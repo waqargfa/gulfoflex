@@ -1,0 +1,27 @@
+{
+  "name": "Gulf-O-Flex® | Premium Rubber Insulation",
+  "short_name": "Gulf-O-Flex",
+  "description": "Gulf-O-Flex® by Rubber World Industry — the GCC's leading NBR rubber insulation manufacturer since 1993.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "industrial"],
+  "lang": "en",
+  "dir": "ltr"
+}
