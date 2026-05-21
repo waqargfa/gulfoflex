@@ -140,7 +140,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top bar */}
-      <div className="hidden lg:block bg-white border-b border-neutral-200/60 text-xs text-neutral-500">
+      <div className="hidden lg:block bg-white border-b border-neutral-200/60 text-xs text-neutral-500 relative z-[60]">
         <div className="container-wide flex items-center justify-between py-2">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5">

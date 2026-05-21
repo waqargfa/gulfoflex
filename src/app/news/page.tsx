@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NewsExperience, { type Article } from "@/components/news/NewsExperience";
+import NewsExperience, { type Article, type GofEvent, type GalleryItem } from "@/components/news/NewsExperience";
 
 export const metadata: Metadata = {
   title: "News & Media | Gulf-O-Flex® Press Releases & Industry News",
@@ -133,6 +133,111 @@ const categories = [
   "Technical",
 ];
 
+const events: GofEvent[] = [
+  {
+    title: "Big 5 Global 2026",
+    tagline: "Premium Sponsor · Stand C3-220",
+    type: "Trade Show",
+    color: "orange",
+    startISO: "2026-11-23",
+    endISO: "2026-11-26",
+    dateLabel: "23 – 26 November 2026",
+    location: "Dubai World Trade Centre, UAE",
+    summary:
+      "Experience the full Gulf-O-Flex® range at the largest construction event in the Middle East. Live demos, technical clinics, and exclusive previews of our 2027 product roadmap.",
+    image: "/images/products/aluclad-install.webp",
+    cta: { label: "Book a meeting", href: "/contact" },
+    featured: true,
+    status: "upcoming",
+  },
+  {
+    title: "Saudi Build Riyadh 2026",
+    tagline: "Vision 2030 Construction Summit",
+    type: "Exhibition",
+    color: "cyan",
+    startISO: "2026-10-12",
+    endISO: "2026-10-15",
+    dateLabel: "12 – 15 October 2026",
+    location: "Riyadh Front Expo Centre, KSA",
+    summary:
+      "Meet the Gulf-O-Flex® KSA team and discover how our locally manufactured rubber insulation is fuelling the Kingdom's mega-projects under Vision 2030.",
+    image: "/images/products/nbr-banner.jpeg",
+    cta: { label: "Add to calendar", href: "#" },
+    status: "upcoming",
+  },
+  {
+    title: "Acoustic Insulation Webinar",
+    tagline: "Live technical session with our R&D team",
+    type: "Webinar",
+    color: "purple",
+    startISO: "2026-07-09",
+    endISO: "2026-07-09",
+    dateLabel: "9 July 2026 · 14:00 GST",
+    location: "Online · Microsoft Teams",
+    summary:
+      "Deep-dive into Gulf-O-Flex® Sound — STC ratings, installation best practices, and case studies from Riyadh Metro Phase 2.",
+    image: "/images/products/sound-1.webp",
+    cta: { label: "Register free", href: "#" },
+    status: "upcoming",
+  },
+  {
+    title: "MEP Expo Mumbai 2026",
+    tagline: "Distributor & specifier meet",
+    type: "Exhibition",
+    color: "green",
+    startISO: "2026-09-03",
+    endISO: "2026-09-05",
+    dateLabel: "3 – 5 September 2026",
+    location: "Bombay Exhibition Centre, India",
+    summary:
+      "Gulf-O-Flex® returns to MEP Expo with our APAC distribution partners — featuring the new low-GWP NBR range and Aluclad jacketing systems.",
+    image: "/images/products/aluclad-2.webp",
+    cta: { label: "View details", href: "#" },
+    status: "upcoming",
+  },
+  {
+    title: "ISH Frankfurt 2025 — Recap",
+    tagline: "Three days. 190+ qualified leads.",
+    type: "Trade Show",
+    color: "blue",
+    startISO: "2025-03-17",
+    endISO: "2025-03-21",
+    dateLabel: "17 – 21 March 2025",
+    location: "Messe Frankfurt, Germany",
+    summary:
+      "Our European debut at ISH Frankfurt set new benchmarks for engagement. Watch the highlight reel and download the post-show report.",
+    image: "/images/products/xlpe-banner.jpg",
+    cta: { label: "Watch recap", href: "#" },
+    status: "past",
+  },
+  {
+    title: "Gulf-O-Flex® Factory Open Day",
+    tagline: "30 years of manufacturing excellence",
+    type: "Open House",
+    color: "orange",
+    startISO: "2025-12-08",
+    endISO: "2025-12-08",
+    dateLabel: "8 December 2025",
+    location: "RAK Industrial Park, UAE",
+    summary:
+      "Customers, partners and media joined us for guided tours of the production line, R&D lab and quality control facilities.",
+    image: "/images/products/nbr-roll.webp",
+    cta: { label: "View photos", href: "#" },
+    status: "past",
+  },
+];
+
+const gallery: GalleryItem[] = [
+  { src: "/images/products/aluclad-install.webp", caption: "Aluclad jacketing — on-site, Dubai", tag: "Project" },
+  { src: "/images/products/sound-2.webp", caption: "Sound insulation — Metro Phase 2", tag: "Acoustics" },
+  { src: "/images/products/nbr-banner.jpeg", caption: "NBR production — KSA facility", tag: "Manufacturing" },
+  { src: "/images/products/xlpe-banner.jpg", caption: "XLPE — FM Approved range", tag: "Certification" },
+  { src: "/images/products/aluglass-install.webp", caption: "Aluglass install — Riyadh tower", tag: "Project" },
+  { src: "/images/products/aluclad-2.webp", caption: "Aluclad — long-run delivery", tag: "Logistics" },
+  { src: "/images/products/sound-1.webp", caption: "Acoustic test chamber", tag: "R&D" },
+  { src: "/images/products/nbr-pipe.jpeg", caption: "Pipe section — pre-cut to spec", tag: "Product" },
+];
+
 export default function NewsPage() {
-  return <NewsExperience articles={articles} categories={categories} />;
+  return <NewsExperience articles={articles} categories={categories} events={events} gallery={gallery} />;
 }

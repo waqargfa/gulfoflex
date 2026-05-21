@@ -1,21 +1,14 @@
-"use client";
+﻿"use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
 export interface CountryInitiative {
-  /** Short badge label, e.g. "Net Zero 2050 Partner" */
   badge: string;
-  /** Display title of the national initiative */
   title: string;
-  /** One-sentence description of Gulf-O-Flex's role in the initiative */
   tagline: string;
-  /** Section headline colour (hex) */
   themeColor: string;
-  /** Accent / highlight colour (hex) */
   accentColor: string;
-  /** 4 stat cards shown in the banner and hero strip */
   metrics: { value: string; label: string }[];
-  /** Chips listing key projects / programmes the initiative covers */
   keyProjects: { name: string; type: string }[];
 }
 
@@ -36,11 +29,11 @@ export interface CountryData {
 }
 
 export const COUNTRIES: CountryData[] = [
-  /* â”€â”€â”€ UAE â”€â”€â”€ */
+  /* --- UAE --- */
   {
     code: "ae",
     name: "UAE",
-    flag: "ðŸ‡¦ðŸ‡ª",
+    flag: "🇦🇪",
     siteUrl: "https://gfa.rwims.com/uae",
     phone: "+971 6 743 4176",
     phoneHref: "tel:+97167434176",
@@ -49,13 +42,13 @@ export const COUNTRIES: CountryData[] = [
     email: "info@gulfoflex.com",
     address: "Ajman Industrial Area 2, Ajman, UAE",
     heroSubtitle:
-      "Driving the UAE's Net Zero 2050 ambition â€” certified low-carbon NBR & XLPE insulation for green buildings, clean energy, and sustainable infrastructure.",
-    tagline: "UAE Net Zero 2050 â€” Insulation That Counts",
+      "Driving the UAE's Net Zero 2050 ambition — certified low-carbon NBR & XLPE insulation for green buildings, clean energy, and sustainable infrastructure.",
+    tagline: "UAE Net Zero 2050 — Insulation That Counts",
     initiative: {
       badge: "UAE Net Zero 2050 Aligned",
       title: "UAE Net Zero 2050",
       tagline:
-        "Gulf-O-FlexÂ® insulation directly reduces building energy consumption and carbon emissions â€” supporting the UAE's landmark Net Zero by 2050 Strategic Initiative and the COP28 legacy agenda.",
+        "Gulf-O-Flex® insulation directly reduces building energy consumption and carbon emissions — supporting the UAE's landmark Net Zero by 2050 Strategic Initiative and the COP28 legacy agenda.",
       themeColor: "#0C4A6E",
       accentColor: "#10B981",
       metrics: [
@@ -81,11 +74,11 @@ export const COUNTRIES: CountryData[] = [
     },
   },
 
-  /* â”€â”€â”€ KSA â”€â”€â”€ */
+  /* --- KSA --- */
   {
     code: "sa",
     name: "KSA",
-    flag: "ðŸ‡¸ðŸ‡¦",
+    flag: "🇸🇦",
     siteUrl: "https://gfa.rwims.com/ksa",
     phone: "+966 11 000 0000",
     phoneHref: "tel:+966110000000",
@@ -94,13 +87,13 @@ export const COUNTRIES: CountryData[] = [
     email: "ksa@gulfoflex.com",
     address: "Riyadh, Kingdom of Saudi Arabia",
     heroSubtitle:
-      "Engineering the Kingdom's future â€” certified NBR & XLPE insulation for NEOM, Red Sea, Qiddiya and every Vision 2030 mega-project.",
+      "Engineering the Kingdom's future — certified NBR & XLPE insulation for NEOM, Red Sea, Qiddiya and every Vision 2030 mega-project.",
     tagline: "Saudi Vision 2030 Aligned Insulation Partner",
     initiative: {
       badge: "Saudi Vision 2030 Aligned Partner",
       title: "Saudi Vision 2030",
       tagline:
-        "Gulf-O-FlexÂ® is actively supplying insulation solutions across Saudi Arabia's most ambitious Vision 2030 infrastructure and development projects.",
+        "Gulf-O-Flex® is actively supplying insulation solutions across Saudi Arabia's most ambitious Vision 2030 infrastructure and development projects.",
       themeColor: "#006C35",
       accentColor: "#C8A84B",
       metrics: [
@@ -126,11 +119,11 @@ export const COUNTRIES: CountryData[] = [
     },
   },
 
-  /* â”€â”€â”€ Sri Lanka â”€â”€â”€ */
+  /* --- Sri Lanka --- */
   {
     code: "lk",
     name: "Sri Lanka",
-    flag: "ðŸ‡±ðŸ‡°",
+    flag: "🇱🇰",
     siteUrl: "https://gfa.rwims.com/lk",
     phone: "+94 11 000 0000",
     phoneHref: "tel:+94110000000",
@@ -139,13 +132,13 @@ export const COUNTRIES: CountryData[] = [
     email: "srilanka@gulfoflex.com",
     address: "Colombo, Sri Lanka",
     heroSubtitle:
-      "Supporting Sri Lanka's green recovery and Port City ambitions â€” NBR & XLPE insulation engineered for sustainable MEP, hospitality, and industrial projects.",
-    tagline: "Green Economy Partner Â· Sri Lanka",
+      "Supporting Sri Lanka's green recovery and Port City ambitions — NBR & XLPE insulation engineered for sustainable MEP, hospitality, and industrial projects.",
+    tagline: "Green Economy Partner · Sri Lanka",
     initiative: {
       badge: "Sri Lanka Green Economy Partner",
       title: "Sri Lanka Green Economy",
       tagline:
-        "Gulf-O-FlexÂ® supports Sri Lanka's sustainable development agenda â€” delivering energy-efficient insulation for Port City Colombo, hospitality, and renewable energy infrastructure.",
+        "Gulf-O-Flex® supports Sri Lanka's sustainable development agenda — delivering energy-efficient insulation for Port City Colombo, hospitality, and renewable energy infrastructure.",
       themeColor: "#166534",
       accentColor: "#F59E0B",
       metrics: [
@@ -169,11 +162,11 @@ export const COUNTRIES: CountryData[] = [
     },
   },
 
-  /* â”€â”€â”€ Egypt â”€â”€â”€ */
+  /* --- Egypt --- */
   {
     code: "eg",
     name: "Egypt",
-    flag: "ðŸ‡ªðŸ‡¬",
+    flag: "🇪🇬",
     siteUrl: "https://gfa.rwims.com/eg",
     phone: "+20 2 0000 0000",
     phoneHref: "tel:+20200000000",
@@ -182,13 +175,13 @@ export const COUNTRIES: CountryData[] = [
     email: "egypt@gulfoflex.com",
     address: "Cairo, Egypt",
     heroSubtitle:
-      "Insulating Egypt's New Republic â€” certified NBR & XLPE solutions for the New Administrative Capital, Benban Solar, and Egypt Vision 2030 mega-projects.",
+      "Insulating Egypt's New Republic — certified NBR & XLPE solutions for the New Administrative Capital, Benban Solar, and Egypt Vision 2030 mega-projects.",
     tagline: "Egypt Vision 2030 Infrastructure Partner",
     initiative: {
       badge: "Egypt Vision 2030 Partner",
       title: "Egypt Vision 2030",
       tagline:
-        "Gulf-O-FlexÂ® delivers certified thermal and acoustic insulation across Egypt's transformative Vision 2030 projects â€” from the New Administrative Capital to the world's largest solar park at Benban.",
+        "Gulf-O-Flex® delivers certified thermal and acoustic insulation across Egypt's transformative Vision 2030 projects — from the New Administrative Capital to the world's largest solar park at Benban.",
       themeColor: "#7C2D12",
       accentColor: "#D4AF37",
       metrics: [
@@ -214,11 +207,11 @@ export const COUNTRIES: CountryData[] = [
     },
   },
 
-  /* â”€â”€â”€ Pakistan â”€â”€â”€ */
+  /* --- Pakistan --- */
   {
     code: "pk",
     name: "Pakistan",
-    flag: "ðŸ‡µðŸ‡°",
+    flag: "🇵🇰",
     siteUrl: "https://gfa.rwims.com/pk",
     phone: "+92 21 0000 0000",
     phoneHref: "tel:+922100000000",
@@ -227,13 +220,13 @@ export const COUNTRIES: CountryData[] = [
     email: "pakistan@gulfoflex.com",
     address: "Karachi, Pakistan",
     heroSubtitle:
-      "Powering Pakistan's CPEC corridor and energy agenda â€” premium NBR & XLPE insulation for power plants, industrial cities, and landmark construction projects.",
+      "Powering Pakistan's CPEC corridor and energy agenda — premium NBR & XLPE insulation for power plants, industrial cities, and landmark construction projects.",
     tagline: "CPEC & Pakistan Development Insulation Partner",
     initiative: {
       badge: "CPEC & Pakistan Vision Partner",
       title: "CPEC & Pakistan Vision 2025",
       tagline:
-        "Gulf-O-FlexÂ® is a trusted insulation supplier across Pakistan's CPEC energy corridor and major infrastructure programmes â€” delivering certified performance in power, industrial, and residential projects.",
+        "Gulf-O-Flex® is a trusted insulation supplier across Pakistan's CPEC energy corridor and major infrastructure programmes — delivering certified performance in power, industrial, and residential projects.",
       themeColor: "#14532D",
       accentColor: "#F0A500",
       metrics: [
@@ -257,11 +250,11 @@ export const COUNTRIES: CountryData[] = [
     },
   },
 
-  /* â”€â”€â”€ Africa â”€â”€â”€ */
+  /* --- Africa --- */
   {
     code: "za",
     name: "Africa",
-    flag: "ðŸŒ",
+    flag: "🌍",
     siteUrl: "https://gfa.rwims.com/africa",
     phone: "+27 11 000 0000",
     phoneHref: "tel:+27110000000",
@@ -270,13 +263,13 @@ export const COUNTRIES: CountryData[] = [
     email: "africa@gulfoflex.com",
     address: "Johannesburg, South Africa",
     heroSubtitle:
-      "Insulating Africa's rise â€” NBR & XLPE solutions for the continent's energy, industrial, and smart-city projects under African Union Agenda 2063.",
+      "Insulating Africa's rise — NBR & XLPE solutions for the continent's energy, industrial, and smart-city projects under African Union Agenda 2063.",
     tagline: "African Union Agenda 2063 Infrastructure Partner",
     initiative: {
       badge: "AU Agenda 2063 Infrastructure Partner",
       title: "African Union Agenda 2063",
       tagline:
-        "Gulf-O-FlexÂ® supports Africa's continental transformation agenda â€” delivering high-performance insulation for energy, industrial, and urban infrastructure projects across the continent.",
+        "Gulf-O-Flex® supports Africa's continental transformation agenda — delivering high-performance insulation for energy, industrial, and urban infrastructure projects across the continent.",
       themeColor: "#92400E",
       accentColor: "#FBBF24",
       metrics: [
@@ -296,7 +289,7 @@ export const COUNTRIES: CountryData[] = [
         { name: "African Free Trade Zones", type: "Industrial" },
         { name: "Cape Town Green Precinct", type: "Sustainability" },
         { name: "Mozambique LNG", type: "Energy" },
-        { name: "CÃ´te d'Ivoire Refinery", type: "Petrochemical" },
+        { name: "Cote d'Ivoire Refinery", type: "Petrochemical" },
         { name: "Africa 2063 Corridors", type: "Infrastructure" },
       ],
     },
