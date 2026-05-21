@@ -85,7 +85,7 @@ export default function CareersPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=80" focalY="35%" />
+        <PageHero src="https://images.unsplash.com/photo-1568066857798-392a983d3150?auto=format&fit=crop&w=2400&q=80" focalY="35%" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
             <div>

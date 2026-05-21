@@ -63,7 +63,7 @@ export default function DownloadsPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=2400&q=80" focalY="center" />
+        <PageHero src="https://images.unsplash.com/photo-1708005383082-3a0e5e79a347?auto=format&fit=crop&w=2400&q=80" focalY="center" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
             <div>

@@ -74,7 +74,7 @@ export default function TechnologiesPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2400&q=80" focalY="50%" />
+        <PageHero src="/images/products/nbr-banner.jpeg" focalY="45%" />
         <div className="container-wide relative z-10">
           <div className="max-w-4xl">
             <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-8" aria-label="Breadcrumb">

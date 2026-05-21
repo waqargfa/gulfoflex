@@ -147,6 +147,22 @@ export default function Navbar() {
               <span className="orange-dot" style={{ width: 5, height: 5 }} />
               {selectedCountry.tagline}
             </span>
+            {selectedCountry.initiative && (
+              <span
+                className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-black tracking-[0.18em] uppercase"
+                style={{
+                  background: `${selectedCountry.initiative.themeColor}14`,
+                  border: `1px solid ${selectedCountry.initiative.themeColor}40`,
+                  color: selectedCountry.initiative.themeColor,
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full animate-pulse"
+                  style={{ background: selectedCountry.initiative.accentColor }}
+                />
+                {selectedCountry.initiative.title}
+              </span>
+            )}
           </div>
           <div className="flex items-center gap-5">
             <a href={selectedCountry.phoneHref} className="flex items-center gap-1.5 hover:text-orange-600 transition-colors">

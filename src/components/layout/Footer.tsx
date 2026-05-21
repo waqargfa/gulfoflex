@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { useCountry } from "@/context/CountryContext";
 
 const FacebookIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -57,6 +60,7 @@ const footerIndustries = [
 const certLogos = ["ISO 9001", "ISO 14001", "FM Approved", "CE Marked", "Gulf Mark", "LPCB"];
 
 export default function Footer() {
+  const { country } = useCountry();
   return (
     <footer className="bg-white border-t border-neutral-200">
       {/* CTA Banner — premium dark */}
@@ -84,7 +88,7 @@ export default function Footer() {
               <Link href="/contact" className="btn-primary text-sm px-5 py-2.5">
                 Request a Quote <ArrowRight size={14} />
               </Link>
-              <a href="tel:+97167434176" className="btn-ghost text-sm px-5 py-2.5" style={{ color: "rgba(255,255,255,0.85)", borderColor: "rgba(255,255,255,0.18)" }}>
+              <a href={country.phoneHref} className="btn-ghost text-sm px-5 py-2.5" style={{ color: "rgba(255,255,255,0.85)", borderColor: "rgba(255,255,255,0.18)" }}>
                 <Phone size={13} /> Call Us
               </a>
             </div>
@@ -121,17 +125,17 @@ export default function Footer() {
               Pioneer in closed-cell elastomeric NBR rubber insulation. Manufacturing excellence since 1993 in the UAE, serving HVAC, Oil & Gas, Marine and industrial sectors across 90+ countries.
             </p>
             <div className="space-y-3 mb-8">
-              <a href="tel:+97167434176" className="flex items-center gap-3 text-sm text-neutral-500 hover:text-orange-600 transition-colors group">
+              <a href={country.phoneHref} className="flex items-center gap-3 text-sm text-neutral-500 hover:text-orange-600 transition-colors group">
                 <Phone size={15} className="text-orange-500 flex-shrink-0" />
-                +971 6 743 4176
+                {country.phone}
               </a>
-              <a href="mailto:info@gulfoflex.com" className="flex items-center gap-3 text-sm text-neutral-500 hover:text-orange-600 transition-colors">
+              <a href={`mailto:${country.email}`} className="flex items-center gap-3 text-sm text-neutral-500 hover:text-orange-600 transition-colors">
                 <Mail size={15} className="text-orange-500 flex-shrink-0" />
-                info@gulfoflex.com
+                {country.email}
               </a>
               <div className="flex items-start gap-3 text-sm text-neutral-500">
                 <MapPin size={15} className="text-orange-500 flex-shrink-0 mt-0.5" />
-                <span>P.O. Box 2435, New Industrial Area,<br />Ajman, UAE</span>
+                <span>{country.address}</span>
               </div>
             </div>
             {/* Social */}

@@ -23,29 +23,31 @@ type Cert = {
 };
 
 const certs: Cert[] = [
-  { abbr: "ISO 9001",  name: "ISO 9001:2015",   sub: "Quality Management",       Icon: BadgeCheck,  since: "Since 2002" },
-  { abbr: "ISO 14001", name: "ISO 14001:2015",  sub: "Environmental Mgmt",       Icon: Leaf,        since: "Since 2008" },
-  { abbr: "FM",        name: "FM Approved",     sub: "FM Global Standards",      Icon: ShieldCheck, since: "Since 2011" },
-  { abbr: "LPCB",      name: "LPCB Certified",  sub: "Loss Prevention Board",    Icon: Flame,       since: "Since 2013" },
-  { abbr: "CE",        name: "CE Marked",       sub: "European Compliance",      Icon: Globe2,      since: "Since 2004" },
-  { abbr: "Gulf Mark", name: "Gulf Mark",       sub: "GCC Standardization",      Icon: Award,       since: "Since 2010" },
+  { abbr: "ISO 9001",  name: "ISO 9001:2015",   sub: "Quality Management",  Icon: BadgeCheck,  since: "Bureau Veritas" },
+  { abbr: "ISO 14001", name: "ISO 14001:2015",  sub: "Environmental Mgmt",  Icon: Leaf,        since: "Bureau Veritas" },
+  { abbr: "ISO 45001", name: "ISO 45001:2018",  sub: "Occupational H&S",    Icon: ShieldCheck, since: "Bureau Veritas" },
+  { abbr: "FM",        name: "FM Approved",     sub: "FM Global Standards",  Icon: Flame,       since: "FM Global" },
+  { abbr: "UL",        name: "UL Listed",       sub: "ASTM E84 / UL 723",   Icon: Award,       since: "Underwriters Labs" },
+  { abbr: "DCL",       name: "DCL Certified",   sub: "Dubai Municipality",  Icon: Globe2,      since: "Dubai Central Lab" },
+  { abbr: "DCD",       name: "DCD Approved",    sub: "UAE Fire & Life Safety", Icon: ShieldCheck, since: "Dubai Civil Defence" },
+  { abbr: "EPD",       name: "EPD Verified",    sub: "Environmental Product", Icon: Sparkles,  since: "EPD International" },
 ];
 
 const standards = [
-  "BS 476 Part 4 & 7",
-  "ASTM E84",
-  "EN 13501-1",
-  "DIN 4102",
-  "IMO FTP Code",
-  "NFPA 90A/B",
-  "ASHRAE 90.1",
+  "FM 4924",
+  "ASTM E84 / UL 723",
+  "ISO 14025",
+  "EN 15804",
   "LEED Compliant",
+  "BREEAM",
+  "Estidama",
+  "BS 476 Part 4 & 7",
 ];
 
 const trustStats = [
-  { value: "12+", label: "Active certifications" },
-  { value: "90+", label: "Countries approved" },
-  { value: "30+", label: "Years audited" },
+  { value: "8+",   label: "Active certifications" },
+  { value: "90+",  label: "Countries approved" },
+  { value: "30+",  label: "Years audited" },
   { value: "100%", label: "Independent labs" },
 ];
 
@@ -116,7 +118,7 @@ export default function Certifications() {
         </div>
 
         {/* Certification badges */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-12 stagger-reveal">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3 mb-12 stagger-reveal">
           {certs.map((cert) => {
             const Icon = cert.Icon;
             return (

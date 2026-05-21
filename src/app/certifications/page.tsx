@@ -101,7 +101,7 @@ export default function CertificationsPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-16 md:pb-20" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=2400&q=80" focalY="40%" />
+        <PageHero src="https://images.unsplash.com/photo-1769695832186-9aabeee586ac?auto=format&fit=crop&w=2400&q=80" focalY="40%" />
         <div className="container-wide relative z-10">
           <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>

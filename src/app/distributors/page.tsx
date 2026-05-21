@@ -61,7 +61,7 @@ export default function DistributorsPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=2400&q=80" focalY="center" />
+        <PageHero src="https://images.unsplash.com/photo-1538474705339-e87de81450e8?auto=format&fit=crop&w=2400&q=80" focalY="center" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
             <div>

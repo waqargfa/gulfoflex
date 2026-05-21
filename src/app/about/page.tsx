@@ -131,7 +131,7 @@ export default function AboutPage() {
         className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
-        <PageHero src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=2400&q=80" focalY="45%" />
+        <PageHero src="https://images.unsplash.com/photo-1670309178236-d8180b68e2f1?auto=format&fit=crop&w=2400&q=80" focalY="50%" />
         <div className="noise" />
 
         <div className="container-wide relative z-10">

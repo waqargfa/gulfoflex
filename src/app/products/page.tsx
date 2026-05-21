@@ -103,7 +103,7 @@ export default function ProductsPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=2400&q=80" focalY="center" />
+        <PageHero src="https://images.unsplash.com/photo-1769695832202-0f10d9d21f27?auto=format&fit=crop&w=2400&q=80" focalY="center" />
 
         <div className="container-wide relative z-10">
           <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-8" aria-label="Breadcrumb">

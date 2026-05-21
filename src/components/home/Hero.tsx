@@ -291,7 +291,7 @@ export default function Hero() {
       <div className="relative z-10 border-t border-white/10 backdrop-blur-md bg-black/55">
         <div className="container-wide">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-            {METRICS.map((m, i) => (
+            {(country.initiative?.metrics ?? METRICS).map((m, i) => (
               <div
                 key={m.label}
                 className="px-6 py-6 lg:py-7 hover:bg-white/5 transition-colors duration-300"

@@ -5,6 +5,7 @@ import Products from "@/components/home/Products";
 import Industries from "@/components/home/Industries";
 import Certifications from "@/components/home/Certifications";
 import Contact from "@/components/home/Contact";
+import CountryInitiativeBanner from "@/components/home/CountryInitiativeBanner";
 
 export const metadata: Metadata = {
   title: "Gulf-O-Flex® | Premium NBR Rubber Insulation Manufacturer | UAE Since 1993",
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <CountryInitiativeBanner />
       <Marquee />
       <Products />
       <Industries />

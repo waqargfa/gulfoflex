@@ -347,7 +347,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
     <>
       {/* HERO — Editorial dark premium */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-24 md:pb-32 bg-[#080808] text-white">
-        <PageHero src="https://images.unsplash.com/photo-1518707399486-6d702f84bd07?auto=format&fit=crop&w=2400&q=80" focalY="40%" variant="dark" intensity={0.85} />
+        <PageHero src="https://images.unsplash.com/photo-1543674892-7d64d45df18b?auto=format&fit=crop&w=2400&q=80" focalY="40%" variant="dark" intensity={0.85} />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
