@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large binary assets — serve from CDN, do not track in git
+/public/assets/GULFO SOUND PRODUCTS/
+/public/assets/*.jpg
+/public/assets/*.jpeg
+/public/assets/*.JPG
+/public/assets/*.JPEG
+/public/assets/plain/
+
+# Large video files — serve from CDN/cloud storage
+/public/videos/

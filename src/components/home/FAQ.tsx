@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Is Gulf-O-Flex® fire rated and compliant with safety standards?",
-    a: "Yes. Gulf-O-Flex® products are fire tested and certified to Class O (BS 476 Part 4 & 7), ASTM E84, EN 13501-1, and IMO FTP Code for marine applications. The products are FM Approved and LPCB Certified, meeting the most stringent fire safety requirements globally.",
+    a: "Yes. Gulf-O-Flex® products are fire tested and certified to Class O (BS 476 Part 4 & 7), ASTM E84, EN 13501-1, and IMO FTP Code for marine applications. The products are FM Approved, meeting the most stringent fire safety requirements globally.",
     tag: "Compliance",
   },
   {
@@ -85,7 +85,7 @@ export default function FAQ() {
                   <div className="flex items-center gap-3 flex-1 min-w-0">
                     <span className="tag text-[9px] flex-shrink-0">{faq.tag}</span>
                     <h3
-                      className={`font-semibold text-sm leading-snug transition-colors truncate ${
+                      className={`font-semibold text-sm leading-snug transition-colors ${
                         open === i ? "text-orange-600" : "text-neutral-800 group-hover:text-neutral-900"
                       }`}
                       itemProp="name"

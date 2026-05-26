@@ -49,8 +49,8 @@ const genericPartners: { name: string; short: string; accent: string }[] = [
 
 const specs = [
   "λ ≤ 0.034 W/mK", "Class O · BS 476", "ISO 9001 · ISO 14001",
-  "FM Approved", "LPCB Certified", "CE Marked · Gulf Mark",
-  "−40°C to +105°C", "μ ≥ 10,000", "CFC & HCFC Free · 0 ODP",
+  "FM Approved",
+  "−40°C to +105°C", "μ ≥ 7,300", "CFC & HCFC Free · 0 ODP",
   "ASTM E84 Compliant", "IMO FTP Code", "ASHRAE 90.1",
 ];
 

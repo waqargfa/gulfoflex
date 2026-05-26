@@ -28,6 +28,15 @@ export default function About() {
           <div className="relative reveal-left">
             {/* Main card */}
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100 border border-neutral-200 aspect-[4/5] max-w-lg shadow-[0_30px_80px_-30px_rgba(249,115,22,0.25)]">
+              {/* Real manufacturing background image */}
+              <Image
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=75"
+                alt="Gulf-O-Flex manufacturing facility"
+                fill
+                className="object-cover object-center"
+                style={{ opacity: 0.18 }}
+                sizes="480px"
+              />
               {/* Grid bg */}
               <div className="absolute inset-0 grid-bg opacity-40" />
 
@@ -81,7 +90,7 @@ export default function About() {
             </div>
 
             {/* Floating mini card */}
-            <div className="absolute -right-6 top-1/3 glass-orange rounded-2xl p-5 shadow-[0_16px_40px_rgba(0,0,0,0.5)]">
+            <div className="hidden lg:block absolute -right-6 top-1/3 glass-orange rounded-2xl p-5 shadow-[0_16px_40px_rgba(0,0,0,0.5)]">
               <Leaf size={20} className="text-orange-600 mb-2" />
               <div className="text-neutral-900 font-bold text-sm">Eco-Engineered</div>
               <div className="text-neutral-500 text-xs mt-1">0 ODP · CFC Free</div>

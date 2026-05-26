@@ -12,7 +12,7 @@ const industries = {
     color: "orange",
     description: [
       "Gulf-O-Flex® NBR is the region's most widely specified thermal insulation for HVAC and MEP applications. Its closed-cell structure provides outstanding vapor barrier performance, preventing condensation on chilled water pipes and cold surfaces in the Gulf's high-humidity environment.",
-      "From mega-mall district cooling connections to individual apartment FCU lines, Gulf-O-Flex® delivers consistent performance backed by FM Approval, LPCB certification, and full compliance with ASHRAE 90.1 energy efficiency standards.",
+      "From mega-mall district cooling connections to individual apartment FCU lines, Gulf-O-Flex® delivers consistent performance backed by FM Approval and full compliance with ASHRAE 90.1 energy efficiency standards.",
     ],
     products: ["Gulf-O-Flex® NBR Tubes", "Gulf-O-Flex® NBR Sheets", "Aluglass Duct Facing", "GOF Contact Adhesive"],
     requirements: ["ASHRAE 90.1 Energy Compliance", "Condensation Prevention", "Fire Spread Control", "Acoustic Attenuation"],
@@ -88,7 +88,7 @@ const industries = {
     color: "cyan",
     description: [
       "The GCC operates some of the world's largest district cooling networks, with Dubai and Abu Dhabi leading in district cooling adoption. Gulf-O-Flex® is the primary insulation specified for district cooling distribution mains, branch connections, and end-user interfaces.",
-      "Our closed-cell NBR insulation's extremely high vapor diffusion resistance factor (μ ≥ 10,000) ensures zero condensation on chilled water pipes carrying temperatures as low as 3°C, even in the region's extreme humidity conditions.",
+      "Our closed-cell NBR insulation's extremely high vapor diffusion resistance factor (μ ≥ 7,300) ensures zero condensation on chilled water pipes carrying temperatures as low as 3°C, even in the region's extreme humidity conditions.",
     ],
     products: ["Gulf-O-Flex® NBR (Large Bore)", "Aluglass Facing Systems", "Pipe Hanger Insulation Kits", "Pre-insulated Systems"],
     requirements: ["Zero Condensation (3°C Pipes)", "ASHRAE 90.1 Compliance", "Long-Term Vapor Barrier", "Fire Safety (NFPA 90A)"],

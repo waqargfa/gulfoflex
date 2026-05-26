@@ -25,7 +25,7 @@ const SLIDES = [
     line2a:   "to\u00a0",
     line2b:   "Global",
     line3:    "standards.",
-    subtitle: "ISO 9001 · FM Approved · LPCB · CE Marked — every roll ships with the world's most rigorous third-party certifications behind it.",
+    subtitle: "ISO 9001 · FM Approved · UL Listed · EPD Verified — every roll ships with the world's most rigorous third-party certifications behind it.",
     cta1:     { label: "View Certifications", href: "/certifications" },
     cta2:     { label: "Our Projects",        href: "/projects" },
   },
@@ -215,12 +215,14 @@ export default function Hero() {
                 <span className="inline-block text-white/55">{slide.line2b}</span>
               </span>
               <span
-                className="block overflow-hidden"
+                className="block"
                 style={{
                   animation: `hero-word 700ms cubic-bezier(0.19,1,0.22,1) ${isRight ? "320ms" : "280ms"} both`,
+                  paddingBottom: "0.15em",
+                  overflow: "visible",
                 }}
               >
-                <span className="inline-block serif-italic gradient-text" style={{ fontSize: "1.02em" }}>
+                <span className="inline-block serif-italic gradient-text" style={{ fontSize: "1.02em", lineHeight: 1.1 }}>
                   {slide.line3}
                 </span>
               </span>
@@ -290,11 +292,11 @@ export default function Hero() {
       {/* ── Stats strip ── */}
       <div className="relative z-10 border-t border-white/10 backdrop-blur-md bg-black/55">
         <div className="container-wide">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+          <div className="grid grid-cols-2 lg:grid-cols-4">
             {(country.initiative?.metrics ?? METRICS).map((m, i) => (
               <div
                 key={m.label}
-                className="px-6 py-6 lg:py-7 hover:bg-white/5 transition-colors duration-300"
+                className={`px-6 py-6 lg:py-7 hover:bg-white/5 transition-colors duration-300${i % 2 === 1 ? " border-l border-white/10" : ""}${i > 0 && i % 2 === 0 ? " lg:border-l lg:border-white/10" : ""}`}
               >
                 <div className="stat-number text-3xl md:text-4xl xl:text-5xl leading-none">{m.value}</div>
                 <div className="mt-2 text-xs text-white/45 font-medium tracking-wide">{m.label}</div>

@@ -14,6 +14,8 @@ const products = {
   nbr: {
     name: "Gulf-O-Flex® NBR",
     icon: Thermometer,
+    heroImage: "/assets/plain/C_107249.jpg",
+    heroVideo: "/videos/products/nbr.mp4",
     shortName: "Closed-Cell NBR Rubber Insulation",
     tagline: "The benchmark for thermal and acoustic pipe insulation in HVAC and MEP applications across the Middle East.",
     color: "orange",
@@ -45,7 +47,7 @@ const products = {
       { label: "Available Forms", value: "Tubes, Sheets (plain & self-adhesive)" },
       { label: "Color", value: "Black (standard)" },
     ],
-    certifications: ["ISO 9001", "FM Approved", "UL Listed", "EPD Verified", "BS 476 Part 6 & 7", "ASTM E84 / UL 723", "Gulf Mark"],
+    certifications: ["ISO 9001", "FM Approved", "UL Listed", "EPD Verified", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
     applications: [
       "Hot & Cold Water Plumbing",
       "Refrigeration Lines",
@@ -63,6 +65,8 @@ const products = {
   xlpe: {
     name: "Gulf-O-Flex® XLPE",
     icon: Zap,
+    heroImage: "/assets/duct.webp",
+    heroVideo: "/videos/products/xlpe.mp4",
     shortName: "Chemically Crosslinked Polyethylene Foam",
     tagline: "Closed-cell elastomeric XLPE foam with alupet facing — a passive, self-sustaining solution for thermal and acoustic insulation in demanding environments.",
     color: "blue",
@@ -105,6 +109,7 @@ const products = {
   sound: {
     name: "Gulf O Sound",
     icon: Volume2,
+    heroImage: "/assets/plain/C_107300.jpg",
     shortName: "Open-Cell Acoustic Elastomeric Foam",
     tagline: "Flexible open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R, pipelines, plant rooms and industrial environments.",
     color: "purple",
@@ -143,6 +148,8 @@ const products = {
   aluglass: {
     name: "Gulf-O-Flex® Aluglass",
     icon: Layers,
+    heroImage: "/assets/ALUGLASS.png",
+    heroVideo: "/videos/products/aluglass.mp4",
     shortName: "NBR Elastomeric Foam with Aluglass Facing",
     tagline: "Best-selling rubber insulation finished with a factory-applied aluminum glass cloth facing — a passive, self-sustaining solution for energy efficiency.",
     color: "cyan",
@@ -197,6 +204,8 @@ const products = {
   aluclad: {
     name: "Gulf-O-Flex® Aluclad",
     icon: Shield,
+    heroImage: "/assets/ALUCLAD 2 (2).png",
+    heroVideo: "/videos/products/aluclad.mp4",
     shortName: "NBR Foam with Alu-Clad Facing",
     tagline: "Best-selling closed-cell NBR insulation with factory-applied Alu-Clad facing — a passive, self-sustaining solution for outdoor and mechanical systems.",
     color: "yellow",
@@ -249,9 +258,114 @@ const products = {
       { name: "Compliance Certificates", format: "PDF", size: "3.0 MB" },
     ],
   },
+  ultra: {
+    name: "Gulf-O-Flex® Ultra",
+    icon: Sparkles,
+    heroImage: "/assets/plain/C_107249.jpg",
+    shortName: "Ultra-Low Conductivity Premium Elastomeric Foam",
+    tagline: "Next-generation closed-cell NBR/EPDM hybrid insulation with ultra-low thermal conductivity for the most demanding HVAC, refrigeration, and chilled-water applications.",
+    color: "orange",
+    description: [
+      "Gulf-O-Flex® Ultra is a premium closed-cell elastomeric foam engineered with an advanced NBR/EPDM polymer blend to deliver an industry-leading thermal conductivity of just 0.030 W/m·K at 0°C. Available in sheet (with or without self-adhesive) and tube forms from 6mm to 50mm, it brings measurable energy savings and longer service life to chilled water, district cooling, refrigeration, and low-temperature process lines.",
+      "Ultra extends the proven Gulf-O-Flex® platform with enhanced UV resistance, an extended operating window from -50°C to +115°C, and an ultra-high water vapour diffusion resistance factor (μ > 7,300). FM Approved, UL Listed and EPD Verified — Zero ODP, CFC and HCFC free, and certified Class O / Class 1 for fire safety.",
+    ],
+    features: [
+      "Ultra-low thermal conductivity — λ 0.030 W/m·K at 0°C (ASTM C518)",
+      "Extended operating temperature — -50°C to +115°C",
+      "Advanced NBR/EPDM polymer blend — improved UV & ozone resistance",
+      "Water vapour diffusion resistance factor μ > 10,000 (BS EN 12086)",
+      "Water absorption ≤ 0.10 vol% (ASTM C534)",
+      "Self-extinguishing — Class O / Class 1 (BS 476 Part 6 & 7)",
+      "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)",
+      "Zero ODP, CFC & HCFC free — EPD Verified low embodied carbon",
+      "Anti-microbial — resists mould and mildew growth",
+      "Available in sheet (plain & self-adhesive) and tube forms, 6–50mm",
+    ],
+    specs: [
+      { label: "Material", value: "Closed-Cell NBR/EPDM Elastomeric Foam" },
+      { label: "Thermal Conductivity (λ)", value: "0.030 W/m·K at 0°C (ASTM C518)" },
+      { label: "Operating Temperature", value: "-50°C to +115°C (ASTM C534)" },
+      { label: "Density", value: "55–80 kg/m³ (ASTM C302-13)" },
+      { label: "Water Absorption", value: "≤ 0.10 vol% (ASTM C534)" },
+      { label: "Water Vapour Transmission", value: "0.00 Perm in (ASTM E96/96M)" },
+      { label: "Vapour Diffusion Factor (μ)", value: "> 10,000 (BS EN 12086)" },
+      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Surface Burning", value: "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)" },
+      { label: "Cell Structure", value: "Closed Cell" },
+      { label: "Thickness Range", value: "6mm to 50mm" },
+      { label: "Available Forms", value: "Sheets (plain & self-adhesive), Tubes" },
+    ],
+    certifications: ["ISO 9001", "FM Approved", "UL Listed", "EPD Verified", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
+    applications: [
+      "Chilled Water & District Cooling",
+      "Low-Temperature Refrigeration",
+      "Cryogenic & Process Piping",
+      "Premium HVAC Systems",
+      "Pharmaceutical & Data Centre Cooling",
+      "Cold Storage Facilities",
+    ],
+    downloads: [
+      { name: "Ultra Product Datasheet", format: "PDF", size: "2.6 MB" },
+      { name: "Ultra Installation Guide", format: "PDF", size: "1.9 MB" },
+      { name: "Compliance Certificates", format: "PDF", size: "3.2 MB" },
+    ],
+  },
+  ultraline: {
+    name: "Gulf-O-Flex® UltraLine",
+    icon: Layers,
+    heroImage: "/assets/duct.webp",
+    shortName: "Pre-Insulated Continuous Tube Line System",
+    tagline: "Factory pre-insulated continuous-length tube line system — chilled-water and refrigeration piping delivered ready to install with built-in vapour barrier and UV-stable jacket.",
+    color: "cyan",
+    description: [
+      "Gulf-O-Flex® UltraLine is a complete factory pre-insulated copper tube line system, supplied in continuous coils up to 50 metres. Each line pairs a soft-temper, dehydrated and nitrogen-charged copper tube with a closed-cell NBR insulation core and a UV-stable, water-tight outer jacket — eliminating site insulation labour and ensuring a continuous, joint-free vapour barrier from end to end.",
+      "UltraLine is designed for VRF / VRV refrigerant lines, split AC connections, chilled water mini-loops, and solar thermal applications. Available as single tube, twin tube (liquid + suction), and multi-tube configurations in diameters from 1/4\" to 1-1/8\" — pre-paired with an optional ECC communication cable for a one-pull installation.",
+    ],
+    features: [
+      "Continuous-length pre-insulated copper line — coils up to 50 m",
+      "Factory dehydrated and nitrogen-charged copper tube — ready to braze",
+      "Closed-cell NBR insulation core — λ 0.034 W/m·K at 0°C",
+      "UV-stable, water-tight LDPE outer jacket — IP-rated for outdoor runs",
+      "Zero water vapour transmission — continuous integral vapour barrier",
+      "Self-extinguishing — Class O / Class 1 (BS 476 Part 6 & 7)",
+      "Available single, twin (liquid + suction), and multi-tube configurations",
+      "Optional integrated communication / control cable (ECC)",
+      "Diameter range 1/4\" to 1-1/8\" with 9 / 13 / 19 / 25 mm insulation thickness",
+      "Eliminates site insulation labour — faster, cleaner installation",
+    ],
+    specs: [
+      { label: "Inner Tube", value: "Soft-temper copper, ASTM B280 / EN 12735" },
+      { label: "Insulation Core", value: "Closed-Cell NBR Elastomeric Foam" },
+      { label: "Outer Jacket", value: "UV-Stable LDPE, water-tight" },
+      { label: "Thermal Conductivity (λ)", value: "0.034 W/m·K at 0°C (ASTM C518)" },
+      { label: "Operating Temperature", value: "-40°C to +105°C" },
+      { label: "Insulation Thickness", value: "9 mm / 13 mm / 19 mm / 25 mm" },
+      { label: "Tube Diameter Range", value: '1/4" to 1-1/8" (6.35 – 28.58 mm OD)' },
+      { label: "Coil Length", value: "Up to 50 m continuous" },
+      { label: "Configurations", value: "Single Tube / Twin Tube / Multi-Tube" },
+      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Vapour Barrier", value: "Integral — 0.00 Perm in (ASTM E96/96M)" },
+      { label: "Tube Charge", value: "Dehydrated, nitrogen-charged, sealed ends" },
+    ],
+    certifications: ["ISO 9001", "ASTM B280", "EN 12735", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
+    applications: [
+      "VRF / VRV Refrigerant Lines",
+      "Split AC Indoor–Outdoor Connections",
+      "Chilled Water Mini-Loops",
+      "Solar Thermal Hot Water",
+      "Refrigeration & Cold Room Piping",
+      "Heat Pump Installations",
+    ],
+    downloads: [
+      { name: "UltraLine Product Datasheet", format: "PDF", size: "2.8 MB" },
+      { name: "UltraLine Sizing & Selection Guide", format: "PDF", size: "2.1 MB" },
+      { name: "UltraLine Installation Manual", format: "PDF", size: "2.4 MB" },
+    ],
+  },
   accessories: {
     name: "Accessories & Adhesives",
     icon: Package,
+    heroImage: "/assets/aluminium.webp",
     shortName: "Complete Installation System",
     tagline: "A complete range of adhesives, sealants, tapes, and anti-vibration accessories engineered for full system compatibility with Gulf-O-Flex® insulation.",
     color: "green",
@@ -347,7 +461,19 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
     <>
       {/* HERO — Editorial dark premium */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-24 md:pb-32 bg-[#080808] text-white">
-        <PageHero src="https://images.unsplash.com/photo-1543674892-7d64d45df18b?auto=format&fit=crop&w=2400&q=80" focalY="40%" variant="dark" intensity={0.85} />
+        <PageHero src={product.heroImage ?? "https://images.unsplash.com/photo-1543674892-7d64d45df18b?auto=format&fit=crop&w=2400&q=80"} focalY="40%" variant="dark" intensity={0.85} />
+        {(product as { heroVideo?: string }).heroVideo && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: 0.55, zIndex: 1 }}
+          >
+            <source src={(product as { heroVideo?: string }).heroVideo} type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 

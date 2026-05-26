@@ -90,7 +90,7 @@ export default function Stats() {
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className="bg-white p-8 xl:p-12 group hover:bg-gradient-to-br hover:from-orange-500/8 hover:to-transparent transition-all duration-300 flex flex-col relative overflow-hidden"
+              className="bg-white p-5 sm:p-8 xl:p-12 group hover:bg-gradient-to-br hover:from-orange-500/8 hover:to-transparent transition-all duration-300 flex flex-col relative overflow-hidden"
             >
               {/* Hover glow sweep */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 via-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 transition-all duration-500 pointer-events-none" />

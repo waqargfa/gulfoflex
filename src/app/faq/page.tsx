@@ -24,7 +24,7 @@ const faqs = [
       },
       {
         q: "Does Gulf-O-Flex® insulation absorb water?",
-        a: "No. Gulf-O-Flex® products are closed-cell insulation, meaning each cell is an independent sealed unit. This structure gives the material a water vapour resistance factor (μ) of ≥10,000, making it essentially impermeable to moisture. This is critical for chilled water and below-ambient applications where condensation control is required.",
+        a: "No. Gulf-O-Flex® products are closed-cell insulation, meaning each cell is an independent sealed unit. This structure gives the material a water vapour resistance factor (μ) of ≥7,300, making it essentially impermeable to moisture. This is critical for chilled water and below-ambient applications where condensation control is required.",
       },
       {
         q: "What is Aluglass and when should I use it?",
@@ -41,7 +41,7 @@ const faqs = [
       },
       {
         q: "Which international standards does Gulf-O-Flex® comply with?",
-        a: "Gulf-O-Flex® products are tested and certified to BS 476, DIN 4102, ASTM E84, EN 13501, IMO SOLAS (marine), ASHRAE 90.1, DIN 1988, BS 5422, and regional standards including UAE GSO, Gulf Mark, and Saudi Standards (SASO). A full list of current certifications is available on our Certifications page.",
+        a: "Gulf-O-Flex® products are tested and certified to BS 476, DIN 4102, ASTM E84, EN 13501, IMO SOLAS (marine), ASHRAE 90.1, DIN 1988, BS 5422, and regional standards including UAE GSO and Saudi Standards (SASO). A full list of current certifications is available on our Certifications page.",
       },
       {
         q: "Does Gulf-O-Flex® contain HCFC or HFC blowing agents?",

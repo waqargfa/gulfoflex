@@ -829,3 +829,7 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Hidden scrollbars (for sticky chip nav and similar horizontal rails) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

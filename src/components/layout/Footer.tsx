@@ -57,18 +57,17 @@ const footerIndustries = [
   { name: "Industrial Plants", href: "/industries/industrial" },
 ];
 
-const certLogos = ["ISO 9001", "ISO 14001", "FM Approved", "CE Marked", "Gulf Mark", "LPCB"];
+const certLogos = ["ISO 9001", "ISO 14001", "FM Approved", "UL Listed"];
 
 export default function Footer() {
   const { country } = useCountry();
   return (
-    <footer className="bg-white border-t border-neutral-200">
+    <footer className="bg-white">
       {/* CTA Banner — premium dark */}
       <div className="relative overflow-hidden" style={{ background: "#0a0a0a" }}>
         <div className="absolute inset-0 grid-bg opacity-[0.10]" />
         <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-orange-500/22 blur-[90px] pointer-events-none" />
         <div className="absolute -right-32 top-0 w-80 h-80 rounded-full bg-orange-500/10 blur-[80px] pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="container-wide py-12 relative z-10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
@@ -84,7 +83,7 @@ export default function Footer() {
                 Get customized recommendations and expert guidance for your project.
               </p>
             </div>
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
               <Link href="/contact" className="btn-primary text-sm px-5 py-2.5">
                 Request a Quote <ArrowRight size={14} />
               </Link>

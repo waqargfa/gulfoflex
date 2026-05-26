@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
+import ProjectsExplorer, { type Project } from "@/components/projects/ProjectsExplorer";
 
 export const metadata: Metadata = {
   title: "Project References | Gulf-O-Flex® Insulation Projects Worldwide",
@@ -11,33 +11,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://gulfoflex.com/projects" },
 };
 
-type Project = {
-  id: number;
-  name: string;
-  location: string;
-  country: string;
-  type: string;
-  image: string;
-};
-
 const featuredProjects: Project[] = [
-  { id: 1, name: "Sharjah Airport Expansion", location: "Sharjah, UAE", country: "UAE", type: "Pipe & Duct Insulation", image: "/projects/project1.png" },
-  { id: 2, name: "Palm Six Senses Project", location: "Dubai, UAE", country: "UAE", type: "Pipe & Duct Insulation", image: "/projects/project2.png" },
-  { id: 3, name: "Luxury Service Apartments & Marina Club", location: "Yiti, Oman", country: "Oman", type: "Pipe & Duct Insulation", image: "/projects/project3.png" },
-  { id: 4, name: "Jinan Island Villas", location: "Al Mouj, Oman", country: "Oman", type: "Pipe & Duct Insulation", image: "/projects/project4.png" },
-  { id: 5, name: "Tivoli & Avani Hotels & Residences", location: "Zallaq, Bahrain", country: "Bahrain", type: "Pipe & Duct Insulation", image: "/projects/project5.png" },
-  { id: 6, name: "Ahlia University", location: "Manama, Bahrain", country: "Bahrain", type: "Pipe & Duct Insulation", image: "/projects/project6.png" },
-  { id: 7, name: "Waterfront Promenade Mina District", location: "Old Doha Port, Qatar", country: "Qatar", type: "Pipe & Duct Insulation", image: "/projects/project7.png" },
-  { id: 8, name: "JCD Stadium", location: "Jeddah, Saudi Arabia", country: "KSA", type: "Pipe & Duct Insulation", image: "/projects/project8.png" },
-  { id: 9, name: "Sustainable City Abu Dhabi", location: "Yas Island, UAE", country: "UAE", type: "Pipe & Duct Insulation", image: "/projects/project9.png" },
-  { id: 10, name: "Hillmont Residences", location: "Dubai, UAE", country: "UAE", type: "Pipe & Duct Insulation", image: "/projects/project10.png" },
-  { id: 11, name: "Bandaranaike International Airport", location: "Katunayake, Sri Lanka", country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/project-srilanka/bandaranaike 1.jpg" },
-  { id: 12, name: "Bandaranaike Memorial Complex", location: "Colombo, Sri Lanka", country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/project-srilanka/Bandaranaike.jpg" },
-  { id: 13, name: "Defence Headquarters Sri Lanka", location: "Colombo, Sri Lanka", country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/project-srilanka/DEFENCE HEAD QUARTERS SRILANKA.jpg" },
-  { id: 14, name: "Taj Samudra Hotel", location: "Colombo, Sri Lanka", country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/project-srilanka/taj-samudra-colombo.jpg" },
-  { id: 15, name: "Diriyah Cultural District", location: "Riyadh, Saudi Arabia", country: "KSA", type: "Pipe & Duct Insulation", image: "/project-srilanka/Diriyah_Header_4.jpg" },
-  { id: 16, name: "King Abdullah Financial District", location: "Riyadh, Saudi Arabia", country: "KSA", type: "Pipe & Duct Insulation", image: "/project-srilanka/KING ABDULLAH FINANCIAL DISTRICT.jpg" },
-  { id: 17, name: "Qiddiya Water Theme Park", location: "Riyadh, Saudi Arabia", country: "KSA", type: "Pipe & Duct Insulation", image: "/project-srilanka/Qiddiya Water theme park.jpg" },
+  { id: 1,  name: "Sharjah Airport Expansion",              location: "Sharjah, UAE",          country: "UAE",       type: "Pipe & Duct Insulation", image: "/images/projects/project1.png"  },
+  { id: 2,  name: "Palm Six Senses Project",                location: "Dubai, UAE",             country: "UAE",       type: "Pipe & Duct Insulation", image: "/images/projects/project2.png"  },
+  { id: 3,  name: "Sustainable City Abu Dhabi",             location: "Yas Island, UAE",        country: "UAE",       type: "Pipe & Duct Insulation", image: "/images/projects/project9.png"  },
+  { id: 4,  name: "Hillmont Residences",                    location: "Dubai, UAE",             country: "UAE",       type: "Pipe & Duct Insulation", image: "/images/projects/project10.png" },
+  { id: 5,  name: "JCD Stadium",                           location: "Jeddah, Saudi Arabia",   country: "KSA",       type: "Pipe & Duct Insulation", image: "/images/projects/project8.png"  },
+  { id: 6,  name: "Luxury Service Apartments & Marina Club", location: "Yiti, Oman",           country: "Oman",      type: "Pipe & Duct Insulation", image: "/images/projects/project3.png"  },
+  { id: 7,  name: "Jinan Island Villas",                    location: "Al Mouj, Oman",          country: "Oman",      type: "Pipe & Duct Insulation", image: "/images/projects/project4.png"  },
+  { id: 8,  name: "Tivoli & Avani Hotels & Residences",     location: "Zallaq, Bahrain",        country: "Bahrain",   type: "Pipe & Duct Insulation", image: "/images/projects/project5.png"  },
+  { id: 9,  name: "Ahlia University",                       location: "Manama, Bahrain",        country: "Bahrain",   type: "Pipe & Duct Insulation", image: "/images/projects/project6.png"  },
+  { id: 10, name: "Waterfront Promenade Mina District",     location: "Old Doha Port, Qatar",   country: "Qatar",     type: "Pipe & Duct Insulation", image: "/images/projects/project7.png"  },
+  { id: 11, name: "Port City Mixed-Use Development",        location: "Colombo, Sri Lanka",     country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/images/projects/project3.png"  },
+  { id: 12, name: "Katunayake Logistics Hub",               location: "Katunayake, Sri Lanka",  country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/images/projects/project4.png"  },
 ];
 
 const stats = [
@@ -97,65 +83,8 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ── Featured Projects ── */}
-      <section className="py-20 md:py-28 bg-white relative">
-        <div className="container-wide">
-          <div className="max-w-3xl mb-12">
-            <div className="eyebrow mb-4"><span className="eyebrow-dot" />Featured References · {featuredProjects.length}</div>
-            <h2 className="text-neutral-900 leading-[1.05]"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
-              Landmark <span className="serif-italic text-orange-600">projects</span> worldwide.
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {featuredProjects.map((project, i) => (
-              <div key={project.id}
-                className="group relative rounded-3xl border bg-white overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_-30px_rgba(234,88,12,0.30)] hover:border-orange-300/60 flex flex-col"
-                style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-4 left-4">
-                    <span className="text-[10px] font-bold tracking-[0.18em] uppercase border px-2.5 py-1 rounded-full bg-white/95 backdrop-blur text-orange-600 border-orange-500/25">
-                      {project.country}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4 text-[10px] font-bold tracking-[0.18em] uppercase text-white/90 bg-black/40 backdrop-blur px-2 py-1 rounded-full">
-                    0{i + 1} / {featuredProjects.length}
-                  </div>
-                </div>
-
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-neutral-900 leading-[1.15] mb-2"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)", fontWeight: 800, letterSpacing: "-0.02em" }}>
-                    {project.name}
-                  </h3>
-                  <div className="flex items-center gap-1.5 text-xs text-neutral-500 mb-4">
-                    <MapPin size={12} className="text-orange-600" />
-                    {project.location}
-                  </div>
-                  <div className="mt-auto flex items-center justify-between pt-4 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                    <span className="text-[10px] font-semibold text-neutral-600 border border-neutral-200 bg-neutral-50 px-2.5 py-1 rounded-full">
-                      {project.type}
-                    </span>
-                    <div className="w-9 h-9 rounded-full border bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-orange-500 group-hover:border-orange-500"
-                      style={{ borderColor: "rgba(0,0,0,0.10)" }}>
-                      <ArrowUpRight size={15} className="text-neutral-500 transition-colors group-hover:text-white" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Featured Projects (filterable by country) ── */}
+      <ProjectsExplorer projects={featuredProjects} />
     </>
   );
 }

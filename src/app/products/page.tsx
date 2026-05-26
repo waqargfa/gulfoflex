@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/layout/PageHero";
 import {
@@ -34,7 +35,7 @@ const products = [
     keyFeatures: ["Class 1 Fire Rated (ASTM E84)", "Zero ODP/GWP", "λ ≤ 0.036 W/mK", "Temp Range −40°C to +105°C"],
     applications: ["HVAC", "District Cooling", "Cold Water", "Industrial"],
     tag: "Best Seller",
-    image: "/images/products/nbr.jpg",
+    image: "/assets/plain/C_107249.jpg",
   },
   {
     slug: "xlpe",
@@ -46,7 +47,7 @@ const products = [
     keyFeatures: ["λ 0.045 W/m·K @ 35°C", "Class O Fire Rated (BS 476)", "μ ≥ 11,000 (foil side)", "Operating −183°C to +115°C"],
     applications: ["HVAC Ducts", "Underfloor", "Automotive", "Marine"],
     tag: "Premium",
-    image: "/images/products/xlpe.jpg",
+    image: "/assets/duct.webp",
   },
   {
     slug: "sound",
@@ -58,7 +59,7 @@ const products = [
     keyFeatures: ["NRC up to 1.00", "High Flexibility", "Class 1 Fire Rated", "100% Recycled Material"],
     applications: ["HVAC Duct Liner", "Plant Rooms", "Conference Rooms", "OEM"],
     tag: "Acoustic",
-    image: "/images/products/sound.jpg",
+    image: "/assets/plain/C_107300.jpg",
   },
   {
     slug: "aluglass",
@@ -70,7 +71,7 @@ const products = [
     keyFeatures: ["High Flexibility", "Sustainable · Zero ODP", "Physical Protection", "Easy Installation"],
     applications: ["Hot & Cold Plumbing", "Refrigeration Lines", "HVAC Ducts", "Oil & Gas"],
     tag: "Best Seller",
-    image: "/images/products/aluglass.jpg",
+    image: "/assets/ALUGLASS.png",
   },
   {
     slug: "aluclad",
@@ -82,7 +83,31 @@ const products = [
     keyFeatures: ["UV Stable — 8+ Years / 10,000h", "Self-Extinguishing (Class O)", "0.00 Perm Vapour Barrier", "Sheet or Tube, ± Self-Adhesive"],
     applications: ["Outdoor", "HVAC Ducts", "Plumbing", "Refrigeration"],
     tag: "Best Seller",
-    image: "/images/products/aluclad.jpg",
+    image: "/assets/ALUCLAD 2 (2).png",
+  },
+  {
+    slug: "ultra",
+    icon: Sparkles,
+    name: "Gulf-O-Flex® Ultra",
+    shortName: "Ultra-Low Conductivity Premium Foam",
+    tagline: "Next-gen NBR/EPDM blend, λ 0.030 W/m·K",
+    desc: "Premium closed-cell NBR/EPDM hybrid insulation with an industry-leading thermal conductivity of 0.030 W/m·K at 0°C and an extended operating window from -50°C to +115°C. FM Approved, UL Listed, EPD Verified — engineered for chilled water, district cooling, and low-temperature process lines.",
+    keyFeatures: ["λ 0.030 W/m·K @ 0°C", "Operating −50°C to +115°C", "μ > 10,000 (BS EN 12086)", "Class O Fire Rated · Zero ODP"],
+    applications: ["Chilled Water", "District Cooling", "Cryogenic Piping", "Data Centres"],
+    tag: "Premium",
+    image: "/assets/plain/C_107249.jpg",
+  },
+  {
+    slug: "ultraline",
+    icon: Layers,
+    name: "Gulf-O-Flex® UltraLine",
+    shortName: "Pre-Insulated Continuous Tube Line System",
+    tagline: "Factory pre-insulated copper line — coils up to 50 m",
+    desc: "Complete factory pre-insulated copper tube line system supplied in continuous coils up to 50 m. Nitrogen-charged copper tube + closed-cell NBR core + UV-stable LDPE jacket — a one-pull, joint-free vapour barrier for VRF/VRV, split AC, chilled-water mini-loops, and solar thermal piping.",
+    keyFeatures: ["Continuous Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral Vapour Barrier", "UV-Stable LDPE Outer Jacket"],
+    applications: ["VRF / VRV", "Split AC", "Chilled Water", "Solar Thermal"],
+    tag: "System",
+    image: "/assets/duct.webp",
   },
   {
     slug: "accessories",
@@ -94,7 +119,7 @@ const products = [
     keyFeatures: ["Low-VOC Polychloroprene Adhesive", "Fire-Resistive Duct Sealant", "Foil / Glass / PVC / Alupet Tapes", "Cork & Metal Anti-Vibration Pads"],
     applications: ["Adhesives", "Duct Sealing", "Vapour Sealing", "Anti-Vibration"],
     tag: "System",
-    image: "/images/products/accessories.jpg",
+    image: "/assets/aluminium.webp",
   },
 ];
 
@@ -167,6 +192,20 @@ export default function ProductsPage() {
                 <div className="absolute top-5 right-5 z-10 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-400">
                   0{i + 1}
                 </div>
+
+                {/* Product image */}
+                {p.image && (
+                  <div className="relative h-52 overflow-hidden">
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-white/30" />
+                  </div>
+                )}
 
                 <div className="relative px-7 pt-8 pb-7">
                   <div className="flex items-center justify-between mb-6">

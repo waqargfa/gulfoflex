@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Send } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import ContactSidebar from "@/components/layout/ContactSidebar";
+import GlobalPresence from "@/components/home/GlobalPresence";
 
 export const metadata: Metadata = {
   title: "Contact Gulf-O-Flex® | Technical Support & Sales Enquiries",
@@ -114,6 +115,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Global Presence section ── */}
+      <GlobalPresence />
     </>
   );
 }

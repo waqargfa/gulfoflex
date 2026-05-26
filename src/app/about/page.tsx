@@ -8,16 +8,19 @@ import {
   BadgeCheck,
   CheckCircle2,
   Compass,
+  Crown,
   Droplets,
   Factory,
   Flame,
   Gauge,
   Globe,
+  Globe2,
   Leaf,
   MapPin,
   Quote,
   ShieldCheck,
   Sparkles,
+  Star,
   Target,
   Thermometer,
   TrendingUp,
@@ -72,8 +75,9 @@ const milestones = [
   { year: "2011", title: "FM Approved",        desc: "Earned FM Global approval — unlocking critical insurance-grade specifications." },
   { year: "2015", title: "Sri Lanka Plant",    desc: "Commissioned the Colombo offshore facility to serve the Asia-Pacific region." },
   { year: "2018", title: "Global Reach",       desc: "Crossed 70 export countries with Gulf-O-Flex® branded products." },
-  { year: "2021", title: "LPCB & UL Listed",   desc: "Added LPCB and UL listings — completing the Tier-1 fire approval matrix." },
+  { year: "2021", title: "UL Listed",        desc: "Earned UL listing — completing the Tier-1 fire approval matrix." },
   { year: "2024", title: "KSA Manufacturing",  desc: "Localized production in the Kingdom — supporting Saudi Vision 2030 and IKTVA." },
+  { year: "2025", title: "Gulf-O-Flex Assist", desc: "Launched Gulf-O-Flex Assist — an AI-powered specification and technical support platform for consultants and contractors." },
 ];
 
 const pillars = [
@@ -89,6 +93,17 @@ const certs = [
   "EU REACH", "ASHRAE", "ECAS",
 ];
 
+const certCards = [
+  { abbr: "ISO 9001",    label: "Quality Management",           body: "Bureau Veritas certified quality system.",           Icon: BadgeCheck },
+  { abbr: "ISO 14001",   label: "Environmental Management",      body: "Verified environmental performance & compliance.",    Icon: Leaf },
+  { abbr: "ISO 45001",   label: "Occupational H&S",              body: "Workforce safety at every manufacturing stage.",      Icon: ShieldCheck },
+  { abbr: "FM Approved", label: "FM Global Standards",           body: "Insurance-grade fire performance approval.",          Icon: Flame },
+  { abbr: "UL Listed",   label: "ASTM E84 / UL 723",             body: "North American fire classification — listed product.", Icon: Star },
+  { abbr: "DCL",         label: "Dubai Central Lab",             body: "Approved for Dubai Municipality specification.",      Icon: Globe2 },
+  { abbr: "DCD",         label: "Dubai Civil Defence",           body: "UAE fire & life-safety code compliance.",            Icon: ShieldCheck },
+  { abbr: "EPD",         label: "Environmental Product Decl.",   body: "Independently verified life-cycle data.",            Icon: Sparkles },
+];
+
 const regions = [
   { name: "Gulf Cooperation Council", share: 56, countries: 6,  highlight: "Market leader" },
   { name: "Middle East & Africa",     share: 22, countries: 24, highlight: "Project specified" },
@@ -99,17 +114,20 @@ const regions = [
 const proofPoints = [
   { icon: Thermometer, value: "0.0321", unit: "W/m·K",  label: "Thermal conductivity",  detail: "At 35°C mean — ASTM C518" },
   { icon: Flame,       value: "Class O", unit: "",        label: "Fire reaction",         detail: "BS 476 Part 6 & 7 / ASTM E84" },
-  { icon: Droplets,    value: ">10,000", unit: "μ",       label: "Vapour resistance",     detail: "Closed-cell, Perm-in ≈ 0.00" },
+  { icon: Droplets,    value: ">7,300", unit: "μ",       label: "Vapour resistance",     detail: "Closed-cell, Perm-in ≈ 0.00" },
   { icon: Volume2,     value: "NRC 1.00", unit: "",       label: "Sound absorption",      detail: "50mm Gulf-O-Sound — ASTM C423" },
   { icon: Gauge,       value: "-183 → +115", unit: "°C", label: "Service temperature",  detail: "NBR / XLPE elastomeric range" },
   { icon: Atom,        value: "0",        unit: "ODP",     label: "Ozone depletion",       detail: "REACH & RoHS compliant" },
 ];
 
 const recognitions = [
-  { icon: Trophy,      title: "Dubai Quality Award",       desc: "Recognized for excellence in manufacturing" },
-  { icon: BadgeCheck,  title: "Sheikh Khalifa Excellence",  desc: "Industrial excellence finalist" },
-  { icon: Award,       title: "Energy Globe Award",         desc: "Climate-positive product nomination" },
-  { icon: Sparkles,    title: "ICV Certified — UAE",        desc: "In-Country Value certification (UAE)" },
+  { Icon: Crown,      title: "One UAE Award",          org: "UAE Excellence Programme",       year: undefined, featured: true  },
+  { Icon: Trophy,     title: "Meera Award",            org: "Industry Recognition",           year: undefined, featured: true  },
+  { Icon: Award,      title: "MEP Award",              org: "MEP Middle East",               year: "2022",    featured: false },
+  { Icon: Award,      title: "MEP Award",              org: "MEP Middle East",               year: "2023",    featured: false },
+  { Icon: Globe2,     title: "CBNME Award",            org: "Construction Business News ME", year: undefined, featured: false },
+  { Icon: BadgeCheck, title: "UAE Business Award",     org: "UAE Business Excellence",       year: undefined, featured: false },
+  { Icon: Zap,        title: "Climate Control Award",  org: "Climate Control Middle East",   year: "2017",    featured: false },
 ];
 
 const sustainability = [
@@ -156,9 +174,6 @@ export default function AboutPage() {
                 For over 30 years, Gulf-O-Flex® has been engineering insulation solutions that protect critical infrastructure, save energy, and enable the region&rsquo;s most ambitious projects. Founded in 1993, we have grown from a UAE manufacturer to a globally recognized brand.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
-                <Link href="/contact" className="btn-primary">
-                  Partner with us <ArrowUpRight size={16} />
-                </Link>
                 <Link href="/projects" className="btn-ghost">
                   See our projects
                 </Link>
@@ -203,7 +218,7 @@ export default function AboutPage() {
                   </div>
                   <div className="mt-5 flex items-center justify-between text-[11px] text-neutral-500">
                     <span className="flex items-center gap-1.5">
-                      <CheckCircle2 size={12} className="text-emerald-500" /> ISO 9001 · FM · LPCB · CE
+                      <CheckCircle2 size={12} className="text-emerald-500" /> ISO 9001 · FM · UL Listed
                     </span>
                     <Link href="/certifications" className="font-semibold text-orange-600 hover:text-orange-700">
                       View all →
@@ -697,7 +712,7 @@ export default function AboutPage() {
               </p>
             </div>
           </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {facilities.map((f, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div
@@ -764,26 +779,85 @@ export default function AboutPage() {
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {recognitions.map((r, i) => (
-              <Reveal key={r.title} delay={i * 70}>
+              <Reveal key={`${r.title}-${r.year ?? i}`} delay={i * 60}>
                 <div
-                  className="group relative h-full rounded-2xl border bg-gradient-to-br from-white to-orange-50/40 p-5 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60"
-                  style={{ borderColor: "rgba(0,0,0,0.07)" }}
+                  className="group relative h-full rounded-2xl border p-5 overflow-hidden transition-all duration-500 hover:-translate-y-1"
+                  style={{
+                    background: r.featured
+                      ? "linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)"
+                      : "linear-gradient(135deg, #fff 0%, #fff7ed 100%)",
+                    borderColor: r.featured ? "rgba(234,179,8,0.40)" : "rgba(0,0,0,0.07)",
+                    boxShadow: r.featured ? "0 0 0 0 rgba(234,179,8,0)" : "none",
+                  }}
                 >
-                  <div className="flex items-center gap-3 mb-2">
+                  {/* Featured top accent */}
+                  {r.featured && (
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                      className="absolute top-0 left-0 right-0 h-0.5"
+                      style={{ background: "linear-gradient(90deg, transparent, #eab308, transparent)" }}
+                    />
+                  )}
+                  {/* Hover accent for non-featured */}
+                  {!r.featured && (
+                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  )}
+
+                  <div className="flex items-start gap-3 mb-2">
+                    {/* Icon medallion */}
+                    <div
+                      className="relative w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-400 group-hover:scale-110"
                       style={{
-                        background: "linear-gradient(135deg, rgba(249,115,22,0.16), rgba(249,115,22,0.04))",
-                        border: "1px solid rgba(249,115,22,0.22)",
+                        background: r.featured
+                          ? "linear-gradient(135deg, rgba(234,179,8,0.22), rgba(234,179,8,0.06))"
+                          : "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.04))",
+                        border: r.featured ? "1px solid rgba(234,179,8,0.30)" : "1px solid rgba(249,115,22,0.22)",
                       }}
                     >
-                      <r.icon size={17} className="text-orange-600" strokeWidth={2.2} />
+                      <r.Icon
+                        size={17}
+                        strokeWidth={2.2}
+                        style={{ color: r.featured ? "#b45309" : undefined }}
+                        className={r.featured ? undefined : "text-orange-600"}
+                      />
+                      {r.featured && (
+                        <div
+                          className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
+                          style={{ background: "#eab308" }}
+                        >
+                          <Star size={7} fill="#fff" color="#fff" strokeWidth={0} />
+                        </div>
+                      )}
                     </div>
-                    <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.015em" }}>
-                      {r.title}
+
+                    <div className="min-w-0 flex-1">
+                      {/* Year badge */}
+                      {r.year && (
+                        <span
+                          className="inline-block text-[8px] font-black tracking-[0.22em] uppercase px-2 py-0.5 rounded-full mb-1"
+                          style={{
+                            background: "rgba(234,88,12,0.08)",
+                            border: "1px solid rgba(234,88,12,0.18)",
+                            color: "#c2410c",
+                          }}
+                        >
+                          {r.year}
+                        </span>
+                      )}
+                      <div
+                        className="text-neutral-900 font-bold text-sm leading-tight"
+                        style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.015em" }}
+                      >
+                        {r.title}
+                      </div>
                     </div>
                   </div>
-                  <p className="text-neutral-500 text-xs leading-relaxed pl-[3.25rem]">{r.desc}</p>
+
+                  <p
+                    className="text-[10px] font-semibold uppercase tracking-wider leading-snug pl-[3.25rem]"
+                    style={{ color: r.featured ? "rgba(180,83,9,0.75)" : "rgba(0,0,0,0.40)" }}
+                  >
+                    {r.org}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -791,64 +865,183 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Sustainability strip ── */}
-      <section
-        className="relative py-20 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #052e16 0%, #064e3b 60%, #065f46 100%)" }}
-      >
-        <div className="absolute inset-0 grid-bg opacity-[0.08]" />
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-emerald-400/20 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-emerald-500/15 rounded-full blur-[110px]" />
+      {/* ── Certifications grid ── */}
+      <section className="relative section-padding bg-white border-t overflow-hidden" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+        <div className="absolute inset-0 grid-bg opacity-[0.06] pointer-events-none" />
+        <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-orange-500/[0.05] rounded-full blur-[140px] pointer-events-none" />
+        <div className="container-wide relative z-10">
+          <Reveal>
+            <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
+              <div>
+                <div className="eyebrow mb-4"><span className="eyebrow-dot" />Compliance &amp; Quality</div>
+                <h2
+                  className="text-neutral-900 leading-[1.05]"
+                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.6vw, 2.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
+                >
+                  Globally certified.{" "}
+                  <span className="serif-italic text-orange-600">Universally trusted.</span>
+                </h2>
+              </div>
+              <Link href="/certifications" className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 hover:text-orange-700 transition-colors">
+                Full certifications list <ArrowUpRight size={13} />
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {certCards.map((cert, i) => (
+              <Reveal key={cert.abbr} delay={i * 55}>
+                <div
+                  className="group relative h-full rounded-2xl border bg-white p-5 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_20px_50px_-20px_rgba(234,88,12,0.25)]"
+                  style={{ borderColor: "rgba(0,0,0,0.07)" }}
+                >
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 transition-all duration-400 group-hover:scale-110"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.04))",
+                      border: "1px solid rgba(249,115,22,0.22)",
+                    }}
+                  >
+                    <cert.Icon size={16} className="text-orange-600" strokeWidth={2.2} />
+                  </div>
+                  <div
+                    className="text-neutral-900 font-black text-sm mb-0.5 group-hover:text-orange-700 transition-colors duration-300"
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
+                  >
+                    {cert.abbr}
+                  </div>
+                  <div className="text-orange-600 text-[9px] font-bold tracking-[0.18em] uppercase mb-2">{cert.label}</div>
+                  <p className="text-neutral-500 text-[11px] leading-relaxed">{cert.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Additional certs pill strip */}
+          <Reveal delay={200}>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {["ASTM E84", "BS 476", "IMO MED", "EU REACH", "ASHRAE", "ECAS"].map((c) => (
+                <span
+                  key={c}
+                  className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase text-neutral-600 bg-neutral-50 border border-neutral-200/80"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Sustainability ── */}
+      <section className="relative py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #020f09 0%, #052e16 45%, #064e3b 100%)" }}>
+        {/* Ambient glows */}
+        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-emerald-500/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-teal-400/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 grid-bg opacity-[0.06] pointer-events-none" />
 
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
-            <Reveal>
+
+          {/* — Eyebrow + headline centered — */}
+          <Reveal>
+            <div className="text-center mb-16">
               <div
-                className="eyebrow mb-5"
-                style={{ background: "rgba(16,185,129,0.15)", borderColor: "rgba(16,185,129,0.35)", color: "#6ee7b7" }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-6"
+                style={{ background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.30)", color: "#6ee7b7" }}
               >
-                <Leaf size={11} />Sustainability
+                <Leaf size={11} /> Sustainability Commitment
               </div>
               <h2
-                className="text-white leading-[1.05] mb-5"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.2vw, 2.75rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
+                className="text-white leading-[1.0] mb-5 mx-auto"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 800, letterSpacing: "-0.04em", maxWidth: "18ch" }}
               >
-                Insulation is <span className="serif-italic text-emerald-300">climate action</span>.
+                Insulation is{" "}
+                <span className="relative inline-block">
+                  <span className="serif-italic text-emerald-300">climate action</span>
+                  <span
+                    className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
+                    style={{ background: "linear-gradient(90deg, transparent, #34d399, transparent)" }}
+                  />
+                </span>
+                .
               </h2>
-              <p className="text-white/70 leading-relaxed max-w-xl">
-                Every meter of Gulf-O-Flex® specified prevents waste energy from leaving a pipe, a duct, or a chiller. Our products are zero-ODP, REACH-compliant, and engineered for decades of service — the longest carbon payback in the building envelope.
+              <p className="text-white/60 leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
+                Every meter of Gulf-O-Flex® specified prevents waste energy from escaping a pipe, duct, or chiller. Zero-ODP, REACH-compliant, engineered for decades of service — the longest carbon payback in the building envelope.
               </p>
               <Link
                 href="/sustainability"
-                className="mt-7 inline-flex items-center gap-2 text-sm font-bold tracking-[0.12em] uppercase text-emerald-300 hover:text-emerald-200 transition-colors"
+                className="mt-8 inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold tracking-[0.10em] uppercase transition-all duration-300 hover:scale-105"
+                style={{ background: "linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.15))", border: "1px solid rgba(16,185,129,0.40)", color: "#6ee7b7" }}
               >
-                Our sustainability report <ArrowUpRight size={14} />
+                <Leaf size={13} /> Read our Sustainability Report <ArrowUpRight size={13} />
               </Link>
-            </Reveal>
+            </div>
+          </Reveal>
 
-            <Reveal delay={120}>
-              <div
-                className="grid grid-cols-2 gap-px rounded-3xl overflow-hidden border border-white/10"
-                style={{ background: "rgba(255,255,255,0.06)" }}
-              >
-                {sustainability.map((s) => (
-                  <div
-                    key={s.label}
-                    className="px-5 py-6 transition-colors hover:bg-white/[0.04]"
-                    style={{ background: "rgba(6,78,59,0.55)" }}
-                  >
+          {/* — Stats row — */}
+          <Reveal delay={80}>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { stat: "0",     unit: "ODP",   label: "Ozone Depletion Potential",     icon: Leaf,       note: "Zero harmful blowing agents" },
+                { stat: "−72",   unit: "%",      label: "HVAC Energy Loss Reduction",    icon: Zap,        note: "vs. uninsulated systems" },
+                { stat: "100",   unit: "%",      label: "Recyclable Cores & Reels",      icon: TrendingUp, note: "Steel cores, full circularity" },
+                { stat: "REACH", unit: "",       label: "Compliant Supply Chain",        icon: ShieldCheck,note: "EU REACH & RoHS certified" },
+              ].map((s, i) => (
+                <div
+                  key={s.label}
+                  className="group relative rounded-2xl p-6 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(16,185,129,0.35)]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(6,78,59,0.70) 0%, rgba(4,47,36,0.85) 100%)",
+                    border: "1px solid rgba(16,185,129,0.18)",
+                  }}
+                >
+                  {/* top accent line */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(90deg, transparent, #34d399, transparent)" }} />
+                  {/* corner glow */}
+                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-emerald-400/10 rounded-full blur-2xl group-hover:bg-emerald-400/20 transition-colors duration-500" />
+
+                  <div className="relative z-10">
                     <div
-                      className="text-emerald-300 font-black text-3xl md:text-4xl leading-none mb-2"
-                      style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}
+                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                      style={{ background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.25)" }}
                     >
-                      {s.stat}
+                      <s.icon size={16} className="text-emerald-400" />
                     </div>
-                    <div className="text-white/65 text-[11px] uppercase tracking-wider font-semibold leading-tight">{s.label}</div>
+                    <div className="flex items-end gap-1 mb-2">
+                      <span
+                        className="text-emerald-300 font-black leading-none"
+                        style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.04em" }}
+                      >
+                        {s.stat}
+                      </span>
+                      {s.unit && (
+                        <span className="text-emerald-400/80 font-bold text-xl mb-0.5">{s.unit}</span>
+                      )}
+                    </div>
+                    <div className="text-white font-bold text-sm mb-1 leading-tight">{s.label}</div>
+                    <div className="text-white/45 text-[11px] tracking-wide">{s.note}</div>
                   </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* — Bottom commitment strip — */}
+          <Reveal delay={160}>
+            <div
+              className="mt-10 rounded-2xl px-8 py-5 flex flex-wrap items-center justify-between gap-4"
+              style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)" }}
+            >
+              {["ISO 14001 Certified", "Zero ODP — CFC & HCFC Free", "EPD Verified Products", "EU REACH Compliant", "LEED Contribution"].map((badge) => (
+                <div key={badge} className="flex items-center gap-2 text-[11px] font-semibold text-emerald-300/80 uppercase tracking-[0.15em]">
+                  <CheckCircle2 size={12} className="text-emerald-400 shrink-0" />
+                  {badge}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
         </div>
       </section>
 

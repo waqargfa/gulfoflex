@@ -77,16 +77,17 @@ const company = [
   { name: "About Us", href: "/about", icon: Users },
   { name: "Certifications", href: "/certifications", icon: Award },
   { name: "Projects", href: "/projects", icon: FileText },
+  { name: "Case Studies", href: "/case-studies", icon: FileText },
   { name: "Downloads", href: "/downloads", icon: FileText },
   { name: "News & Media", href: "/news", icon: FileText },
   { name: "Careers", href: "/careers", icon: Users },
 ];
 
 const navLinks = [
-  { name: "Products", href: "/products", mega: "products" },
+  { name: "Solutions", href: "/products", mega: "products" },
   { name: "Industries", href: "/industries", mega: "industries" },
-  { name: "Technologies", href: "/technologies" },
-  { name: "Company", href: "/about", mega: "company" },
+  { name: "Innovation", href: "/technologies" },
+  { name: "About", href: "/about", mega: "company" },
   { name: "Contact", href: "/contact" },
 ];
 

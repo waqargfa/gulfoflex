@@ -1,0 +1,240 @@
+"use client";
+
+import { Trophy, Star, Award, Globe2, Crown, Zap, BadgeCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+type AwardItem = {
+  title: string;
+  org: string;
+  year?: string;
+  Icon: LucideIcon;
+  featured?: boolean;
+};
+
+const AWARDS: AwardItem[] = [
+  {
+    title: "One UAE Award",
+    org: "UAE Excellence Programme",
+    Icon: Crown,
+    featured: true,
+  },
+  {
+    title: "Meera Award",
+    org: "Industry Recognition",
+    Icon: Trophy,
+    featured: true,
+  },
+  {
+    title: "MEP Award",
+    org: "MEP Middle East",
+    year: "2022",
+    Icon: Award,
+  },
+  {
+    title: "MEP Award",
+    org: "MEP Middle East",
+    year: "2023",
+    Icon: Award,
+  },
+  {
+    title: "CBNME Award",
+    org: "Construction Business News ME",
+    Icon: Globe2,
+  },
+  {
+    title: "UAE Business Award",
+    org: "UAE Business Excellence",
+    Icon: BadgeCheck,
+  },
+  {
+    title: "Climate Control Award",
+    org: "Climate Control Middle East",
+    year: "2017",
+    Icon: Zap,
+  },
+];
+
+export default function Awards() {
+  return (
+    <section
+      className="section-padding relative overflow-hidden"
+      style={{ background: "#07080d" }}
+      aria-labelledby="awards-heading"
+    >
+      {/* Background decoration */}
+      <div className="absolute inset-0 grid-bg opacity-[0.07]" />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div
+          className="w-[800px] h-[400px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(ellipse, rgba(234,179,8,0.10) 0%, transparent 65%)",
+          }}
+        />
+      </div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/25 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/6 to-transparent" />
+
+      {/* Corner marks */}
+      <div className="hidden md:block absolute top-10 left-10 w-10 h-10 border-t border-l border-white/8 pointer-events-none" />
+      <div className="hidden md:block absolute top-10 right-10 w-10 h-10 border-t border-r border-white/8 pointer-events-none" />
+      <div className="hidden md:block absolute bottom-10 left-10 w-10 h-10 border-b border-l border-white/8 pointer-events-none" />
+      <div className="hidden md:block absolute bottom-10 right-10 w-10 h-10 border-b border-r border-white/8 pointer-events-none" />
+
+      <div className="container-wide relative z-10">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
+          <div
+            className="eyebrow mb-5 mx-auto w-fit"
+            style={{
+              background: "rgba(234,179,8,0.12)",
+              borderColor: "rgba(234,179,8,0.28)",
+              color: "#eab308",
+            }}
+          >
+            <span
+              className="eyebrow-dot"
+              style={{ background: "#eab308" }}
+            />
+            Industry Recognition
+          </div>
+          <h2
+            id="awards-heading"
+            className="text-white mb-4 leading-[1.0]"
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.25rem, 4.5vw, 4rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.04em",
+            }}
+          >
+            Awards &amp;{" "}
+            <span
+              className="serif-italic"
+              style={{ color: "#eab308" }}
+            >
+              Acknowledgements.
+            </span>
+          </h2>
+          <p className="text-white/50 text-base leading-relaxed">
+            Over three decades of engineering excellence recognised by the
+            region's most prestigious industry bodies and award programmes.
+          </p>
+        </div>
+
+        {/* Award cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 stagger-reveal">
+          {/* Featured awards span 2 cols on lg */}
+          {AWARDS.map((award, i) => {
+            const Icon = award.Icon;
+            const isSpan = award.featured && i < 2;
+            return (
+              <div
+                key={`${award.title}-${award.year ?? i}`}
+                className={`group relative flex flex-col items-center text-center py-8 px-5 rounded-2xl cursor-default overflow-hidden transition-all duration-500 hover:-translate-y-0.5 ${
+                  isSpan ? "sm:col-span-1 lg:col-span-1" : ""
+                }`}
+                style={{
+                  background: award.featured
+                    ? "linear-gradient(135deg, rgba(234,179,8,0.10) 0%, rgba(234,179,8,0.04) 100%)"
+                    : "rgba(255,255,255,0.025)",
+                  border: award.featured
+                    ? "1px solid rgba(234,179,8,0.25)"
+                    : "1px solid rgba(255,255,255,0.06)",
+                  boxShadow: award.featured
+                    ? "0 0 40px rgba(234,179,8,0.06) inset"
+                    : "none",
+                }}
+              >
+                {/* Top accent line */}
+                <div
+                  className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-500"
+                  style={{
+                    width: award.featured ? "40%" : "0%",
+                    background: "linear-gradient(90deg, transparent, #eab308, transparent)",
+                  }}
+                />
+                <div
+                  className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500"
+                  style={{
+                    width: "60%",
+                    background: "linear-gradient(90deg, transparent, #eab308, transparent)",
+                  }}
+                />
+
+                {/* Inner glow on hover */}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at 50% 0%, rgba(234,179,8,0.08) 0%, transparent 70%)",
+                  }}
+                />
+
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Icon medallion */}
+                  <div
+                    className="relative mb-4 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
+                    style={{
+                      background: award.featured
+                        ? "linear-gradient(135deg, rgba(234,179,8,0.22), rgba(234,179,8,0.06))"
+                        : "linear-gradient(135deg, rgba(234,179,8,0.14), rgba(234,179,8,0.03))",
+                      border: "1px solid rgba(234,179,8,0.22)",
+                    }}
+                  >
+                    <Icon
+                      size={22}
+                      style={{ color: "#eab308" }}
+                      strokeWidth={1.8}
+                    />
+                    {award.featured && (
+                      <div
+                        className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full flex items-center justify-center"
+                        style={{ background: "#eab308" }}
+                      >
+                        <Star size={8} fill="#07080d" color="#07080d" strokeWidth={0} />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Year badge */}
+                  {award.year && (
+                    <div
+                      className="text-[9px] font-black tracking-[0.25em] uppercase mb-2 px-2.5 py-0.5 rounded-full"
+                      style={{
+                        background: "rgba(234,179,8,0.12)",
+                        border: "1px solid rgba(234,179,8,0.22)",
+                        color: "#eab308",
+                      }}
+                    >
+                      {award.year}
+                    </div>
+                  )}
+
+                  {/* Title */}
+                  <div
+                    className="text-white font-black text-base leading-tight mb-1.5 group-hover:text-yellow-200 transition-colors duration-300"
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      letterSpacing: "-0.025em",
+                    }}
+                  >
+                    {award.title}
+                  </div>
+
+                  {/* Org */}
+                  <div
+                    className="text-[10px] font-semibold uppercase tracking-wider leading-snug"
+                    style={{ color: "rgba(234,179,8,0.65)" }}
+                  >
+                    {award.org}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

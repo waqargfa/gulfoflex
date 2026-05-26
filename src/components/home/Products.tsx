@@ -21,6 +21,7 @@ const products = [
     features: ["−40°C to +105°C", "Class O fire rated", "CFC & HCFC free"],
     icon: Thermometer,
     image: "/images/products/nbr-roll.webp",
+    video: "/videos/products/nbr.mp4",
     href: "/products/nbr",
     badge: "Best Seller",
   },
@@ -33,6 +34,7 @@ const products = [
     features: ["−50°C to +100°C", "Chemical resistant", "UV stable"],
     icon: Layers,
     image: "/images/products/xlpe-banner.jpg",
+    video: "/videos/products/xlpe.mp4",
     objectPosition: "center",
     href: "/products/xlpe",
     badge: "Industrial Grade",
@@ -58,6 +60,7 @@ const products = [
     features: ["Weatherproof", "UV resistant", "Professional finish"],
     icon: ZapIcon,
     image: "/images/products/aluglass-tube.webp",
+    video: "/videos/products/aluglass.mp4",
     href: "/products/aluglass",
     badge: "External Use",
   },
@@ -70,8 +73,33 @@ const products = [
     features: ["Up to +600°C", "Corrosion resistant", "Multiple profiles"],
     icon: Wrench,
     image: "/images/products/aluclad-1.webp",
+    video: "/videos/products/aluclad.mp4",
     href: "/products/aluclad",
     badge: "Heavy Duty",
+  },
+  {
+    id: "ultra",
+    name: "Gulf-O-Flex® Ultra",
+    short: "ULT",
+    category: "Ultra-Low Conductivity",
+    tagline: "Next-generation NBR/EPDM hybrid closed-cell foam with industry-leading thermal conductivity of 0.030 W/m·K at 0°C — engineered for chilled water, district cooling, and low-temperature process lines.",
+    features: ["λ 0.030 W/m·K @ 0°C", "−50°C to +115°C", "μ > 7,300"],
+    icon: ShieldCheck,
+    image: "/images/products/nbr-roll.webp",
+    href: "/products/ultra",
+    badge: "Premium",
+  },
+  {
+    id: "ultraline",
+    name: "Gulf-O-Flex® UltraLine",
+    short: "ULN",
+    category: "Pre-Insulated Tube Line",
+    tagline: "Factory pre-insulated continuous copper tube line system — nitrogen-charged copper + closed-cell NBR core + UV-stable LDPE jacket, supplied in coils up to 50 m for VRF/VRV, split AC, chilled water and solar thermal piping.",
+    features: ["Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral vapour barrier"],
+    icon: Layers,
+    image: "/images/products/xlpe-banner.jpg",
+    href: "/products/ultraline",
+    badge: "System",
   },
   {
     id: "accessories",
@@ -147,7 +175,7 @@ export default function Products() {
           <div className="lg:col-span-7">
             <div className="eyebrow mb-6">
               <span className="eyebrow-dot" />
-              Product Range · 6 Engineered Systems
+              Product Range · 8 Engineered Systems
             </div>
             <h2
               id="products-heading"
@@ -180,10 +208,10 @@ export default function Products() {
 
           {/* ── LEFT: Featured visual pane ── */}
           <div
-            className="lg:col-span-7 relative rounded-3xl overflow-hidden"
+            className="lg:col-span-7 relative rounded-3xl overflow-hidden min-h-[480px]"
             style={{ border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 40px 100px -40px rgba(0,0,0,0.28)" }}
           >
-            <div className="relative" style={{ aspectRatio: "16/11" }}>
+            <div className="relative h-full" style={{ minHeight: "inherit" }}>
 
               {/* Cross-fading product images */}
               {products.map((p) => (
@@ -206,9 +234,24 @@ export default function Products() {
                 />
               ))}
 
+              {/* Auto-playing product video — fades in above the fallback image */}
+              {(active as { video?: string }).video && (
+                <video
+                  key={`vid-${activeId}`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ zIndex: 1 }}
+                >
+                  <source src={(active as { video?: string }).video} type="video/mp4" />
+                </video>
+              )}
+
               {/* Cinematic overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(130deg, rgba(249,115,22,0.22), transparent 52%)" }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" style={{ zIndex: 2 }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(130deg, rgba(249,115,22,0.22), transparent 52%)", zIndex: 2 }} />
 
               {/* ── TOP bar: badge + counter ── */}
               <div className="absolute top-0 left-0 right-0 px-7 pt-7 flex items-start justify-between z-10">
@@ -315,7 +358,7 @@ export default function Products() {
 
           {/* ── RIGHT: Product selector list ── */}
           <div
-            className="lg:col-span-5 rounded-3xl overflow-hidden bg-white flex flex-col"
+            className="lg:col-span-5 rounded-3xl overflow-hidden bg-white flex flex-col min-h-[480px]"
             style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 30px 80px -40px rgba(0,0,0,0.13)" }}
           >
             {/* Dot indicator header — no instructional text */}

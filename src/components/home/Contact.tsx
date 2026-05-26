@@ -170,7 +170,7 @@ export default function Contact() {
                       <p className="text-[11px] font-bold text-neutral-500 leading-none mb-0.5">{opt.title}</p>
                       <p className={`text-xs font-semibold ${opt.color} truncate`}>{opt.value}</p>
                     </div>
-                    <ArrowRight size={12} className={`${opt.color} ml-auto shrink-0 opacity-0 group-hover:opacity-100 transition-opacity`} />
+                    <ArrowRight size={12} className={`${opt.color} ml-auto shrink-0 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity`} />
                   </a>
                 ))}
               </div>

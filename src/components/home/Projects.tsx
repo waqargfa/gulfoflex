@@ -1,184 +1,252 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, BookOpen, FolderOpen } from "lucide-react";
 
-const projects = [
+const caseStudies = [
   {
-    title: "Dubai Metro Red Line Extension",
+    slug: "sobha-hartland",
+    title: "Sobha Hartland — GI Duct Insulation",
+    subtitle: "Resolving installer bond failures through on-site technical training.",
+    client: "Sobha Hartland",
     location: "Dubai, UAE",
-    industry: "Infrastructure",
-    desc: "Comprehensive NBR insulation for all HVAC and plumbing systems across 15 new metro stations, meeting DEWA and Dubai Municipality standards.",
-    specs: "45,000 m² · Gulf-O-Flex NBR",
-    year: "2023",
-    gradient: "from-orange-600/20 to-orange-500/5",
-    border: "border-orange-500/15",
+    sector: "Luxury Residential · HVAC",
+    year: "2024",
+    image: "/case-studies/sobha-hartland.webp",
+    highlight: "100% bond integrity · On-time delivery",
+    accentColor: "#F97316",
+    tagColor: "rgba(249,115,22,0.15)",
+    tagTextColor: "#F97316",
+    metrics: [
+      { value: "0", label: "Detachment incidents" },
+      { value: "100%", label: "Bond integrity" },
+    ],
   },
   {
-    title: "Aramco Offshore Platform",
-    location: "Eastern Province, KSA",
-    industry: "Oil & Gas",
-    desc: "Marine-grade insulation for cryogenic and process piping systems on offshore production platform, meeting IMO FTP Code and NFPA requirements.",
-    specs: "18,000 LM · Gulf-O-Flex NBR + Aluclad",
-    year: "2023",
-    gradient: "from-blue-600/15 to-blue-500/5",
-    border: "border-blue-500/15",
+    slug: "six-senses-palm-jumeirah",
+    title: "Six Senses · Palm Jumeirah",
+    subtitle: "Humidity-resilient insulation spec for Dubai's most prestigious coastal resort.",
+    client: "Six Senses · Palm Jumeirah",
+    location: "Palm Jumeirah, Dubai, UAE",
+    sector: "Luxury Hospitality · MEP",
+    year: "2024",
+    image: "/case-studies/palm-six-senses.webp",
+    highlight: "75 mm two-layer pipe spec · ↓ Energy consumption",
+    accentColor: "#3B82F6",
+    tagColor: "rgba(59,130,246,0.15)",
+    tagTextColor: "#60A5FA",
+    metrics: [
+      { value: "75 mm", label: "Two-layer pipe spec" },
+      { value: "↓ Energy", label: "Consumption" },
+    ],
   },
   {
-    title: "Qatar FIFA World Cup Stadiums",
-    location: "Doha, Qatar",
-    industry: "Construction",
-    desc: "District cooling and HVAC insulation for multiple FIFA World Cup 2022 stadium facilities — engineered for Qatar's extreme climate conditions.",
-    specs: "120,000 m² · Multiple Products",
-    year: "2022",
-    gradient: "from-purple-600/15 to-purple-500/5",
-    border: "border-purple-500/15",
+    slug: "district-cooling-dubai",
+    title: "District Cooling Network — Dubai",
+    subtitle: "Hybrid PIR + Aluclad strategy cut 15-year TCO by 38% across a 14 km CHW network.",
+    client: "District Cooling Operator",
+    location: "Dubai, UAE",
+    sector: "District Cooling · Infrastructure",
+    year: "2025",
+    image: "/case-studies/cbd-sharjah.webp",
+    highlight: "−38% 15-year TCO · 3× faster field-joint install",
+    accentColor: "#10B981",
+    tagColor: "rgba(16,185,129,0.15)",
+    tagTextColor: "#34D399",
+    metrics: [
+      { value: "−38%", label: "15-yr TCO" },
+      { value: "×3", label: "Faster install" },
+    ],
   },
   {
-    title: "Singapore Container Terminal",
-    location: "Singapore",
-    industry: "Marine",
-    desc: "Acoustic and thermal insulation for the HVAC systems in Asia's largest automated container terminal, meeting MAS and NEA standards.",
-    specs: "32,000 m² · Gulf-O-Flex Sound",
-    year: "2022",
-    gradient: "from-cyan-600/15 to-cyan-500/5",
-    border: "border-cyan-500/15",
+    slug: "sustainable-city-abu-dhabi",
+    title: "The Sustainable City — Abu Dhabi",
+    subtitle: "150,000 m² zero-fibre duct liner meeting LEED & Estidama Pearl requirements.",
+    client: "JEET MEP · The Sustainable City",
+    location: "Abu Dhabi, UAE",
+    sector: "Sustainable Development · HVAC",
+    year: "2024",
+    image: "/case-studies/sustainable-city-uae.webp",
+    highlight: "150,000 m² installed · 20-year acoustic life",
+    accentColor: "#A855F7",
+    tagColor: "rgba(168,85,247,0.15)",
+    tagTextColor: "#C084FC",
+    metrics: [
+      { value: "150k m²", label: "Installed" },
+      { value: "0%", label: "Fibre shedding" },
+    ],
   },
 ];
 
-const testimonials = [
-  {
-    quote: "Gulf-O-Flex consistently delivers product quality and technical support that is unmatched in the region. Our go-to insulation partner for 15 years.",
-    author: "Senior MEP Engineer",
-    company: "Leading UAE Consultancy",
-  },
-  {
-    quote: "The technical data sheets, compliance certifications, and technical team support from Gulf-O-Flex makes specification and project execution seamless.",
-    author: "Procurement Director",
-    company: "Major GCC Contractor",
-  },
-  {
-    quote: "GOF Assist has transformed how our team calculates insulation specifications. Instant, accurate, and fully code-compliant recommendations.",
-    author: "M&E Consultant",
-    company: "International Engineering Firm",
-  },
+const featuredProjects = [
+  { name: "Sharjah Airport Expansion",      location: "Sharjah, UAE",          country: "UAE",     image: "/images/projects/project1.png"  },
+  { name: "Palm Six Senses Project",        location: "Dubai, UAE",             country: "UAE",     image: "/images/projects/project2.png"  },
+  { name: "JCD Stadium",                    location: "Jeddah, Saudi Arabia",   country: "KSA",     image: "/images/projects/project8.png"  },
+  { name: "Tivoli & Avani Hotels",          location: "Zallaq, Bahrain",        country: "Bahrain", image: "/images/projects/project5.png"  },
+  { name: "Waterfront Promenade Mina",      location: "Old Doha Port, Qatar",   country: "Qatar",   image: "/images/projects/project7.png"  },
+  { name: "Sustainable City Abu Dhabi",     location: "Yas Island, UAE",        country: "UAE",     image: "/images/projects/project9.png"  },
 ];
 
 export default function Projects() {
   return (
-    <section className="section-padding bg-neutral-50 relative overflow-hidden" aria-labelledby="projects-heading">
-      <div className="absolute inset-0 grid-bg opacity-25" />
+    <section className="section-padding bg-neutral-50 relative overflow-x-hidden" aria-labelledby="projects-heading">
+      <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px tech-divider" />
 
       <div className="container-wide relative z-10">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16 reveal">
-          <div>
-            <div className="eyebrow mb-5">
-              <span className="eyebrow-dot" />
-              Case Studies &amp; Projects
+
+        {/* ── Section header ── */}
+        <div className="flex flex-col gap-6 mb-10 sm:mb-12 reveal">
+          {/* Top row: eyebrow + desktop CTAs */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6">
+            <div>
+              <div className="eyebrow mb-4 sm:mb-5">
+                <span className="eyebrow-dot" />
+                Case Studies &amp; Projects
+              </div>
+              <h2
+                id="projects-heading"
+                className="text-neutral-900 leading-[1.02]"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.5vw, 4.25rem)", fontWeight: 700, letterSpacing: "-0.035em" }}
+              >
+                Trusted on the world&rsquo;s{" "}
+                <span className="serif-italic text-orange-600">most critical projects.</span>
+              </h2>
             </div>
-            <h2
-              id="projects-heading"
-              className="text-neutral-900 leading-[1.02]"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 4.5vw, 4.25rem)", fontWeight: 700, letterSpacing: "-0.035em" }}
-            >
-              Trusted on the world&rsquo;s<br />
-              <span className="serif-italic text-orange-600">most critical projects.</span>
-            </h2>
+            {/* CTAs — hidden on xs, visible from sm */}
+            <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
+              <Link href="/case-studies" className="btn-ghost">
+                <BookOpen size={14} /> Case Studies <ArrowRight size={14} />
+              </Link>
+              <Link href="/projects" className="btn-ghost">
+                <FolderOpen size={14} /> Projects <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
-          <Link href="/projects" className="btn-ghost flex-shrink-0">
-            All Projects <ArrowRight size={16} />
-          </Link>
+          {/* Mobile-only CTA row */}
+          <div className="flex sm:hidden items-center gap-2">
+            <Link href="/case-studies"
+              className="flex-1 flex items-center justify-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.14em] py-3 px-4 rounded-full border border-neutral-200 bg-white text-neutral-700 active:bg-neutral-100 transition-colors">
+              <BookOpen size={12} /> Case Studies
+            </Link>
+            <Link href="/projects"
+              className="flex-1 flex items-center justify-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.14em] py-3 px-4 rounded-full border border-neutral-200 bg-white text-neutral-700 active:bg-neutral-100 transition-colors">
+              <FolderOpen size={12} /> Projects
+            </Link>
+          </div>
         </div>
 
-        {/* Projects grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-20 stagger-reveal">
-          {projects.map((p) => (
-            <div
-              key={p.title}
-              className={`group relative rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} p-8 hover-lift overflow-hidden`}
+        {/* ── Case studies grid ── */}
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-4 stagger-reveal">
+          {caseStudies.map((cs) => (
+            <Link
+              key={cs.slug}
+              href={`/case-studies#${cs.slug}`}
+              className="group relative rounded-2xl sm:rounded-3xl overflow-hidden hover:-translate-y-1 sm:hover:-translate-y-1.5 transition-all duration-500 block"
+              style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
             >
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
-                <svg viewBox="0 0 128 128" fill="none">
-                  <circle cx="128" cy="0" r="80" stroke="rgba(249,115,22,0.5)" strokeWidth="1" fill="none" />
-                  <circle cx="128" cy="0" r="50" stroke="rgba(249,115,22,0.3)" strokeWidth="1" fill="none" />
-                </svg>
+              {/* Image */}
+              <div className="relative h-44 sm:h-52 overflow-hidden">
+                <Image
+                  src={cs.image}
+                  alt={cs.title}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.72) 100%)" }} />
+                {/* Sector tag + year */}
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between gap-2">
+                  <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.16em] uppercase px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full backdrop-blur-sm min-w-0 truncate"
+                    style={{ background: cs.tagColor, color: cs.tagTextColor, border: `1px solid ${cs.accentColor}30` }}>
+                    {cs.sector.split("·")[0].trim()}
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold text-white/70 bg-black/30 px-2 py-1 sm:px-2.5 sm:py-1 rounded-full backdrop-blur-sm flex-shrink-0">{cs.year}</span>
+                </div>
+                {/* Title on image */}
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+                  <h3 className="text-white font-black text-sm sm:text-base leading-tight"
+                    style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em", textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}>
+                    {cs.title}
+                  </h3>
+                </div>
               </div>
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="tag text-[9px]">{p.industry}</span>
-                  <span className="text-neutral-500 text-xs">{p.location}</span>
-                  <span className="ml-auto text-neutral-500 text-xs">{p.year}</span>
+              {/* Content panel */}
+              <div className="bg-white border-x border-b border-neutral-100 rounded-b-2xl sm:rounded-b-3xl p-4 sm:p-5">
+                {/* Location + client (truncated) */}
+                <div className="flex items-center gap-2 mb-2 text-neutral-400 text-xs min-w-0">
+                  <MapPin size={11} className="flex-shrink-0" style={{ color: cs.accentColor }} />
+                  <span className="truncate flex-1 min-w-0">{cs.location}</span>
+                  <span className="hidden sm:block text-[10px] font-bold uppercase tracking-wider text-neutral-300 truncate max-w-[130px] flex-shrink-0">{cs.client}</span>
                 </div>
-
-                <h3 className="text-neutral-900 font-black text-xl mb-3" style={{ fontFamily: "var(--font-syne)" }}>
-                  {p.title}
-                </h3>
-                <p className="text-neutral-500 text-sm leading-relaxed mb-5">{p.desc}</p>
-
-                <div className="flex items-center justify-between">
-                  <div className="text-orange-600 text-xs font-bold">{p.specs}</div>
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    View Case Study <ExternalLink size={11} />
+                <p className="text-neutral-500 text-[13px] sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-none">{cs.subtitle}</p>
+                {/* Metrics row */}
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-3 border-t border-neutral-100">
+                  {cs.metrics.map((m) => (
+                    <div key={m.label} className="flex-shrink-0">
+                      <div className="text-sm font-black leading-none mb-0.5" style={{ fontFamily: "var(--font-display)", color: cs.accentColor }}>{m.value}</div>
+                      <div className="text-[9px] sm:text-[10px] text-neutral-400 uppercase tracking-wider">{m.label}</div>
+                    </div>
+                  ))}
+                  {/* Always visible on mobile, hover-reveal on desktop */}
+                  <div className="ml-auto flex items-center gap-1 text-[11px] font-semibold sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ color: cs.accentColor }}>
+                    <span className="hidden sm:inline">Read case study</span>
+                    <ArrowUpRight size={14} className="sm:w-[10px] sm:h-[10px]" />
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Testimonials */}
-        <div className="reveal">
-          <div className="text-center mb-12">
-            <div className="eyebrow justify-center mb-4">
-              <span className="eyebrow-dot" />
-              What Industry Experts Say
+        {/* ── Featured Projects strip ── */}
+        <div className="mt-12 sm:mt-14 reveal">
+          <div className="flex items-end justify-between mb-5 sm:mb-7 gap-4">
+            <div>
+              <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-400 mb-1">10,000+ projects worldwide</div>
+              <h3 className="text-neutral-900 font-black"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.3rem, 2.5vw, 2rem)", letterSpacing: "-0.03em" }}>
+                Featured Projects
+              </h3>
             </div>
-            <h3
-              className="text-neutral-900 font-bold"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", letterSpacing: "-0.03em" }}
-            >
-              Trusted by engineers<br />
-              <span className="serif-italic text-orange-600">worldwide.</span>
-            </h3>
+            <Link href="/projects" className="btn-ghost flex-shrink-0 !py-2.5 !px-4 !text-[11px]">
+              View all <ArrowRight size={13} />
+            </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-5 stagger-reveal">
-            {testimonials.map((t, i) => (
-              <div key={i} className="relative rounded-2xl border border-neutral-200 bg-white p-8 overflow-hidden group hover:border-orange-500/30 transition-colors duration-300">
-                {/* Large quote mark watermark */}
-                <div
-                  className="absolute -top-2 -left-2 font-black leading-none select-none pointer-events-none"
-                  style={{ fontFamily: "Georgia, serif", fontSize: "8rem", color: "rgba(249,115,22,0.06)", lineHeight: 1 }}
-                >
-                  &ldquo;
-                </div>
-                {/* Stars */}
-                <div className="flex gap-1 mb-5">
-                  {[...Array(5)].map((_, si) => (
-                    <svg key={si} width="12" height="12" viewBox="0 0 24 24" fill="rgba(249,115,22,0.9)">
-                      <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-neutral-700 text-sm leading-relaxed mb-7 relative z-10">{t.quote}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-black text-sm">
-                    {t.author[0]}
-                  </div>
-                  <div>
-                    <div className="text-neutral-900 text-sm font-bold" style={{ fontFamily: "var(--font-display)" }}>{t.author}</div>
-                    <div className="text-neutral-400 text-xs">{t.company}</div>
+
+          {/* 2 cols mobile → 3 cols sm → 6 cols lg */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 stagger-reveal">
+            {featuredProjects.map((proj) => (
+              <Link
+                key={proj.name}
+                href="/projects"
+                className="group relative rounded-xl sm:rounded-2xl overflow-hidden aspect-[3/4] block active:scale-95 sm:hover:-translate-y-1 transition-transform duration-300"
+                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.10)" }}
+              >
+                <Image
+                  src={proj.image}
+                  alt={proj.name}
+                  fill
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3">
+                  <div className="text-[8px] sm:text-[9px] font-bold tracking-[0.14em] uppercase text-white/60 mb-0.5">{proj.country}</div>
+                  <div className="text-white text-[11px] sm:text-xs font-bold leading-tight line-clamp-2" style={{ fontFamily: "var(--font-display)" }}>{proj.name}</div>
+                  <div className="hidden sm:flex items-center gap-1 mt-1 text-white/50 text-[9px]">
+                    <MapPin size={8} className="flex-shrink-0" />
+                    <span className="truncate">{proj.location}</span>
                   </div>
                 </div>
-                {/* Bottom orange line on hover */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

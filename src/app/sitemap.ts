@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/products/sound", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/products/aluglass", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/products/aluclad", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/products/ultra", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/products/ultraline", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/products/accessories", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/industries", priority: 0.85, changeFrequency: "monthly" as const },
     { url: "/industries/hvac", priority: 0.8, changeFrequency: "monthly" as const },

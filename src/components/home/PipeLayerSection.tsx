@@ -36,7 +36,7 @@ const LAYERS = [
     specs: [
       "λ ≤ 0.036 W/mK at 0°C",
       "−40°C to +105°C",
-      "Water vapor resistance μ ≥ 10,000",
+      "Water vapor resistance μ ≥ 7,300",
       "Class 1 / Class 0 (ASTM E84, BS 476)",
       "6 – 100 mm thickness · Tubes, Sheets, Rolls",
     ],
@@ -116,10 +116,10 @@ const NBR_LAYERS = [
     description:
       "The closed-cell structure is its own integral vapor barrier — no foil, no tape, no failure points. The system delivers Class 1 / Class 0 fire safety, zero condensation, and 30+ year service life across HVAC, district cooling and plumbing.",
     specs: [
-      "Water vapor resistance μ ≥ 10,000",
+      "Water vapor resistance μ ≥ 7,300",
       "Class 1 / Class 0 (ASTM E84, BS 476)",
       "Zero ODP · Low GWP",
-      "FM Approved · LPCB · CE",
+      "FM Approved · UL Listed",
       "Service life 30+ years",
     ],
     accent: "#22d3a5",
