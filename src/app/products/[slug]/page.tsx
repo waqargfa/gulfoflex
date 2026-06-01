@@ -462,18 +462,6 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
       {/* HERO — Editorial dark premium */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-24 md:pb-32 bg-[#080808] text-white">
         <PageHero src={product.heroImage ?? "https://images.unsplash.com/photo-1543674892-7d64d45df18b?auto=format&fit=crop&w=2400&q=80"} focalY="40%" variant="dark" intensity={0.85} />
-        {(product as { heroVideo?: string }).heroVideo && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: 0.55, zIndex: 1 }}
-          >
-            <source src={(product as { heroVideo?: string }).heroVideo} type="video/mp4" />
-          </video>
-        )}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
