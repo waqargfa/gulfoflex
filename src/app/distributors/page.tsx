@@ -25,7 +25,7 @@ const regions = [
   },
   {
     name: "South Asia",
-    color: "blue",
+    color: "neutral",
     countries: [
       { name: "India", dist: "Authorized Distributor", city: "Mumbai, Delhi, Chennai", phone: "Contact HQ", email: "info@gulfoflex.com" },
       { name: "Pakistan", dist: "Authorized Distributor", city: "Karachi, Lahore", phone: "Contact HQ", email: "info@gulfoflex.com" },
@@ -35,7 +35,7 @@ const regions = [
   },
   {
     name: "East Asia & Pacific",
-    color: "green",
+    color: "orange",
     countries: [
       { name: "South Korea", dist: "KoreaTech Distribution", city: "Seoul", phone: "Contact HQ", email: "info@gulfoflex.com" },
       { name: "Singapore", dist: "Authorized Distributor", city: "Singapore", phone: "Contact HQ", email: "info@gulfoflex.com" },
@@ -45,7 +45,7 @@ const regions = [
   },
   {
     name: "Africa",
-    color: "purple",
+    color: "neutral",
     countries: [
       { name: "Egypt", dist: "Authorized Distributor", city: "Cairo, Alexandria", phone: "Contact HQ", email: "info@gulfoflex.com" },
       { name: "Nigeria", dist: "Authorized Distributor", city: "Lagos, Abuja", phone: "Contact HQ", email: "info@gulfoflex.com" },
@@ -89,7 +89,7 @@ export default function DistributorsPage() {
                     <Globe2 size={14} className="text-orange-600" />
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">Global footprint</div>
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 </div>
                 <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {[{ n: "90+", l: "Countries" }, { n: "200+", l: "Distributors" }, { n: "6", l: "Continents" }, { n: "30+", l: "Years" }].map((s) => (

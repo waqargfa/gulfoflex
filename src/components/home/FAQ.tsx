@@ -36,17 +36,13 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section-padding bg-neutral-50 relative overflow-hidden" aria-labelledby="faq-heading">
+    <section className="section-padding bg-white relative overflow-hidden" aria-labelledby="faq-heading">
       <div className="absolute inset-0 grid-bg opacity-25" />
       <div className="absolute top-0 left-0 right-0 h-px tech-divider" />
 
       <div className="container-wide relative z-10">
         {/* Header — single col, left-aligned */}
         <div className="max-w-xl mb-12 reveal-left">
-          <div className="eyebrow mb-5">
-            <span className="eyebrow-dot" />
-            Frequently Asked Questions
-          </div>
           <h2
             id="faq-heading"
             className="text-neutral-900 mb-4 leading-[1.02]"

@@ -2,9 +2,9 @@
 
 import { useCountry } from "@/context/CountryContext";
 
-/* Official Vision 2030 colour palette */
-const V_GREEN = "#006C35";
-const V_GOLD  = "#C8A84B";
+/* On-brand palette: dark charcoal + orange */
+const V_GREEN = "#1c1917";
+const V_GOLD  = "#F97316";
 
 /* Inline SVG badge matching the Saudi Vision 2030 identity */
 function Vision2030Logo({ className = "" }: { className?: string }) {
@@ -59,7 +59,7 @@ export default function KSAVision2030Banner() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: `linear-gradient(135deg, ${V_GREEN} 0%, #004d27 60%, #003319 100%)` }}
+      style={{ background: `linear-gradient(135deg, ${V_GREEN} 0%, #171411 60%, #0a0a0a 100%)` }}
       aria-label="Saudi Vision 2030 Partnership"
     >
       {/* Grid texture */}
@@ -68,7 +68,7 @@ export default function KSAVision2030Banner() {
       {/* Gold glow orb */}
       <div
         className="absolute -top-32 left-1/3 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: `radial-gradient(circle, rgba(200,168,75,0.18) 0%, transparent 65%)`, filter: "blur(40px)" }}
+        style={{ background: `radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 65%)`, filter: "blur(40px)" }}
       />
       {/* Top & bottom accent lines */}
       <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(90deg, transparent, ${V_GOLD}, transparent)` }} />
@@ -81,7 +81,7 @@ export default function KSAVision2030Banner() {
           <div className="flex-1">
             <div
               className="inline-flex items-center gap-2 text-[9px] font-black tracking-[0.28em] uppercase px-3 py-1 rounded-full mb-2"
-              style={{ background: "rgba(200,168,75,0.18)", border: `1px solid rgba(200,168,75,0.40)`, color: V_GOLD }}
+              style={{ background: "rgba(249,115,22,0.18)", border: `1px solid rgba(249,115,22,0.40)`, color: V_GOLD }}
             >
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse"
@@ -98,7 +98,7 @@ export default function KSAVision2030Banner() {
           </div>
 
           {/* Metrics row — desktop right */}
-          <div className="hidden lg:grid grid-cols-4 gap-px rounded-xl overflow-hidden flex-shrink-0" style={{ background: "rgba(200,168,75,0.12)", border: `1px solid rgba(200,168,75,0.20)` }}>
+          <div className="hidden lg:grid grid-cols-4 gap-px rounded-xl overflow-hidden flex-shrink-0" style={{ background: "rgba(249,115,22,0.12)", border: `1px solid rgba(249,115,22,0.20)` }}>
             {v.metrics.map((m) => (
               <div key={m.label} className="px-5 py-4 text-center" style={{ background: "rgba(0,0,0,0.20)" }}>
                 <div
@@ -121,7 +121,7 @@ export default function KSAVision2030Banner() {
             <div
               key={m.label}
               className="rounded-xl px-4 py-3 text-center"
-              style={{ background: "rgba(0,0,0,0.25)", border: `1px solid rgba(200,168,75,0.20)` }}
+              style={{ background: "rgba(0,0,0,0.25)", border: `1px solid rgba(249,115,22,0.20)` }}
             >
               <div
                 className="font-black text-lg leading-none mb-1"
@@ -162,7 +162,7 @@ export default function KSAVision2030Banner() {
                 {p.name}
                 <span
                   className="text-[8px] font-semibold tracking-wider px-1.5 py-0.5 rounded-full"
-                  style={{ background: `rgba(200,168,75,0.15)`, color: V_GOLD }}
+                  style={{ background: `rgba(249,115,22,0.15)`, color: V_GOLD }}
                 >
                   {p.type}
                 </span>

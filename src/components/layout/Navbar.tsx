@@ -179,7 +179,6 @@ export default function Navbar() {
                 onClick={() => setCountryOpen(!countryOpen)}
                 className="flex items-center gap-1.5 hover:text-orange-600 transition-colors font-medium border-l border-neutral-200 pl-5"
               >
-                <span className="text-sm leading-none">{selectedCountry.flag}</span>
                 <span>{selectedCountry.name}</span>
                 <ChevronDown
                   size={11}
@@ -197,7 +196,6 @@ export default function Navbar() {
                         selectedCountry.code === c.code ? "text-orange-600 font-semibold bg-orange-50/60" : "text-neutral-700"
                       )}
                     >
-                      <span className="text-sm">{c.flag}</span>
                       <span>{c.name}</span>
                     </button>
                   ))}
@@ -394,7 +392,6 @@ export default function Navbar() {
                       : "bg-neutral-50 border-neutral-200 text-neutral-600 hover:border-orange-300 hover:text-orange-600"
                   )}
                 >
-                  <span>{c.flag}</span>
                   <span>{c.name}</span>
                 </button>
               ))}

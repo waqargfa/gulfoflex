@@ -64,7 +64,7 @@ const categories: Category[] = [
     key: "certifications",
     icon: Award,
     name: "Certifications & Test Reports",
-    accent: "59,130,246",
+    accent: "234,88,12",
     desc: "ISO certifications, fire & life safety approvals, and UAE compliance documents.",
     files: [
       { name: "ISO 9001:2015 Quality Management Certificate", size: "0.5 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-9001.pdf", downloads: 9210, updated: "2025-11-08" },
@@ -81,7 +81,7 @@ const categories: Category[] = [
     key: "guides",
     icon: Wrench,
     name: "Installation Guides",
-    accent: "16,185,129",
+    accent: "194,65,12",
     desc: "Step-by-step instructions, best practice guides, and maintenance recommendations.",
     files: [
       { name: "NBR Pipe Insulation Installation Guide", size: "3.2 MB", type: "PDF", downloads: 7820, updated: "2026-03-11" },
@@ -96,7 +96,7 @@ const categories: Category[] = [
     key: "brochures",
     icon: BookOpen,
     name: "Brochures & Catalogues",
-    accent: "236,72,153",
+    accent: "115,115,115",
     desc: "Marketing brochures, company profile, and product family catalogues for project specifiers.",
     files: [
       { name: "Gulf-O-Flex® Master Catalogue 2026", size: "8.4 MB", type: "PDF", badge: "UPDATED", downloads: 9410, updated: "2026-01-08" },
@@ -109,7 +109,7 @@ const categories: Category[] = [
     key: "specs",
     icon: Layers,
     name: "Specification Tools",
-    accent: "234,179,8",
+    accent: "251,146,60",
     desc: "Master specification text, calculation worksheets, and CSI / NBS-ready spec sections.",
     files: [
       { name: "Master Specification (Section 23 07 00)", size: "0.4 MB", type: "DOCX", downloads: 4210, updated: "2026-03-29" },
@@ -487,9 +487,9 @@ function SidebarChip({
 function BadgePill({ kind }: { kind: "NEW" | "UPDATED" | "POPULAR" }) {
   const palette =
     kind === "NEW"
-      ? { bg: "rgba(16,185,129,0.12)", border: "rgba(16,185,129,0.35)", color: "#059669" }
+      ? { bg: "rgba(249,115,22,0.12)", border: "rgba(249,115,22,0.35)", color: "#f97316" }
       : kind === "UPDATED"
-      ? { bg: "rgba(59,130,246,0.12)", border: "rgba(59,130,246,0.35)", color: "#2563eb" }
+      ? { bg: "rgba(115,115,115,0.12)", border: "rgba(115,115,115,0.35)", color: "#525252" }
       : { bg: "rgba(249,115,22,0.12)", border: "rgba(249,115,22,0.35)", color: "#ea580c" };
   return (
     <span
@@ -545,7 +545,7 @@ function FileRow({ file, accent, onCopy, copied }: { file: FileItem; accent: str
           title="Copy link"
           className="w-9 h-9 rounded-full border border-neutral-200 bg-white hover:border-neutral-400 flex items-center justify-center transition"
         >
-          {copied ? <Check size={13} className="text-emerald-500" /> : <Share2 size={13} className="text-neutral-600" />}
+          {copied ? <Check size={13} className="text-orange-500" /> : <Share2 size={13} className="text-neutral-600" />}
         </button>
         <a
           href={href}
@@ -608,7 +608,7 @@ function FileCard({ file, accent, onCopy, copied }: { file: FileItem; accent: st
           title="Copy link"
           className="w-10 h-10 rounded-xl border border-neutral-200 bg-white hover:border-neutral-400 flex items-center justify-center transition"
         >
-          {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} className="text-neutral-600" />}
+          {copied ? <Check size={14} className="text-orange-500" /> : <Copy size={14} className="text-neutral-600" />}
         </button>
       </div>
     </div>

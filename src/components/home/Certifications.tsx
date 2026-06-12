@@ -31,6 +31,10 @@ const certs: Cert[] = [
   { abbr: "DCL",       name: "DCL Certified",   sub: "Dubai Municipality",  Icon: Globe2,      since: "Dubai Central Lab" },
   { abbr: "DCD",       name: "DCD Approved",    sub: "UAE Fire & Life Safety", Icon: ShieldCheck, since: "Dubai Civil Defence" },
   { abbr: "EPD",       name: "EPD Verified",    sub: "Environmental Product", Icon: Sparkles,  since: "EPD International" },
+  { abbr: "TUV",       name: "TUV Singapore",   sub: "Product Safety & Quality", Icon: BadgeCheck, since: "TÜV SÜD" },
+  { abbr: "SGBC",      name: "Singapore Green Building", sub: "Green Building Product", Icon: Leaf, since: "SGBC Council" },
+  { abbr: "CE/REACH",  name: "CE & Reach Mark", sub: "EU Compliance",        Icon: Globe2,    since: "European Union" },
+  { abbr: "Saudi Made", name: "Saudi Made",     sub: "Saudi Arabia",         Icon: ShieldCheck, since: "MODON" },
 ];
 
 const standards = [
@@ -45,7 +49,7 @@ const standards = [
 ];
 
 const trustStats = [
-  { value: "8+",   label: "Active certifications" },
+  { value: "12+",  label: "Active certifications" },
   { value: "90+",  label: "Countries approved" },
   { value: "30+",  label: "Years audited" },
   { value: "100%", label: "Independent labs" },
@@ -55,21 +59,23 @@ export default function Certifications() {
   return (
     <section
       className="section-padding relative overflow-hidden"
-      style={{ background: "#080a0f" }}
+      style={{ background: "linear-gradient(160deg, #0f0e0c 0%, #0a0908 55%, #0d0b09 100%)" }}
       aria-labelledby="certs-heading"
     >
       {/* Background layers */}
-      <div className="absolute inset-0 grid-bg opacity-[0.10]" />
+      <div className="absolute inset-0 grid-bg opacity-[0.08]" />
+      {/* Orange ambient centre */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
-          className="w-[900px] h-[460px] rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(249,115,22,0.13) 0%, transparent 65%)" }}
+          className="w-[1000px] h-[500px] rounded-full"
+          style={{ background: "radial-gradient(ellipse, rgba(249,115,22,0.11) 0%, transparent 62%)", filter: "blur(20px)" }}
         />
       </div>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+      {/* Top signature orange line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
-      {/* Decorative corner marks */}
+      {/* Corner marks */}
       <div className="hidden md:block absolute top-10 left-10 w-10 h-10 border-t border-l border-white/10 pointer-events-none" />
       <div className="hidden md:block absolute top-10 right-10 w-10 h-10 border-t border-r border-white/10 pointer-events-none" />
       <div className="hidden md:block absolute bottom-10 left-10 w-10 h-10 border-b border-l border-white/10 pointer-events-none" />
@@ -78,13 +84,6 @@ export default function Certifications() {
       <div className="container-wide relative z-10">
         {/* Section header — centered */}
         <div className="text-center max-w-2xl mx-auto mb-12 reveal">
-          <div
-            className="eyebrow mb-5 mx-auto w-fit"
-            style={{ background: "rgba(249,115,22,0.12)", borderColor: "rgba(249,115,22,0.25)", color: "#f97316" }}
-          >
-            <span className="eyebrow-dot" />
-            Compliance &amp; Quality
-          </div>
           <h2
             id="certs-heading"
             className="text-white mb-4 leading-[1.0]"
@@ -101,12 +100,12 @@ export default function Certifications() {
 
         {/* Trust stat strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px mb-12 rounded-2xl overflow-hidden reveal"
-          style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.06)" }}>
+          style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.15)" }}>
           {trustStats.map((s) => (
-            <div key={s.label} className="px-5 py-5 flex items-baseline gap-3" style={{ background: "#0a0c12" }}>
+            <div key={s.label} className="px-5 py-5 flex items-baseline gap-3" style={{ background: "rgba(15,13,11,0.7)" }}>
               <div
-                className="text-white"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.4vw, 2.1rem)", fontWeight: 800, letterSpacing: "-0.03em" }}
+                className="corp-stat-value"
+                style={{ fontSize: "clamp(1.5rem, 2.4vw, 2.1rem)" }}
               >
                 {s.value}
               </div>

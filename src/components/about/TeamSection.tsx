@@ -121,14 +121,14 @@ function getInitials(name: string) {
 
 // Per-country accent colors (orange-anchored brand spectrum)
 const COUNTRY_ACCENT: Record<string, { rgb: string; label: string }> = {
-  uae:     { rgb: "234,88,12",   label: "Dubai · Sharjah · Abu Dhabi" },
-  ksa:     { rgb: "194,65,12",   label: "Riyadh · Jeddah · Dammam" },
-  qatar:   { rgb: "217,70,239",  label: "Doha" },
-  kuwait:  { rgb: "13,148,136",  label: "Kuwait City" },
-  bahrain: { rgb: "37,99,235",   label: "Manama" },
-  oman:    { rgb: "5,150,105",   label: "Muscat · Sohar" },
-  egypt:   { rgb: "220,38,38",   label: "Cairo · Alexandria" },
-  africa:  { rgb: "22,163,74",   label: "Lagos · Nairobi · Accra" },
+  uae:     { rgb: "249,115,22",  label: "Dubai · Sharjah · Abu Dhabi" },
+  ksa:     { rgb: "234,88,12",   label: "Riyadh · Jeddah · Dammam" },
+  qatar:   { rgb: "194,65,12",   label: "Doha" },
+  kuwait:  { rgb: "251,146,60",  label: "Kuwait City" },
+  bahrain: { rgb: "249,115,22",  label: "Manama" },
+  oman:    { rgb: "234,88,12",   label: "Muscat · Sohar" },
+  egypt:   { rgb: "194,65,12",   label: "Cairo · Alexandria" },
+  africa:  { rgb: "251,146,60",  label: "Lagos · Nairobi · Accra" },
 };
 
 export default function TeamSection() {

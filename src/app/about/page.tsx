@@ -182,11 +182,11 @@ export default function AboutPage() {
               {/* Trust strip */}
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-neutral-500">
                 <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
                   Specified by Tier-1 GCC consultants & EPCs
                 </span>
                 <span className="hidden sm:block w-px h-3 bg-neutral-300" />
-                <span className="flex items-center gap-2"><CheckCircle2 size={12} className="text-emerald-500" />ISO · FM · UL · DCD · EPD</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} className="text-orange-500" />ISO · FM · UL · DCD · EPD</span>
                 <span className="hidden sm:block w-px h-3 bg-neutral-300" />
                 <span className="flex items-center gap-2"><Globe size={12} className="text-orange-600" />Shipping to 90+ countries</span>
               </div>
@@ -201,7 +201,7 @@ export default function AboutPage() {
                     <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-orange-600">
                       <Sparkles size={11} /> By the numbers
                     </div>
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                   </div>
                   <div className="grid grid-cols-2 gap-px rounded-2xl overflow-hidden" style={{ background: "rgba(0,0,0,0.06)" }}>
                     {heroStats.map((s) => (
@@ -218,7 +218,7 @@ export default function AboutPage() {
                   </div>
                   <div className="mt-5 flex items-center justify-between text-[11px] text-neutral-500">
                     <span className="flex items-center gap-1.5">
-                      <CheckCircle2 size={12} className="text-emerald-500" /> ISO 9001 · FM · UL Listed
+                      <CheckCircle2 size={12} className="text-orange-500" /> ISO 9001 · FM · UL Listed
                     </span>
                     <Link href="/certifications" className="font-semibold text-orange-600 hover:text-orange-700">
                       View all →
@@ -746,8 +746,8 @@ export default function AboutPage() {
                   <p className="text-neutral-500 text-sm leading-relaxed mb-4">{f.desc}</p>
                   <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-600">{f.capacity}</span>
-                    <span className="flex items-center gap-1.5 text-[11px] text-emerald-600 font-semibold">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="flex items-center gap-1.5 text-[11px] text-orange-600 font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
                       {f.status}
                     </span>
                   </div>
@@ -784,17 +784,17 @@ export default function AboutPage() {
                   className="group relative h-full rounded-2xl border p-5 overflow-hidden transition-all duration-500 hover:-translate-y-1"
                   style={{
                     background: r.featured
-                      ? "linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)"
+                      ? "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)"
                       : "linear-gradient(135deg, #fff 0%, #fff7ed 100%)",
-                    borderColor: r.featured ? "rgba(234,179,8,0.40)" : "rgba(0,0,0,0.07)",
-                    boxShadow: r.featured ? "0 0 0 0 rgba(234,179,8,0)" : "none",
+                    borderColor: r.featured ? "rgba(234,88,12,0.40)" : "rgba(0,0,0,0.07)",
+                    boxShadow: r.featured ? "0 0 0 0 rgba(234,88,12,0)" : "none",
                   }}
                 >
                   {/* Featured top accent */}
                   {r.featured && (
                     <div
                       className="absolute top-0 left-0 right-0 h-0.5"
-                      style={{ background: "linear-gradient(90deg, transparent, #eab308, transparent)" }}
+                      style={{ background: "linear-gradient(90deg, transparent, #ea580c, transparent)" }}
                     />
                   )}
                   {/* Hover accent for non-featured */}
@@ -808,21 +808,21 @@ export default function AboutPage() {
                       className="relative w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-400 group-hover:scale-110"
                       style={{
                         background: r.featured
-                          ? "linear-gradient(135deg, rgba(234,179,8,0.22), rgba(234,179,8,0.06))"
+                          ? "linear-gradient(135deg, rgba(234,88,12,0.22), rgba(234,88,12,0.06))"
                           : "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.04))",
-                        border: r.featured ? "1px solid rgba(234,179,8,0.30)" : "1px solid rgba(249,115,22,0.22)",
+                        border: r.featured ? "1px solid rgba(234,88,12,0.30)" : "1px solid rgba(249,115,22,0.22)",
                       }}
                     >
                       <r.Icon
                         size={17}
                         strokeWidth={2.2}
-                        style={{ color: r.featured ? "#b45309" : undefined }}
+                        style={{ color: r.featured ? "#c2410c" : undefined }}
                         className={r.featured ? undefined : "text-orange-600"}
                       />
                       {r.featured && (
                         <div
                           className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                          style={{ background: "#eab308" }}
+                          style={{ background: "#ea580c" }}
                         >
                           <Star size={7} fill="#fff" color="#fff" strokeWidth={0} />
                         </div>
@@ -854,7 +854,7 @@ export default function AboutPage() {
 
                   <p
                     className="text-[10px] font-semibold uppercase tracking-wider leading-snug pl-[3.25rem]"
-                    style={{ color: r.featured ? "rgba(180,83,9,0.75)" : "rgba(0,0,0,0.40)" }}
+                    style={{ color: r.featured ? "rgba(196,65,12,0.75)" : "rgba(0,0,0,0.40)" }}
                   >
                     {r.org}
                   </p>
@@ -935,10 +935,10 @@ export default function AboutPage() {
       </section>
 
       {/* ── Sustainability ── */}
-      <section className="relative py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #020f09 0%, #052e16 45%, #064e3b 100%)" }}>
+      <section className="relative py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #0a0a0a 0%, #1a0e06 45%, #2a1407 100%)" }}>
         {/* Ambient glows */}
-        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-emerald-500/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-teal-400/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-orange-500/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-orange-400/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute inset-0 grid-bg opacity-[0.06] pointer-events-none" />
 
         <div className="container-wide relative z-10">
@@ -948,7 +948,7 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <div
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-6"
-                style={{ background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.30)", color: "#6ee7b7" }}
+                style={{ background: "rgba(249,115,22,0.12)", border: "1px solid rgba(249,115,22,0.30)", color: "#fdba74" }}
               >
                 <Leaf size={11} /> Sustainability Commitment
               </div>
@@ -958,10 +958,10 @@ export default function AboutPage() {
               >
                 Insulation is{" "}
                 <span className="relative inline-block">
-                  <span className="serif-italic text-emerald-300">climate action</span>
+                  <span className="serif-italic text-orange-300">climate action</span>
                   <span
                     className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                    style={{ background: "linear-gradient(90deg, transparent, #34d399, transparent)" }}
+                    style={{ background: "linear-gradient(90deg, transparent, #fb923c, transparent)" }}
                   />
                 </span>
                 .
@@ -972,7 +972,7 @@ export default function AboutPage() {
               <Link
                 href="/sustainability"
                 className="mt-8 inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-bold tracking-[0.10em] uppercase transition-all duration-300 hover:scale-105"
-                style={{ background: "linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.15))", border: "1px solid rgba(16,185,129,0.40)", color: "#6ee7b7" }}
+                style={{ background: "linear-gradient(135deg, rgba(249,115,22,0.25), rgba(234,88,12,0.15))", border: "1px solid rgba(249,115,22,0.40)", color: "#fdba74" }}
               >
                 <Leaf size={13} /> Read our Sustainability Report <ArrowUpRight size={13} />
               </Link>
@@ -990,33 +990,33 @@ export default function AboutPage() {
               ].map((s, i) => (
                 <div
                   key={s.label}
-                  className="group relative rounded-2xl p-6 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(16,185,129,0.35)]"
+                  className="group relative rounded-2xl p-6 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_-20px_rgba(249,115,22,0.35)]"
                   style={{
-                    background: "linear-gradient(135deg, rgba(6,78,59,0.70) 0%, rgba(4,47,36,0.85) 100%)",
-                    border: "1px solid rgba(16,185,129,0.18)",
+                    background: "linear-gradient(135deg, rgba(42,20,7,0.70) 0%, rgba(26,14,6,0.85) 100%)",
+                    border: "1px solid rgba(249,115,22,0.18)",
                   }}
                 >
                   {/* top accent line */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(90deg, transparent, #34d399, transparent)" }} />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(90deg, transparent, #fb923c, transparent)" }} />
                   {/* corner glow */}
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-emerald-400/10 rounded-full blur-2xl group-hover:bg-emerald-400/20 transition-colors duration-500" />
+                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-orange-400/10 rounded-full blur-2xl group-hover:bg-orange-400/20 transition-colors duration-500" />
 
                   <div className="relative z-10">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                      style={{ background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.25)" }}
+                      style={{ background: "rgba(249,115,22,0.15)", border: "1px solid rgba(249,115,22,0.25)" }}
                     >
-                      <s.icon size={16} className="text-emerald-400" />
+                      <s.icon size={16} className="text-orange-400" />
                     </div>
                     <div className="flex items-end gap-1 mb-2">
                       <span
-                        className="text-emerald-300 font-black leading-none"
+                        className="text-orange-300 font-black leading-none"
                         style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.04em" }}
                       >
                         {s.stat}
                       </span>
                       {s.unit && (
-                        <span className="text-emerald-400/80 font-bold text-xl mb-0.5">{s.unit}</span>
+                        <span className="text-orange-400/80 font-bold text-xl mb-0.5">{s.unit}</span>
                       )}
                     </div>
                     <div className="text-white font-bold text-sm mb-1 leading-tight">{s.label}</div>
@@ -1031,11 +1031,11 @@ export default function AboutPage() {
           <Reveal delay={160}>
             <div
               className="mt-10 rounded-2xl px-8 py-5 flex flex-wrap items-center justify-between gap-4"
-              style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)" }}
+              style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.15)" }}
             >
               {["ISO 14001 Certified", "Zero ODP — CFC & HCFC Free", "EPD Verified Products", "EU REACH Compliant", "LEED Contribution"].map((badge) => (
-                <div key={badge} className="flex items-center gap-2 text-[11px] font-semibold text-emerald-300/80 uppercase tracking-[0.15em]">
-                  <CheckCircle2 size={12} className="text-emerald-400 shrink-0" />
+                <div key={badge} className="flex items-center gap-2 text-[11px] font-semibold text-orange-300/80 uppercase tracking-[0.15em]">
+                  <CheckCircle2 size={12} className="text-orange-400 shrink-0" />
                   {badge}
                 </div>
               ))}

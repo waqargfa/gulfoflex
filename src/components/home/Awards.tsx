@@ -57,50 +57,35 @@ const AWARDS: AwardItem[] = [
 export default function Awards() {
   return (
     <section
-      className="section-padding relative overflow-hidden"
-      style={{ background: "#07080d" }}
+      className="section-padding relative overflow-hidden bg-white"
       aria-labelledby="awards-heading"
     >
       {/* Background decoration */}
-      <div className="absolute inset-0 grid-bg opacity-[0.07]" />
+      <div className="absolute inset-0 grid-bg opacity-[0.18]" />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
           className="w-[800px] h-[400px] rounded-full"
           style={{
             background:
-              "radial-gradient(ellipse, rgba(234,179,8,0.10) 0%, transparent 65%)",
+              "radial-gradient(ellipse, rgba(249,115,22,0.07) 0%, transparent 65%)",
           }}
         />
       </div>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/25 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/6 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
 
       {/* Corner marks */}
-      <div className="hidden md:block absolute top-10 left-10 w-10 h-10 border-t border-l border-white/8 pointer-events-none" />
-      <div className="hidden md:block absolute top-10 right-10 w-10 h-10 border-t border-r border-white/8 pointer-events-none" />
-      <div className="hidden md:block absolute bottom-10 left-10 w-10 h-10 border-b border-l border-white/8 pointer-events-none" />
-      <div className="hidden md:block absolute bottom-10 right-10 w-10 h-10 border-b border-r border-white/8 pointer-events-none" />
+      <div className="hidden md:block absolute top-10 left-10 w-10 h-10 border-t border-l border-orange-500/20 pointer-events-none" />
+      <div className="hidden md:block absolute top-10 right-10 w-10 h-10 border-t border-r border-orange-500/20 pointer-events-none" />
+      <div className="hidden md:block absolute bottom-10 left-10 w-10 h-10 border-b border-l border-orange-500/20 pointer-events-none" />
+      <div className="hidden md:block absolute bottom-10 right-10 w-10 h-10 border-b border-r border-orange-500/20 pointer-events-none" />
 
       <div className="container-wide relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 reveal">
-          <div
-            className="eyebrow mb-5 mx-auto w-fit"
-            style={{
-              background: "rgba(234,179,8,0.12)",
-              borderColor: "rgba(234,179,8,0.28)",
-              color: "#eab308",
-            }}
-          >
-            <span
-              className="eyebrow-dot"
-              style={{ background: "#eab308" }}
-            />
-            Industry Recognition
-          </div>
           <h2
             id="awards-heading"
-            className="text-white mb-4 leading-[1.0]"
+            className="text-neutral-900 mb-4 leading-[1.0]"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2.25rem, 4.5vw, 4rem)",
@@ -111,12 +96,12 @@ export default function Awards() {
             Awards &amp;{" "}
             <span
               className="serif-italic"
-              style={{ color: "#eab308" }}
+              style={{ color: "#f97316" }}
             >
               Acknowledgements.
             </span>
           </h2>
-          <p className="text-white/50 text-base leading-relaxed">
+          <p className="text-neutral-500 text-base leading-relaxed">
             Over three decades of engineering excellence recognised by the
             region's most prestigious industry bodies and award programmes.
           </p>
@@ -136,14 +121,14 @@ export default function Awards() {
                 }`}
                 style={{
                   background: award.featured
-                    ? "linear-gradient(135deg, rgba(234,179,8,0.10) 0%, rgba(234,179,8,0.04) 100%)"
-                    : "rgba(255,255,255,0.025)",
+                    ? "linear-gradient(135deg, rgba(249,115,22,0.09) 0%, rgba(249,115,22,0.03) 100%)"
+                    : "rgba(255,255,255,0.95)",
                   border: award.featured
-                    ? "1px solid rgba(234,179,8,0.25)"
-                    : "1px solid rgba(255,255,255,0.06)",
+                    ? "1px solid rgba(249,115,22,0.28)"
+                    : "1px solid rgba(10,10,10,0.07)",
                   boxShadow: award.featured
-                    ? "0 0 40px rgba(234,179,8,0.06) inset"
-                    : "none",
+                    ? "0 4px 24px rgba(249,115,22,0.08), 0 1px 3px rgba(10,10,10,0.04)"
+                    : "0 1px 3px rgba(10,10,10,0.04), 0 8px 24px -8px rgba(10,10,10,0.07)",
                 }}
               >
                 {/* Top accent line */}
@@ -151,14 +136,14 @@ export default function Awards() {
                   className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-500"
                   style={{
                     width: award.featured ? "40%" : "0%",
-                    background: "linear-gradient(90deg, transparent, #eab308, transparent)",
+                    background: "linear-gradient(90deg, transparent, #f97316, transparent)",
                   }}
                 />
                 <div
                   className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500"
                   style={{
                     width: "60%",
-                    background: "linear-gradient(90deg, transparent, #eab308, transparent)",
+                    background: "linear-gradient(90deg, transparent, #f97316, transparent)",
                   }}
                 />
 
@@ -167,7 +152,7 @@ export default function Awards() {
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(ellipse at 50% 0%, rgba(234,179,8,0.08) 0%, transparent 70%)",
+                      "radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.08) 0%, transparent 70%)",
                   }}
                 />
 
@@ -177,22 +162,22 @@ export default function Awards() {
                     className="relative mb-4 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
                     style={{
                       background: award.featured
-                        ? "linear-gradient(135deg, rgba(234,179,8,0.22), rgba(234,179,8,0.06))"
-                        : "linear-gradient(135deg, rgba(234,179,8,0.14), rgba(234,179,8,0.03))",
-                      border: "1px solid rgba(234,179,8,0.22)",
+                        ? "linear-gradient(135deg, rgba(249,115,22,0.22), rgba(249,115,22,0.06))"
+                        : "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.03))",
+                      border: "1px solid rgba(249,115,22,0.22)",
                     }}
                   >
                     <Icon
                       size={22}
-                      style={{ color: "#eab308" }}
+                      style={{ color: "#f97316" }}
                       strokeWidth={1.8}
                     />
                     {award.featured && (
                       <div
                         className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full flex items-center justify-center"
-                        style={{ background: "#eab308" }}
+                        style={{ background: "#f97316" }}
                       >
-                        <Star size={8} fill="#07080d" color="#07080d" strokeWidth={0} />
+                        <Star size={8} fill="#ffffff" color="#ffffff" strokeWidth={0} />
                       </div>
                     )}
                   </div>
@@ -202,9 +187,9 @@ export default function Awards() {
                     <div
                       className="text-[9px] font-black tracking-[0.25em] uppercase mb-2 px-2.5 py-0.5 rounded-full"
                       style={{
-                        background: "rgba(234,179,8,0.12)",
-                        border: "1px solid rgba(234,179,8,0.22)",
-                        color: "#eab308",
+                        background: "rgba(249,115,22,0.12)",
+                        border: "1px solid rgba(249,115,22,0.22)",
+                        color: "#f97316",
                       }}
                     >
                       {award.year}
@@ -213,7 +198,7 @@ export default function Awards() {
 
                   {/* Title */}
                   <div
-                    className="text-white font-black text-base leading-tight mb-1.5 group-hover:text-yellow-200 transition-colors duration-300"
+                    className="text-neutral-900 font-black text-base leading-tight mb-1.5 group-hover:text-orange-600 transition-colors duration-300"
                     style={{
                       fontFamily: "var(--font-display)",
                       letterSpacing: "-0.025em",
@@ -225,7 +210,7 @@ export default function Awards() {
                   {/* Org */}
                   <div
                     className="text-[10px] font-semibold uppercase tracking-wider leading-snug"
-                    style={{ color: "rgba(234,179,8,0.65)" }}
+                    style={{ color: "rgba(249,115,22,0.65)" }}
                   >
                     {award.org}
                   </div>

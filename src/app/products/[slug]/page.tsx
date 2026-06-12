@@ -20,17 +20,17 @@ const products = {
     tagline: "The benchmark for thermal and acoustic pipe insulation in HVAC and MEP applications across the Middle East.",
     color: "orange",
     description: [
-      "Gulf-O-Flex® NBR is a Flexible Elastomeric Foam made of Nitrile Butadiene Rubber (NBR), available in thicknesses from 6mm to 50mm in both sheet (with or without self-adhesive) and tube forms. Its closed-cell structure with honeycomb mesh and scrim is a self-sustaining, passive solution to energy efficiency — requiring no active maintenance to deliver consistent thermal and acoustic performance.",
-      "With outstanding resistance to moisture vapor, mold, and mildew growth, Gulf-O-Flex® NBR ensures long service life, minimal downtime, and continuing efficiency across HVAC, district cooling, hot & cold water plumbing, refrigeration, and industrial applications. CFC and HCFC free with zero ODP — FM Approved, UL Listed, and EPD Verified.",
+      "Gulf-O-Flex® NBR is a Flexible Elastomeric Foam made of Nitrile Butadiene Rubber (NBR), available in thicknesses from 6mm to 50mm in both sheet (with or without self-adhesive) and tube forms. Its closed-cell structure with honeycomb mesh and scrim is a self-sustaining, passive solution to energy efficiency requiring no active maintenance to deliver consistent thermal and acoustic performance.",
+      "With outstanding resistance to moisture vapor, mold, and mildew growth, Gulf-O-Flex® NBR ensures long service life, minimal downtime, and continuing efficiency across HVAC, district cooling, hot & cold water plumbing, refrigeration, and industrial applications. CFC and HCFC free with zero ODP FM Approved, UL Listed, and EPD Verified.",
     ],
     features: [
-      "Closed-cell structure — water absorption only 0.16 vol% (ASTM C534)",
-      "Zero water vapour transmission — 0.00 Perm in (ASTM E96/96M)",
-      "Self-extinguishing — Class 1 / Class O fire rated (BS 476 & ASTM E84)",
-      "FSI ≤ 25, SDI ≤ 50 — verified per ASTM E84 / UL 723",
-      "Zero ODP — CFC and HCFC free, helps reduce greenhouse gas emissions",
+      "Closed-cell structure, water absorption only 0.16 vol% (ASTM C534)",
+      "Zero water vapour transmission, 0.00 Perm in (ASTM E96/96M)",
+      "Self-extinguishing, Class 1 / Class O fire rated (BS 476 & ASTM E84)",
+      "FSI ≤ 25, SDI ≤ 50, verified per ASTM E84 / UL 723",
+      "Zero ODP, CFC and HCFC free, helps reduce greenhouse gas emissions",
       "Anti-microbial: resists mold and mildew growth for long service life",
-      "High flexibility — covers pipes, bends, ducts, tanks, vessels and flat surfaces",
+      "High flexibility, covers pipes, bends, ducts, tanks, vessels and flat surfaces",
       "Available with or without self-adhesive application and scrim",
     ],
     specs: [
@@ -69,7 +69,7 @@ const products = {
     heroVideo: "/videos/products/xlpe.mp4",
     shortName: "Chemically Crosslinked Polyethylene Foam",
     tagline: "Closed-cell elastomeric XLPE foam with alupet facing — a passive, self-sustaining solution for thermal and acoustic insulation in demanding environments.",
-    color: "blue",
+    color: "neutral",
     description: [
       "Gulf-O-Flex® XLPE is a chemically crosslinked polyethylene closed-cell foam, finished with a thin layer of alupet facing and engineered for difficult environments in the long term. Its thin-layer, lightweight construction allows it to withstand high-pressure environments while delivering reliable thermal and acoustic performance.",
       "As a passive solution to energy efficiency, XLPE requires no active maintenance to perform — making it an asset across HVAC, ductwork, automotive, marine, and industrial insulation applications. Self-extinguishing with Class O / Class 1 fire rating per BS 476.",
@@ -112,7 +112,7 @@ const products = {
     heroImage: "/assets/plain/C_107300.jpg",
     shortName: "Open-Cell Acoustic Elastomeric Foam",
     tagline: "Flexible open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R, pipelines, plant rooms and industrial environments.",
-    color: "purple",
+    color: "neutral",
     description: [
       "Gulf O Sound is a flexible, open-cell elastomeric foam that is intended to absorb sound. It is ideal for acoustic insulation in pipelines, HVAC/R systems, buildings, and industrial applications due to its viscoelastic qualities, open-cell structure, and superior air flow resistance. It combines superior insulating qualities with acoustic performance.",
       "Its resistance to moisture vapor, mold and mildew growth ensures that its applications have a long lifespan, less downtime and continuing efficiency. Engineered with a higher density than other acoustic insulations, each thickness of Gulf O Sound delivers distinct Noise Reduction Coefficient (NRC) values across frequencies — making it a superior acoustic insulation. Made from 100% recycled materials.",
@@ -152,7 +152,7 @@ const products = {
     heroVideo: "/videos/products/aluglass.mp4",
     shortName: "NBR Elastomeric Foam with Aluglass Facing",
     tagline: "Best-selling rubber insulation finished with a factory-applied aluminum glass cloth facing — a passive, self-sustaining solution for energy efficiency.",
-    color: "cyan",
+    color: "neutral",
     description: [
       "Gulf-O-Flex® Aluglass is a Flexible Elastomeric Foam made of Nitrile Butadiene Rubber (NBR), available in thicknesses from 6mm to 50mm in both sheet (with or without self-adhesive) and tube forms, finished with a factory-applied Aluglass facing. The closed-cell structure delivers consistent thermal insulation performance with no need for active maintenance — a passive solution to energy efficiency.",
       "Its resistance to moisture vapor, mold, and mildew growth ensures applications enjoy a long lifespan, less downtime, and continuing efficiency. Lightweight, highly flexible, and able to undergo heavy stress without breakage — ideal for pipes, bends, ducts, tanks, vessels, and flat surfaces. CFC and HCFC free with zero ODP. FM Approved, UL Listed, and EPD Verified.",
@@ -208,7 +208,7 @@ const products = {
     heroVideo: "/videos/products/aluclad.mp4",
     shortName: "NBR Foam with Alu-Clad Facing",
     tagline: "Best-selling closed-cell NBR insulation with factory-applied Alu-Clad facing — a passive, self-sustaining solution for outdoor and mechanical systems.",
-    color: "yellow",
+    color: "orange",
     description: [
       "Gulf-O-Flex® Aluclad is a Flexible Elastomeric Foam made of Nitrile Butadiene Rubber (NBR), available in thicknesses from 6mm to 50mm in both sheet (with or without self-adhesive) and tube forms. The insulation is finished with a factory-applied Alu-Clad facing, making it ready for external applications — the facing protects the foam from UV rays and minor mechanical damage.",
       "A passive solution to energy efficiency, Aluclad needs no active maintenance to deliver consistent thermal performance. Its lightweight, flexible structure resists heavy stress without breakage, while exceptional resistance to moisture vapor, mold, and mildew ensures long lifespan, reduced downtime, and continuing efficiency across mechanical and outdoor systems.",
@@ -316,7 +316,7 @@ const products = {
     heroImage: "/assets/duct.webp",
     shortName: "Pre-Insulated Continuous Tube Line System",
     tagline: "Factory pre-insulated continuous-length tube line system — chilled-water and refrigeration piping delivered ready to install with built-in vapour barrier and UV-stable jacket.",
-    color: "cyan",
+    color: "neutral",
     description: [
       "Gulf-O-Flex® UltraLine is a complete factory pre-insulated copper tube line system, supplied in continuous coils up to 50 metres. Each line pairs a soft-temper, dehydrated and nitrogen-charged copper tube with a closed-cell NBR insulation core and a UV-stable, water-tight outer jacket — eliminating site insulation labour and ensuring a continuous, joint-free vapour barrier from end to end.",
       "UltraLine is designed for VRF / VRV refrigerant lines, split AC connections, chilled water mini-loops, and solar thermal applications. Available as single tube, twin tube (liquid + suction), and multi-tube configurations in diameters from 1/4\" to 1-1/8\" — pre-paired with an optional ECC communication cable for a one-pull installation.",
@@ -368,7 +368,7 @@ const products = {
     heroImage: "/assets/aluminium.webp",
     shortName: "Complete Installation System",
     tagline: "A complete range of adhesives, sealants, tapes, and anti-vibration accessories engineered for full system compatibility with Gulf-O-Flex® insulation.",
-    color: "green",
+    color: "orange",
     description: [
       "Gulf-O-Flex® Accessories provide all the ancillary products required for a complete and code-compliant NBR, XLPE, and faced insulation installation. The range includes polychloroprene and synthetic-rubber contact adhesives (Gulf O Glue, Gulf-O-Seal 81-10), fire-resistive duct vapor-barrier sealants (Gulf-O-Seal 32-17), and a complete family of foil, glass-cloth, PVC, alupet, and NBR foam tapes.",
       "The accessories range also covers anti-vibration cork and metal-sandwich pads for mechanical equipment isolation. Each accessory is formulated and tested for full compatibility with Gulf-O-Flex® insulation products, ensuring system integrity, vapor-barrier continuity, and long-term performance — indoors and outdoors.",
@@ -424,13 +424,22 @@ const products = {
 };
 
 type ProductParams = { slug: string };
+type ProductSlug = keyof typeof products;
+
+function normalizeProductSlug(input: unknown): ProductSlug | null {
+  if (typeof input !== "string") return null;
+  const normalized = decodeURIComponent(input).trim().toLowerCase();
+  if (!normalized) return null;
+  return normalized in products ? (normalized as ProductSlug) : null;
+}
 
 export async function generateMetadata(
   { params }: { params: Promise<ProductParams> },
   _parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug } = await params;
-  const product = products[slug as keyof typeof products];
+  const { slug: rawSlug } = await params;
+  const slug = normalizeProductSlug(rawSlug);
+  const product = slug ? products[slug] : null;
   if (!product) return {};
   return {
     title: `${product.name} | Gulf-O-Flex® ${product.shortName}`,
@@ -444,9 +453,12 @@ export function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: { params: Promise<ProductParams> }) {
-  const { slug } = await params;
-  const product = products[slug as keyof typeof products];
-  if (!product) notFound();
+  const { slug: rawSlug } = await params;
+  const slug = normalizeProductSlug(rawSlug);
+  const product = slug ? products[slug] : null;
+  if (!product || !slug) notFound();
+
+  const productSlug: ProductSlug = slug;
 
   const Icon = product.icon;
 
@@ -525,8 +537,8 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                 <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span className="relative flex h-2.5 w-2.5">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50 animate-ping" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.7)]" />
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-50 animate-ping" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-400 shadow-[0_0_12px_rgba(249,115,22,0.7)]" />
                     </span>
                     <span className="text-[10px] tracking-[0.22em] uppercase font-bold text-white/65">In Production</span>
                   </div>
@@ -534,11 +546,11 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                 </div>
 
                 <ProductAnimation
-                  slug={slug}
+                  slug={productSlug}
                   shortName={product.shortName}
                   specValue={product.specs.find((s) => /thermal|conduct/i.test(s.label))?.value}
                   productCount={Object.keys(products).length}
-                  index={Object.keys(products).indexOf(slug) + 1}
+                  index={Object.keys(products).indexOf(productSlug) + 1}
                 />
 
                 <div className="grid grid-cols-2 gap-px bg-white/[0.06]">
@@ -639,7 +651,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                 <div className="rounded-xl border bg-white p-4" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
                   <Globe2 size={16} className="text-orange-600 mb-2.5" />
                   <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-neutral-400 mb-1">Distributed</div>
-                  <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>50+ countries</div>
+                  <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>90+ countries</div>
                 </div>
                 <div className="rounded-xl border bg-white p-4" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
                   <Clock size={16} className="text-orange-600 mb-2.5" />
@@ -770,7 +782,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                 </div>
                 <div className="mt-5 pt-5 border-t flex items-center justify-between" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 size={14} className="text-emerald-500" />
+                    <CheckCircle2 size={14} className="text-orange-600" />
                     <span className="text-[11px] text-neutral-500">Verified · current revision</span>
                   </div>
                   <Link href="/certifications" className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
@@ -838,7 +850,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
       <section className="relative overflow-hidden py-24 md:py-28 bg-white">
         {/* Soft ambient accents */}
         <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-orange-500/[0.07] blur-[120px] pointer-events-none" />
-        <div className="absolute -right-32 -bottom-20 w-[440px] h-[440px] rounded-full bg-amber-400/[0.08] blur-[110px] pointer-events-none" />
+        <div className="absolute -right-32 -bottom-20 w-[440px] h-[440px] rounded-full bg-orange-400/[0.08] blur-[110px] pointer-events-none" />
         <div className="absolute inset-0 grid-bg opacity-[0.035] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
 
@@ -880,7 +892,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
 
             {/* Contact card — light glass */}
             <div className="relative rounded-3xl border border-neutral-200 bg-white p-7 md:p-8 shadow-[0_30px_80px_-30px_rgba(234,88,12,0.18)]">
-              <div className="absolute inset-x-0 top-0 h-[3px] rounded-t-3xl bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400" />
+              <div className="absolute inset-x-0 top-0 h-[3px] rounded-t-3xl bg-gradient-to-r from-orange-500 via-orange-400 to-orange-400" />
               <div className="flex items-center gap-3 mb-6">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -890,7 +902,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-bold">Technical desk</div>
-                  <div className="text-neutral-900 font-bold text-sm">Sun – Thu · 08:00–18:00 GST</div>
+                  <div className="text-neutral-900 font-bold text-sm">Mon – Sat · 09:00–18:00 GST</div>
                 </div>
               </div>
 

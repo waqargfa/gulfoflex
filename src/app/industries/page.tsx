@@ -29,7 +29,7 @@ const industries = [
     desc: "Process piping insulation for refineries, petrochemical plants, upstream production, and LNG storage. Meeting NORSOK, API, and international offshore standards.",
     applications: ["Process Pipe Insulation", "LNG Storage Systems", "Flare Systems", "Offshore Platforms"],
     projects: "1,800+",
-    color: "red",
+    color: "orange",
   },
   {
     slug: "marine",
@@ -39,7 +39,7 @@ const industries = [
     desc: "Marine-grade insulation systems meeting IMO FTP Code requirements for ships, offshore vessels, naval vessels, and port infrastructure. Corrosion and moisture resistant.",
     applications: ["Ship HVAC Systems", "Engine Room Insulation", "Cargo Hold Insulation", "Offshore Vessels"],
     projects: "850+",
-    color: "blue",
+    color: "neutral",
   },
   {
     slug: "construction",
@@ -49,7 +49,7 @@ const industries = [
     desc: "Comprehensive insulation solutions for commercial, residential, hospitality, and healthcare construction. Compliant with Dubai Green Building Regulations, ADBC, and international green building standards.",
     applications: ["High-Rise Towers", "Hotels & Resorts", "Hospitals & Healthcare", "Data Centers"],
     projects: "12,000+",
-    color: "yellow",
+    color: "orange",
   },
   {
     slug: "district-cooling",
@@ -59,7 +59,7 @@ const industries = [
     desc: "Gulf-O-Flex® insulation is specified across the GCC for district cooling distribution networks, chiller plant rooms, and end-user connections — ensuring energy efficiency and condensation control.",
     applications: ["Distribution Pipes", "Chiller Plant Rooms", "End-User Connections", "Storage Tanks"],
     projects: "380+",
-    color: "cyan",
+    color: "neutral",
   },
   {
     slug: "industrial",
@@ -69,7 +69,7 @@ const industries = [
     desc: "Industrial thermal and acoustic insulation for manufacturing plants, power generation, food processing, pharmaceutical, and water treatment facilities across the region.",
     applications: ["Process Piping", "Steam Systems", "Cold Storage Plants", "Power Generation"],
     projects: "2,200+",
-    color: "purple",
+    color: "neutral",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function IndustriesPage() {
             <div className="inline-flex items-center gap-6 px-5 py-3 rounded-full border bg-white shadow-sm"
               style={{ borderColor: "rgba(0,0,0,0.08)" }}>
               <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 <span className="text-xs font-semibold text-neutral-600">{totalProjects.toLocaleString()}+ projects delivered</span>
               </div>
               <span className="w-px h-4 bg-neutral-200" />

@@ -27,7 +27,7 @@ const openRoles = [
     location: "Riyadh, Saudi Arabia",
     type: "Full-time",
     level: "Mid-Senior",
-    color: "blue",
+    color: "neutral",
     desc: "Lead sales strategy and key account management across the Kingdom of Saudi Arabia. Build distribution partnerships, win specification on major projects, and grow Gulf-O-Flex® market share in the Kingdom's booming construction and industrial sectors.",
     requirements: ["5+ years construction sales", "Strong KSA market network", "Arabic speaker required", "Track record with large accounts"],
   },
@@ -37,7 +37,7 @@ const openRoles = [
     location: "Ajman, UAE",
     type: "Full-time",
     level: "Mid-level",
-    color: "green",
+    color: "orange",
     desc: "Supervise day-to-day production operations at our flagship Ajman manufacturing facility. Coordinate shift teams, monitor output quality against ISO 9001 standards, and drive continuous improvement initiatives.",
     requirements: ["Engineering diploma or degree", "3+ years in manufacturing", "ISO 9001 / Lean experience", "Mandarin or Hindi a plus"],
   },
@@ -47,7 +47,7 @@ const openRoles = [
     location: "Ajman, UAE (Hybrid)",
     type: "Full-time",
     level: "Mid-level",
-    color: "purple",
+    color: "neutral",
     desc: "Drive Gulf-O-Flex®'s digital presence across SEO, SEM, LinkedIn, and technical content marketing. Collaborate with engineering teams to create compelling technical content that resonates with HVAC consultants and procurement professionals.",
     requirements: ["3+ years B2B digital marketing", "SEO & content strategy", "LinkedIn Ads experience", "Technical writing ability"],
   },
@@ -57,7 +57,7 @@ const openRoles = [
     location: "Ajman, UAE",
     type: "Full-time",
     level: "Junior-Mid",
-    color: "cyan",
+    color: "neutral",
     desc: "Coordinate international shipments to our network of 90+ country distributors. Manage freight forwarders, export documentation, LC handling, and customer delivery communication.",
     requirements: ["2+ years freight/logistics", "Export documentation knowledge", "ERP system experience", "English + Arabic required"],
   },
@@ -67,7 +67,7 @@ const openRoles = [
     location: "Ajman, UAE",
     type: "Full-time",
     level: "Senior",
-    color: "red",
+    color: "orange",
     desc: "Lead elastomeric rubber compound development for our next generation of NBR and XLPE insulation products. Work in our in-house laboratory to develop formulations that meet evolving fire, environmental, and performance standards.",
     requirements: ["B.Sc / M.Sc in Chemistry or Materials", "Rubber / polymer compounding", "Experience with fire testing", "Publications a plus"],
   },
@@ -113,7 +113,7 @@ export default function CareersPage() {
                     <Sparkles size={14} className="text-orange-600" />
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">Life at GOF</div>
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 </div>
                 <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {[

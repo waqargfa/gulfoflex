@@ -64,7 +64,7 @@ export default function PageLoader() {
           position: "fixed",
           inset: 0,
           zIndex: 99999,
-          background: "#07070E",
+          background: "#0a0a0a",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -104,7 +104,7 @@ export default function PageLoader() {
           width: "clamp(200px, 40vw, 340px)",
           height: 1,
           marginTop: 16,
-          background: "linear-gradient(90deg, transparent, #f97316 30%, #fbbf24 50%, #f97316 70%, transparent)",
+          background: "linear-gradient(90deg, transparent, #f97316 30%, #fdba74 50%, #f97316 70%, transparent)",
           transformOrigin: "center",
           animation: "_gl_underline 0.6s cubic-bezier(0.4,0,0.2,1) 0.8s both",
         }} />
@@ -118,7 +118,7 @@ export default function PageLoader() {
         }}>
           <div style={{
             height: "100%",
-            background: "linear-gradient(90deg, #f97316, #fbbf24 55%, #f97316)",
+            background: "linear-gradient(90deg, #f97316, #fdba74 55%, #f97316)",
             boxShadow: "0 0 8px 1px rgba(249,115,22,0.6)",
             transformOrigin: "left center",
             animation: "_gl_bar 2.2s cubic-bezier(0.4,0,0.2,1) 0.2s both",

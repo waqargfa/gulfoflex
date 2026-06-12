@@ -160,7 +160,7 @@
   .blue-glow {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0) 60%);
+    background: radial-gradient(circle, rgba(115, 115, 115, 0.18) 0%, rgba(115, 115, 115, 0) 60%);
     filter: blur(80px);
     pointer-events: none;
   }
@@ -833,3 +833,187 @@
 /* Hidden scrollbars (for sticky chip nav and similar horizontal rails) */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============================================
+   CORPORATE DESIGN SYSTEM — UPGRADE LAYER
+   ============================================ */
+
+/* ── Premium Light Section ── */
+.corp-section-light {
+  background: #ffffff;
+  position: relative;
+}
+.corp-section-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(249,115,22,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249,115,22,0.028) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+/* ── Premium Off-White Section ── */
+.corp-section-warm {
+  background: linear-gradient(180deg, #fafaf8 0%, #f7f5f2 100%);
+  position: relative;
+}
+
+/* ── Signature Dark Section (rich, not flat) ── */
+.corp-section-dark {
+  background: linear-gradient(160deg, #0f0e0c 0%, #0a0908 55%, #0d0b09 100%);
+  position: relative;
+}
+.corp-section-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* ── Corporate white card ── */
+.corp-card {
+  background: #ffffff;
+  border: 1px solid rgba(10,10,10,0.07);
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(10,10,10,0.04), 0 8px 32px -12px rgba(10,10,10,0.08);
+  transition: box-shadow 0.45s var(--ease-out-expo), transform 0.45s var(--ease-out-expo), border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.corp-card:hover {
+  border-color: rgba(249,115,22,0.22);
+  box-shadow: 0 2px 6px rgba(10,10,10,0.04), 0 20px 56px -16px rgba(249,115,22,0.15), 0 12px 24px -8px rgba(10,10,10,0.08);
+  transform: translateY(-4px);
+}
+.corp-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(249,115,22,0), transparent);
+  transition: background 0.45s ease;
+  pointer-events: none;
+}
+.corp-card:hover::before {
+  background: linear-gradient(90deg, transparent, rgba(249,115,22,0.55) 50%, transparent);
+}
+
+/* ── Orange accent card (on white) ── */
+.corp-card-orange {
+  background: linear-gradient(160deg, rgba(249,115,22,0.07) 0%, rgba(249,115,22,0.02) 100%);
+  border: 1px solid rgba(249,115,22,0.18);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px -8px rgba(249,115,22,0.10);
+  transition: box-shadow 0.45s var(--ease-out-expo), transform 0.45s var(--ease-out-expo), border-color 0.35s ease;
+}
+.corp-card-orange:hover {
+  border-color: rgba(249,115,22,0.38);
+  box-shadow: 0 12px 48px -12px rgba(249,115,22,0.22);
+  transform: translateY(-4px);
+}
+
+/* ── Dark glass card (on dark sections) ── */
+.dark-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.45s var(--ease-out-expo);
+}
+.dark-card:hover {
+  background: rgba(255,255,255,0.055);
+  border-color: rgba(249,115,22,0.25);
+  transform: translateY(-3px);
+}
+
+/* ── Section top ornament ── */
+.section-top-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(249,115,22,0.4) 50%, transparent);
+  pointer-events: none;
+}
+
+/* ── Premium stat pill (on light bg) ── */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.03));
+  border: 1px solid rgba(249,115,22,0.18);
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+}
+
+/* ── Feature icon box ── */
+.feature-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(249,115,22,0.04));
+  border: 1px solid rgba(249,115,22,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.feature-icon:hover, .group:hover .feature-icon {
+  background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(249,115,22,0.08));
+  transform: scale(1.06);
+}
+
+/* ── Gradient heading text (warm, on white) ── */
+.heading-gradient-warm {
+  background: linear-gradient(120deg, #0a0a0a 0%, #1c1917 40%, #78350f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Separator dot ── */
+.sep-dot::before {
+  content: "·";
+  margin: 0 0.5rem;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ── Corporate number stat (on light bg) ── */
+.corp-stat-value {
+  font-family: var(--font-display), ui-sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--orange-darker) 0%, var(--orange) 60%, #fb923c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+/* ── Ambient glow orb ── */
+.glow-orb-orange {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, rgba(249,115,22,0.06) 35%, transparent 65%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.glow-orb-warm {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 65%);
+  filter: blur(100px);
+  pointer-events: none;
+}

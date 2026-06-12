@@ -304,8 +304,8 @@ export default function ProductsPage() {
                 <div className="relative flex items-center justify-between px-6 py-4 border-b border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span className="relative flex h-2.5 w-2.5">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50 animate-ping" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.7)]" />
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-50 animate-ping" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-400 shadow-[0_0_12px_rgba(249,115,22,0.7)]" />
                     </span>
                     <span className="text-[10px] tracking-[0.22em] uppercase font-bold text-white/65">Live Simulation</span>
                   </div>

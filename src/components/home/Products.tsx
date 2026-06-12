@@ -85,7 +85,7 @@ const products = [
     tagline: "Next-generation NBR/EPDM hybrid closed-cell foam with industry-leading thermal conductivity of 0.030 W/m·K at 0°C — engineered for chilled water, district cooling, and low-temperature process lines.",
     features: ["λ 0.030 W/m·K @ 0°C", "−50°C to +115°C", "μ > 7,300"],
     icon: ShieldCheck,
-    image: "/images/products/nbr-roll.webp",
+    image: "/images/products/ultra/ultra.png",
     href: "/products/ultra",
     badge: "Premium",
   },
@@ -97,7 +97,7 @@ const products = [
     tagline: "Factory pre-insulated continuous copper tube line system — nitrogen-charged copper + closed-cell NBR core + UV-stable LDPE jacket, supplied in coils up to 50 m for VRF/VRV, split AC, chilled water and solar thermal piping.",
     features: ["Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral vapour barrier"],
     icon: Layers,
-    image: "/images/products/xlpe-banner.jpg",
+    image: "/images/products/ultra/ultraline.png",
     href: "/products/ultraline",
     badge: "System",
   },
@@ -173,10 +173,6 @@ export default function Products() {
         {/* ── Header ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14 lg:mb-20 reveal">
           <div className="lg:col-span-7">
-            <div className="eyebrow mb-6">
-              <span className="eyebrow-dot" />
-              Product Range · 8 Engineered Systems
-            </div>
             <h2
               id="products-heading"
               className="text-neutral-900 leading-[0.95]"
@@ -530,12 +526,6 @@ export default function Products() {
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-2xl">
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-5"
-                style={{ background: "rgba(249,115,22,0.12)", color: "#fb923c", border: "1px solid rgba(249,115,22,0.30)" }}
-              >
-                <ActiveIcon size={11} /> Engineering Support
-              </div>
               <h3
                 className="text-white leading-[1.05] mb-3"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.03em" }}

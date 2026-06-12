@@ -14,7 +14,7 @@ const SLIDES = [
     line1:    "Engineered",
     line2a:   "for\u00a0",
     line2b:   "Extreme",
-    line3:    "performance.",
+    line3:    "performance",
     subtitle: null,                   // resolved from country context
     cta1:     { label: "Explore Products",    href: "/products" },
     cta2:     { label: "GOF Assist AI",       href: "/gulf-o-flex-assist" },
@@ -25,7 +25,7 @@ const SLIDES = [
     line2a:   "to\u00a0",
     line2b:   "Global",
     line3:    "standards.",
-    subtitle: "ISO 9001 · FM Approved · UL Listed · EPD Verified — every roll ships with the world's most rigorous third-party certifications behind it.",
+    subtitle: "ISO 9001 · FM Approved · UL Listed · EPD Verified · TUV Singapore · Singapore Green Building · CE & Reach Mark · Saudi Made — every roll ships with the world's most rigorous third-party certifications behind it.",
     cta1:     { label: "View Certifications", href: "/certifications" },
     cta2:     { label: "Our Projects",        href: "/projects" },
   },
@@ -39,13 +39,6 @@ const SLIDES = [
     cta1:     { label: "Find a Distributor",  href: "/distributors" },
     cta2:     { label: "About Us",            href: "/about" },
   },
-];
-
-const METRICS = [
-  { value: "30+",  label: "Years Manufacturing" },
-  { value: "56%",  label: "GCC Market Share" },
-  { value: "90+",  label: "Export Countries" },
-  { value: "10K+", label: "Projects Delivered" },
 ];
 
 /* ─────────────────────────── component ──────────────────────────── */
@@ -146,8 +139,8 @@ export default function Hero() {
           style={{ background: "radial-gradient(circle, rgba(249,115,22,0.22) 0%, rgba(249,115,22,0.06) 40%, transparent 70%)", filter: "blur(40px)" }}
         />
         <div
-          className="absolute -bottom-40 -left-32 w-[720px] h-[720px] rounded-full opacity-60"
-          style={{ background: "radial-gradient(circle, rgba(56,189,248,0.18) 0%, rgba(56,189,248,0.05) 45%, transparent 75%)", filter: "blur(60px)" }}
+          className="absolute -bottom-40 -left-32 w-[720px] h-[720px] rounded-full opacity-50"
+          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.14) 0%, rgba(249,115,22,0.04) 45%, transparent 75%)", filter: "blur(60px)" }}
         />
 
         <div className="absolute inset-0 grid-bg opacity-[0.18]" />
@@ -196,14 +189,16 @@ export default function Hero() {
             }}
           >
             {/* ── Heading — staggered per-line ── */}
-            <h1 className="mega-heading overflow-hidden">
+            <h1 className="mega-heading">
               <span
                 className="block overflow-hidden"
                 style={{
                   animation: `hero-word 700ms cubic-bezier(0.19,1,0.22,1) ${isRight ? "120ms" : "80ms"} both`,
+                  paddingTop: "0.08em",
+                  marginTop: "-0.08em",
                 }}
               >
-                <span className="inline-block text-white">{slide.line1}</span>
+                <span className="inline-block text-white" style={{ lineHeight: 1.02 }}>{slide.line1}</span>
               </span>
               <span
                 className="block overflow-hidden"
@@ -289,22 +284,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Stats strip ── */}
-      <div className="relative z-10 border-t border-white/10 backdrop-blur-md bg-black/55">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 lg:grid-cols-4">
-            {(country.initiative?.metrics ?? METRICS).map((m, i) => (
-              <div
-                key={m.label}
-                className={`px-6 py-6 lg:py-7 hover:bg-white/5 transition-colors duration-300${i % 2 === 1 ? " border-l border-white/10" : ""}${i > 0 && i % 2 === 0 ? " lg:border-l lg:border-white/10" : ""}`}
-              >
-                <div className="stat-number text-3xl md:text-4xl xl:text-5xl leading-none">{m.value}</div>
-                <div className="mt-2 text-xs text-white/45 font-medium tracking-wide">{m.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

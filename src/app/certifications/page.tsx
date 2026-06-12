@@ -21,7 +21,7 @@ import PageHero from "@/components/layout/PageHero";
 export const metadata: Metadata = {
   title: "Certifications & Compliance | Gulf-O-Flex® ISO 9001, FM Approved, UL Listed",
   description:
-    "Gulf-O-Flex® holds ISO 9001, ISO 14001, FM Approved, and UL Listed certifications. Our products meet BS 476, ASTM E84, EN 13501-1, NFPA, ASHRAE, and IMO standards.",
+    "Gulf-O-Flex® holds ISO 9001, ISO 14001, FM Approved, UL Listed, TUV Singapore, Singapore Green Building, CE & REACH, and Saudi Made certifications. Our products meet BS 476, ASTM E84, EN 13501-1, NFPA, ASHRAE, and IMO standards.",
   alternates: { canonical: "https://gulfoflex.com/certifications" },
 };
 
@@ -39,7 +39,7 @@ const certifications = [
     name: "ISO 14001:2015",
     authority: "Bureau Veritas",
     category: "Environmental",
-    color: "green",
+    color: "orange",
     desc: "Environmental Management System certification. Demonstrates our commitment to reducing environmental impact, managing waste, and sustainable manufacturing practices.",
     scope: "Environmental management of manufacturing operations",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-14001:2015.pdf",
@@ -48,7 +48,7 @@ const certifications = [
     name: "ISO 45001:2018",
     authority: "Bureau Veritas",
     category: "Occupational H&S",
-    color: "blue",
+    color: "neutral",
     desc: "Occupational Health and Safety Management System certification. Demonstrates our commitment to a safe and healthy workplace across all manufacturing operations.",
     scope: "Health & safety management of manufacturing operations",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-45001-2028.pdf",
@@ -57,7 +57,7 @@ const certifications = [
     name: "FM Approved",
     authority: "FM Global",
     category: "Fire Safety",
-    color: "red",
+    color: "orange",
     desc: "FM Approved certification — one of the world's most recognized and demanding fire safety approvals. Covers thermal, fire, and smoke performance to FM 4924 standards.",
     scope: "NBR closed-cell elastomeric insulation products",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-FM-4924.pdf",
@@ -66,7 +66,7 @@ const certifications = [
     name: "UL Listed",
     authority: "Underwriters Laboratories",
     category: "Fire Safety",
-    color: "red",
+    color: "orange",
     desc: "UL Listed for surface burning characteristics to ASTM E84 / UL 723. Verifies flame spread and smoke developed indices for North American specification.",
     scope: "Elastomeric insulation — ASTM E84 / UL 723",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-UL.pdf",
@@ -75,7 +75,7 @@ const certifications = [
     name: "DCL",
     authority: "Dubai Central Laboratory",
     category: "UAE Compliance",
-    color: "yellow",
+    color: "orange",
     desc: "Dubai Central Laboratory product certification. Mandatory product listing for materials specified on projects within the Emirate of Dubai, verifying conformity to UAE technical regulations.",
     scope: "Insulation products — Dubai Municipality requirements",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCL-Al-Safat-Dubai-Green-Building.pdf",
@@ -84,7 +84,7 @@ const certifications = [
     name: "DCD",
     authority: "Dubai Civil Defence",
     category: "UAE Fire Code",
-    color: "purple",
+    color: "neutral",
     desc: "Dubai Civil Defence approval for fire-rated insulation. Required listing under the UAE Fire & Life Safety Code of Practice for materials installed in buildings across Dubai.",
     scope: "Fire-rated insulation — UAE Fire & Life Safety Code",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCD.pdf",
@@ -93,10 +93,46 @@ const certifications = [
     name: "EPD",
     authority: "EPD International / IBU",
     category: "Sustainability",
-    color: "green",
+    color: "orange",
     desc: "Environmental Product Declaration verified to ISO 14025 / EN 15804. Transparent, third-party Life-Cycle Assessment data for LEED, BREEAM, and Estidama credits.",
     scope: "Life-cycle environmental performance disclosure",
     pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/EPD-Catalogue.pdf",
+  },
+  {
+    name: "TUV Singapore",
+    authority: "TÜV SÜD",
+    category: "International Certification",
+    color: "orange",
+    desc: "TÜV SÜD Singapore certification — one of the world's most respected testing, inspection, and certification marks. Verifies product safety, quality, and compliance to international standards.",
+    scope: "Elastomeric insulation products — safety and quality compliance",
+    pdfUrl: "",
+  },
+  {
+    name: "Singapore Green Building",
+    authority: "Singapore Green Building Council",
+    category: "Sustainability",
+    color: "orange",
+    desc: "Singapore Green Building Product certification. Recognizes products that meet the environmental and sustainability criteria set by the Singapore Green Building Council (SGBC) for green building projects.",
+    scope: "Green building — environmental and sustainability standards",
+    pdfUrl: "",
+  },
+  {
+    name: "CE & Reach Mark",
+    authority: "European Union",
+    category: "EU Compliance",
+    color: "neutral",
+    desc: "CE marking and REACH compliance for products sold in the European Economic Area. CE verifies conformity to EU health, safety, and environmental protection standards. REACH ensures safe chemical substances throughout manufacturing.",
+    scope: "EU market access — CE marking and REACH chemical regulation compliance",
+    pdfUrl: "",
+  },
+  {
+    name: "Saudi Made",
+    authority: "Saudi Authority for Industrial Cities & Technology Zones (MODON)",
+    category: "Saudi Arabia Compliance",
+    color: "orange",
+    desc: "Saudi Made certification — a national mark awarded to products manufactured in Saudi Arabia, promoting local industry and verifying that products meet Saudi national quality and manufacturing standards.",
+    scope: "Local manufacturing and quality standards — Kingdom of Saudi Arabia",
+    pdfUrl: "",
   },
 ];
 
@@ -140,10 +176,10 @@ export default function CertificationsPage() {
               {/* Trust chips */}
               <div className="flex flex-wrap items-center gap-2.5">
                 {[
-                  { icon: Flame,        label: "Fire Safety",     accent: "rgb(220,38,38)" },
+                  { icon: Flame,        label: "Fire Safety",     accent: "rgb(234,88,12)" },
                   { icon: ShieldCheck,  label: "Quality (ISO 9001)", accent: "rgb(234,88,12)" },
-                  { icon: Leaf,         label: "Sustainability",  accent: "rgb(5,150,105)" },
-                  { icon: Building2,    label: "UAE & GCC Listed", accent: "rgb(37,99,235)" },
+                  { icon: Leaf,         label: "Sustainability",  accent: "rgb(194,65,12)" },
+                  { icon: Building2,    label: "UAE & GCC Listed", accent: "rgb(115,115,115)" },
                 ].map((c) => {
                   const Icon = c.icon;
                   return (
@@ -172,8 +208,8 @@ export default function CertificationsPage() {
                     <BadgeCheck size={14} className="text-orange-600" />
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">Trust signals</div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.14em] uppercase text-emerald-600">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.14em] uppercase text-orange-600">
+                    <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                     Live
                   </span>
                 </div>
@@ -348,7 +384,7 @@ export default function CertificationsPage() {
               {
                 icon: Globe2,
                 title: "Globally recognized",
-                body: "Marks accepted by consultants and authorities in 90+ markets — ISO, FM, UL, Dubai Civil Defence, LEED, BREEAM, Estidama.",
+                body: "Marks accepted by consultants and authorities in 90+ markets — ISO, FM, UL, TUV, Singapore Green Building, CE & REACH, Saudi Made, Dubai Civil Defence, LEED, BREEAM, Estidama.",
               },
               {
                 icon: RefreshCw,

@@ -61,10 +61,6 @@ export default function TechShowcase() {
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="reveal-left">
-            <div className="eyebrow mb-5">
-              <span className="eyebrow-dot" />
-              Technology &amp; Innovation
-            </div>
             <h2
               id="tech-heading"
               className="text-neutral-900 mb-5 leading-[1.02]"
@@ -91,66 +87,86 @@ export default function TechShowcase() {
             </div>
           </div>
 
-          {/* Platform preview visual */}
+          {/* Platform preview visual — premium light app UI */}
           <div className="reveal relative">
-            <div className="relative rounded-3xl bg-neutral-950 border border-neutral-200/10 overflow-hidden p-6 aspect-square max-w-md ml-auto shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
-              {/* Dark grid bg */}
-              <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(249,115,22,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-              {/* Top orange line */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/60 to-transparent" />
-              <div className="relative z-10 space-y-4">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-orange-500/20 flex items-center justify-center">
-                      <Cpu size={14} className="text-orange-600" />
+            {/* App window chrome */}
+            <div className="relative rounded-3xl bg-white border border-neutral-200 overflow-hidden max-w-md ml-auto shadow-[0_32px_80px_-16px_rgba(10,10,10,0.14),0_0_0_1px_rgba(10,10,10,0.04)]">
+              {/* Window title bar */}
+              <div className="flex items-center justify-between px-5 py-3.5 border-b border-neutral-100 bg-neutral-50/80">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex gap-1.5">
+                    <span className="w-3 h-3 rounded-full bg-neutral-200" />
+                    <span className="w-3 h-3 rounded-full bg-neutral-200" />
+                    <span className="w-3 h-3 rounded-full bg-orange-400" />
+                  </div>
+                  <div className="flex items-center gap-1.5 ml-2">
+                    <div className="w-5 h-5 rounded-md bg-orange-500/15 flex items-center justify-center">
+                      <Cpu size={11} className="text-orange-600" />
                     </div>
-                    <span className="text-neutral-200 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>GOF Assist</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs text-neutral-500">Live</span>
+                    <span className="text-neutral-700 font-bold text-xs" style={{ fontFamily: "var(--font-display)" }}>GOF Assist</span>
                   </div>
                 </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+                  <span className="text-[10px] text-neutral-400 font-medium">Live</span>
+                </div>
+              </div>
+              {/* Orange accent line below title bar */}
+              <div className="h-[2px] bg-gradient-to-r from-orange-500 via-orange-400 to-transparent" />
 
-                {/* Mock input */}
-                <div className="rounded-xl p-4 border border-white/8 bg-white/5">
-                  <div className="text-xs text-neutral-400 mb-1">Pipe: DN100 · Fluid: Chilled Water · 7°C</div>
-                  <div className="text-xs text-neutral-400">Location: Dubai, UAE · Ambient: 35°C</div>
+              <div className="p-5 space-y-3">
+                {/* Input card */}
+                <div className="rounded-xl p-4 border border-neutral-100 bg-neutral-50">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-neutral-400 mb-2">Project Parameters</div>
+                  <div className="text-xs text-neutral-600 mb-1">Pipe: <span className="text-neutral-900 font-semibold">DN100</span> · Fluid: <span className="text-neutral-900 font-semibold">Chilled Water · 7°C</span></div>
+                  <div className="text-xs text-neutral-600">Location: <span className="text-neutral-900 font-semibold">Dubai, UAE</span> · Ambient: <span className="text-neutral-900 font-semibold">35°C</span></div>
                 </div>
 
-                {/* Mock output */}
-                <div className="rounded-xl p-4 bg-orange-500/15 border border-orange-500/30">
-                  <div className="text-xs text-orange-400 font-bold uppercase tracking-wider mb-2">AI Recommendation</div>
-                  <div className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
+                {/* AI output card */}
+                <div className="rounded-xl p-4 bg-gradient-to-br from-orange-500/10 to-orange-400/5 border border-orange-500/20">
+                  <div className="flex items-center gap-1.5 mb-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                    <div className="text-[10px] text-orange-600 font-bold uppercase tracking-wider">AI Recommendation</div>
+                  </div>
+                  <div className="text-neutral-900 font-black text-base mb-1" style={{ fontFamily: "var(--font-display)" }}>
                     Gulf-O-Flex® NBR
                   </div>
-                  <div className="text-neutral-300 text-xs mt-1">Thickness: 38mm · λ: 0.034 W/mK</div>
-                  <div className="flex items-center gap-4 mt-3">
+                  <div className="text-neutral-500 text-xs mb-3">Thickness: 38mm · λ: 0.034 W/mK</div>
+                  <div className="flex items-center gap-4">
                     <div>
-                      <div className="text-orange-400 font-black text-base" style={{ fontFamily: "var(--font-display)" }}>94%</div>
+                      <div className="text-orange-600 font-black text-sm" style={{ fontFamily: "var(--font-display)" }}>94%</div>
                       <div className="text-neutral-400 text-[10px]">Heat Loss Prevented</div>
                     </div>
                     <div>
-                      <div className="text-green-400 font-black text-base">✓</div>
+                      <div className="text-orange-600 font-black text-sm">✓</div>
                       <div className="text-neutral-400 text-[10px]">ASHRAE Compliant</div>
                     </div>
                     <div>
-                      <div className="text-green-400 font-black text-base">✓</div>
+                      <div className="text-orange-600 font-black text-sm">✓</div>
                       <div className="text-neutral-400 text-[10px]">No Condensation</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Chart bars */}
-                <div className="rounded-xl p-4 border border-white/8 bg-white/5">
-                  <div className="text-xs text-neutral-400 mb-3">Energy Savings Analysis</div>
-                  <div className="flex items-end gap-2 h-16">
-                    {[40, 65, 80, 92, 88, 95].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 bg-gradient-to-t from-orange-500/80 to-orange-400/40 rounded-sm"
-                        style={{ height: `${h}%`, transition: `height ${i * 150 + 500}ms ease` }}
-                      />
+                <div className="rounded-xl p-4 border border-neutral-100 bg-neutral-50">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-neutral-400">Energy Savings Analysis</div>
+                    <div className="text-[10px] text-orange-600 font-bold">+38% avg</div>
+                  </div>
+                  <div className="flex items-end gap-2 h-14">
+                    {[40, 65, 80, 92, 88, 95].map((h, idx) => (
+                      <div key={idx} className="flex-1 flex flex-col justify-end gap-0.5">
+                        <div
+                          className="w-full rounded-sm bg-gradient-to-t from-orange-500 to-orange-300/70"
+                          style={{ height: `${h}%`, transition: `height ${idx * 150 + 500}ms ease` }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex justify-between mt-1.5">
+                    {["Jan","Feb","Mar","Apr","May","Jun"].map(m => (
+                      <span key={m} className="text-[8px] text-neutral-300 flex-1 text-center">{m}</span>
                     ))}
                   </div>
                 </div>
@@ -158,9 +174,19 @@ export default function TechShowcase() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -left-4 bottom-1/4 glass-card rounded-xl px-4 py-3 border border-neutral-200 shadow-xl">
+            <div className="absolute -left-4 bottom-1/4 bg-white rounded-xl px-4 py-3 border border-neutral-200 shadow-[0_8px_32px_rgba(10,10,10,0.10)]">
               <div className="text-orange-600 font-black text-xl" style={{ fontFamily: "var(--font-display)" }}>AI</div>
-              <div className="text-neutral-500 text-[10px] uppercase tracking-wide">Powered</div>
+              <div className="text-neutral-400 text-[10px] uppercase tracking-wide">Powered</div>
+            </div>
+            {/* Second floating badge — top right */}
+            <div className="absolute -right-3 top-1/4 bg-white rounded-xl px-3 py-2.5 border border-neutral-200 shadow-[0_8px_32px_rgba(10,10,10,0.10)] flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                <Thermometer size={12} className="text-orange-600" />
+              </div>
+              <div>
+                <div className="text-neutral-900 font-bold text-xs">−40°C to +105°C</div>
+                <div className="text-neutral-400 text-[9px]">Operating Range</div>
+              </div>
             </div>
           </div>
         </div>

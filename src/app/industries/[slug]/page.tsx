@@ -28,7 +28,7 @@ const industries = {
     icon: Flame,
     name: "Oil & Gas",
     tagline: "Process insulation for upstream, midstream and downstream operations",
-    color: "red",
+    color: "orange",
     description: [
       "The oil and gas sector demands insulation that performs reliably in extreme temperatures, corrosive environments, and safety-critical applications. Gulf-O-Flex® provides certified insulation solutions for refineries, petrochemical plants, LNG facilities, and offshore platforms.",
       "Our insulation systems meet NORSOK, API, and ISO requirements for process piping and are compatible with fire protection systems, supporting safety-critical applications from cryogenic storage to high-temperature steam systems.",
@@ -47,7 +47,7 @@ const industries = {
     icon: Anchor,
     name: "Marine & Shipbuilding",
     tagline: "IMO FTP compliant insulation systems for sea applications",
-    color: "blue",
+    color: "neutral",
     description: [
       "Marine environments present unique challenges: salt air corrosion, constant vibration, high humidity, and strict fire safety regulations governed by the International Maritime Organization (IMO) FTP Code. Gulf-O-Flex® marine-grade insulation is specifically formulated to meet these demands.",
       "From HVAC systems on cruise ships to process piping on offshore production platforms, Gulf-O-Flex® delivers certified performance backed by IMO FTP Code compliance and major class society approvals.",
@@ -66,7 +66,7 @@ const industries = {
     icon: Building,
     name: "Construction",
     tagline: "From residential towers to landmark commercial developments",
-    color: "yellow",
+    color: "orange",
     description: [
       "Construction projects across the GCC depend on Gulf-O-Flex® for thermal and acoustic insulation of HVAC systems, plumbing, and building services. Our products meet Dubai Green Building Regulations, ADBC, and international green building certification requirements including LEED and BREEAM.",
       "With over 12,000 completed construction projects, Gulf-O-Flex® is the contractor's first choice — backed by comprehensive technical support, regional availability, and a trusted brand recognized by consultants and authorities.",
@@ -85,7 +85,7 @@ const industries = {
     icon: Thermometer,
     name: "District Cooling",
     tagline: "High-efficiency insulation for district cooling networks",
-    color: "cyan",
+    color: "neutral",
     description: [
       "The GCC operates some of the world's largest district cooling networks, with Dubai and Abu Dhabi leading in district cooling adoption. Gulf-O-Flex® is the primary insulation specified for district cooling distribution mains, branch connections, and end-user interfaces.",
       "Our closed-cell NBR insulation's extremely high vapor diffusion resistance factor (μ ≥ 7,300) ensures zero condensation on chilled water pipes carrying temperatures as low as 3°C, even in the region's extreme humidity conditions.",
@@ -104,7 +104,7 @@ const industries = {
     icon: Factory,
     name: "Industrial Plants",
     tagline: "Insulation solutions for process-critical industrial applications",
-    color: "purple",
+    color: "neutral",
     description: [
       "Industrial manufacturing plants, power generation facilities, food processing plants, pharmaceutical factories, and water treatment works all have demanding insulation requirements. Gulf-O-Flex® provides complete industrial insulation systems engineered for reliability, safety, and regulatory compliance.",
       "Our products are compatible with standard pipe sizes up to DN500 and are available in thicknesses up to 100mm, covering the widest range of industrial applications from cold utilities to high-temperature process systems.",
@@ -208,7 +208,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                 style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                 <div className="px-7 py-4 border-b flex items-center justify-between" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                   <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">By the numbers</div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 </div>
                 <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {industry.stats.map((s) => (

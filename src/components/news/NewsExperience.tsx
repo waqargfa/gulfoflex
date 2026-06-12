@@ -67,10 +67,10 @@ export type GalleryItem = {
 
 const accentMap: Record<string, { text: string; bg: string; border: string; ring: string }> = {
   orange: { text: "text-orange-700", bg: "bg-orange-50", border: "border-orange-200", ring: "ring-orange-500/30" },
-  blue:   { text: "text-blue-700",   bg: "bg-blue-50",   border: "border-blue-200",   ring: "ring-blue-500/30" },
-  green:  { text: "text-emerald-700",bg: "bg-emerald-50",border: "border-emerald-200",ring: "ring-emerald-500/30" },
-  purple: { text: "text-purple-700", bg: "bg-purple-50", border: "border-purple-200", ring: "ring-purple-500/30" },
-  cyan:   { text: "text-cyan-700",   bg: "bg-cyan-50",   border: "border-cyan-200",   ring: "ring-cyan-500/30" },
+  blue:   { text: "text-neutral-700",bg: "bg-neutral-50",border: "border-neutral-200",ring: "ring-neutral-500/30" },
+  green:  { text: "text-orange-700", bg: "bg-orange-50", border: "border-orange-200", ring: "ring-orange-500/30" },
+  purple: { text: "text-neutral-700",bg: "bg-neutral-50",border: "border-neutral-200",ring: "ring-neutral-500/30" },
+  cyan:   { text: "text-neutral-700",bg: "bg-neutral-50",border: "border-neutral-200",ring: "ring-neutral-500/30" },
 };
 
 export default function NewsExperience({
@@ -258,7 +258,7 @@ export default function NewsExperience({
                       <Tag size={9} />{slide.category}
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.18em] uppercase px-2.5 py-1.5 rounded-full border border-white/20 bg-white/10 text-white backdrop-blur">
-                      <Radio size={10} className="animate-pulse text-emerald-400" /> Live · {articles.length} stories
+                      <Radio size={10} className="animate-pulse text-orange-400" /> Live · {articles.length} stories
                     </span>
                     {slide.trending && (
                       <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.18em] uppercase px-2.5 py-1.5 rounded-full border border-orange-400/40 bg-orange-500/15 text-orange-300">
@@ -775,7 +775,7 @@ function FeaturedHero({
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
       {/* Visual */}
-      <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-amber-700">
+      <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700">
         {article.image ? (
           <>
             <Image

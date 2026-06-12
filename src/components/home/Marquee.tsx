@@ -33,18 +33,18 @@ const COUNTRY_CLIENTS: Record<string, Client[]> = {
    Generic consultants / EPCs marquee (shown when no country clients)
 ───────────────────────────────────────────────────────────────────── */
 const genericPartners: { name: string; short: string; accent: string }[] = [
-  { name: "ALEC",          short: "AL",  accent: "#1D3557" },
-  { name: "DRAKE & SCULL", short: "DS",  accent: "#2563EB" },
+  { name: "ALEC",          short: "AL",  accent: "#525252" },
+  { name: "DRAKE & SCULL", short: "DS",  accent: "#737373" },
   { name: "KEO",           short: "KE",  accent: "#F97316" },
-  { name: "WSP",           short: "WS",  accent: "#CC0000" },
-  { name: "AECOM",         short: "AE",  accent: "#FF6600" },
-  { name: "BECHTEL",       short: "BC",  accent: "#003087" },
-  { name: "PARSONS",       short: "PA",  accent: "#00205B" },
-  { name: "JACOBS",        short: "JA",  accent: "#C8102E" },
+  { name: "WSP",           short: "WS",  accent: "#525252" },
+  { name: "AECOM",         short: "AE",  accent: "#FB923C" },
+  { name: "BECHTEL",       short: "BC",  accent: "#737373" },
+  { name: "PARSONS",       short: "PA",  accent: "#525252" },
+  { name: "JACOBS",        short: "JA",  accent: "#737373" },
   { name: "ARCADIS",       short: "AC",  accent: "#F97316" },
-  { name: "L&T",           short: "L&T", accent: "#0EA5E9" },
-  { name: "CCC",           short: "CC",  accent: "#10B981" },
-  { name: "ARAMCO",        short: "AR",  accent: "#009A44" },
+  { name: "L&T",           short: "L&T", accent: "#737373" },
+  { name: "CCC",           short: "CC",  accent: "#525252" },
+  { name: "ARAMCO",        short: "AR",  accent: "#737373" },
 ];
 
 const specs = [
@@ -70,9 +70,9 @@ function ClientLogoBadge({ client }: { client: Client }) {
         style={{
           width: 84,
           height: 84,
-          background: "rgba(255,255,255,0.96)",
-          borderColor: "rgba(255,255,255,0.12)",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.35)",
+          background: "#ffffff",
+          borderColor: "rgba(10,10,10,0.09)",
+          boxShadow: "0 2px 12px rgba(10,10,10,0.07), 0 1px 3px rgba(10,10,10,0.04)",
         }}
       >
         {/* Hover tint */}
@@ -105,7 +105,7 @@ function ClientLogoBadge({ client }: { client: Client }) {
       </div>
 
       <span
-        className="text-neutral-500 group-hover:text-neutral-200 transition-colors duration-400 text-center leading-tight"
+        className="text-neutral-400 group-hover:text-orange-600 transition-colors duration-400 text-center leading-tight"
         style={{
           fontSize: "0.5rem",
           fontWeight: 700,
@@ -138,8 +138,8 @@ function MonogramBadge({ partner }: { partner: typeof genericPartners[0] }) {
         style={{
           width: 76,
           height: 76,
-          background: "rgba(255,255,255,0.04)",
-          borderColor: "rgba(255,255,255,0.08)",
+          background: "rgba(249,115,22,0.04)",
+          borderColor: "rgba(249,115,22,0.14)",
         }}
       >
         <div
@@ -154,7 +154,7 @@ function MonogramBadge({ partner }: { partner: typeof genericPartners[0] }) {
           style={{ width: "60%", background: partner.accent, boxShadow: `0 0 12px ${partner.accent}` }}
         />
         <span
-          className="relative z-10 font-black leading-none transition-all duration-500 text-neutral-500 group-hover:text-white"
+          className="relative z-10 font-black leading-none transition-all duration-500 text-neutral-600 group-hover:text-orange-600"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: partner.short.length > 2 ? "0.9rem" : "1.35rem",
@@ -165,7 +165,7 @@ function MonogramBadge({ partner }: { partner: typeof genericPartners[0] }) {
         </span>
       </div>
       <span
-        className="text-neutral-500 group-hover:text-neutral-200 transition-colors duration-400 text-center leading-tight"
+        className="text-neutral-400 group-hover:text-orange-600 transition-colors duration-400 text-center leading-tight"
         style={{
           fontSize: "0.52rem",
           fontWeight: 700,
@@ -194,19 +194,22 @@ export default function Marquee() {
 
   return (
     <section
-      className="relative overflow-hidden bg-neutral-950 border-y"
-      style={{ borderColor: "rgba(255,255,255,0.05)" }}
+      className="relative overflow-hidden bg-white border-y"
+      style={{ borderColor: "rgba(10,10,10,0.07)" }}
       aria-label="Trusted partners"
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
+      {/* Top orange accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.4]" style={{ backgroundImage: "linear-gradient(rgba(249,115,22,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.025) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
 
       {/* Header */}
       <div className="container-wide pt-10 pb-8">
         <div className="flex items-center justify-center gap-4">
-          <span className="w-10 h-px bg-gradient-to-r from-transparent to-orange-500/60" />
+          <span className="w-12 h-px bg-gradient-to-r from-transparent to-orange-500/50" />
           <span
-            className="text-neutral-500"
+            className="text-neutral-400"
             style={{
               fontSize: "0.625rem",
               fontWeight: 700,
@@ -217,7 +220,7 @@ export default function Marquee() {
           >
             Trusted by Industry Leaders &middot; GCC &amp; Beyond
           </span>
-          <span className="w-10 h-px bg-gradient-to-l from-transparent to-orange-500/60" />
+          <span className="w-12 h-px bg-gradient-to-l from-transparent to-orange-500/50" />
         </div>
       </div>
 
@@ -258,7 +261,7 @@ export default function Marquee() {
           {[...specs, ...specs].map((s, i) => (
             <div
               key={i}
-              className="flex items-center gap-2 flex-shrink-0 text-neutral-600 hover:text-orange-400 transition-colors duration-300"
+              className="flex items-center gap-2 flex-shrink-0 text-neutral-400 hover:text-orange-500 transition-colors duration-300"
             >
               <span className="text-orange-500/40" style={{ fontSize: "0.5rem" }}>◆</span>
               <span

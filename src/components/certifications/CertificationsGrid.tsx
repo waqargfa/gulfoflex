@@ -16,11 +16,12 @@ export type Certification = {
 
 const accentMap: Record<string, string> = {
   orange: "text-orange-600 border-orange-500/20 bg-orange-500/10",
-  green: "text-green-600 border-green-500/20 bg-green-500/10",
-  red: "text-red-600 border-red-500/20 bg-red-500/10",
-  blue: "text-blue-600 border-blue-500/20 bg-blue-500/10",
-  yellow: "text-yellow-600 border-yellow-500/20 bg-yellow-500/10",
-  purple: "text-purple-600 border-purple-500/20 bg-purple-500/10",
+  neutral: "text-neutral-600 border-neutral-500/20 bg-neutral-500/10",
+  green: "text-orange-600 border-orange-500/20 bg-orange-500/10",
+  red: "text-orange-600 border-orange-500/20 bg-orange-500/10",
+  blue: "text-neutral-600 border-neutral-500/20 bg-neutral-500/10",
+  yellow: "text-orange-600 border-orange-500/20 bg-orange-500/10",
+  purple: "text-neutral-600 border-neutral-500/20 bg-neutral-500/10",
 };
 
 export default function CertificationsGrid({ certifications }: { certifications: Certification[] }) {
@@ -65,7 +66,7 @@ export default function CertificationsGrid({ certifications }: { certifications:
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute top-6 right-7 flex items-center gap-2">
                 {cert.pdfUrl && (
-                  <span className="inline-flex items-center gap-1 text-[9px] font-bold tracking-[0.14em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                  <span className="inline-flex items-center gap-1 text-[9px] font-bold tracking-[0.14em] uppercase text-orange-700 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full">
                     <FileText size={9} /> PDF
                   </span>
                 )}
@@ -203,7 +204,7 @@ export default function CertificationsGrid({ certifications }: { certifications:
                       <p className="text-neutral-700 text-[15px] leading-relaxed">{active.scope}</p>
                     </div>
                     <div className="rounded-2xl border bg-neutral-50 px-5 py-4 flex items-start gap-3" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                      <ShieldCheck size={16} className="text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <ShieldCheck size={16} className="text-orange-600 mt-0.5 flex-shrink-0" />
                       <div className="text-xs text-neutral-600 leading-relaxed">
                         Independently audited and third-party verified. Original certificates and test reports are available on request.
                       </div>

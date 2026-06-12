@@ -64,8 +64,8 @@ export default function Footer() {
   return (
     <footer className="bg-white">
       {/* CTA Banner — premium dark */}
-      <div className="relative overflow-hidden" style={{ background: "#0a0a0a" }}>
-        <div className="absolute inset-0 grid-bg opacity-[0.10]" />
+      <div className="relative overflow-hidden" style={{ background: "linear-gradient(160deg, #0f0e0c 0%, #0a0908 55%, #0d0b09 100%)" }}>
+        <div className="absolute inset-0 grid-bg opacity-[0.08]" />
         <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-orange-500/22 blur-[90px] pointer-events-none" />
         <div className="absolute -right-32 top-0 w-80 h-80 rounded-full bg-orange-500/10 blur-[80px] pointer-events-none" />
         <div className="container-wide py-12 relative z-10">

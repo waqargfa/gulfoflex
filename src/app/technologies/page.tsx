@@ -66,8 +66,8 @@ const technologies: Tech[] = [
     title: "Gulf-O-Flex NBR Ultra",
     tag: "Ultra Performance",
     tier: "Premium",
-    accent: "#a855f7",
-    tint: "rgba(168,85,247,0.10)",
+    accent: "#737373",
+    tint: "rgba(115,115,115,0.10)",
     desc: "Ultra-density NBR engineered for projects that demand the best — district cooling mains, chiller plants, and critical pharma/data-centre piping. Higher cell density delivers improved thermal lambda and stronger mechanical performance over standard NBR.",
     specs: [
       { label: "Thermal Conductivity", value: "≤0.033 W/(m·K)" },
@@ -83,8 +83,8 @@ const technologies: Tech[] = [
     title: "Gulf-O-Flex NBR Ultra Line",
     tag: "Ultra Line · Pre-formed",
     tier: "Premium",
-    accent: "#ec4899",
-    tint: "rgba(236,72,153,0.10)",
+    accent: "#f97316",
+    tint: "rgba(249,115,22,0.10)",
     desc: "Pre-formed, line-extruded NBR Ultra tubes and sheets cut to project lengths in our factory — eliminating site-seam losses, ensuring uniform thickness, and dramatically reducing installation time on long pipe runs and large-diameter plant.",
     specs: [
       { label: "Tube Lengths",          value: "2 m / 5 m / Custom" },
@@ -100,8 +100,8 @@ const technologies: Tech[] = [
     title: "Cross-Linked Polyethylene (XLPE)",
     tag: "Advanced Polymer",
     tier: "Core",
-    accent: "#3b82f6",
-    tint: "rgba(59,130,246,0.10)",
+    accent: "#737373",
+    tint: "rgba(115,115,115,0.10)",
     desc: "XLPE foam extends performance into higher-temperature applications while staying flexible and easy to install. The cross-linked molecular network provides superior resistance to compression, UV exposure, and aggressive chemical environments.",
     specs: [
       { label: "Thermal Conductivity", value: "≤0.038 W/(m·K)" },
@@ -117,8 +117,8 @@ const technologies: Tech[] = [
     title: "Acoustic Insulation System",
     tag: "Sound Control",
     tier: "Specialty",
-    accent: "#8b5cf6",
-    tint: "rgba(139,92,246,0.10)",
+    accent: "#737373",
+    tint: "rgba(115,115,115,0.10)",
     desc: "Gulf-O-Flex Sound is engineered for combined thermal and acoustic performance on HVAC ducts, pumps, and mechanical rooms. A multi-layer composite of mass-loaded vinyl, NBR foam and fibre delivers up to 32 dB sound reduction.",
     specs: [
       { label: "Sound Reduction Index", value: "Up to 32 dB" },
@@ -134,8 +134,8 @@ const technologies: Tech[] = [
     title: "Aluglass & Aluclad Cladding",
     tag: "Surface Finish",
     tier: "Specialty",
-    accent: "#10b981",
-    tint: "rgba(16,185,129,0.10)",
+    accent: "#f97316",
+    tint: "rgba(249,115,22,0.10)",
     desc: "Premium aluminium-glass reinforced laminate claddings protect insulation from UV, mechanical damage and weather in outdoor and industrial use. Bonded directly to the NBR or XLPE core for permanent, glue-free performance.",
     specs: [
       { label: "Aluminium Thickness", value: "0.025–0.05 mm" },
@@ -498,11 +498,11 @@ export default function TechnologiesPage() {
               <tbody>
                 {[
                   { name: "NBR", tier: "Core",     lambda: "≤0.036", temp: "−40° → +105°",  best: "HVAC chilled water, ducts",         accent: "#f97316" },
-                  { name: "NBR Ultra",       tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "District cooling mains, plants",    accent: "#a855f7" },
-                  { name: "NBR Ultra Line",  tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "Pre-formed factory runs",           accent: "#ec4899" },
-                  { name: "XLPE",            tier: "Core",     lambda: "≤0.038", temp: "−50° → +120°",  best: "Hot water, solar, industrial",      accent: "#3b82f6" },
-                  { name: "Sound",           tier: "Specialty",lambda: "≤0.036", temp: "−40° → +105°",  best: "Acoustic-critical zones",           accent: "#8b5cf6" },
-                  { name: "Aluglass / Aluclad",tier: "Specialty",lambda: "—",     temp: "−30° → +80°",   best: "Outdoor, plant rooms, UV exposure", accent: "#10b981" },
+                  { name: "NBR Ultra",       tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "District cooling mains, plants",    accent: "#737373" },
+                  { name: "NBR Ultra Line",  tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "Pre-formed factory runs",           accent: "#f97316" },
+                  { name: "XLPE",            tier: "Core",     lambda: "≤0.038", temp: "−50° → +120°",  best: "Hot water, solar, industrial",      accent: "#737373" },
+                  { name: "Sound",           tier: "Specialty",lambda: "≤0.036", temp: "−40° → +105°",  best: "Acoustic-critical zones",           accent: "#737373" },
+                  { name: "Aluglass / Aluclad",tier: "Specialty",lambda: "—",     temp: "−30° → +80°",   best: "Outdoor, plant rooms, UV exposure", accent: "#f97316" },
                 ].map((row) => (
                   <tr
                     key={row.name}
@@ -546,12 +546,12 @@ export default function TechnologiesPage() {
       </section>
 
       {/* ── Gulf-O-Flex Assist Showcase (futuristic / AI theme) ── */}
-      <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: "#050816" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: "#0a0a0a" }}>
         {/* Aurora */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] rounded-full blur-[140px]" style={{ background: "rgba(59,130,246,0.18)" }} />
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ background: "rgba(168,85,247,0.18)" }} />
-          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px]" style={{ background: "rgba(34,211,238,0.12)" }} />
+          <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] rounded-full blur-[140px]" style={{ background: "rgba(249,115,22,0.18)" }} />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ background: "rgba(249,115,22,0.18)" }} />
+          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px]" style={{ background: "rgba(249,115,22,0.12)" }} />
         </div>
         {/* Grid */}
         <div
@@ -572,9 +572,9 @@ export default function TechnologiesPage() {
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-6"
                 style={{
-                  background: "linear-gradient(90deg, rgba(34,211,238,0.18), rgba(168,85,247,0.18))",
-                  border: "1px solid rgba(168,85,247,0.40)",
-                  color: "#67e8f9",
+                  background: "linear-gradient(90deg, rgba(249,115,22,0.18), rgba(234,88,12,0.18))",
+                  border: "1px solid rgba(249,115,22,0.40)",
+                  color: "#fdba74",
                 }}
               >
                 <Cpu size={11} /> NEW · AI Platform
@@ -591,7 +591,7 @@ export default function TechnologiesPage() {
                 Meet{" "}
                 <span
                   style={{
-                    background: "linear-gradient(90deg, #67e8f9 0%, #a855f7 60%, #ec4899 100%)",
+                    background: "linear-gradient(90deg, #fdba74 0%, #f97316 60%, #ea580c 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -611,9 +611,9 @@ export default function TechnologiesPage() {
                   href="https://gulfoflexassist.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_40px_-10px_rgba(168,85,247,0.50)]"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_15px_40px_-10px_rgba(249,115,22,0.50)]"
                   style={{
-                    background: "linear-gradient(90deg, #06b6d4 0%, #a855f7 100%)",
+                    background: "linear-gradient(90deg, #f97316 0%, #ea580c 100%)",
                     color: "#fff",
                   }}
                 >
@@ -630,7 +630,7 @@ export default function TechnologiesPage() {
 
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-white/50">
                 <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
                   Live · v2.0
                 </span>
                 <span className="w-px h-3 bg-white/20" />
@@ -646,7 +646,7 @@ export default function TechnologiesPage() {
                 className="absolute -inset-4 rounded-3xl blur-2xl pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(34,211,238,0.18), rgba(168,85,247,0.18), transparent)",
+                    "linear-gradient(135deg, rgba(249,115,22,0.18), rgba(234,88,12,0.18), transparent)",
                 }}
               />
               <div
@@ -662,14 +662,14 @@ export default function TechnologiesPage() {
                   style={{ borderColor: "rgba(255,255,255,0.08)" }}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-400" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
                   </div>
                   <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">
                     gulfoflexassist.com
                   </span>
-                  <Bot size={14} className="text-cyan-400" />
+                  <Bot size={14} className="text-orange-400" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
@@ -686,11 +686,11 @@ export default function TechnologiesPage() {
                         className="w-9 h-9 rounded-lg flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110"
                         style={{
                           background:
-                            "linear-gradient(135deg, rgba(34,211,238,0.20), rgba(168,85,247,0.20))",
-                          border: "1px solid rgba(168,85,247,0.30)",
+                            "linear-gradient(135deg, rgba(249,115,22,0.20), rgba(234,88,12,0.20))",
+                          border: "1px solid rgba(249,115,22,0.30)",
                         }}
                       >
-                        <f.Icon size={16} className="text-cyan-300" strokeWidth={2.2} />
+                        <f.Icon size={16} className="text-orange-300" strokeWidth={2.2} />
                       </div>
                       <div
                         className="text-white font-bold text-sm mb-1"
@@ -708,14 +708,14 @@ export default function TechnologiesPage() {
                   className="mt-5 flex items-center gap-3 px-4 py-3 rounded-2xl border"
                   style={{
                     background: "rgba(255,255,255,0.025)",
-                    borderColor: "rgba(168,85,247,0.25)",
+                    borderColor: "rgba(249,115,22,0.25)",
                   }}
                 >
-                  <Sparkles size={14} className="text-purple-300" />
+                  <Sparkles size={14} className="text-orange-300" />
                   <span className="text-[12px] text-white/55 flex-1 truncate">
                     "Specify NBR thickness for 6\" chilled water in 45°C ambient…"
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
                 </div>
               </div>
             </div>

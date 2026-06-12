@@ -14,7 +14,7 @@ const commitments = [
   {
     icon: Leaf,
     title: "Zero ODP Materials",
-    color: "green",
+    color: "orange",
     desc: "All Gulf-O-Flex® products use blowing agents with zero Ozone Depletion Potential (ODP = 0), compliant with the Montreal Protocol and Dubai Green Building Regulations.",
     metric: "ODP = 0",
     metricLabel: "All Product Range",
@@ -30,7 +30,7 @@ const commitments = [
   {
     icon: BarChart3,
     title: "Energy Saving Impact",
-    color: "blue",
+    color: "neutral",
     desc: "Every 1 tonne of Gulf-O-Flex® insulation installed prevents an estimated 12 tonnes of CO₂ emissions over a 25-year system life through reduced heating and cooling energy demand.",
     metric: "12:1",
     metricLabel: "CO₂ Savings Ratio",
@@ -38,7 +38,7 @@ const commitments = [
   {
     icon: Recycle,
     title: "Manufacturing Waste Reduction",
-    color: "purple",
+    color: "neutral",
     desc: "Our closed-loop manufacturing process recycles 95% of production offcuts back into raw material. We have reduced landfill waste from manufacturing by 72% since 2018.",
     metric: "95%",
     metricLabel: "Offcut Recycling Rate",
@@ -46,7 +46,7 @@ const commitments = [
   {
     icon: Droplets,
     title: "Water Conservation",
-    color: "cyan",
+    color: "neutral",
     desc: "Our Ajman facilities recycle 100% of process water through a closed-loop cooling system, reducing freshwater consumption by 85% versus conventional manufacturing approaches.",
     metric: "85%",
     metricLabel: "Water Recycled",
@@ -54,7 +54,7 @@ const commitments = [
   {
     icon: Wind,
     title: "Carbon-Neutral Target",
-    color: "green",
+    color: "orange",
     desc: "Gulf-O-Flex® has committed to achieving carbon-neutral manufacturing by 2030, through a combination of renewable energy procurement, process efficiency, and verified carbon offsetting.",
     metric: "2030",
     metricLabel: "Carbon-Neutral Target Year",
@@ -103,7 +103,7 @@ export default function SustainabilityPage() {
                     <Leaf size={14} className="text-orange-600" />
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">Impact metrics</div>
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 </div>
                 <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {[
@@ -182,7 +182,7 @@ export default function SustainabilityPage() {
                 <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600 flex items-center gap-2">
                   <Leaf size={12} />Green Standards · {standards.length}
                 </div>
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
               </div>
               <div className="divide-y" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                 {standards.map((std, i) => (
@@ -203,7 +203,7 @@ export default function SustainabilityPage() {
       <section className="relative overflow-hidden py-20" style={{ background: "#0a0a0a" }}>
         <div className="absolute inset-0 grid-bg opacity-[0.10]" />
         <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-orange-500/20 blur-[90px] pointer-events-none" />
-        <div className="absolute -right-32 bottom-0 w-80 h-80 rounded-full bg-emerald-500/15 blur-[80px] pointer-events-none" />
+        <div className="absolute -right-32 bottom-0 w-80 h-80 rounded-full bg-orange-500/15 blur-[80px] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="container-wide relative z-10 text-center">

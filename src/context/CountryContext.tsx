@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
 export interface CountryInitiative {
-  badge: string;
+  badge?: string;
   title: string;
   tagline: string;
   themeColor: string;
@@ -15,7 +15,6 @@ export interface CountryInitiative {
 export interface CountryData {
   code: string;
   name: string;
-  flag: string;
   siteUrl: string;
   phone: string;
   phoneHref: string;
@@ -33,7 +32,6 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "ae",
     name: "UAE",
-    flag: "🇦🇪",
     siteUrl: "https://gfa.rwims.com/uae",
     phone: "+971 6 743 4176",
     phoneHref: "tel:+97167434176",
@@ -42,34 +40,27 @@ export const COUNTRIES: CountryData[] = [
     email: "info@gulfoflex.com",
     address: "Ajman Industrial Area 2, Ajman, UAE",
     heroSubtitle:
-      "Driving the UAE's Net Zero 2050 ambition — certified low-carbon NBR & XLPE insulation for green buildings, clean energy, and sustainable infrastructure.",
+      "Driving the UAE's Net Zero 2050 ambition certified low-carbon NBR & XLPE insulation for green buildings, clean energy, and sustainable infrastructure.",
     tagline: "UAE Net Zero 2050 — Insulation That Counts",
     initiative: {
-      badge: "UAE Net Zero 2050 Aligned",
       title: "UAE Net Zero 2050",
       tagline:
-        "Gulf-O-Flex® insulation directly reduces building energy consumption and carbon emissions — supporting the UAE's landmark Net Zero by 2050 Strategic Initiative and the COP28 legacy agenda.",
-      themeColor: "#0C4A6E",
-      accentColor: "#10B981",
+        "Gulf-O-Flex® insulation directly reduces building energy consumption and carbon emissions supporting the UAE's landmark Net Zero by 2050 Strategic Initiative.",
+      themeColor: "#9a3f10",
+      accentColor: "#f97316",
       metrics: [
         { value: "30%+", label: "Energy Saving per Project" },
-        { value: "COP28", label: "Dubai Legacy Partner" },
         { value: "EPD", label: "Environmental Product Declaration" },
         { value: "56%", label: "GCC Market Share" },
       ],
       keyProjects: [
-        { name: "Masdar City", type: "Clean Energy" },
-        { name: "MBRS Solar Park", type: "Solar" },
-        { name: "Barakah Nuclear", type: "Clean Power" },
-        { name: "EXPO City Dubai", type: "Sustainable Urban" },
-        { name: "Dubai Green Buildings", type: "Regulation" },
-        { name: "Abu Dhabi 2030 Plan", type: "Urban Strategy" },
-        { name: "Etihad Rail", type: "Green Transit" },
-        { name: "UAE Hydrogen Roadmap", type: "Energy" },
-        { name: "Al Maktoum Airport", type: "Mega Infrastructure" },
-        { name: "Zayed Sustainability Prize", type: "ESG" },
-        { name: "Dubai Metro Blue Line", type: "Transit" },
-        { name: "Yas Bay Waterfront", type: "Development" },
+        { name: "SHARJAH AIRPORT NEW PASSENGER TERMINAL BUILDING", type: "UAE" },
+        { name: "PALM SIX SENSES, DUBAI", type: "UAE" },
+        { name: "DAMAC VOLTA TOWER, DUBAI", type: "UAE" },
+        { name: "TILAL AL GHAF - RETAIL HUB PHASE 1", type: "UAE" },
+        { name: "Mixed Use Development at Bousher", type: "Oman" },
+        { name: "Barq Project at RAFO Airbase - Khassab", type: "Oman" },
+        { name: "Luxury Service Apartments & Marina Club at Yiti", type: "Oman" },
       ],
     },
   },
@@ -78,7 +69,6 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "sa",
     name: "KSA",
-    flag: "🇸🇦",
     siteUrl: "https://gfa.rwims.com/ksa",
     phone: "+966 11 000 0000",
     phoneHref: "tel:+966110000000",
@@ -94,8 +84,8 @@ export const COUNTRIES: CountryData[] = [
       title: "Saudi Vision 2030",
       tagline:
         "Gulf-O-Flex® is actively supplying insulation solutions across Saudi Arabia's most ambitious Vision 2030 infrastructure and development projects.",
-      themeColor: "#006C35",
-      accentColor: "#C8A84B",
+      themeColor: "#c2410c",
+      accentColor: "#fb923c",
       metrics: [
         { value: "100+", label: "KSA Projects Delivered" },
         { value: "15+", label: "Vision 2030 Mega-Projects" },
@@ -123,7 +113,6 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "lk",
     name: "Sri Lanka",
-    flag: "🇱🇰",
     siteUrl: "https://gfa.rwims.com/lk",
     phone: "+94 11 000 0000",
     phoneHref: "tel:+94110000000",
@@ -139,8 +128,8 @@ export const COUNTRIES: CountryData[] = [
       title: "Sri Lanka Green Economy",
       tagline:
         "Gulf-O-Flex® supports Sri Lanka's sustainable development agenda — delivering energy-efficient insulation for Port City Colombo, hospitality, and renewable energy infrastructure.",
-      themeColor: "#166534",
-      accentColor: "#F59E0B",
+      themeColor: "#7c3410",
+      accentColor: "#f97316",
       metrics: [
         { value: "50+", label: "Sri Lanka Projects" },
         { value: "Green", label: "Building Certified" },
@@ -166,7 +155,6 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "eg",
     name: "Egypt",
-    flag: "🇪🇬",
     siteUrl: "https://gfa.rwims.com/eg",
     phone: "+20 2 0000 0000",
     phoneHref: "tel:+20200000000",
@@ -182,8 +170,8 @@ export const COUNTRIES: CountryData[] = [
       title: "Egypt Vision 2030",
       tagline:
         "Gulf-O-Flex® delivers certified thermal and acoustic insulation across Egypt's transformative Vision 2030 projects — from the New Administrative Capital to the world's largest solar park at Benban.",
-      themeColor: "#7C2D12",
-      accentColor: "#D4AF37",
+      themeColor: "#7c2d12",
+      accentColor: "#fb923c",
       metrics: [
         { value: "75+", label: "Egypt Projects" },
         { value: "NAC", label: "New Capital Approved" },
@@ -211,7 +199,6 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "pk",
     name: "Pakistan",
-    flag: "🇵🇰",
     siteUrl: "https://gfa.rwims.com/pk",
     phone: "+92 21 0000 0000",
     phoneHref: "tel:+922100000000",
@@ -227,8 +214,8 @@ export const COUNTRIES: CountryData[] = [
       title: "CPEC & Pakistan Vision 2025",
       tagline:
         "Gulf-O-Flex® is a trusted insulation supplier across Pakistan's CPEC energy corridor and major infrastructure programmes — delivering certified performance in power, industrial, and residential projects.",
-      themeColor: "#14532D",
-      accentColor: "#F0A500",
+      themeColor: "#9a3f10",
+      accentColor: "#f97316",
       metrics: [
         { value: "60+", label: "Pakistan Projects" },
         { value: "CPEC", label: "Corridor Active" },
@@ -254,7 +241,6 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "za",
     name: "Africa",
-    flag: "🌍",
     siteUrl: "https://gfa.rwims.com/africa",
     phone: "+27 11 000 0000",
     phoneHref: "tel:+27110000000",
@@ -270,8 +256,8 @@ export const COUNTRIES: CountryData[] = [
       title: "African Union Agenda 2063",
       tagline:
         "Gulf-O-Flex® supports Africa's continental transformation agenda — delivering high-performance insulation for energy, industrial, and urban infrastructure projects across the continent.",
-      themeColor: "#92400E",
-      accentColor: "#FBBF24",
+      themeColor: "#92400e",
+      accentColor: "#fb923c",
       metrics: [
         { value: "20+", label: "African Countries" },
         { value: "LNG", label: "Gas Projects Active" },

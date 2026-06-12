@@ -51,7 +51,7 @@ export default function ContactSidebar() {
         >
           {o.primary && (
             <div className="absolute top-4 right-4 inline-flex items-center gap-1 text-[9px] font-bold tracking-[0.18em] uppercase text-orange-700 bg-white border border-orange-200 px-2 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
               Primary
             </div>
           )}
@@ -130,12 +130,12 @@ export default function ContactSidebar() {
         href={country.whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="block rounded-2xl border bg-white p-6 hover:border-emerald-300 hover:shadow-[0_20px_40px_-20px_rgba(16,185,129,0.30)] transition-all"
+        className="block rounded-2xl border bg-white p-6 hover:border-orange-300 hover:shadow-[0_20px_40px_-20px_rgba(249,115,22,0.30)] transition-all"
         style={{ borderColor: "rgba(0,0,0,0.06)" }}
       >
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center">
-            <MessageCircle size={16} className="text-emerald-600" />
+          <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center">
+            <MessageCircle size={16} className="text-orange-600" />
           </div>
           <span
             className="text-neutral-900 font-bold"

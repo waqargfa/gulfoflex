@@ -28,7 +28,6 @@ const DIST_IDS = new Set([
 export type HubDef = {
   city: string;
   country: string;
-  flag: string;
   label: string;
   role: "HQ" | "Plant" | "Sales Office";
   /** [longitude, latitude] in decimal degrees */
@@ -59,7 +58,7 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
           <linearGradient id="wm-arc-grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#f97316" stopOpacity="1" />
             <stop offset="45%" stopColor="#fb923c" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#a3a3a3" stopOpacity="0.95" />
           </linearGradient>
           <filter id="wm-pin-glow" x="-80%" y="-80%" width="260%" height="260%">
             <feGaussianBlur stdDeviation="3.5" result="blur" />
@@ -85,13 +84,13 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
         {/* ── Ocean sphere ─────────────────────────────────────── */}
         <Sphere
           id="wm-sphere"
-          fill="rgba(8,12,28,0.82)"
-          stroke="rgba(99,102,241,0.12)"
+          fill="transparent"
+          stroke="rgba(249,115,22,0.12)"
           strokeWidth={0.6}
         />
 
-        {/* ── Lat/lon graticule ────────────────────────────────── */}
-        <Graticule stroke="rgba(148,163,184,0.055)" strokeWidth={0.4} />
+        {/* ── Lat/lon graticule ────────────────────────── */}
+        <Graticule stroke="rgba(115,115,115,0.055)" strokeWidth={0.4} />
 
         {/* ── Country fills with hover effect ─────────────────── */}
         <Geographies geography={GEO_URL}>
@@ -110,9 +109,9 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
                       fill: isGCC
                         ? "rgba(249,115,22,0.48)"
                         : isDist
-                        ? "rgba(251,191,36,0.28)"
-                        : "rgba(30,41,59,0.75)",
-                      stroke: "rgba(255,255,255,0.07)",
+                        ? "rgba(249,115,22,0.22)"
+                        : "rgba(212,212,212,0.55)",
+                      stroke: "rgba(255,255,255,0.55)",
                       strokeWidth: 0.45,
                       outline: "none",
                       transition: "fill 180ms ease",
@@ -121,13 +120,13 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
                       fill: isGCC
                         ? "rgba(249,115,22,0.92)"
                         : isDist
-                        ? "rgba(251,191,36,0.72)"
-                        : "rgba(100,116,139,0.52)",
+                        ? "rgba(249,115,22,0.72)"
+                        : "rgba(115,115,115,0.52)",
                       stroke: isGCC
                         ? "rgba(249,115,22,0.6)"
                         : isDist
-                        ? "rgba(251,191,36,0.4)"
-                        : "rgba(148,163,184,0.2)",
+                        ? "rgba(249,115,22,0.4)"
+                        : "rgba(163,163,163,0.35)",
                       strokeWidth: 0.6,
                       outline: "none",
                       cursor: "default",
@@ -136,8 +135,8 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
                       fill: isGCC
                         ? "rgba(249,115,22,0.70)"
                         : isDist
-                        ? "rgba(251,191,36,0.50)"
-                        : "rgba(51,65,85,0.75)",
+                        ? "rgba(249,115,22,0.50)"
+                        : "rgba(180,180,180,0.65)",
                       outline: "none",
                     },
                   }}
@@ -183,8 +182,8 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
           const color = isHQ
             ? "#f97316"
             : isPlant
-            ? "#fbbf24"
-            : "#22d3ee";
+            ? "#fb923c"
+            : "#a3a3a3";
           const pulseDur = isHQ ? "1.8s" : isPlant ? "2.2s" : "2.6s";
 
           return (
@@ -264,9 +263,6 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
             className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
           >
             <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white text-neutral-900 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.4)] border border-neutral-100 min-w-max">
-              <span className="text-2xl leading-none">
-                {hubs[displayHub].flag}
-              </span>
               <div>
                 <div className="text-sm font-bold leading-snug">
                   {hubs[displayHub].city},{" "}
@@ -284,8 +280,8 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
                   hubs[displayHub].role === "HQ"
                     ? "bg-orange-500 text-white"
                     : hubs[displayHub].role === "Plant"
-                    ? "bg-amber-400 text-neutral-900"
-                    : "bg-cyan-400 text-neutral-900"
+                    ? "bg-orange-400 text-neutral-900"
+                    : "bg-neutral-400 text-neutral-900"
                 }`}
               >
                 {hubs[displayHub].role}
@@ -302,11 +298,11 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
           HQ
         </div>
         <div className="flex items-center gap-1.5 text-[9px] font-bold tracking-[0.14em] uppercase text-neutral-400">
-          <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_7px_rgba(251,191,36,0.8)]" />
+          <span className="w-2 h-2 rounded-full bg-orange-400 shadow-[0_0_7px_rgba(249,115,22,0.8)]" />
           Plant
         </div>
         <div className="flex items-center gap-1.5 text-[9px] font-bold tracking-[0.14em] uppercase text-neutral-400">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_7px_rgba(34,211,238,0.7)]" />
+          <span className="w-2 h-2 rounded-full bg-neutral-400 shadow-[0_0_7px_rgba(115,115,115,0.7)]" />
           Sales Office
         </div>
         <div className="ml-auto flex items-center gap-3">
@@ -315,7 +311,7 @@ export default function WorldMap({ hubs, activeHub, onHubClick }: Props) {
             GCC
           </div>
           <div className="flex items-center gap-1.5 text-[9px] font-bold tracking-[0.14em] uppercase text-neutral-500">
-            <span className="w-3 h-1.5 rounded-sm bg-amber-400/38" />
+            <span className="w-3 h-1.5 rounded-sm bg-orange-400/38" />
             Distribution
           </div>
         </div>

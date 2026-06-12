@@ -45,7 +45,7 @@ const LAYERS: readonly LayerSpec[] = [
       "Corrosion risk eliminated after insulation application",
       "No surface preparation required prior to NBR application",
     ],
-    accent: "#8DA0B6",
+    accent: "#9ca3af",
   },
   {
     id: "insulation",
@@ -103,7 +103,7 @@ const LAYERS: readonly LayerSpec[] = [
       "PE film backing protects adhesive on site",
       "Tested per ASTM, BS EN and ISO standards",
     ],
-    accent: "#60A5FA",
+    accent: "#9ca3af",
   },
   {
     id: "cladding",
@@ -159,7 +159,7 @@ const NBR_LAYERS: readonly LayerSpec[] = [
       "Surface condensation causes ceiling staining and corrosion",
       "Biological growth risk in humid environments above 80% RH",
     ],
-    accent: "#8DA0B6",
+    accent: "#9ca3af",
   },
   {
     id: "insulation",
@@ -217,7 +217,7 @@ const NBR_LAYERS: readonly LayerSpec[] = [
       "Suitable for GCC district cooling networks up to 40 bar",
       "Manufactured under ISO 9001 QMS in the UAE since 1993",
     ],
-    accent: "#22d3a5",
+    accent: "#737373",
   },
 ];
 
@@ -1113,7 +1113,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
       style={{ height: `${sectionHeightVh}vh` }}
       aria-label="Insulation layer system — 3D visualisation"
     >
-      <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden bg-black">
+      <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden" style={{ background: "#0a0806" }}>
         {/* Background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 grid-bg opacity-[0.07]" />
@@ -1140,7 +1140,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
           className="absolute inset-0 pl-canvas-wrap"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 50% 55%, #111114 0%, #0a0a0c 55%, #050507 100%)",
+              "radial-gradient(ellipse 70% 55% at 50% 55%, #130f0a 0%, #0a0806 55%, #060504 100%)",
           }}
         >
           <Canvas
@@ -1148,22 +1148,22 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
             dpr={[1, 2]}
             camera={{ position: [2.4, 0.35, 5.0], fov: 28 }}
             gl={{ antialias: true, alpha: true, powerPreference: "high-performance", preserveDrawingBuffer: false }}
-            style={{ background: "#070708" }}
+            style={{ background: "#080604" }}
             onCreated={({ gl }) => {
               const canvas = gl.domElement;
               const handleLost = (e: Event) => {
                 e.preventDefault();
               };
               const handleRestored = () => {
-                gl.setClearColor("#070708", 0);
+                gl.setClearColor("#080604", 0);
               };
               canvas.addEventListener("webglcontextlost", handleLost, false);
               canvas.addEventListener("webglcontextrestored", handleRestored, false);
-              gl.setClearColor("#070708", 0);
+              gl.setClearColor("#080604", 0);
             }}
           >
-            <color attach="background" args={["#070708"]} />
-            <fog attach="fog" args={["#070708", 7, 16]} />
+            <color attach="background" args={["#080604"]} />
+            <fog attach="fog" args={["#080604", 7, 16]} />
 
             <ambientLight intensity={0.22} />
             <directionalLight
@@ -1186,7 +1186,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
             {/* Rim light from right */}
             <directionalLight position={[6, 1, -4]} intensity={1.1} color="#FFB76A" />
             <pointLight position={[2, 2, 4]} intensity={2.6} color="#FFB76A" distance={14} />
-            <pointLight position={[-3, -1, -2]} intensity={1.0} color="#3B82F6" distance={12} />
+            <pointLight position={[-3, -1, -2]} intensity={1.0} color="#f97316" distance={12} />
             <pointLight position={[0, 3, 2]} intensity={1.4} color="#ffffff" distance={10} />
 
             <Environment preset="studio" />
@@ -1537,7 +1537,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
                   position: "absolute",
                   inset: 0,
                   width: 0,
-                  background: "linear-gradient(90deg, #f97316, #fbbf24, #f97316)",
+                  background: "linear-gradient(90deg, #f97316, #fdba74, #f97316)",
                   boxShadow: "0 0 14px rgba(249,115,22,0.7)",
                   transition: "width 0.05s linear",
                 }}

@@ -119,7 +119,7 @@ export default function FAQPage() {
                     <HelpCircle size={14} className="text-orange-600" />
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">Knowledge base</div>
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 </div>
                 <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {faqs.map((s) => (

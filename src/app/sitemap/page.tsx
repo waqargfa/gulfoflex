@@ -34,7 +34,7 @@ const categories = [
   {
     label: "Products",
     icon: Package,
-    color: "from-orange-500 to-amber-500",
+    color: "from-orange-500 to-orange-600",
     pages: [
       { title: "All Products",      href: "/products",               desc: "Full product range overview" },
       { title: "NBR Rubber",        href: "/products/nbr",           desc: "Elastomeric NBR insulation" },
@@ -62,7 +62,7 @@ const categories = [
   {
     label: "Technical",
     icon: FlaskConical,
-    color: "from-blue-600 to-blue-700",
+    color: "from-neutral-600 to-neutral-700",
     pages: [
       { title: "Technologies",     href: "/technologies",   desc: "Innovation & material science" },
       { title: "Certifications",   href: "/certifications", desc: "Standards, approvals & listings" },
@@ -73,7 +73,7 @@ const categories = [
   {
     label: "Resources",
     icon: FolderOpen,
-    color: "from-emerald-600 to-teal-600",
+    color: "from-orange-600 to-orange-700",
     pages: [
       { title: "Projects",   href: "/projects",  desc: "Featured project references" },
       { title: "News",       href: "/news",       desc: "Latest news & announcements" },
@@ -83,7 +83,7 @@ const categories = [
   {
     label: "Connect",
     icon: Phone,
-    color: "from-violet-600 to-purple-600",
+    color: "from-neutral-600 to-neutral-700",
     pages: [
       { title: "Contact Us",    href: "/contact",      desc: "Get in touch with our team" },
       { title: "Distributors",  href: "/distributors", desc: "Find a local distributor" },

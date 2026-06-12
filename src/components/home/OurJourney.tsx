@@ -26,10 +26,6 @@ export default function OurJourney() {
       <div className="container-wide relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-20 reveal">
-          <div className="eyebrow justify-center mb-5">
-            <span className="eyebrow-dot" />
-            Our Journey
-          </div>
           <h2
             id="journey-heading"
             className="text-neutral-900 mb-5 leading-[1.02]"
@@ -64,7 +60,7 @@ export default function OurJourney() {
                 <div className="group relative rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur-sm overflow-hidden p-6 hover:border-orange-500/40 transition-all duration-500 hover:shadow-[0_10px_40px_rgba(249,115,22,0.18)] cursor-default">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/6 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div
-                    className="absolute -bottom-2 -right-1 font-black select-none pointer-events-none leading-none text-neutral-100"
+                    className="absolute -bottom-2 -right-1 font-black select-none pointer-events-none leading-none text-orange-500/[0.07]"
                     style={{ fontFamily: "var(--font-display)", fontSize: "5.5rem" }}
                   >
                     {m.year}

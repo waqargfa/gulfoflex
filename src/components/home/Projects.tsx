@@ -33,9 +33,9 @@ const caseStudies = [
     year: "2024",
     image: "/case-studies/palm-six-senses.webp",
     highlight: "75 mm two-layer pipe spec · ↓ Energy consumption",
-    accentColor: "#3B82F6",
-    tagColor: "rgba(59,130,246,0.15)",
-    tagTextColor: "#60A5FA",
+    accentColor: "#737373",
+    tagColor: "rgba(115,115,115,0.15)",
+    tagTextColor: "#737373",
     metrics: [
       { value: "75 mm", label: "Two-layer pipe spec" },
       { value: "↓ Energy", label: "Consumption" },
@@ -51,9 +51,9 @@ const caseStudies = [
     year: "2025",
     image: "/case-studies/cbd-sharjah.webp",
     highlight: "−38% 15-year TCO · 3× faster field-joint install",
-    accentColor: "#10B981",
-    tagColor: "rgba(16,185,129,0.15)",
-    tagTextColor: "#34D399",
+    accentColor: "#F97316",
+    tagColor: "rgba(249,115,22,0.15)",
+    tagTextColor: "#F97316",
     metrics: [
       { value: "−38%", label: "15-yr TCO" },
       { value: "×3", label: "Faster install" },
@@ -69,9 +69,9 @@ const caseStudies = [
     year: "2024",
     image: "/case-studies/sustainable-city-uae.webp",
     highlight: "150,000 m² installed · 20-year acoustic life",
-    accentColor: "#A855F7",
-    tagColor: "rgba(168,85,247,0.15)",
-    tagTextColor: "#C084FC",
+    accentColor: "#737373",
+    tagColor: "rgba(115,115,115,0.15)",
+    tagTextColor: "#737373",
     metrics: [
       { value: "150k m²", label: "Installed" },
       { value: "0%", label: "Fibre shedding" },
@@ -101,10 +101,6 @@ export default function Projects() {
           {/* Top row: eyebrow + desktop CTAs */}
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6">
             <div>
-              <div className="eyebrow mb-4 sm:mb-5">
-                <span className="eyebrow-dot" />
-                Case Studies &amp; Projects
-              </div>
               <h2
                 id="projects-heading"
                 className="text-neutral-900 leading-[1.02]"
@@ -156,12 +152,8 @@ export default function Projects() {
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.72) 100%)" }} />
-                {/* Sector tag + year */}
-                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between gap-2">
-                  <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.16em] uppercase px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full backdrop-blur-sm min-w-0 truncate"
-                    style={{ background: cs.tagColor, color: cs.tagTextColor, border: `1px solid ${cs.accentColor}30` }}>
-                    {cs.sector.split("·")[0].trim()}
-                  </span>
+                {/* Year */}
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-end gap-2">
                   <span className="text-[9px] sm:text-[10px] font-semibold text-white/70 bg-black/30 px-2 py-1 sm:px-2.5 sm:py-1 rounded-full backdrop-blur-sm flex-shrink-0">{cs.year}</span>
                 </div>
                 {/* Title on image */}

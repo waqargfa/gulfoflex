@@ -21,6 +21,7 @@ export default function CountryInitiativeBanner() {
   const v = country.initiative;
   const { themeColor, accentColor } = v;
   const bgImg = COUNTRY_BG[country.code];
+  const isThreeMetricLayout = v.metrics.length === 3;
 
   return (
     <section
@@ -90,9 +91,6 @@ export default function CountryInitiativeBanner() {
               boxShadow: `0 0 24px ${accentColor}20`,
             }}
           >
-            <span className="text-3xl mb-1 leading-none" role="img" aria-label={country.name}>
-              {country.flag}
-            </span>
             {(() => {
               const words = v.title.split(" ");
               const last = words[words.length - 1];
@@ -115,24 +113,6 @@ export default function CountryInitiativeBanner() {
 
           {/* Text content */}
           <div className="flex-1 min-w-0">
-            {/* Live badge */}
-            <div className="flex items-center gap-2 mb-3">
-              <div
-                className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.22em] uppercase px-3 py-1.5 rounded-full"
-                style={{
-                  background: `${accentColor}18`,
-                  border: `1px solid ${accentColor}45`,
-                  color: accentColor,
-                }}
-              >
-                <span
-                  className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0"
-                  style={{ background: accentColor }}
-                />
-                {v.badge}
-              </div>
-            </div>
-
             {/* Title */}
             <h2
               className="text-white font-black text-xl sm:text-2xl lg:text-3xl leading-tight mb-2"
@@ -149,11 +129,13 @@ export default function CountryInitiativeBanner() {
         </div>
 
         {/* ── Metrics grid ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
+        <div
+          className={`grid gap-3 sm:gap-4 mb-8 sm:mb-10 ${isThreeMetricLayout ? "grid-cols-1 sm:grid-cols-3" : "grid-cols-2 sm:grid-cols-4"}`}
+        >
           {v.metrics.map((m, i) => (
             <div
               key={m.label}
-              className="relative rounded-2xl px-4 py-4 sm:py-5 text-center overflow-hidden group"
+              className={`relative rounded-2xl text-center overflow-hidden group ${isThreeMetricLayout ? "px-5 py-5 sm:px-6 sm:py-7" : "px-4 py-4 sm:py-5"}`}
               style={{
                 background: "rgba(0,0,0,0.28)",
                 border: `1px solid ${accentColor}30`,
@@ -166,7 +148,7 @@ export default function CountryInitiativeBanner() {
               />
               {/* Number */}
               <div
-                className="font-black text-2xl sm:text-3xl leading-none mb-1.5 relative z-10"
+                className={`font-black leading-none relative z-10 ${isThreeMetricLayout ? "text-3xl sm:text-4xl mb-2" : "text-2xl sm:text-3xl mb-1.5"}`}
                 style={{
                   color: accentColor,
                   fontFamily: "var(--font-display)",
@@ -177,7 +159,7 @@ export default function CountryInitiativeBanner() {
                 {m.value}
               </div>
               {/* Label */}
-              <div className="text-white/55 text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold leading-tight relative z-10">
+              <div className={`text-white/55 uppercase tracking-wider font-semibold leading-tight relative z-10 ${isThreeMetricLayout ? "text-[11px] sm:text-xs" : "text-[10px] sm:text-[11px]"}`}>
                 {m.label}
               </div>
             </div>
@@ -199,9 +181,12 @@ export default function CountryInitiativeBanner() {
             Key Projects &amp; Programmes
           </p>
           <div className="flex flex-wrap gap-2">
-            {v.keyProjects.map((p) => (
+            {v.keyProjects.map((p) => {
+              const regionLabel = /\bOMAN\b/i.test(p.name) ? "Oman" : p.type;
+
+              return (
               <span
-                key={p.name}
+                key={`${p.name}-${regionLabel}`}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
                 style={{
                   background: "rgba(255,255,255,0.07)",
@@ -215,16 +200,17 @@ export default function CountryInitiativeBanner() {
                 />
                 <span>{p.name}</span>
                 <span
+                  suppressHydrationWarning
                   className="text-[9px] font-semibold tracking-wide px-1.5 py-0.5 rounded-full"
                   style={{
                     background: `${accentColor}20`,
                     color: accentColor,
                   }}
                 >
-                  {p.type}
+                  {regionLabel}
                 </span>
               </span>
-            ))}
+            )})}
           </div>
         </div>
       </div>

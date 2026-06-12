@@ -51,9 +51,9 @@ export default function DownloadsPage() {
 
               {/* trust badges */}
               <div className="mt-8 flex items-center gap-6 flex-wrap text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
-                <span className="inline-flex items-center gap-2"><ShieldCheck size={13} className="text-emerald-500" /> Verified Sources</span>
+                <span className="inline-flex items-center gap-2"><ShieldCheck size={13} className="text-orange-500" /> Verified Sources</span>
                 <span className="inline-flex items-center gap-2"><Clock size={13} className="text-orange-500" /> Updated Quarterly</span>
-                <span className="inline-flex items-center gap-2"><Download size={13} className="text-blue-500" /> Free for Spec Use</span>
+                <span className="inline-flex items-center gap-2"><Download size={13} className="text-neutral-500" /> Free for Spec Use</span>
               </div>
             </div>
 
@@ -68,8 +68,8 @@ export default function DownloadsPage() {
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">Library Overview</div>
                   </div>
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50 animate-ping" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-50 animate-ping" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-400" />
                   </span>
                 </div>
                 <div className="grid grid-cols-3 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
@@ -95,7 +95,7 @@ export default function DownloadsPage() {
                 <div className="px-7 py-4 border-t flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500"
                      style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                   <span>Last sync · Today</span>
-                  <span className="text-emerald-600">All systems healthy</span>
+                  <span className="text-orange-600">All systems healthy</span>
                 </div>
               </div>
             </div>

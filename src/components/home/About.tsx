@@ -15,7 +15,7 @@ const strengths = [
 
 export default function About() {
   return (
-    <section className="section-padding bg-neutral-50 relative overflow-hidden" aria-labelledby="about-heading">
+    <section className="section-padding bg-white relative overflow-hidden" aria-labelledby="about-heading">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-orange-600/8 rounded-full blur-[100px]" />
@@ -99,10 +99,6 @@ export default function About() {
 
           {/* Right – content */}
           <div className="reveal">
-            <div className="eyebrow mb-6">
-              <span className="eyebrow-dot" />
-              About Gulf-O-Flex
-            </div>
             <h2
               id="about-heading"
               className="text-neutral-900 mb-6 leading-[1.02]"

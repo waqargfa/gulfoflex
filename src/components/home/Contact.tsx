@@ -22,42 +22,38 @@ export default function Contact() {
       title: "Email Us",
       value: country.email,
       action: `mailto:${country.email}`,
-      color: "text-blue-500",
-      bg: "bg-blue-500/8",
-      border: "border-blue-500/20",
+      color: "text-neutral-500",
+      bg: "bg-neutral-500/8",
+      border: "border-neutral-500/20",
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
       value: "Chat with us",
       action: country.whatsappHref,
-      color: "text-green-500",
-      bg: "bg-green-500/8",
-      border: "border-green-500/20",
+      color: "text-orange-500",
+      bg: "bg-orange-500/8",
+      border: "border-orange-500/20",
     },
     {
       icon: Headphones,
       title: "GOF Assist",
       value: "AI Technical Help",
       action: "https://gulfoflexassist.com",
-      color: "text-purple-500",
-      bg: "bg-purple-500/8",
-      border: "border-purple-500/20",
+      color: "text-neutral-500",
+      bg: "bg-neutral-500/8",
+      border: "border-neutral-500/20",
     },
   ];
 
   return (
-    <section className="py-16 bg-neutral-50 relative overflow-hidden" aria-labelledby="contact-heading">
+    <section className="py-16 bg-white relative overflow-hidden" aria-labelledby="contact-heading">
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute top-0 left-0 right-0 h-px tech-divider" />
 
       <div className="container-wide relative z-10">
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-10 reveal">
-          <div className="eyebrow justify-center mb-4">
-            <span className="eyebrow-dot" />
-            Get in Touch
-          </div>
           <h2
             id="contact-heading"
             className="text-neutral-900 mb-3 leading-tight"
@@ -76,18 +72,12 @@ export default function Contact() {
 
           {/* Form card */}
           <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6">
-            <div className="flex items-center justify-between mb-5">
-              <div>
+              <div className="mb-5">
                 <h3 className="text-neutral-900 font-bold text-lg leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.025em" }}>
                   Request a Quote
                 </h3>
                 <p className="text-neutral-400 text-xs mt-0.5">We respond within 1 business day</p>
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-green-600 font-semibold bg-green-500/8 border border-green-500/20 px-2.5 py-1 rounded-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                Online
-              </div>
-            </div>
 
             <form
               action="/api/contact"

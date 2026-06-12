@@ -452,7 +452,7 @@ function BlockRenderer({ blocks }: { blocks: Block[] }) {
                 key={j}
                 className="flex items-start gap-2 text-[13px] md:text-sm text-neutral-700 leading-relaxed"
               >
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 shrink-0" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -474,7 +474,7 @@ function ScrollProgress() {
   return (
     <motion.div
       aria-hidden
-      className="fixed left-0 right-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 shadow-[0_0_12px_rgba(234,88,12,0.45)] pointer-events-none"
+      className="fixed left-0 right-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 shadow-[0_0_12px_rgba(234,88,12,0.45)] pointer-events-none"
       style={{ scaleX }}
     />
   );
@@ -671,7 +671,7 @@ export default function CaseStudiesPage() {
           className="absolute -bottom-32 -left-20 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-40 pointer-events-none"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(245,158,11,0.30), rgba(245,158,11,0) 70%)",
+              "radial-gradient(closest-side, rgba(249,115,22,0.30), rgba(249,115,22,0) 70%)",
           }}
         />
 
@@ -792,7 +792,7 @@ export default function CaseStudiesPage() {
                         {isActive && (
                           <motion.span
                             layoutId="region-pill"
-                            className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-600 to-amber-500 shadow"
+                            className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-600 to-orange-500 shadow"
                             transition={{ type: "spring", stiffness: 320, damping: 28 }}
                           />
                         )}
@@ -813,7 +813,7 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/20 via-amber-400/10 to-transparent rounded-[2rem] blur-3xl pointer-events-none" />
+              <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/20 via-orange-400/10 to-transparent rounded-[2rem] blur-3xl pointer-events-none" />
               <TiltCard intensity={5} className="rounded-3xl">
                 <div
                   className="relative rounded-3xl border bg-white/90 backdrop-blur-xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(234,88,12,0.20)]"
@@ -829,10 +829,10 @@ export default function CaseStudiesPage() {
                         Featured · {visible.length} of {caseStudies.length}
                       </div>
                     </div>
-                    <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-emerald-700">
+                    <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-orange-700">
                       <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75 animate-ping" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
                       </span>
                       Live
                     </span>
@@ -857,7 +857,7 @@ export default function CaseStudiesPage() {
                           {isActive && (
                             <motion.span
                               layoutId="active-rail"
-                              className="absolute left-0 top-2 bottom-2 w-1 rounded-r-full bg-gradient-to-b from-orange-500 to-amber-500"
+                              className="absolute left-0 top-2 bottom-2 w-1 rounded-r-full bg-gradient-to-b from-orange-500 to-orange-600"
                               transition={{ type: "spring", stiffness: 320, damping: 28 }}
                             />
                           )}
@@ -922,7 +922,7 @@ export default function CaseStudiesPage() {
                   {isActive && (
                     <motion.span
                       layoutId="chip-pill"
-                      className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-600 to-amber-500"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-600 to-orange-500"
                       transition={{ type: "spring", stiffness: 320, damping: 28 }}
                     />
                   )}
@@ -1040,27 +1040,27 @@ export default function CaseStudiesPage() {
                   key: "challenge" as const,
                   label: "Challenge",
                   icon: AlertTriangle,
-                  accent: "text-rose-600",
-                  ring: "ring-rose-200/70",
-                  pill: "from-rose-500 to-rose-600",
+                  accent: "text-orange-600",
+                  ring: "ring-orange-200/70",
+                  pill: "from-orange-500 to-orange-600",
                   blocks: cs.challenge,
                 },
                 {
                   key: "solution" as const,
                   label: "Solution",
                   icon: Lightbulb,
-                  accent: "text-amber-600",
-                  ring: "ring-amber-200/70",
-                  pill: "from-amber-500 to-orange-500",
+                  accent: "text-orange-600",
+                  ring: "ring-orange-200/70",
+                  pill: "from-orange-500 to-orange-600",
                   blocks: cs.solution,
                 },
                 {
                   key: "result" as const,
                   label: "Result",
                   icon: CheckCircle2,
-                  accent: "text-emerald-600",
-                  ring: "ring-emerald-200/70",
-                  pill: "from-emerald-500 to-teal-500",
+                  accent: "text-orange-600",
+                  ring: "ring-orange-200/70",
+                  pill: "from-orange-500 to-orange-600",
                   blocks: cs.result,
                 },
               ];
@@ -1256,7 +1256,7 @@ export default function CaseStudiesPage() {
                     </div>
 
                     {/* Highlight */}
-                    <div className="mt-6 flex items-start gap-3 rounded-xl border border-orange-200/70 bg-gradient-to-br from-orange-50 to-amber-50/60 px-4 py-3.5">
+                    <div className="mt-6 flex items-start gap-3 rounded-xl border border-orange-200/70 bg-gradient-to-br from-orange-50 to-orange-50/60 px-4 py-3.5">
                       <Sparkles size={16} className="text-orange-600 shrink-0 mt-0.5" />
                       <p className="text-sm font-semibold text-orange-900 leading-snug">
                         {cs.highlight}
@@ -1290,7 +1290,7 @@ export default function CaseStudiesPage() {
             />
             <motion.div
               aria-hidden
-              className="absolute -bottom-20 -left-20 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"
+              className="absolute -bottom-20 -left-20 w-80 h-80 bg-orange-500/15 rounded-full blur-3xl pointer-events-none"
               animate={{ scale: [1.1, 1, 1.1], opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -1321,7 +1321,7 @@ export default function CaseStudiesPage() {
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:-translate-y-0.5 hover:shadow-orange-500/50"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:-translate-y-0.5 hover:shadow-orange-500/50"
                 >
                   Request a site audit{" "}
                   <ArrowRight

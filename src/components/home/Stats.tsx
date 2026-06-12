@@ -60,18 +60,14 @@ export default function Stats() {
         <div className="absolute top-0 left-0 right-0 h-px tech-divider" />
         <div className="absolute bottom-0 left-0 right-0 h-px tech-divider" />
         {/* Vertical accents */}
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/3 to-transparent" />
-        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/3 to-transparent" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-orange-500/10 to-transparent" />
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-orange-500/10 to-transparent" />
       </div>
 
       <div className="container-wide relative z-10" ref={ref}>
         {/* Section header — asymmetric two-column */}
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 xl:gap-20 items-end mb-16 reveal">
           <div>
-            <div className="eyebrow mb-5">
-              <span className="eyebrow-dot" />
-              By The Numbers
-            </div>
             <h2
               className="text-neutral-900 leading-[0.95]"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.75rem, 5.5vw, 5.5rem)", fontWeight: 800, letterSpacing: "-0.05em" }}

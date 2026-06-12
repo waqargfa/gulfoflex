@@ -9,7 +9,6 @@ import {
   Building2,
   Flame,
   Anchor,
-  Hammer,
   Snowflake,
   Cog,
   CheckCircle2,
@@ -21,17 +20,17 @@ import {
 const industries = [
   {
     id: "hvac",
-    name: "HVAC & MEP",
-    shortName: "HVAC & MEP",
+    name: "HVAC, MEP & Construction",
+    shortName: "HVAC & Construction",
     icon: Building2,
     image: "/images/products/nbr-pipe.jpeg",
     imageAlt: "Black NBR rubber foam pipe insulation installed on chilled water piping in a mechanical room",
     tagline: "Energy-efficient building services",
-    desc: "Comprehensive insulation solutions for heating, ventilation, air conditioning, and mechanical, electrical & plumbing systems. Reduces energy consumption and prevents condensation in even the most complex building service networks.",
-    applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Fan coil units"],
-    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Sound", "Accessories"],
-    projects: "2,000+",
-    stat: { label: "Energy Savings", value: "Up to 40%" },
+    desc: "Comprehensive insulation solutions for heating, ventilation, air conditioning, mechanical, electrical & plumbing systems, and building construction. Reduces energy consumption, prevents condensation, and meets the latest international energy codes and sustainability standards across commercial buildings, residential complexes, hotels, and hospitals.",
+    applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Green buildings"],
+    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Sound", "Gulf-O-Flex Ultra"],
+    projects: "7,000+",
+    stat: { label: "Energy Savings", value: "Up to 30%" },
     color: "text-orange-600",
     accentRgb: "234 88 12",
     bg: "bg-orange-500/8",
@@ -49,16 +48,16 @@ const industries = [
     imageAlt: "Metallic aluclad jacketed insulation installed on industrial process piping",
     tagline: "Extreme-temperature performance",
     desc: "High-performance thermal insulation rated for extreme temperatures found in refineries, petrochemical plants, pipelines, and offshore platforms. Engineered to meet the most demanding international standards.",
-    applications: ["Process piping", "Cryogenic systems", "Heat exchangers", "Storage tanks", "LNG facilities"],
-    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Aluclad"],
+    applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Fan coil units"],
+    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Aluclad", "Gulf-O-Flex Ultra"],
     projects: "500+",
-    stat: { label: "Temp. Range", value: "-200°C to 150°C" },
-    color: "text-red-500",
-    accentRgb: "239 68 68",
-    bg: "bg-red-500/8",
-    border: "border-red-500/20",
-    activeBg: "bg-red-500",
-    gradient: "from-red-600/10 via-red-500/5 to-transparent",
+    stat: { label: "Temp. Range", value: "-40°C to 105°C" },
+    color: "text-orange-500",
+    accentRgb: "249 115 22",
+    bg: "bg-orange-500/8",
+    border: "border-orange-500/20",
+    activeBg: "bg-orange-500",
+    gradient: "from-orange-600/10 via-orange-500/5 to-transparent",
     href: "/industries/oil-gas",
   },
   {
@@ -71,37 +70,15 @@ const industries = [
     tagline: "Salt-spray & humidity resistant",
     desc: "Marine-grade insulation engineered to withstand harsh sea environments, salt spray, humidity, and vibration on ships, offshore platforms, and naval vessels. Certified to international marine standards.",
     applications: ["HVAC systems", "Engine rooms", "Piping systems", "Refrigeration", "Acoustic damping"],
-    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Sound"],
-    projects: "300+",
+    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Sound", "Gulf-O-Flex Ultra", "Gulf-O-Flex Ultraline"],
     stat: { label: "Humidity Resistance", value: "99.9%" },
-    color: "text-blue-500",
-    accentRgb: "59 130 246",
-    bg: "bg-blue-500/8",
-    border: "border-blue-500/20",
-    activeBg: "bg-blue-500",
-    gradient: "from-blue-600/10 via-blue-500/5 to-transparent",
+    color: "text-orange-500",
+    accentRgb: "249 115 22",
+    bg: "bg-orange-500/8",
+    border: "border-orange-500/20",
+    activeBg: "bg-orange-500",
+    gradient: "from-orange-600/10 via-orange-500/5 to-transparent",
     href: "/industries/marine",
-  },
-  {
-    id: "construction",
-    name: "Construction",
-    shortName: "Construction",
-    icon: Hammer,
-    image: "/images/projects/project10.png",
-    imageAlt: "Hillmont Residences Dubai — insulation installed across a large commercial residential construction project",
-    tagline: "Building-code compliant",
-    desc: "Thermal and acoustic insulation for commercial buildings, residential complexes, hotels, hospitals, and infrastructure projects meeting the latest international energy codes and sustainability standards.",
-    applications: ["Building services", "Underfloor heating", "Rooftop units", "Acoustic walls", "Green buildings"],
-    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Sound"],
-    projects: "5,000+",
-    stat: { label: "Projects Delivered", value: "5,000+" },
-    color: "text-amber-500",
-    accentRgb: "245 158 11",
-    bg: "bg-amber-500/8",
-    border: "border-amber-500/20",
-    activeBg: "bg-amber-500",
-    gradient: "from-amber-600/10 via-amber-500/5 to-transparent",
-    href: "/industries/construction",
   },
   {
     id: "district-cooling",
@@ -111,17 +88,17 @@ const industries = [
     image: "/images/products/aluclad-2.webp",
     imageAlt: "Aluclad metallic cladding on large-diameter pipes in a district cooling plant",
     tagline: "GCC-scale cooling networks",
-    desc: "Specialized insulation for district cooling networks — the backbone of sustainable urban cooling in GCC cities. Prevents energy loss across extensive pipe networks and ensures maximum system efficiency.",
-    applications: ["Distribution mains", "Riser pipes", "Energy transfer stations", "Chiller plants", "Storage tanks"],
-    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Aluclad"],
+    desc: "Specialized insulation for district cooling networks, the backbone of sustainable urban cooling in GCC cities. Prevents energy loss across extensive pipe networks and ensures maximum system efficiency.",
+    applications: ["Distribution mains", "Energy transfer stations", "Chiller plants", "Storage tanks"],
+    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Aluclad", "Gulf-O-Flex Ultra"],
     projects: "200+",
     stat: { label: "Heat Loss Reduction", value: "Up to 35%" },
-    color: "text-cyan-500",
-    accentRgb: "6 182 212",
-    bg: "bg-cyan-500/8",
-    border: "border-cyan-500/20",
-    activeBg: "bg-cyan-500",
-    gradient: "from-cyan-600/10 via-cyan-500/5 to-transparent",
+    color: "text-orange-500",
+    accentRgb: "249 115 22",
+    bg: "bg-orange-500/8",
+    border: "border-orange-500/20",
+    activeBg: "bg-orange-500",
+    gradient: "from-orange-600/10 via-orange-500/5 to-transparent",
     href: "/industries/district-cooling",
   },
   {
@@ -133,16 +110,16 @@ const industries = [
     imageAlt: "Aluclad metallic jacketed insulation installed on industrial process piping",
     tagline: "Process-grade durability",
     desc: "Heavy-duty thermal insulation for manufacturing plants, food processing facilities, pharmaceutical plants, and general industrial processes requiring precise temperature control and long-term durability.",
-    applications: ["Process vessels", "Industrial piping", "Boiler systems", "Cold storage", "Cleanrooms"],
-    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Aluclad"],
+    applications: ["HVAC systems", "Chilled water pipes", "Air handling units", "Ductwork insulation", "Ventilation systems"],
+    products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Aluclad", "Gulf-O-Flex Ultra"],
     projects: "800+",
     stat: { label: "Service Life", value: "25+ Years" },
-    color: "text-purple-500",
-    accentRgb: "168 85 247",
-    bg: "bg-purple-500/8",
-    border: "border-purple-500/20",
-    activeBg: "bg-purple-500",
-    gradient: "from-purple-600/10 via-purple-500/5 to-transparent",
+    color: "text-orange-500",
+    accentRgb: "249 115 22",
+    bg: "bg-orange-500/8",
+    border: "border-orange-500/20",
+    activeBg: "bg-orange-500",
+    gradient: "from-orange-600/10 via-orange-500/5 to-transparent",
     href: "/industries/industrial",
   },
 ];
@@ -165,10 +142,6 @@ export default function Industries() {
       <div className="container-wide relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-          <div className="eyebrow justify-center mb-5">
-            <span className="eyebrow-dot" />
-            Industries We Serve
-          </div>
           <h2
             id="industries-heading"
             className="text-neutral-900 mb-5 leading-[1.02]"
@@ -178,7 +151,7 @@ export default function Industries() {
             <span className="serif-italic text-orange-600">every sector.</span>
           </h2>
           <p className="text-neutral-500 text-lg">
-            Gulf-O-Flex® insulation powers critical infrastructure across six major industries, delivering consistent performance in the most demanding environments.
+            Gulf-O-Flex® insulation powers critical infrastructure across five major industries, delivering consistent performance in the most demanding environments.
           </p>
         </div>
 
@@ -234,9 +207,11 @@ export default function Industries() {
                     >
                       {ind.shortName}
                     </span>
-                    <span className="block text-[10px] uppercase tracking-[0.12em] font-bold text-neutral-400 mt-0.5">
-                      {ind.projects} projects
-                    </span>
+                    {ind.projects && (
+                      <span className="block text-[10px] uppercase tracking-[0.12em] font-bold text-neutral-400 mt-0.5">
+                        {ind.projects} projects
+                      </span>
+                    )}
                   </div>
                   {isActive && (
                     <ChevronRight
@@ -428,15 +403,17 @@ export default function Industries() {
                             {current.stat.value}
                           </div>
                         </div>
-                        <div
-                          className="rounded-xl px-3 py-2 border border-white/20 text-white text-xs font-bold"
-                          style={{ background: `rgba(${current.accentRgb},0.55)` }}
-                        >
-                          {current.projects}
-                          <div className="text-[9px] font-semibold tracking-[0.14em] uppercase opacity-80">
-                            projects
+                        {current.projects && (
+                          <div
+                            className="rounded-xl px-3 py-2 border border-white/20 text-white text-xs font-bold"
+                            style={{ background: `rgba(${current.accentRgb},0.55)` }}
+                          >
+                            {current.projects}
+                            <div className="text-[9px] font-semibold tracking-[0.14em] uppercase opacity-80">
+                              projects
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
 
                       {/* progress dots */}
