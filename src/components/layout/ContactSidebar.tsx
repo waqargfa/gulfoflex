@@ -114,7 +114,7 @@ export default function ContactSidebar() {
           </span>
         </div>
         <p className="text-neutral-500 text-sm mb-4">
-          Get instant technical answers, product calculations, and compliance reports — 24/7.
+          Get instant technical answers, product calculations, and compliance reports - 24/7.
         </p>
         <Link
           href="https://gulfoflexassist.com"
@@ -145,7 +145,7 @@ export default function ContactSidebar() {
           </span>
         </div>
         <p className="text-neutral-500 text-sm">
-          Send a quick message — we typically reply in minutes during business hours.
+          Send a quick message - we typically reply in minutes during business hours.
         </p>
       </a>
     </div>

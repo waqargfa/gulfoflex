@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Gulf-O-Flex® — gulfoflex.com",
+  title: "Terms of Use | Gulf-O-Flex® - gulfoflex.com",
   description:
-    "Terms of Use for gulfoflex.com — the official website of Rubber World Industry LLC, manufacturer of Gulf-O-Flex® rubber insulation products.",
+    "Terms of Use for gulfoflex.com - the official website of Rubber World Industry LLC, manufacturer of Gulf-O-Flex® rubber insulation products.",
   alternates: { canonical: "https://gulfoflex.com/terms" },
 };
 
@@ -67,7 +67,7 @@ export default function TermsPage() {
               Terms of <span className="gradient-text">Use</span><span className="serif-italic text-orange-600">.</span>
             </h1>
             <p className="text-neutral-600 text-lg max-w-2xl leading-relaxed">
-              Terms governing the use of gulfoflex.com — operated by Rubber World Industry LLC.
+              Terms governing the use of gulfoflex.com - operated by Rubber World Industry LLC.
             </p>
 
             {/* Quick-reference highlights */}
@@ -97,7 +97,7 @@ export default function TermsPage() {
         <div className="container-wide">
           <div className="flex gap-10 xl:gap-16 items-start">
 
-            {/* Sticky TOC sidebar — desktop only */}
+            {/* Sticky TOC sidebar - desktop only */}
             <aside className="hidden lg:block w-60 xl:w-64 flex-shrink-0 sticky top-28 self-start">
               <div
                 className="rounded-2xl border bg-white p-6"
@@ -165,8 +165,8 @@ export default function TermsPage() {
                     </div>
                   </div>
                   <p className="text-neutral-600 leading-relaxed text-[0.9375rem]">
-                    All content on this Site — including text, images, product data, technical specifications, logos,
-                    trademarks, and software — is the property of Rubber World Industry LLC or its licensors.{" "}
+                    All content on this Site - including text, images, product data, technical specifications, logos,
+                    trademarks, and software - is the property of Rubber World Industry LLC or its licensors.{" "}
                     <strong className="text-neutral-900">Gulf-O-Flex® is a registered trademark.</strong> Unauthorized
                     reproduction, distribution, or use of any content is strictly prohibited.
                   </p>

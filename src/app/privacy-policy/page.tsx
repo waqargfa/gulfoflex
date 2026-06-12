@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Gulf-O-Flex® — Rubber World Industry LLC",
-  description: "Privacy Policy for gulfoflex.com — how Rubber World Industry LLC collects, uses, and protects your personal information.",
+  title: "Privacy Policy | Gulf-O-Flex® - Rubber World Industry LLC",
+  description: "Privacy Policy for gulfoflex.com - how Rubber World Industry LLC collects, uses, and protects your personal information.",
   alternates: { canonical: "https://gulfoflex.com/privacy-policy" },
 };
 
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
         <div className="container-wide">
           <div className="flex gap-10 xl:gap-16 items-start">
 
-            {/* Sticky TOC sidebar — desktop only */}
+            {/* Sticky TOC sidebar - desktop only */}
             <aside className="hidden lg:block w-60 xl:w-64 flex-shrink-0 sticky top-28 self-start">
               <div
                 className="rounded-2xl border bg-white p-6"
@@ -313,7 +313,7 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </div>
 
-                {/* Section 09 — Contact */}
+                {/* Section 09 - Contact */}
                 <div id="contact" className="scroll-mt-28 rounded-2xl border p-7 md:p-8 transition-all hover:border-orange-200" style={{ borderColor: "rgba(0,0,0,0.07)", background: "linear-gradient(135deg, rgba(249,115,22,0.04) 0%, rgba(249,115,22,0.01) 100%)" }}>
                   <div className="flex items-start gap-4 mb-5">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-[0_4px_12px_-4px_rgba(249,115,22,0.5)]">

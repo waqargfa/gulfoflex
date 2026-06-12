@@ -7,7 +7,7 @@ import { ArrowRight, ArrowUpRight, MapPin, BookOpen, FolderOpen } from "lucide-r
 const caseStudies = [
   {
     slug: "sobha-hartland",
-    title: "Sobha Hartland — GI Duct Insulation",
+    title: "Sobha Hartland - GI Duct Insulation",
     subtitle: "Resolving installer bond failures through on-site technical training.",
     client: "Sobha Hartland",
     location: "Dubai, UAE",
@@ -43,25 +43,25 @@ const caseStudies = [
   },
   {
     slug: "district-cooling-dubai",
-    title: "District Cooling Network — Dubai",
+    title: "District Cooling Network - Dubai",
     subtitle: "Hybrid PIR + Aluclad strategy cut 15-year TCO by 38% across a 14 km CHW network.",
     client: "District Cooling Operator",
     location: "Dubai, UAE",
     sector: "District Cooling · Infrastructure",
     year: "2025",
     image: "/case-studies/cbd-sharjah.webp",
-    highlight: "−38% 15-year TCO · 3× faster field-joint install",
+    highlight: "−38% 15-year TCO · 3�- faster field-joint install",
     accentColor: "#F97316",
     tagColor: "rgba(249,115,22,0.15)",
     tagTextColor: "#F97316",
     metrics: [
       { value: "−38%", label: "15-yr TCO" },
-      { value: "×3", label: "Faster install" },
+      { value: "�-3", label: "Faster install" },
     ],
   },
   {
     slug: "sustainable-city-abu-dhabi",
-    title: "The Sustainable City — Abu Dhabi",
+    title: "The Sustainable City - Abu Dhabi",
     subtitle: "150,000 m² zero-fibre duct liner meeting LEED & Estidama Pearl requirements.",
     client: "JEET MEP · The Sustainable City",
     location: "Abu Dhabi, UAE",
@@ -110,7 +110,7 @@ export default function Projects() {
                 <span className="serif-italic text-orange-600">most critical projects.</span>
               </h2>
             </div>
-            {/* CTAs — hidden on xs, visible from sm */}
+            {/* CTAs - hidden on xs, visible from sm */}
             <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
               <Link href="/case-studies" className="btn-ghost">
                 <BookOpen size={14} /> Case Studies <ArrowRight size={14} />
@@ -243,3 +243,4 @@ export default function Projects() {
     </section>
   );
 }
+

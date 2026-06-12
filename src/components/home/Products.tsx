@@ -17,7 +17,7 @@ const products = [
     name: "Gulf-O-Flex® NBR",
     short: "NBR",
     category: "Thermal & Acoustic",
-    tagline: "Closed-cell elastomeric rubber insulation — the industry benchmark for thermal efficiency, moisture resistance, and acoustic performance across HVAC and industrial environments.",
+    tagline: "Closed-cell elastomeric rubber insulation - the industry benchmark for thermal efficiency, moisture resistance, and acoustic performance across HVAC and industrial environments.",
     features: ["−40°C to +105°C", "Class O fire rated", "CFC & HCFC free"],
     icon: Thermometer,
     image: "/images/products/nbr-roll.webp",
@@ -44,7 +44,7 @@ const products = [
     name: "Gulf-O-Flex® Sound",
     short: "SND",
     category: "Acoustic Insulation",
-    tagline: "Engineered for superior sound attenuation in mechanical rooms, duct systems, and industrial environments — combining thermal and acoustic performance in one solution.",
+    tagline: "Engineered for superior sound attenuation in mechanical rooms, duct systems, and industrial environments - combining thermal and acoustic performance in one solution.",
     features: ["25dB+ noise reduction", "Dual-function", "Vibration damping"],
     icon: Volume2,
     image: "/images/products/sound-1.webp",
@@ -82,7 +82,7 @@ const products = [
     name: "Gulf-O-Flex® Ultra",
     short: "ULT",
     category: "Ultra-Low Conductivity",
-    tagline: "Next-generation NBR/EPDM hybrid closed-cell foam with industry-leading thermal conductivity of 0.030 W/m·K at 0°C — engineered for chilled water, district cooling, and low-temperature process lines.",
+    tagline: "Next-generation NBR/EPDM hybrid closed-cell foam with industry-leading thermal conductivity of 0.030 W/m·K at 0°C - engineered for chilled water, district cooling, and low-temperature process lines.",
     features: ["λ 0.030 W/m·K @ 0°C", "−50°C to +115°C", "μ > 7,300"],
     icon: ShieldCheck,
     image: "/images/products/ultra/ultra.png",
@@ -94,7 +94,7 @@ const products = [
     name: "Gulf-O-Flex® UltraLine",
     short: "ULN",
     category: "Pre-Insulated Tube Line",
-    tagline: "Factory pre-insulated continuous copper tube line system — nitrogen-charged copper + closed-cell NBR core + UV-stable LDPE jacket, supplied in coils up to 50 m for VRF/VRV, split AC, chilled water and solar thermal piping.",
+    tagline: "Factory pre-insulated continuous copper tube line system - nitrogen-charged copper + closed-cell NBR core + UV-stable LDPE jacket, supplied in coils up to 50 m for VRF/VRV, split AC, chilled water and solar thermal piping.",
     features: ["Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral vapour barrier"],
     icon: Layers,
     image: "/images/products/ultra/ultraline.png",
@@ -185,7 +185,7 @@ export default function Products() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-end gap-6">
             <p className="text-neutral-600 text-base md:text-lg leading-relaxed max-w-md">
-              A complete portfolio of certified thermal, acoustic and protective insulation — manufactured in the UAE, specified across{" "}
+              A complete portfolio of certified thermal, acoustic and protective insulation - manufactured in the UAE, specified across{" "}
               <span className="text-neutral-900 font-semibold">90+ markets</span>.
             </p>
             <div className="flex items-center gap-3">
@@ -230,7 +230,7 @@ export default function Products() {
                 />
               ))}
 
-              {/* Auto-playing product video — fades in above the fallback image */}
+              {/* Auto-playing product video - fades in above the fallback image */}
               {(active as { video?: string }).video && (
                 <video
                   key={`vid-${activeId}`}
@@ -283,7 +283,7 @@ export default function Products() {
                 {active.short}
               </div>
 
-              {/* ── BOTTOM animated info — re-mounts to trigger slide-up ── */}
+              {/* ── BOTTOM animated info - re-mounts to trigger slide-up ── */}
               <div key={`info-${animKey}`} className="absolute bottom-0 left-0 right-0 px-7 pb-8 z-10">
                 <div
                   className="gof-slide-up flex items-center gap-2 text-[10px] font-bold tracking-[0.28em] uppercase text-orange-300 mb-2.5"
@@ -357,7 +357,7 @@ export default function Products() {
             className="lg:col-span-5 rounded-3xl overflow-hidden bg-white flex flex-col min-h-[480px]"
             style={{ border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 30px 80px -40px rgba(0,0,0,0.13)" }}
           >
-            {/* Dot indicator header — no instructional text */}
+            {/* Dot indicator header - no instructional text */}
             <div className="px-6 md:px-7 py-4 flex items-center justify-between shrink-0" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
               <div className="flex items-center gap-[7px]">
                 {products.map((p) => (
@@ -534,7 +534,7 @@ export default function Products() {
                 <span className="serif-italic text-orange-400">insulation system?</span>
               </h3>
               <p className="text-white/60 text-sm md:text-[15px] leading-relaxed">
-                Our AI-powered GOF Assist recommends optimal products for your application — backed by 30+ years of engineering expertise.
+                Our AI-powered GOF Assist recommends optimal products for your application - backed by 30+ years of engineering expertise.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">

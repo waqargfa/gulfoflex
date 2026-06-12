@@ -65,7 +65,7 @@ export default function Stats() {
       </div>
 
       <div className="container-wide relative z-10" ref={ref}>
-        {/* Section header — asymmetric two-column */}
+        {/* Section header - asymmetric two-column */}
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 xl:gap-20 items-end mb-16 reveal">
           <div>
             <h2
@@ -77,7 +77,7 @@ export default function Stats() {
             </h2>
           </div>
           <p className="text-neutral-500 text-base leading-relaxed max-w-sm pb-2">
-            Three decades of manufacturing excellence — the numbers behind Gulf-O-Flex&rsquo;s global leadership.
+            Three decades of manufacturing excellence - the numbers behind Gulf-O-Flex&rsquo;s global leadership.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function Stats() {
               {/* Hover glow sweep */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 via-orange-500/0 to-orange-500/0 group-hover:from-orange-500/5 transition-all duration-500 pointer-events-none" />
               
-              {/* Faint decorative index — ultra-transparent */}
+              {/* Faint decorative index - ultra-transparent */}
               <div
                 className="absolute -bottom-3 -right-3 font-black leading-none select-none pointer-events-none"
                 style={{ fontFamily: "var(--font-display)", fontSize: "9rem", letterSpacing: "-0.05em", color: "rgba(249,115,22,0.055)" }}
@@ -128,7 +128,7 @@ export default function Stats() {
               The GCC&rsquo;s Most Trusted Insulation Brand
             </div>
             <p className="text-neutral-500 text-sm max-w-lg">
-              From Ajman to the world — Gulf-O-Flex® has been the engineer&rsquo;s first choice for three decades, delivering quality that never compromises.
+              From Ajman to the world - Gulf-O-Flex® has been the engineer&rsquo;s first choice for three decades, delivering quality that never compromises.
             </p>
           </div>
           <div className="flex items-center gap-4 flex-shrink-0">

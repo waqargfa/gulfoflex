@@ -97,7 +97,7 @@ export default function KSAVision2030Banner() {
             </p>
           </div>
 
-          {/* Metrics row — desktop right */}
+          {/* Metrics row - desktop right */}
           <div className="hidden lg:grid grid-cols-4 gap-px rounded-xl overflow-hidden flex-shrink-0" style={{ background: "rgba(249,115,22,0.12)", border: `1px solid rgba(249,115,22,0.20)` }}>
             {v.metrics.map((m) => (
               <div key={m.label} className="px-5 py-4 text-center" style={{ background: "rgba(0,0,0,0.20)" }}>
@@ -115,7 +115,7 @@ export default function KSAVision2030Banner() {
           </div>
         </div>
 
-        {/* Metrics row — mobile */}
+        {/* Metrics row - mobile */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 lg:hidden">
           {v.metrics.map((m) => (
             <div

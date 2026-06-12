@@ -63,7 +63,7 @@ export default function Footer() {
   const { country } = useCountry();
   return (
     <footer className="bg-white">
-      {/* CTA Banner — premium dark */}
+      {/* CTA Banner - premium dark */}
       <div className="relative overflow-hidden" style={{ background: "linear-gradient(160deg, #0f0e0c 0%, #0a0908 55%, #0d0b09 100%)" }}>
         <div className="absolute inset-0 grid-bg opacity-[0.08]" />
         <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-orange-500/22 blur-[90px] pointer-events-none" />

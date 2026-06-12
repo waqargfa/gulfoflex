@@ -91,7 +91,7 @@ export default function SustainabilityPage() {
                 <span className="gradient-text">saves the planet</span><span className="serif-italic text-orange-600">.</span>
               </h1>
               <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Our insulation products are not just performance-optimized — they&rsquo;re engineered to reduce energy consumption and carbon emissions over their entire lifecycle, contributing directly to a net-zero future.
+                Our insulation products are not just performance-optimized - they&rsquo;re engineered to reduce energy consumption and carbon emissions over their entire lifecycle, contributing directly to a net-zero future.
               </p>
             </div>
             <div className="relative">

@@ -9,7 +9,7 @@
  *
  * The video covers the container like background-size:cover
  * (object-fit: cover on an absolutely-positioned element).
- * pointer-events: none — never steals clicks.
+ * pointer-events: none - never steals clicks.
  */
 
 import { useRef, useEffect } from "react";
@@ -66,7 +66,7 @@ export default function VideoBackground({
         <source src={src} type="video/mp4" />
       </video>
 
-      {/* Warm-dark overlay — keeps text readable over bright video frames */}
+      {/* Warm-dark overlay - keeps text readable over bright video frames */}
       <div
         style={{
           position:   "absolute",

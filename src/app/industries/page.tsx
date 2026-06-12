@@ -56,7 +56,7 @@ const industries = [
     icon: Thermometer,
     name: "District Cooling",
     tagline: "Specialized solutions for district cooling networks",
-    desc: "Gulf-O-Flex® insulation is specified across the GCC for district cooling distribution networks, chiller plant rooms, and end-user connections — ensuring energy efficiency and condensation control.",
+    desc: "Gulf-O-Flex® insulation is specified across the GCC for district cooling distribution networks, chiller plant rooms, and end-user connections - ensuring energy efficiency and condensation control.",
     applications: ["Distribution Pipes", "Chiller Plant Rooms", "End-User Connections", "Storage Tanks"],
     projects: "380+",
     color: "neutral",
@@ -201,7 +201,7 @@ export default function IndustriesPage() {
             Need a sector <span className="serif-italic text-orange-400">specialist?</span>
           </h2>
           <p className="text-white/55 mb-8 max-w-xl mx-auto">
-            Our application engineers know your industry — and the regulations, standards, and project realities that shape it.
+            Our application engineers know your industry - and the regulations, standards, and project realities that shape it.
           </p>
           <Link href="/contact" className="btn-primary">
             Talk to an engineer <ArrowRight size={16} />

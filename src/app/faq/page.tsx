@@ -4,7 +4,7 @@ import { ArrowRight, HelpCircle, Plus } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
-  title: "FAQ | Gulf-O-Flex® Insulation — Frequently Asked Questions",
+  title: "FAQ | Gulf-O-Flex® Insulation - Frequently Asked Questions",
   description:
     "Frequently asked questions about Gulf-O-Flex® rubber insulation products, installation, fire ratings, applications, and specifications. Technical answers from our engineering team.",
   alternates: { canonical: "https://gulfoflex.com/faq" },
@@ -198,7 +198,7 @@ export default function FAQPage() {
             Still have questions?<br /><span className="serif-italic text-orange-400">Ask GOF Assist.</span>
           </h2>
           <p className="text-white/55 max-w-xl mx-auto mb-8">
-            Our AI engineering assistant can answer technical questions, perform thickness calculations, and generate specification documents — 24/7.
+            Our AI engineering assistant can answer technical questions, perform thickness calculations, and generate specification documents - 24/7.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <a href="https://gulfoflexassist.com" target="_blank" rel="noopener noreferrer" className="btn-primary">

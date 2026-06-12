@@ -37,7 +37,7 @@ import Reveal from "@/components/about/Reveal";
 export const metadata: Metadata = {
   title: "About Gulf-O-Flex® | Premium Insulation Manufacturer Since 1993",
   description:
-    "Learn about Gulf-O-Flex® by Rubber World Industry — the GCC's leading NBR rubber insulation manufacturer since 1993. Discover our manufacturing facilities, team, and commitment to quality.",
+    "Learn about Gulf-O-Flex® by Rubber World Industry , the GCC's leading NBR rubber insulation manufacturer since 1993. Discover our manufacturing facilities, team, and commitment to quality.",
   alternates: { canonical: "https://gulfoflex.com/about" },
 };
 
@@ -55,14 +55,14 @@ const heroStats = [
 const values = [
   { icon: Award,       title: "Uncompromising Quality",   desc: "ISO 9001 certified quality management ensures every product exceeds specifications. No compromise, ever." },
   { icon: TrendingUp,  title: "Continuous Innovation",    desc: "Investing in R&D to develop next-generation insulation solutions that define the future of the industry." },
-  { icon: Users,       title: "Customer Partnership",     desc: "We build long-term partnerships with engineers, contractors, and consultants — not just transactions." },
+  { icon: Users,       title: "Customer Partnership",     desc: "We build long-term partnerships with engineers, contractors, and consultants , not just transactions." },
   { icon: Leaf,        title: "Sustainability First",     desc: "Committed to sustainable manufacturing, zero ODP products, and supporting the global net-zero agenda." },
   { icon: Globe,       title: "Global Standards",         desc: "Meeting and exceeding international standards across BS, ASTM, EN, DIN, IMO, NFPA, and ASHRAE." },
   { icon: Factory,     title: "Manufacturing Excellence", desc: "State-of-the-art facilities with advanced QA processes, trained workforce, and modern production lines." },
 ];
 
 const facilities = [
-  { location: "Ajman, UAE",       country: "UAE",      desc: "Flagship manufacturing campus — head office and primary production facility",  capacity: "Primary Campus",    status: "Operational" },
+  { location: "Ajman, UAE",       country: "UAE",      desc: "Flagship manufacturing campus , head office and primary production facility",  capacity: "Primary Campus",    status: "Operational" },
   { location: "Ajman, UAE",       country: "UAE",      desc: "Secondary production and logistics hub within the industrial area",            capacity: "Secondary Hub",     status: "Operational" },
   { location: "Sri Lanka",        country: "Asia",     desc: "Offshore manufacturing facility serving Asian markets",                        capacity: "Asia Pacific",      status: "Operational" },
   { location: "Saudi Arabia",     country: "KSA",      desc: "In-Kingdom manufacturing supporting Vision 2030 localization",                 capacity: "KSA Operations",    status: "Operational" },
@@ -71,20 +71,20 @@ const facilities = [
 const milestones = [
   { year: "1993", title: "Founded",            desc: "Rubber World Industry established in Ajman, UAE by the Shaikhani Group." },
   { year: "2002", title: "ISO 9001 Certified", desc: "First Gulf insulation manufacturer to achieve ISO 9001 quality certification." },
-  { year: "2007", title: "Class O Approval",   desc: "Achieved BS 476 Part 6 & 7 Class O — opening the door to GCC mega-projects." },
-  { year: "2011", title: "FM Approved",        desc: "Earned FM Global approval — unlocking critical insurance-grade specifications." },
+  { year: "2007", title: "Class O Approval",   desc: "Achieved BS 476 Part 6 & 7 Class O opening the door to GCC mega-projects." },
+  { year: "2011", title: "FM Approved",        desc: "Earned FM Global approval unlocking critical insurance-grade specifications." },
   { year: "2015", title: "Sri Lanka Plant",    desc: "Commissioned the Colombo offshore facility to serve the Asia-Pacific region." },
   { year: "2018", title: "Global Reach",       desc: "Crossed 70 export countries with Gulf-O-Flex® branded products." },
-  { year: "2021", title: "UL Listed",        desc: "Earned UL listing — completing the Tier-1 fire approval matrix." },
-  { year: "2024", title: "KSA Manufacturing",  desc: "Localized production in the Kingdom — supporting Saudi Vision 2030 and IKTVA." },
-  { year: "2025", title: "Gulf-O-Flex Assist", desc: "Launched Gulf-O-Flex Assist — an AI-powered specification and technical support platform for consultants and contractors." },
+  { year: "2021", title: "UL Listed",        desc: "Earned UL listing completing the Tier-1 fire approval matrix." },
+  { year: "2024", title: "KSA Manufacturing",  desc: "Localized production in the Kingdom supporting Saudi Vision 2030 and IKTVA." },
+  { year: "2025", title: "Gulf-O-Flex Assist", desc: "Launched Gulf-O-Flex Assist an AI-powered specification and technical support platform for consultants and contractors." },
 ];
 
 const pillars = [
   { icon: ShieldCheck, title: "Engineered to Spec",   desc: "Every roll, sheet and tube is engineered against BS, ASTM, EN, DIN, IMO, NFPA and ASHRAE standards." },
-  { icon: Flame,       title: "Fire-Safe by Design",  desc: "Class O / B-s3,d0 / 25/50 ratings — Gulf-O-Flex® meets the world's strictest fire performance codes." },
+  { icon: Flame,       title: "Fire-Safe by Design",  desc: "Class O / B-s1,d0 / 25/50 ratings Gulf-O-Flex® meets the world's strictest fire performance codes." },
   { icon: Gauge,       title: "Lifetime Performance", desc: "Closed-cell NBR maintains thermal conductivity and vapour resistance for the asset's full design life." },
-  { icon: Zap,         title: "Energy Saved",         desc: "Every meter we ship cuts HVAC and process energy losses — measured in megawatt-hours, not slogans." },
+  { icon: Zap,         title: "Energy Saved",         desc: "Every meter we ship cuts HVAC and process energy losses measured in megawatt-hours, not slogans." },
 ];
 
 const certs = [
@@ -98,7 +98,7 @@ const certCards = [
   { abbr: "ISO 14001",   label: "Environmental Management",      body: "Verified environmental performance & compliance.",    Icon: Leaf },
   { abbr: "ISO 45001",   label: "Occupational H&S",              body: "Workforce safety at every manufacturing stage.",      Icon: ShieldCheck },
   { abbr: "FM Approved", label: "FM Global Standards",           body: "Insurance-grade fire performance approval.",          Icon: Flame },
-  { abbr: "UL Listed",   label: "ASTM E84 / UL 723",             body: "North American fire classification — listed product.", Icon: Star },
+  { abbr: "UL Listed",   label: "ASTM E84 / UL 723",             body: "North American fire classification listed product.", Icon: Star },
   { abbr: "DCL",         label: "Dubai Central Lab",             body: "Approved for Dubai Municipality specification.",      Icon: Globe2 },
   { abbr: "DCD",         label: "Dubai Civil Defence",           body: "UAE fire & life-safety code compliance.",            Icon: ShieldCheck },
   { abbr: "EPD",         label: "Environmental Product Decl.",   body: "Independently verified life-cycle data.",            Icon: Sparkles },
@@ -112,11 +112,11 @@ const regions = [
 ];
 
 const proofPoints = [
-  { icon: Thermometer, value: "0.0321", unit: "W/m·K",  label: "Thermal conductivity",  detail: "At 35°C mean — ASTM C518" },
+  { icon: Thermometer, value: "0.0321", unit: "W/m·K",  label: "Thermal conductivity",  detail: "At 35°C mean ASTM C518" },
   { icon: Flame,       value: "Class O", unit: "",        label: "Fire reaction",         detail: "BS 476 Part 6 & 7 / ASTM E84" },
   { icon: Droplets,    value: ">7,300", unit: "μ",       label: "Vapour resistance",     detail: "Closed-cell, Perm-in ≈ 0.00" },
-  { icon: Volume2,     value: "NRC 1.00", unit: "",       label: "Sound absorption",      detail: "50mm Gulf-O-Sound — ASTM C423" },
-  { icon: Gauge,       value: "-183 → +115", unit: "°C", label: "Service temperature",  detail: "NBR / XLPE elastomeric range" },
+  { icon: Volume2,     value: "NRC 1.00", unit: "",       label: "Sound absorption",      detail: "50mm Gulf-O-Sound ASTM C423" },
+  { icon: Gauge,       value: "-40 → +105", unit: "°C", label: "Service temperature",  detail: "NBR / XLPE elastomeric range" },
   { icon: Atom,        value: "0",        unit: "ODP",     label: "Ozone depletion",       detail: "REACH & RoHS compliant" },
 ];
 
@@ -161,7 +161,6 @@ export default function AboutPage() {
 
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
             <Reveal>
-              <div className="eyebrow mb-6"><span className="eyebrow-dot" />Our Story · Since 1993</div>
               <h1
                 className="text-neutral-900 leading-[0.95] mb-7"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}
@@ -274,7 +273,6 @@ export default function AboutPage() {
         <div className="container-wide relative">
           <Reveal>
             <div className="max-w-3xl mb-14">
-              <div className="eyebrow mb-5"><span className="eyebrow-dot" />Purpose · Mission · Vision</div>
               <h2
                 className="text-neutral-900 leading-[1.05]"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -289,9 +287,9 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { icon: Target,   tag: "Purpose", title: "Why we exist",       body: "To shield the world's critical infrastructure from energy loss, noise, fire, and time — using premium NBR rubber engineered in the Gulf." },
+              { icon: Target,   tag: "Purpose", title: "Why we exist",       body: "To shield the world's critical infrastructure from energy loss, noise, fire, and time using premium NBR rubber engineered in the Gulf." },
               { icon: Compass,  tag: "Mission", title: "What we do daily",   body: "Manufacture certified, high-performance closed-cell elastomeric insulation that engineers can specify with absolute confidence." },
-              { icon: Sparkles, tag: "Vision",  title: "Where we're going",  body: "Be the most trusted insulation partner across the Gulf, Asia, and Africa — recognized for craft, compliance, and climate-positive impact." },
+              { icon: Sparkles, tag: "Vision",  title: "Where we're going",  body: "Be the most trusted insulation partner across the Gulf, Asia, and Africa recognized for craft, compliance, and climate-positive impact." },
             ].map((c, i) => (
               <Reveal key={c.tag} delay={i * 100}>
                 <div
@@ -334,7 +332,6 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 items-start">
             <div className="lg:sticky lg:top-28">
               <Reveal>
-                <div className="eyebrow mb-5"><span className="eyebrow-dot" />Who We Are</div>
                 <h2
                   className="text-neutral-900 leading-[1.05] mb-6"
                   style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -344,7 +341,7 @@ export default function AboutPage() {
                 <div className="space-y-4 text-neutral-600 leading-relaxed">
                   <p>Rubber World Industry (RWI), trading as Gulf-O-Flex®, was founded in 1993 by the Shaikhani Group in Ajman, UAE. From a single facility, we have grown into one of the world&rsquo;s leading manufacturers of closed-cell elastomeric rubber insulation.</p>
                   <p>Today, with four state-of-the-art manufacturing facilities across the UAE, Sri Lanka, and Saudi Arabia, we supply 56% of the GCC&rsquo;s rubber insulation demand and export to over 90 countries worldwide.</p>
-                  <p>Our insulation technology is based on Nitrile Butadiene Rubber (NBR) — a premium closed-cell elastomeric material engineered for thermal and acoustic performance, moisture resistance, fire safety compliance, and long-term durability in the harshest environments.</p>
+                  <p>Our insulation technology is based on Nitrile Butadiene Rubber (NBR) a premium closed-cell elastomeric material engineered for thermal and acoustic performance, moisture resistance, fire safety compliance, and long-term durability in the harshest environments.</p>
                 </div>
                 <div className="mt-7 flex flex-wrap gap-2">
                   {["NBR", "XLPE", "Sound", "Aluglass", "Aluclad"].map((t) => (
@@ -367,7 +364,7 @@ export default function AboutPage() {
                     className="text-neutral-800 text-base md:text-lg leading-relaxed"
                     style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
                   >
-                    &ldquo;We don&rsquo;t make insulation to ship containers — we make it to be specified, installed, and trusted for the lifetime of the asset.&rdquo;
+                    &ldquo;We don&rsquo;t make insulation to ship containers , we make it to be specified, installed, and trusted for the lifetime of the asset.&rdquo;
                   </blockquote>
                   <figcaption className="mt-4 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center text-white font-bold text-xs">
@@ -386,7 +383,6 @@ export default function AboutPage() {
             <div className="relative">
               <Reveal>
                 <div className="mb-8">
-                  <div className="eyebrow mb-4"><span className="eyebrow-dot" />Milestones</div>
                   <h3
                     className="text-neutral-900"
                     style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.4vw, 2rem)", fontWeight: 800, letterSpacing: "-0.025em" }}
@@ -441,12 +437,6 @@ export default function AboutPage() {
         <div className="container-wide relative z-10">
           <Reveal>
             <div className="max-w-3xl mb-14">
-              <div
-                className="eyebrow mb-5"
-                style={{ background: "rgba(249,115,22,0.12)", borderColor: "rgba(249,115,22,0.30)", color: "#fb923c" }}
-              >
-                <span className="eyebrow-dot" />Why Gulf-O-Flex®
-              </div>
               <h2
                 className="text-white leading-[1.05] mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -504,7 +494,6 @@ export default function AboutPage() {
         <div className="container-wide relative z-10">
           <Reveal>
             <div className="text-center mb-14">
-              <div className="eyebrow justify-center mb-4 mx-auto w-fit"><span className="eyebrow-dot" />Our Values</div>
               <h2
                 className="text-neutral-900 leading-[1.05]"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -547,7 +536,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Engineered Numbers — premium technical proof ── */}
+      {/* ── Engineered Numbers , premium technical proof ── */}
       <section className="relative section-padding overflow-hidden bg-white">
         <div className="absolute inset-0 grid-bg opacity-[0.10] pointer-events-none" />
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[420px] h-[420px] bg-orange-500/[0.06] rounded-full blur-[120px] pointer-events-none" />
@@ -555,7 +544,6 @@ export default function AboutPage() {
         <div className="container-wide relative z-10">
           <Reveal>
             <div className="max-w-3xl mb-12">
-              <div className="eyebrow mb-5"><span className="eyebrow-dot" />Engineered Numbers</div>
               <h2
                 className="text-neutral-900 leading-[1.05] mb-4"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -563,7 +551,7 @@ export default function AboutPage() {
                 Not adjectives. <span className="serif-italic text-orange-600">Measurements.</span>
               </h2>
               <p className="text-neutral-500 text-lg leading-relaxed max-w-2xl">
-                Six numbers behind every Gulf-O-Flex® datasheet — tested against ASTM, BS, EN and DIN protocols.
+                Six numbers behind every Gulf-O-Flex® datasheet , tested against ASTM, BS, EN and DIN protocols.
               </p>
             </div>
           </Reveal>
@@ -633,7 +621,6 @@ export default function AboutPage() {
           <Reveal>
             <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-end mb-12">
               <div>
-                <div className="eyebrow mb-5"><span className="eyebrow-dot" />Global Presence</div>
                 <h2
                   className="text-neutral-900 leading-[1.05]"
                   style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -642,7 +629,7 @@ export default function AboutPage() {
                 </h2>
               </div>
               <p className="text-neutral-500 text-lg leading-relaxed">
-                From the GCC&rsquo;s most demanding mega-projects to OEM partnerships in Europe and Asia — Gulf-O-Flex® performs to the same specification, on every continent.
+                From the GCC&rsquo;s most demanding mega-projects to OEM partnerships in Europe and Asia , Gulf-O-Flex® performs to the same specification, on every continent.
               </p>
             </div>
           </Reveal>
@@ -700,7 +687,6 @@ export default function AboutPage() {
         <div className="container-wide relative z-10">
           <Reveal>
             <div className="text-center mb-12">
-              <div className="eyebrow justify-center mb-4 mx-auto w-fit"><span className="eyebrow-dot" />Manufacturing Network</div>
               <h2
                 className="text-neutral-900 leading-[1.05] mb-3 whitespace-nowrap"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.5rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -708,7 +694,7 @@ export default function AboutPage() {
                 4 world-class <span className="serif-italic text-orange-600">facilities.</span>
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
-                Strategically located across three countries — engineered for capacity, redundancy, and proximity to our customers.
+                Strategically located across three countries , engineered for capacity, redundancy, and proximity to our customers.
               </p>
             </div>
           </Reveal>
@@ -764,7 +750,6 @@ export default function AboutPage() {
           <Reveal>
             <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
               <div>
-                <div className="eyebrow mb-4"><span className="eyebrow-dot" />Recognition</div>
                 <h2
                   className="text-neutral-900 leading-[1.05]"
                   style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.6vw, 2.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -873,7 +858,6 @@ export default function AboutPage() {
           <Reveal>
             <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
               <div>
-                <div className="eyebrow mb-4"><span className="eyebrow-dot" />Compliance &amp; Quality</div>
                 <h2
                   className="text-neutral-900 leading-[1.05]"
                   style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.6vw, 2.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
@@ -943,15 +927,9 @@ export default function AboutPage() {
 
         <div className="container-wide relative z-10">
 
-          {/* — Eyebrow + headline centered — */}
+          {/* , Headline centered , */}
           <Reveal>
             <div className="text-center mb-16">
-              <div
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-6"
-                style={{ background: "rgba(249,115,22,0.12)", border: "1px solid rgba(249,115,22,0.30)", color: "#fdba74" }}
-              >
-                <Leaf size={11} /> Sustainability Commitment
-              </div>
               <h2
                 className="text-white leading-[1.0] mb-5 mx-auto"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4.5vw, 4rem)", fontWeight: 800, letterSpacing: "-0.04em", maxWidth: "18ch" }}
@@ -967,7 +945,7 @@ export default function AboutPage() {
                 .
               </h2>
               <p className="text-white/60 leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
-                Every meter of Gulf-O-Flex® specified prevents waste energy from escaping a pipe, duct, or chiller. Zero-ODP, REACH-compliant, engineered for decades of service — the longest carbon payback in the building envelope.
+                Every meter of Gulf-O-Flex® specified prevents waste energy from escaping a pipe, duct, or chiller. Zero-ODP, REACH-compliant, engineered for decades of service , the longest carbon payback in the building envelope.
               </p>
               <Link
                 href="/sustainability"
@@ -979,7 +957,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          {/* — Stats row — */}
+          {/* , Stats row , */}
           <Reveal delay={80}>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -1027,13 +1005,13 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          {/* — Bottom commitment strip — */}
+          {/* , Bottom commitment strip , */}
           <Reveal delay={160}>
             <div
               className="mt-10 rounded-2xl px-8 py-5 flex flex-wrap items-center justify-between gap-4"
               style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.15)" }}
             >
-              {["ISO 14001 Certified", "Zero ODP — CFC & HCFC Free", "EPD Verified Products", "EU REACH Compliant", "LEED Contribution"].map((badge) => (
+              {["ISO 14001 Certified", "Zero ODP , CFC & HCFC Free", "EPD Verified Products", "EU REACH Compliant", "LEED Contribution"].map((badge) => (
                 <div key={badge} className="flex items-center gap-2 text-[11px] font-semibold text-orange-300/80 uppercase tracking-[0.15em]">
                   <CheckCircle2 size={12} className="text-orange-400 shrink-0" />
                   {badge}

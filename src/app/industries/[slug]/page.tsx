@@ -16,7 +16,7 @@ const industries = {
     ],
     products: ["Gulf-O-Flex® NBR Tubes", "Gulf-O-Flex® NBR Sheets", "Aluglass Duct Facing", "GOF Contact Adhesive"],
     requirements: ["ASHRAE 90.1 Energy Compliance", "Condensation Prevention", "Fire Spread Control", "Acoustic Attenuation"],
-    keyProjects: ["Dubai Metro Stations", "Burj Khalifa HVAC", "Dubai Mall Chilled Water", "Abu Dhabi Airport"],
+    keyProjects: [],
     stats: [
       { n: "6,500+", l: "HVAC Projects" },
       { n: "56%", l: "GCC Market Share" },
@@ -35,7 +35,7 @@ const industries = {
     ],
     products: ["Gulf-O-Flex® NBR (Process)", "Gulf-O-Flex® Aluclad Jacketing", "Stainless Steel Cladding", "Vapor Seal Systems"],
     requirements: ["NORSOK M-501 Compliance", "Cryogenic to High-Temp Range", "Fire Safety (IMO/NFPA)", "Corrosion Resistance"],
-    keyProjects: ["Saudi Aramco Facilities", "ADNOC Refineries", "Qatar LNG Plants", "Kuwait Oil Company"],
+    keyProjects: [],
     stats: [
       { n: "1,800+", l: "O&G Projects" },
       { n: "-200°C", l: "Min Temperature" },
@@ -54,7 +54,7 @@ const industries = {
     ],
     products: ["Gulf-O-Flex® NBR Marine Grade", "Gulf-O-Flex® Aluclad Marine", "Fire Barrier Systems", "Acoustic Panels"],
     requirements: ["IMO FTP Code Compliance", "Class Society Approval", "Salt Spray Resistance", "Vibration Resistance"],
-    keyProjects: ["Dubai Dry Docks", "Singapore Container Terminal", "Abu Dhabi Shipbuilding", "Qatar Offshore Vessels"],
+    keyProjects: [],
     stats: [
       { n: "850+", l: "Marine Projects" },
       { n: "IMO", l: "FTP Approved" },
@@ -69,11 +69,11 @@ const industries = {
     color: "orange",
     description: [
       "Construction projects across the GCC depend on Gulf-O-Flex® for thermal and acoustic insulation of HVAC systems, plumbing, and building services. Our products meet Dubai Green Building Regulations, ADBC, and international green building certification requirements including LEED and BREEAM.",
-      "With over 12,000 completed construction projects, Gulf-O-Flex® is the contractor's first choice — backed by comprehensive technical support, regional availability, and a trusted brand recognized by consultants and authorities.",
+      "With over 12,000 completed construction projects, Gulf-O-Flex® is the contractor's first choice - backed by comprehensive technical support, regional availability, and a trusted brand recognized by consultants and authorities.",
     ],
     products: ["Gulf-O-Flex® NBR Tubes & Sheets", "Gulf-O-Flex® Sound", "Aluglass Facing", "Installation Accessories"],
     requirements: ["LEED & BREEAM Credits", "Dubai Green Building Regs", "Fire Classification", "Acoustic Compliance"],
-    keyProjects: ["Emaar Developments", "Aldar Properties", "Meydan City Projects", "Qatar FIFA Stadiums"],
+    keyProjects: [],
     stats: [
       { n: "12,000+", l: "Construction Projects" },
       { n: "LEED", l: "Compatible Products" },
@@ -92,7 +92,7 @@ const industries = {
     ],
     products: ["Gulf-O-Flex® NBR (Large Bore)", "Aluglass Facing Systems", "Pipe Hanger Insulation Kits", "Pre-insulated Systems"],
     requirements: ["Zero Condensation (3°C Pipes)", "ASHRAE 90.1 Compliance", "Long-Term Vapor Barrier", "Fire Safety (NFPA 90A)"],
-    keyProjects: ["Empower District Cooling (Dubai)", "Tabreed Network (UAE)", "Qatar Cool (Doha)", "KHIZA (Saudi Arabia)"],
+    keyProjects: [],
     stats: [
       { n: "380+", l: "DC Projects" },
       { n: "μ≥10k", l: "Vapor Resistance Factor" },
@@ -111,7 +111,7 @@ const industries = {
     ],
     products: ["Gulf-O-Flex® NBR (Industrial)", "Gulf-O-Flex® Aluclad", "High-Temp Composite Systems", "Custom Fabrications"],
     requirements: ["Process Temperature Range", "Chemical Resistance", "Mechanical Protection", "Maintenance Access"],
-    keyProjects: ["KIZAD Industrial Zone (UAE)", "Jubail Industrial City (KSA)", "Duqm Special Economic Zone", "Khalifa Port Industrial Zone"],
+    keyProjects: [],
     stats: [
       { n: "2,200+", l: "Industrial Projects" },
       { n: "DN500", l: "Max Pipe Size" },
@@ -266,23 +266,24 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
             </div>
           </div>
 
-          {/* Reference Projects */}
-          <div>
-            <div className="eyebrow mb-4"><span className="eyebrow-dot" />Reference Projects · {industry.keyProjects.length}</div>
-            <h2 className="text-neutral-900 leading-[1.05] mb-8"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 800, letterSpacing: "-0.03em" }}>
-                Proven on the world&rsquo;s most <span className="serif-italic text-orange-600">demanding</span> jobs.
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {industry.keyProjects.map((p, i) => (
-                <div key={p} className="group rounded-2xl border bg-white p-5 transition-all duration-300 hover:border-orange-300/60 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(234,88,12,0.25)]"
-                  style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                  <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600 mb-2">Project · 0{i + 1}</div>
-                  <div className="text-neutral-900 text-sm font-semibold leading-snug">{p}</div>
-                </div>
-              ))}
+          {industry.keyProjects.length > 0 && (
+            <div>
+              <div className="eyebrow mb-4"><span className="eyebrow-dot" />Reference Projects · {industry.keyProjects.length}</div>
+              <h2 className="text-neutral-900 leading-[1.05] mb-8"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 800, letterSpacing: "-0.03em" }}>
+                  Proven on the world&rsquo;s most <span className="serif-italic text-orange-600">demanding</span> jobs.
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {industry.keyProjects.map((p, i) => (
+                  <div key={p} className="group rounded-2xl border bg-white p-5 transition-all duration-300 hover:border-orange-300/60 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(234,88,12,0.25)]"
+                    style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+                    <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600 mb-2">Project · 0{i + 1}</div>
+                    <div className="text-neutral-900 text-sm font-semibold leading-snug">{p}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Site Map | Gulf-O-Flex® — gulfoflex.com",
+  title: "Site Map | Gulf-O-Flex® - gulfoflex.com",
   description:
-    "Complete site map for gulfoflex.com — browse all pages of the Gulf-O-Flex® website including products, industries, certifications, and more.",
+    "Complete site map for gulfoflex.com - browse all pages of the Gulf-O-Flex® website including products, industries, certifications, and more.",
   alternates: { canonical: "https://gulfoflex.com/sitemap" },
 };
 
@@ -134,7 +134,7 @@ export default function SitemapPageRoute() {
               Site <span className="gradient-text">Map</span><span className="serif-italic text-orange-600">.</span>
             </h1>
             <p className="text-neutral-600 text-lg max-w-xl leading-relaxed">
-              A complete directory of every page on gulfoflex.com — organized by section for easy navigation.
+              A complete directory of every page on gulfoflex.com - organized by section for easy navigation.
             </p>
 
             {/* Stats row */}

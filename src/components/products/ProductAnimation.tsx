@@ -1,5 +1,5 @@
 /**
- * ProductAnimation — autoplay looping video for each Gulf-O-Flex® product.
+ * ProductAnimation - autoplay looping video for each Gulf-O-Flex® product.
  *
  * Renders a muted, looping, inline video so it behaves like a seamless
  * animation (no controls, no audio, no user interaction required).

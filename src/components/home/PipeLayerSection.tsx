@@ -29,7 +29,7 @@ const LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 01  ·  Service Pipe",
     label: "Steel / Copper Service Pipe",
     description:
-      "The base service pipe — carbon steel, stainless steel, or copper — carrying chilled water, HVAC refrigerant, domestic cold water, or industrial process fluids across the GCC's most demanding MEP networks.",
+      "The base service pipe - carbon steel, stainless steel, or copper - carrying chilled water, HVAC refrigerant, domestic cold water, or industrial process fluids across the GCC's most demanding MEP networks.",
     keyMetric: { value: "DN400", unit: "", label: "Maximum bore diameter supported" },
     specs: [
       "DN15 – DN400 bore diameter",
@@ -52,7 +52,7 @@ const LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 02  ·  Gulf-O-Flex® NBR",
     label: "Gulf-O-Flex® NBR Insulation",
     description:
-      "Premium closed-cell Nitrile Butadiene Rubber (NBR) elastomeric insulation — the regional benchmark for HVAC, district cooling, and plumbing. Engineered with a honeycomb closed-cell structure that acts as its own integral vapour barrier — zero water absorption, Class 1 fire rated, CFC/HCFC free. Manufactured in the UAE since 1993.",
+      "Premium closed-cell Nitrile Butadiene Rubber (NBR) elastomeric insulation - the regional benchmark for HVAC, district cooling, and plumbing. Engineered with a honeycomb closed-cell structure that acts as its own integral vapour barrier - zero water absorption, Class 1 fire rated, CFC/HCFC free. Manufactured in the UAE since 1993.",
     keyMetric: { value: "0.032", unit: "W/mK", label: "Thermal conductivity at 35°C (ASTM C518)" },
     specs: [
       "λ = 0.032 W/mK at 35°C (ASTM C518)",
@@ -60,7 +60,7 @@ const LAYERS: readonly LayerSpec[] = [
       "−40°C to +105°C operating range",
       "Density 50–70 kg/m³ (ASTM C302-13)",
       "Water absorption 0.16 vol% (ASTM C534)",
-      "WVT 0.00 Perm in — zero vapour pass (ASTM E96)",
+      "WVT 0.00 Perm in - zero vapour pass (ASTM E96)",
       "Vapour diffusion factor μ ≥ 7,300",
       "NRC 0.30 / 0.40 / 0.45 at 13 / 19 / 25 mm",
       "Class 1 / Class O fire rated (BS 476 Pt 6 & 7)",
@@ -70,11 +70,11 @@ const LAYERS: readonly LayerSpec[] = [
     ],
     highlights: [
       "FM Approved · UL Listed · EPD Verified · ISO 9001",
-      "Zero ODP — CFC and HCFC free, low GWP",
+      "Zero ODP - CFC and HCFC free, low GWP",
       "Anti-microbial: resists mold, mildew and fungi growth",
-      "Self-extinguishing — no active fire suppression needed",
+      "Self-extinguishing - no active fire suppression needed",
       "Closed-cell = integral vapour barrier, no tape required",
-      "Pre-slit tube design — no mechanical fixings, no thermal bridges",
+      "Pre-slit tube design - no mechanical fixings, no thermal bridges",
     ],
     accent: "#f97316",
   },
@@ -83,7 +83,7 @@ const LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 03  ·  Gulf-O-Flex® Aluglass",
     label: "Gulf-O-Flex® Aluglass Facing",
     description:
-      "High-performance aluminium + glass-cloth + PE-film laminate facing seals the insulation surface with a continuous vapour barrier and mechanical reinforcement — engineered for the heat and humidity of the Gulf climate. Self-adhesive option for fast site application.",
+      "High-performance aluminium + glass-cloth + PE-film laminate facing seals the insulation surface with a continuous vapour barrier and mechanical reinforcement - engineered for the heat and humidity of the Gulf climate. Self-adhesive option for fast site application.",
     keyMetric: { value: "< 0.02", unit: "perms", label: "Vapour permeability (ASTM E96)" },
     specs: [
       "Aluminium + Glass Cloth + PE Film laminate",
@@ -98,7 +98,7 @@ const LAYERS: readonly LayerSpec[] = [
       "Self-adhesive option for fast application",
     ],
     highlights: [
-      "Continuous barrier — eliminates vapour ingress at joints",
+      "Continuous barrier - eliminates vapour ingress at joints",
       "Glass-cloth scrim provides puncture and tear resistance",
       "PE film backing protects adhesive on site",
       "Tested per ASTM, BS EN and ISO standards",
@@ -110,7 +110,7 @@ const LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 04  ·  Gulf-O-Flex® Aluclad",
     label: "Gulf-O-Flex® Aluclad Jacketing",
     description:
-      "Industrial-grade aluminium jacketing in smooth or stucco-embossed profiles — delivering UV, weather, chemical, and mechanical protection for outdoor pipelines, offshore platforms, petrochemical plants, and rooftop plant rooms across the GCC.",
+      "Industrial-grade aluminium jacketing in smooth or stucco-embossed profiles - delivering UV, weather, chemical, and mechanical protection for outdoor pipelines, offshore platforms, petrochemical plants, and rooftop plant rooms across the GCC.",
     keyMetric: { value: "0.4–1.0", unit: "mm", label: "Available gauge range" },
     specs: [
       "Aluminium Alloy 1050 / 3003 (H14 / H16 temper)",
@@ -134,7 +134,7 @@ const LAYERS: readonly LayerSpec[] = [
 ];
 
 /* NBR-focused walkthrough (used on the /products/nbr page).
-   Only the bare service pipe and the NBR sleeve are shown in 3D —
+   Only the bare service pipe and the NBR sleeve are shown in 3D -
    the third “sealed” step keeps the NBR fully installed and
    highlights the closed-cell vapor seal performance. */
 const NBR_LAYERS: readonly LayerSpec[] = [
@@ -143,7 +143,7 @@ const NBR_LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 01  ·  Service Pipe",
     label: "Bare Service Pipe",
     description:
-      "A chilled-water service pipe operating at +6°C in a +48°C ambient. Without insulation, the cold steel surface condenses humidity, drips on ceilings, corrodes the line, and bleeds cooling capacity into the air. This is the unprotected baseline — condensation forms immediately.",
+      "A chilled-water service pipe operating at +6°C in a +48°C ambient. Without insulation, the cold steel surface condenses humidity, drips on ceilings, corrodes the line, and bleeds cooling capacity into the air. This is the unprotected baseline - condensation forms immediately.",
     keyMetric: { value: "+48°C", unit: "", label: "Typical GCC ambient temperature" },
     specs: [
       "DN15 – DN400 bore diameter",
@@ -166,7 +166,7 @@ const NBR_LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 02  ·  Gulf-O-Flex® NBR",
     label: "Closed-Cell NBR Rubber Insulation",
     description:
-      "Pre-slit Gulf-O-Flex® NBR tube slides over the pipe and seals along the factory-cut seam with Gulf-O-Flex® adhesive — no mechanical fixings, no thermal bridges. The flexible closed-cell Nitrile Butadiene Rubber structure encapsulates the pipe in an integral vapour barrier that cannot delaminate or fail at joints.",
+      "Pre-slit Gulf-O-Flex® NBR tube slides over the pipe and seals along the factory-cut seam with Gulf-O-Flex® adhesive - no mechanical fixings, no thermal bridges. The flexible closed-cell Nitrile Butadiene Rubber structure encapsulates the pipe in an integral vapour barrier that cannot delaminate or fail at joints.",
     keyMetric: { value: "0.032", unit: "W/mK", label: "Thermal conductivity at 35°C (ASTM C518)" },
     specs: [
       "λ = 0.032 W/mK at 35°C (ASTM C518)",
@@ -174,21 +174,21 @@ const NBR_LAYERS: readonly LayerSpec[] = [
       "−40°C to +105°C operating range",
       "Density 50–70 kg/m³ (ASTM C302-13)",
       "Water absorption only 0.16 vol% (ASTM C534)",
-      "WVT = 0.00 Perm in — zero vapour pass (ASTM E96)",
+      "WVT = 0.00 Perm in - zero vapour pass (ASTM E96)",
       "Vapour diffusion factor μ ≥ 7,300",
       "NRC 0.30 / 0.40 / 0.45 at 13 / 19 / 25 mm",
       "Thickness: 6 – 50 mm (tubes) · 6 – 100 mm (sheets)",
-      "Pre-slit design — adhesive seam, no thermal bridges",
+      "Pre-slit design - adhesive seam, no thermal bridges",
       "Tubes · Sheets · Rolls · Self-adhesive forms",
       "Cell structure: closed-cell honeycomb mesh + scrim",
     ],
     highlights: [
       "FM Approved · UL Listed · EPD Verified · ISO 9001",
-      "Zero ODP — CFC and HCFC free, low GWP refrigerant-safe",
+      "Zero ODP - CFC and HCFC free, low GWP refrigerant-safe",
       "Anti-microbial: resists mold, mildew and fungi growth",
-      "Self-extinguishing — Class 1 / Class O (BS 476 & ASTM E84)",
+      "Self-extinguishing - Class 1 / Class O (BS 476 & ASTM E84)",
       "Closed-cell structure = integral vapour barrier, no foil tape needed",
-      "Passive performance — 0 active maintenance over 30+ year service life",
+      "Passive performance - 0 active maintenance over 30+ year service life",
     ],
     accent: "#f97316",
   },
@@ -197,23 +197,23 @@ const NBR_LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 03  ·  Sealed System",
     label: "Vapor-Sealed & Fire-Safe",
     description:
-      "The closed-cell honeycomb structure is its own integral vapour barrier — no foil laminate, no butt tape, no failure points at joints. The fully sealed NBR system delivers zero condensation, Class 1 / Class 0 fire safety, and a 30+ year passive service life across HVAC, district cooling, refrigeration, and plumbing.",
+      "The closed-cell honeycomb structure is its own integral vapour barrier - no foil laminate, no butt tape, no failure points at joints. The fully sealed NBR system delivers zero condensation, Class 1 / Class 0 fire safety, and a 30+ year passive service life across HVAC, district cooling, refrigeration, and plumbing.",
     keyMetric: { value: "7,300", unit: "μ", label: "Vapour diffusion resistance factor (ASTM E96)" },
     specs: [
       "Vapour diffusion factor μ ≥ 7,300 (ASTM E96/96M)",
-      "WVT = 0.00 Perm in — absolute zero vapour pass",
+      "WVT = 0.00 Perm in - absolute zero vapour pass",
       "Class 1 / Class O fire rated (BS 476 Part 6 & 7)",
       "FSI ≤ 25 · SDI ≤ 50 (ASTM E84 / UL 723)",
-      "Self-extinguishing — no active fire suppression needed",
+      "Self-extinguishing - no active fire suppression needed",
       "FM Approved · UL Listed · ISO 9001 certified",
       "Zero ODP · Low GWP (CFC & HCFC free)",
       "Anti-microbial: resists mold, mildew and fungi",
       "Service life: 30+ years with zero maintenance",
     ],
     highlights: [
-      "EPD Verified — independently certified environmental data",
+      "EPD Verified - independently certified environmental data",
       "Tested per ASTM, BS EN, ISO and FM Global standards",
-      "No secondary vapour barrier required — simplifies installation",
+      "No secondary vapour barrier required - simplifies installation",
       "Suitable for GCC district cooling networks up to 40 bar",
       "Manufactured under ISO 9001 QMS in the UAE since 1993",
     ],
@@ -223,7 +223,7 @@ const NBR_LAYERS: readonly LayerSpec[] = [
 
 export type PipeLayerVariant = "full" | "nbr";
 
-/* Geometry constants — smaller, better framed */
+/* Geometry constants - smaller, better framed */
 const R_PIPE_OUTER  = 0.55;
 const R_PIPE_INNER  = 0.44;
 const R_INSULATION  = 0.68;
@@ -303,7 +303,7 @@ function SlidingLayer({
 }
 
 /* ─────────────────────────────────────────────────────────
-   VAPOR BARRIER TAPE — arc-sweep wrap
+   VAPOR BARRIER TAPE - arc-sweep wrap
    Tape really wraps around, so we keep the theta sweep here.
 ───────────────────────────────────────────────────────── */
 function VaporTape({ progress }: { progress: number }) {
@@ -369,11 +369,11 @@ function VaporTape({ progress }: { progress: number }) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   BORE FLOW — pressurised chilled air / fluid streaming through
+   BORE FLOW - pressurised chilled air / fluid streaming through
    the hollow pipe bore. Three layered particle systems:
-     coreRef  — 160 tiny fast white streaks (laminar core flow)
-     mistRef  — 60 larger cool-blue mist puffs (condensation haze)
-     plumeRef — 50 particles that EXIT from the open pipe end
+     coreRef  - 160 tiny fast white streaks (laminar core flow)
+     mistRef  - 60 larger cool-blue mist puffs (condensation haze)
+     plumeRef - 50 particles that EXIT from the open pipe end
                 and expand visibly outward as a cold-air plume
    All systems fade out as NBR insulation slides over.
 ───────────────────────────────────────────────────────── */
@@ -398,7 +398,7 @@ function BoreFlow({ insulProgress }: { insulProgress: number }) {
       corePos[i * 3 + 2] = Math.sin(angle) * r;
       coreSpeeds[i]      = 1.8 + Math.random() * 2.8;
     }
-    /* Mist haze — slower, wider spread */
+    /* Mist haze - slower, wider spread */
     const mistPos    = new Float32Array(N_MIST * 3);
     const mistSpeeds = new Float32Array(N_MIST);
     for (let i = 0; i < N_MIST; i++) {
@@ -409,7 +409,7 @@ function BoreFlow({ insulProgress }: { insulProgress: number }) {
       mistPos[i * 3 + 2] = Math.sin(angle) * r;
       mistSpeeds[i]      = 0.5 + Math.random() * 0.9;
     }
-    /* Exit plume — particles that leave the positive-Y pipe end */
+    /* Exit plume - particles that leave the positive-Y pipe end */
     const plumePos  = new Float32Array(N_PLUME * 3);
     const plumeVels = new Float32Array(N_PLUME * 3);
     const plumeAges = new Float32Array(N_PLUME);
@@ -488,7 +488,7 @@ function BoreFlow({ insulProgress }: { insulProgress: number }) {
 
   return (
     <group>
-      {/* Fast laminar core — bright white streaks */}
+      {/* Fast laminar core - bright white streaks */}
       <points ref={coreRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[core.pos, 3]} />
@@ -503,7 +503,7 @@ function BoreFlow({ insulProgress }: { insulProgress: number }) {
           blending={THREE.AdditiveBlending}
         />
       </points>
-      {/* Mist haze — larger cool-blue puffs */}
+      {/* Mist haze - larger cool-blue puffs */}
       <points ref={mistRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[mist.pos, 3]} />
@@ -518,7 +518,7 @@ function BoreFlow({ insulProgress }: { insulProgress: number }) {
           blending={THREE.AdditiveBlending}
         />
       </points>
-      {/* Exit plume — visible cloud emerging from pipe end */}
+      {/* Exit plume - visible cloud emerging from pipe end */}
       <points ref={plumeRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[plume.pos, 3]} />
@@ -599,7 +599,7 @@ function makeCanvasTexture(
   return tex;
 }
 
-/* Brushed steel — 1024 px, high-contrast anisotropic scratches, barrel highlight, edge falloff */
+/* Brushed steel - 1024 px, high-contrast anisotropic scratches, barrel highlight, edge falloff */
 function brushedSteelMaps() {
   const map = makeCanvasTexture(1024, (ctx, s) => {
     /* Base: cool-blue industrial steel gradient */
@@ -625,7 +625,7 @@ function brushedSteelMaps() {
       const y = Math.random() * s;
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(s, y); ctx.stroke();
     }
-    /* Barrel highlight — strong centre specular band */
+    /* Barrel highlight - strong centre specular band */
     const hg = ctx.createLinearGradient(0, 0, s, 0);
     hg.addColorStop(0,    "rgba(255,255,255,0)");
     hg.addColorStop(0.40, "rgba(255,255,255,0.05)");
@@ -655,7 +655,7 @@ function brushedSteelMaps() {
     }
   }, [4, 1]);
 
-  /* Roughness map: horizontal smear noise — scratch peaks reflect (dark=smooth), base is medium */
+  /* Roughness map: horizontal smear noise - scratch peaks reflect (dark=smooth), base is medium */
   const roughnessMap = makeCanvasTexture(512, (ctx, s) => {
     ctx.fillStyle = "#1c2230"; ctx.fillRect(0, 0, s, s);
     for (let i = 0; i < 5000; i++) {
@@ -668,11 +668,11 @@ function brushedSteelMaps() {
   return { map, roughnessMap };
 }
 
-/* Closed-cell NBR foam — matte jet-black rubber with cell pores + slit seam */
+/* Closed-cell NBR foam - matte jet-black rubber with cell pores + slit seam */
 function nbrFoamMaps() {
   const map = makeCanvasTexture(512, (ctx, s) => {
     ctx.fillStyle = "#0b0b0b"; ctx.fillRect(0, 0, s, s);
-    /* Closed cells — slight radial shading */
+    /* Closed cells - slight radial shading */
     for (let i = 0; i < 2200; i++) {
       const x = Math.random() * s, y = Math.random() * s;
       const r = 1.2 + Math.random() * 3.5;
@@ -716,7 +716,7 @@ function nbrFoamMaps() {
   return { map, normalMap };
 }
 
-/* Stucco-embossed aluminium — 1024 px, deeper emboss, roughnessMap, barrel highlight, groove darkening */
+/* Stucco-embossed aluminium - 1024 px, deeper emboss, roughnessMap, barrel highlight, groove darkening */
 function stuccoAlumMaps() {
   const STEP = 18;
 
@@ -736,7 +736,7 @@ function stuccoAlumMaps() {
       const y = Math.random() * s;
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(s, y); ctx.stroke();
     }
-    /* Stucco bumps — offset diamond grid */
+    /* Stucco bumps - offset diamond grid */
     for (let row = -1; row * STEP < s + STEP * 2; row++) {
       for (let col = -1; col * STEP < s + STEP * 2; col++) {
         const ox = (row & 1) ? STEP * 0.5 : 0;
@@ -760,7 +760,7 @@ function stuccoAlumMaps() {
         ctx.restore();
       }
     }
-    /* Groove network — thin dark lines between bumps */
+    /* Groove network - thin dark lines between bumps */
     ctx.globalAlpha = 0.12;
     ctx.strokeStyle = "#3a4250";
     ctx.lineWidth = 0.8;
@@ -786,7 +786,7 @@ function stuccoAlumMaps() {
     ctx.fillStyle = er; ctx.fillRect(0, 0, s, s);
   }, [8, 3]);
 
-  /* Normal map — strong emboss vectors for deep stucco relief */
+  /* Normal map - strong emboss vectors for deep stucco relief */
   const normalMap = makeCanvasTexture(1024, (ctx, s) => {
     ctx.fillStyle = "#8080ff"; ctx.fillRect(0, 0, s, s);
     for (let row = -1; row * STEP < s + STEP * 2; row++) {
@@ -806,7 +806,7 @@ function stuccoAlumMaps() {
     }
   }, [8, 3]);
 
-  /* Roughness map — bump peaks = low roughness (shiny), grooves = high roughness (matte) */
+  /* Roughness map - bump peaks = low roughness (shiny), grooves = high roughness (matte) */
   const roughnessMap = makeCanvasTexture(512, (ctx, s) => {
     ctx.fillStyle = "#999999"; ctx.fillRect(0, 0, s, s); /* medium base roughness */
     const step = STEP / 2; /* scaled to 512 */
@@ -846,7 +846,7 @@ function PipeAssembly({ progressRef, variant = "full" }: SceneProps) {
     if (!groupRef.current) return;
 
     const ease   = (x: number) => (x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x));
-    // NBR variant: only the NBR sleeve animates — slide it across the
+    // NBR variant: only the NBR sleeve animates - slide it across the
     // middle third of scroll progress, then hold full coverage.
     const insulP = isNbr
       ? ease((p - 0.18) / 0.42)
@@ -922,7 +922,7 @@ function PipeAssembly({ progressRef, variant = "full" }: SceneProps) {
         {/* ── Air / fluid bore flow (visible before insulation) ── */}
         <BoreFlow insulProgress={layerProgs.ins} />
 
-        {/* ── NBR insulation — slides on from left ── */}
+        {/* ── NBR insulation - slides on from left ── */}
         <SlidingLayer
           radius={R_INSULATION}
           innerCapRadius={R_PIPE_OUTER}
@@ -1067,7 +1067,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
     });
 
     // Compute step thresholds inside the effect so its dependency list
-    // only contains primitive `stepCount` — otherwise the array literal
+    // only contains primitive `stepCount` - otherwise the array literal
     // would change identity every render and continuously kill / recreate
     // the ScrollTrigger, which leaves the R3F scene in a stale state and
     // can present as a blank canvas.
@@ -1111,7 +1111,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
     <section
       ref={sectionRef}
       style={{ height: `${sectionHeightVh}vh` }}
-      aria-label="Insulation layer system — 3D visualisation"
+      aria-label="Insulation layer system - 3D visualisation"
     >
       <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden" style={{ background: "#0a0806" }}>
         {/* Background */}
@@ -1236,7 +1236,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
                   maxWidth: 560,
                 }}
               >
-                Layer by layer —{" "}
+                Layer by layer -{" "}
                 <span className="orange-text">engineered protection.</span>
               </h2>
             </div>
@@ -1269,7 +1269,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
             </div>
           </header>
 
-          {/* MIDDLE — text panels */}
+          {/* MIDDLE - text panels */}
           <div className="flex-1 grid lg:grid-cols-[1fr_minmax(0,500px)] items-center mt-4">
             <div />
             <div className="relative" style={{ minHeight: 420 }}>
@@ -1416,7 +1416,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
                     ))}
                   </div>
 
-                  {/* Highlights — certifications and key performance claims */}
+                  {/* Highlights - certifications and key performance claims */}
                   {layer.highlights && layer.highlights.length > 0 && (
                     <ul className="space-y-1.5 mt-1" style={{ maxWidth: 480 }}>
                       {layer.highlights.map((h) => (
@@ -1464,7 +1464,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
             </div>
           </div>
 
-          {/* BOTTOM — progress rail */}
+          {/* BOTTOM - progress rail */}
           <footer className="pt-6">
             <div
               className="grid gap-3 mb-3"

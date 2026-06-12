@@ -37,7 +37,7 @@ export default function DownloadsPage() {
                 <span className="serif-italic text-orange-600">.</span>
               </h1>
               <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl">
-                A living technical library for MEP engineers, contractors, and consultants. Search, filter, preview, and download — datasheets, ISO certificates, fire approvals, BIM families, and ready-to-paste master specifications.
+                A living technical library for MEP engineers, contractors, and consultants. Search, filter, preview, and download - datasheets, ISO certificates, fire approvals, BIM families, and ready-to-paste master specifications.
               </p>
 
               <div className="mt-8 flex items-center gap-3 flex-wrap">
@@ -74,11 +74,11 @@ export default function DownloadsPage() {
                 </div>
                 <div className="grid grid-cols-3 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {[
-                    { n: "36+",  l: "Documents" },
-                    { n: "6",    l: "Categories" },
-                    { n: "7",    l: "Formats" },
+                    { n: "13+",  l: "Documents" },
+                    { n: "3",    l: "Categories" },
+                    { n: "2",    l: "Formats" },
                     { n: "ISO",  l: "Certified" },
-                    { n: "BIM",  l: "Ready" },
+                    { n: "Local", l: "Hosted" },
                     { n: "2026", l: "Edition" },
                   ].map((s) => (
                     <div key={s.l} className="bg-white p-5">

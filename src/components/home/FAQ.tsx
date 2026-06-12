@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "What is the difference between NBR and XLPE insulation?",
-    a: "NBR (Nitrile Butadiene Rubber) offers superior flexibility, excellent moisture resistance, and Class O fire rating — ideal for HVAC, refrigeration, and acoustic applications. XLPE (Cross-Linked Polyethylene) provides higher compressive strength, chemical resistance, and UV stability, better suited for industrial pipe insulation and outdoor applications requiring mechanical protection.",
+    a: "NBR (Nitrile Butadiene Rubber) offers superior flexibility, excellent moisture resistance, and Class O fire rating - ideal for HVAC, refrigeration, and acoustic applications. XLPE (Cross-Linked Polyethylene) provides higher compressive strength, chemical resistance, and UV stability, better suited for industrial pipe insulation and outdoor applications requiring mechanical protection.",
     tag: "Product",
   },
   {
@@ -41,7 +41,7 @@ export default function FAQ() {
       <div className="absolute top-0 left-0 right-0 h-px tech-divider" />
 
       <div className="container-wide relative z-10">
-        {/* Header — single col, left-aligned */}
+        {/* Header - single col, left-aligned */}
         <div className="max-w-xl mb-12 reveal-left">
           <h2
             id="faq-heading"
@@ -52,7 +52,7 @@ export default function FAQ() {
             <span className="serif-italic text-orange-600">insulation questions.</span>
           </h2>
           <p className="text-neutral-500 leading-relaxed">
-            Precise, reliable technical clarity from Gulf-O-Flex® engineers —
+            Precise, reliable technical clarity from Gulf-O-Flex® engineers -
             structured for MEP engineers, consultants, and project specifiers.
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function FAQ() {
                 More questions?
               </h3>
               <p className="text-neutral-500 text-sm leading-relaxed mb-5">
-                Browse our full FAQ center or use Gulf-O-Flex Assist — our AI engineering platform — for instant technical answers.
+                Browse our full FAQ center or use Gulf-O-Flex Assist - our AI engineering platform - for instant technical answers.
               </p>
               <div className="flex flex-col gap-2">
                 <Link href="/faq" className="btn-primary text-xs py-3">

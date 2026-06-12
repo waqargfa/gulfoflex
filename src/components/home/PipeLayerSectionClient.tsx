@@ -10,7 +10,7 @@ export type PipeLayerVariant = "full" | "nbr";
  * Lazy-mount wrapper: only renders the heavy R3F Canvas when the user
  * is within ~1 viewport of the section. This avoids the canvas being
  * created far above the fold and then having its WebGL context
- * suspended by Chromium while it sits offscreen — a state where the
+ * suspended by Chromium while it sits offscreen - a state where the
  * canvas becomes a blank rectangle that never recovers.
  */
 export default function PipeLayerSectionClient({ variant = "full" }: { variant?: PipeLayerVariant } = {}) {

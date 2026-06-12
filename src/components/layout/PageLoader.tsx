@@ -7,7 +7,7 @@ import Image from "next/image";
    0.00 s  background appears
    0.30 s  logo fades + scales in
    0.80 s  underline draws in
-   2.40 s  exit — curtain slides up
+   2.40 s  exit - curtain slides up
    3.00 s  component unmounts
 ──────────────────────────────────────────────── */
 

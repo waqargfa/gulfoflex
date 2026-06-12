@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -118,8 +118,8 @@ export default function GlobalPresence() {
             Our reach <span className="serif-italic text-orange-500">worldwide</span>.
           </h2>
           <p className="text-neutral-500 text-base md:text-lg leading-relaxed max-w-2xl">
-            From our headquarters in the UAE, Gulf-O-Flex® powers landmark projects across six
-            continents — backed by three manufacturing plants, dedicated sales offices, and a
+            From our headquarters in the UAE, Gulf-O-Flex powers landmark projects across six
+            continents, backed by three manufacturing plants, dedicated sales offices, and a
             distributor network spanning <span className="text-neutral-900 font-semibold">90+ countries</span>.
           </p>
         </div>
@@ -156,7 +156,7 @@ export default function GlobalPresence() {
             <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
               <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500">
-                Live network · {HUBS.length} hubs
+                Live network - {HUBS.length} hubs
               </span>
             </div>
 
@@ -210,7 +210,7 @@ export default function GlobalPresence() {
                           isActive ? "text-white/70" : "text-neutral-400"
                         }`}
                       >
-                        {h.label} · est. {h.established}
+                        {h.label} - est. {h.established}
                       </div>
                     </div>
                     <MapPin
@@ -243,7 +243,7 @@ export default function GlobalPresence() {
                     letterSpacing: "-0.025em",
                   }}
                 >
-                  Where you&rsquo;ll find Gulf-O-Flex®.
+                  Where you&rsquo;ll find Gulf-O-Flex.
                 </h3>
               </div>
               <div className="text-xs text-neutral-400">
@@ -319,3 +319,4 @@ export default function GlobalPresence() {
     </section>
   );
 }
+

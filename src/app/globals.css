@@ -6,7 +6,7 @@
 }
 
 /* ============================================
-   GULF-O-FLEX — PREMIUM DESIGN SYSTEM v2
+   GULF-O-FLEX - PREMIUM DESIGN SYSTEM v2
    ============================================ */
 
 @layer base {
@@ -104,7 +104,7 @@
 
 @layer components {
 
-  /* ——— Page hero Ken-Burns ——— */
+  /* --- Page hero Ken-Burns --- */
   .page-hero-kenburns {
     animation: pageHeroKenBurns 28s ease-in-out infinite alternate;
     transform-origin: 50% 50%;
@@ -118,7 +118,7 @@
     .page-hero-kenburns { animation: none; transform: scale(1.06); }
   }
 
-  /* ——— Background art ——— */
+  /* --- Background art --- */
   .grid-bg {
     background-image:
       linear-gradient(rgba(249, 115, 22, 0.07) 1px, transparent 1px),
@@ -172,7 +172,7 @@
     background: radial-gradient(ellipse at center, transparent 40%, rgba(10,10,10,0.10) 100%);
   }
 
-  /* ——— Glass surfaces ——— */
+  /* --- Glass surfaces --- */
   .glass-card {
     background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55));
     backdrop-filter: blur(24px) saturate(1.4);
@@ -215,7 +215,7 @@
     box-shadow: 0 1px 2px rgba(10,10,10,0.04);
   }
 
-  /* ——— Buttons ——— */
+  /* --- Buttons --- */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -298,7 +298,7 @@
     box-shadow: 0 12px 36px -10px rgba(249, 115, 22, 0.45);
   }
 
-  /* ——— Labels / tags ——— */
+  /* --- Labels / tags --- */
   .section-label {
     display: inline-flex;
     align-items: center;
@@ -358,7 +358,7 @@
     border: 1px solid var(--stroke-orange);
   }
 
-  /* ——— Typography helpers ——— */
+  /* --- Typography helpers --- */
   .gradient-text,
   .orange-text {
     background: linear-gradient(120deg, var(--orange) 0%, var(--orange-dark) 60%, #9a3a07 100%);
@@ -416,7 +416,7 @@
     font-feature-settings: "ss01", "ss02", "cv11";
   }
 
-  /* ——— Layout ——— */
+  /* --- Layout --- */
   .section-padding {
     padding-top: clamp(5rem, 9vw, 9rem);
     padding-bottom: clamp(5rem, 9vw, 9rem);
@@ -431,7 +431,7 @@
     padding-right: clamp(1.25rem, 5vw, 4rem);
   }
 
-  /* ——— Hover effects ——— */
+  /* --- Hover effects --- */
   .hover-lift {
     transition: transform 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-smooth), border-color 0.35s ease;
   }
@@ -456,7 +456,7 @@
   }
   .card-shine:hover::after { left: 130%; }
 
-  /* ——— Number display ——— */
+  /* --- Number display --- */
   .stat-number {
     font-family: var(--font-display), var(--font-syne), ui-sans-serif;
     font-weight: 800;
@@ -468,7 +468,7 @@
     letter-spacing: -0.045em;
   }
 
-  /* ——— Dividers ——— */
+  /* --- Dividers --- */
   .tech-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--stroke-orange) 50%, transparent);
@@ -496,7 +496,7 @@
     letter-spacing: -0.01em;
   }
 
-  /* ——— Scroll reveal ——— */
+  /* --- Scroll reveal --- */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -519,7 +519,7 @@
   }
   .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
 
-  /* ——— Marquee ——— */
+  /* --- Marquee --- */
   .marquee-track {
     display: flex;
     gap: 4rem;
@@ -532,7 +532,7 @@
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
 
-  /* ——— Spotlight effect (for cards) ——— */
+  /* --- Spotlight effect (for cards) --- */
   .spotlight {
     position: relative;
     overflow: hidden;
@@ -737,12 +737,13 @@
 .word-rise > span:nth-child(5) { animation-delay: 0.45s; }
 .word-rise > span:nth-child(6) { animation-delay: 0.55s; }
 
-/* Stagger reveal — parent gets .is-visible from SmoothScroll, children transition in sequence */
+/* Stagger reveal - parent gets .is-visible from SmoothScroll, children transition in sequence */
 .stagger-reveal > * {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.65s var(--ease-out-expo), transform 0.65s var(--ease-out-expo);
 }
+.stagger-reveal.is-visible > * { opacity: 1; transform: none; }
 .stagger-reveal.is-visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.04s; }
 .stagger-reveal.is-visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.11s; }
 .stagger-reveal.is-visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.18s; }
@@ -761,7 +762,7 @@
 }
 .reveal-scale.is-visible { opacity: 1; transform: scale(1) translateY(0); }
 
-/* Split reveal — for large two-column sections */
+/* Split reveal - for large two-column sections */
 .reveal-pair > *:first-child {
   opacity: 0;
   transform: translateX(-28px);
@@ -835,7 +836,7 @@
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ============================================
-   CORPORATE DESIGN SYSTEM — UPGRADE LAYER
+   CORPORATE DESIGN SYSTEM - UPGRADE LAYER
    ============================================ */
 
 /* ── Premium Light Section ── */

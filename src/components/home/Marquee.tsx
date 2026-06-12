@@ -26,7 +26,7 @@ const COUNTRY_CLIENTS: Record<string, Client[]> = {
     { name: "Tiger Group",          logo: "/logos/Tiger%20Group.png",                      short: "TG" },
     { name: "Almal Realestate",     logo: "/logos/Almal%20Realstate.jpg",                  short: "AL" },
   ],
-  // KSA, LK, EG, PK, ZA — to be added
+  // KSA, LK, EG, PK, ZA - to be added
 };
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -263,7 +263,7 @@ export default function Marquee() {
               key={i}
               className="flex items-center gap-2 flex-shrink-0 text-neutral-400 hover:text-orange-500 transition-colors duration-300"
             >
-              <span className="text-orange-500/40" style={{ fontSize: "0.5rem" }}>◆</span>
+              <span className="text-orange-500/40" style={{ fontSize: "0.5rem" }}>�-�</span>
               <span
                 style={{
                   fontSize: "0.6875rem",
@@ -282,3 +282,4 @@ export default function Marquee() {
     </section>
   );
 }
+

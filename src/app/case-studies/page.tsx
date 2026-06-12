@@ -157,7 +157,7 @@ const caseStudies: CaseStudy[] = [
         type: "ul",
         items: [
           "Normal Recommendation: 32 mm insulation for pipes above 150 mm thickness",
-          "Project-Specific Adjustment: 75 mm insulation in two layers — First Layer: 50 mm base barrier; Second Layer: 25 mm for enhanced protection and thermal performance",
+          "Project-Specific Adjustment: 75 mm insulation in two layers , First Layer: 50 mm base barrier; Second Layer: 25 mm for enhanced protection and thermal performance",
         ],
       },
     ],
@@ -207,7 +207,7 @@ const caseStudies: CaseStudy[] = [
         type: "ul",
         items: [
           "Outdoor RH: 5%",
-          "Indoor RH: 45–50% (approx.)",
+          "Indoor RH: 45-50% (approx.)",
           "Dry Bulb Temperature (DBT): As provided by the contractor's equipment selection",
           "Wet Bulb Temperature (WBT): As provided by the contractor's equipment selection",
         ],
@@ -225,7 +225,7 @@ const caseStudies: CaseStudy[] = [
       },
       {
         type: "p",
-        text: "These thicknesses were sufficient to prevent condensation given the low RH and operating temperatures. The consultant requested a manual calculation for verification — our manual calculation matched the system-generated result, confirming the accuracy of the proposed insulation thickness.",
+        text: "These thicknesses were sufficient to prevent condensation given the low RH and operating temperatures. The consultant requested a manual calculation for verification , our manual calculation matched the system-generated result, confirming the accuracy of the proposed insulation thickness.",
       },
     ],
     result: [
@@ -245,7 +245,7 @@ const caseStudies: CaseStudy[] = [
     id: "04",
     slug: "jeddah-central-stadium",
     region: "KSA",
-    title: "Jeddah Central Development — Stadium",
+    title: "Jeddah Central Development , Stadium",
     subtitle:
       "Full specification switch from XLPE to NBR closed-cell elastomeric through an independent test programme on a Vision 2030 flagship venue.",
     client: "Jeddah Central Development · Stadium",
@@ -254,15 +254,15 @@ const caseStudies: CaseStudy[] = [
     year: "2025",
     image: "/case-studies/qiddiya.webp",
     overview:
-      "The mechanical specification for the stadium's chilled-water, BMU and HVAC distribution was originally issued calling for XLPE/PE foam insulation throughout — a default carried from the consultant's previous large-venue templates. With a high-occupancy sports venue and Saudi Vision 2030 visibility, the fire and life-safety implications warranted a formal challenge.",
+      "The mechanical specification for the stadium's chilled-water, BMU and HVAC distribution was originally issued calling for XLPE/PE foam insulation throughout , a default carried from the consultant's previous large-venue templates. With a high-occupancy sports venue and Saudi Vision 2030 visibility, the fire and life-safety implications warranted a formal challenge.",
     challenge: [
       {
         type: "p",
-        text: "The design consultant's template specified XLPE/PE foam for all CHW and HVAC scopes. Independent review identified that XLPE did not meet the fire reaction, smoke density, or vapour resistance thresholds required for an occupied public venue under SASO and the Saudi Building Code (§804.3).",
+        text: "The design consultant's template specified XLPE/PE foam for all CHW and HVAC scopes. Independent review identified that XLPE did not meet the fire reaction, smoke density, or vapour resistance thresholds required for an occupied public venue under SASO and the Saudi Building Code (S804.3).",
       },
       {
         type: "p",
-        text: "A formal variation was required — supported by an independent comparative test programme — to persuade both the consultant and the authority having jurisdiction to accept the substitution without programme impact.",
+        text: "A formal variation was required , supported by an independent comparative test programme , to persuade both the consultant and the authority having jurisdiction to accept the substitution without programme impact.",
       },
     ],
     solution: [
@@ -275,13 +275,13 @@ const caseStudies: CaseStudy[] = [
         items: [
           "EN 13501-1 · Reaction to fire: XLPE Class E → Gulf-O-Flex NBR Class B-s2,d0",
           "ASTM E662 · Smoke density (Dm): XLPE >450 → Gulf-O-Flex NBR <200 (>55% lower)",
-          "EN 12086 · Water vapour resistance (μ): XLPE ≥3,500 → Gulf-O-Flex NBR ≥7,300 (2× barrier)",
+          "EN 12086 · Water vapour resistance (μ): XLPE ≥3,500 → Gulf-O-Flex NBR ≥7,300 (2�- barrier)",
           "Long-term thermal stability: XLPE showed λ drift and cell collapse; NBR remained dimensionally stable",
         ],
       },
       {
         type: "p",
-        text: "The full variation pack — including SASO alignment evidence — was submitted to the consultant and the authority having jurisdiction as a formal technical document.",
+        text: "The full variation pack , including SASO alignment evidence , was submitted to the consultant and the authority having jurisdiction as a formal technical document.",
       },
     ],
     result: [
@@ -301,7 +301,7 @@ const caseStudies: CaseStudy[] = [
     id: "05",
     slug: "district-cooling-dubai",
     region: "UAE",
-    title: "District Cooling Network — Dubai",
+    title: "District Cooling Network , Dubai",
     subtitle:
       "A hybrid PIR + Gulf-O-Flex Aluclad strategy cut 15-year total cost of ownership by 38% on a 14 km secondary CHW network.",
     client: "District Cooling Operator",
@@ -310,11 +310,11 @@ const caseStudies: CaseStudy[] = [
     year: "2025",
     image: "/case-studies/cbd-sharjah.webp",
     overview:
-      "A 14 km secondary chilled-water network feeding a mixed-use district. The original specification used 75 mm PIR pre-insulated steel factory-jacketed pipe for straight runs — a well-performing choice for straight sections. The challenge was the 3,000+ field joints, valves, expansion bends, and risers rising into each plot: precisely where rigid foam underperforms.",
+      "A 14 km secondary chilled-water network feeding a mixed-use district. The original specification used 75 mm PIR pre-insulated steel factory-jacketed pipe for straight runs , a well-performing choice for straight sections. The challenge was the 3,000+ field joints, valves, expansion bends, and risers rising into each plot: precisely where rigid foam underperforms.",
     challenge: [
       {
         type: "p",
-        text: "Factory-insulated PIR straight sections performed reliably. However, every field joint, valve, expansion bend, and plot take-off was insulated on-site using rigid PIR sections — a labour-intensive process prone to condensation, corrosion under insulation (CUI), and energy loss at fittings.",
+        text: "Factory-insulated PIR straight sections performed reliably. However, every field joint, valve, expansion bend, and plot take-off was insulated on-site using rigid PIR sections , a labour-intensive process prone to condensation, corrosion under insulation (CUI), and energy loss at fittings.",
       },
       {
         type: "p",
@@ -329,22 +329,22 @@ const caseStudies: CaseStudy[] = [
       {
         type: "ul",
         items: [
-          "Retain PIR pre-insulated pipe for all straight, factory-jacketed runs — no change to the performing element",
+          "Retain PIR pre-insulated pipe for all straight, factory-jacketed runs , no change to the performing element",
           "Substitute Gulf-O-Flex Aluclad at every fitting, valve, riser break, and plot take-off",
           "Deliver a single, sealed, vapour-tight system at the network's failure points",
-          "Reduce field-joint installation time by 3× versus the rigid-only approach",
+          "Reduce field-joint installation time by 3�- versus the rigid-only approach",
         ],
       },
     ],
     result: [
       {
         type: "p",
-        text: "The hybrid strategy eliminated mid-life re-insulation events. No condensation defects were recorded at flexible-insulated fittings. The 15-year total cost of ownership dropped from USD 138/m to USD 79/m — a 38% reduction — driven by avoided rework, reduced joint installation hours, and zero replacement events.",
+        text: "The hybrid strategy eliminated mid-life re-insulation events. No condensation defects were recorded at flexible-insulated fittings. The 15-year total cost of ownership dropped from USD 138/m to USD 79/m , a 38% reduction , driven by avoided rework, reduced joint installation hours, and zero replacement events.",
       },
     ],
     metrics: [
       { value: "−38%", label: "15-year TCO vs rigid-only" },
-      { value: "×3", label: "Faster field-joint install" },
+      { value: "�-3", label: "Faster field-joint install" },
       { value: "0", label: "Mid-life re-insulations" },
     ],
     highlight: "Hybrid PIR + Aluclad strategy delivered 38% lower 15-year TCO by targeting the network's failure points.",
@@ -353,7 +353,7 @@ const caseStudies: CaseStudy[] = [
     id: "06",
     slug: "sustainable-city-abu-dhabi",
     region: "UAE",
-    title: "The Sustainable City — Abu Dhabi",
+    title: "The Sustainable City , Abu Dhabi",
     subtitle:
       "150,000 m² of closed-cell duct liner specified to meet LEED, Estidama, and zero-fibre-shedding mandates on a flagship UAE sustainable development.",
     client: "The Sustainable City · JEET MEP Contractors",
@@ -370,7 +370,7 @@ const caseStudies: CaseStudy[] = [
       },
       {
         type: "p",
-        text: "The scale of the installation — 150,000 m² — required a material with factory-laminated self-adhesive backing to meet the programme throughput target, and a 20-year acoustic and thermal performance guarantee without mid-life replacement.",
+        text: "The scale of the installation , 150,000 m² , required a material with factory-laminated self-adhesive backing to meet the programme throughput target, and a 20-year acoustic and thermal performance guarantee without mid-life replacement.",
       },
     ],
     solution: [
@@ -381,9 +381,9 @@ const caseStudies: CaseStudy[] = [
       {
         type: "ul",
         items: [
-          "Full surface preparation — ducts cleaned of dust, oils and contaminants prior to bonding",
+          "Full surface preparation , ducts cleaned of dust, oils and contaminants prior to bonding",
           "Precision cutting using sharp blades to eliminate acoustic leak paths at joints",
-          "Adhesive activation maintained between 18–35°C to ensure self-adhesive backing performance",
+          "Adhesive activation maintained between 18-35°C to ensure self-adhesive backing performance",
           "Approved sealant at all seams to eliminate thermal bridges and acoustic leakage",
         ],
       },
@@ -391,7 +391,7 @@ const caseStudies: CaseStudy[] = [
     result: [
       {
         type: "p",
-        text: "Zero fibre-shedding was recorded across all occupied zones. NRC performance was independently verified by Dubai Acoustics Research Laboratory at 0.40 for 19 mm thickness — stable across the 20-year design life. The installation contributed to IEQ and energy credits under both LEED and Estidama Pearl, and completed on programme.",
+        text: "Zero fibre-shedding was recorded across all occupied zones. NRC performance was independently verified by Dubai Acoustics Research Laboratory at 0.40 for 19 mm thickness , stable across the 20-year design life. The installation contributed to IEQ and energy credits under both LEED and Estidama Pearl, and completed on programme.",
       },
     ],
     metrics: [
@@ -407,7 +407,7 @@ const principles = [
   {
     icon: Target,
     title: "Site-First Diagnosis",
-    desc: "Every case begins with an on-site audit by our technical team — not assumptions.",
+    desc: "Every case begins with an on-site audit by our technical team , not assumptions.",
   },
   {
     icon: Lightbulb,
@@ -417,7 +417,7 @@ const principles = [
   {
     icon: Trophy,
     title: "Measurable Outcomes",
-    desc: "Performance is verified — bond integrity, condensation control, energy savings.",
+    desc: "Performance is verified , bond integrity, condensation control, energy savings.",
   },
 ];
 
@@ -1314,7 +1314,7 @@ export default function CaseStudiesPage() {
                 </h3>
                 <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
                   Our technical team is available for site audits, specification support and
-                  installer training — across the GCC and beyond.
+                  installer training , across the GCC and beyond.
                 </p>
               </div>
 
@@ -1343,4 +1343,5 @@ export default function CaseStudiesPage() {
     </>
   );
 }
+
 

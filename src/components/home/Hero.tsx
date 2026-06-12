@@ -25,7 +25,7 @@ const SLIDES = [
     line2a:   "to\u00a0",
     line2b:   "Global",
     line3:    "standards.",
-    subtitle: "ISO 9001 · FM Approved · UL Listed · EPD Verified · TUV Singapore · Singapore Green Building · CE & Reach Mark · Saudi Made — every roll ships with the world's most rigorous third-party certifications behind it.",
+    subtitle: "ISO 9001 · FM Approved · UL Listed · EPD Verified · TUV Singapore · Singapore Green Building · CE & Reach Mark · Saudi Made - every roll ships with the world's most rigorous third-party certifications behind it.",
     cta1:     { label: "View Certifications", href: "/certifications" },
     cta2:     { label: "Our Projects",        href: "/projects" },
   },
@@ -35,7 +35,7 @@ const SLIDES = [
     line2a:   "across\u00a0",
     line2b:   "90+",
     line3:    "countries.",
-    subtitle: "From HVAC mega-projects in the GCC to LNG terminals worldwide — Gulf-O-Flex® insulation is specified where failure is not an option.",
+    subtitle: "From HVAC mega-projects in the GCC to LNG terminals worldwide - Gulf-O-Flex® insulation is specified where failure is not an option.",
     cta1:     { label: "Find a Distributor",  href: "/distributors" },
     cta2:     { label: "About Us",            href: "/about" },
   },
@@ -147,7 +147,7 @@ export default function Hero() {
         <div ref={spotRef} className="absolute inset-0" />
         <div className="noise" />
 
-        {/* ── Directional gradient overlay — transitions with slide ── */}
+        {/* ── Directional gradient overlay - transitions with slide ── */}
         <div
           className="absolute inset-y-0 left-0 w-3/4 transition-opacity duration-500"
           style={{
@@ -179,7 +179,7 @@ export default function Hero() {
         <div
           className={`container-wide w-full flex ${isRight ? "justify-end" : "justify-start"} transition-[justify-content] duration-500`}
         >
-          {/* Text panel — animates in from its side */}
+          {/* Text panel - animates in from its side */}
           <div
             key={animKey}
             className="w-full max-w-[640px]"
@@ -188,7 +188,7 @@ export default function Hero() {
               textAlign: isRight ? "right" : "left",
             }}
           >
-            {/* ── Heading — staggered per-line ── */}
+            {/* ── Heading - staggered per-line ── */}
             <h1 className="mega-heading">
               <span
                 className="block overflow-hidden"

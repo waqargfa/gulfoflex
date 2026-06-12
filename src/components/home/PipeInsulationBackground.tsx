@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Hero background — realistic pipe insulation installation scene
+ * Hero background - realistic pipe insulation installation scene
  *
  * Scene (back → front):
  *   1. Dark industrial wall + structural pillars
@@ -33,7 +33,7 @@ const clmp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v)
    CANVAS TEXTURE FACTORIES  (created once inside useMemo)
 ═══════════════════════════════════════════════════════════ */
 
-/** Black closed-cell NBR rubber foam — dense micro-pore surface */
+/** Black closed-cell NBR rubber foam - dense micro-pore surface */
 function makeNBRTex() {
   const W = 1024, H = 256;
   const c = document.createElement("canvas"); c.width = W; c.height = H;
@@ -92,7 +92,7 @@ function makeAlumTex() {
   return t;
 }
 
-/** Realistic concrete — aggregate grain + form-board joints + moisture staining */
+/** Realistic concrete - aggregate grain + form-board joints + moisture staining */
 function makeConcreteTexture() {
   const W = 1024, H = 1024;
   const c = document.createElement("canvas"); c.width = W; c.height = H;
@@ -132,7 +132,7 @@ function makeConcreteTexture() {
 }
 
 /* ════════════════════════════════════════════════════════════
-   PIPE FLANGE — flanged joint disc with bolt ring
+   PIPE FLANGE - flanged joint disc with bolt ring
    The single most recognisable feature of industrial pipework.
 ════════════════════════════════════════════════════════════ */
 function PipeFlange({ pR, mat }: { pR: number; mat: THREE.Material }) {
@@ -174,7 +174,7 @@ function IndustrialBuilding() {
   const steelMat = useMemo(() => new THREE.MeshPhysicalMaterial({
     color: "#28303e", metalness: 0.88, roughness: 0.55,
   }), []);
-  // Warm amber glass — lit from inside (emissive glow)
+  // Warm amber glass - lit from inside (emissive glow)
   const glassMat = useMemo(() => new THREE.MeshPhysicalMaterial({
     color: "#ffdd88", emissive: "#ff9900", emissiveIntensity: 0.55,
     roughness: 0.06, metalness: 0.0,
@@ -262,7 +262,7 @@ function Floor() {
 
 /* ═══════════════════════════════════════════════════════════
    3. DENSE BACKGROUND PIPE SYSTEM
-   Multi-level pipe rack — the visual core of a real facility.
+   Multi-level pipe rack - the visual core of a real facility.
    Three depth layers with varying pipe sizes, materials,
    flanged joints, and H-beam rack structure.
    Fog fades deeper layers naturally into the background.
@@ -359,7 +359,7 @@ function BackgroundPipeSystem() {
                 <cylinderGeometry args={[aR, aR, pipeLen, 40, 1, true]} />
               </mesh>
             )}
-            {/* Flanged joints — flat disc rings (cheap, fog-friendly) */}
+            {/* Flanged joints - flat disc rings (cheap, fog-friendly) */}
             {flangeT.map((ft, fi) => (
               <group key={fi} position={[0, ft * pipeLen, 0]}>
                 <PipeFlange pR={p.pR} mat={flangeMat} />
@@ -382,7 +382,7 @@ function PipeHangers() {
   }), []);
 
   const hangerX  = [-5, 0, 5];
-  // [y, z, outerRadius] — matches PIPES config below
+  // [y, z, outerRadius] - matches PIPES config below
   const lanes: [number, number, number][] = [
     [-0.60, -0.30, 0.276],
     [ 0.55, -1.50, 0.210],
@@ -452,7 +452,7 @@ function InsulatedPipe({ y, z, len, pR, iR, aR, delay, cycle }: PipeCfg) {
   const nbrTex  = useMemo(() => makeNBRTex(),  []);
   const alumTex = useMemo(() => makeAlumTex(), []);
 
-  // Pure PBR steel — metalness + clearcoat gives photorealistic polished pipe
+  // Pure PBR steel - metalness + clearcoat gives photorealistic polished pipe
   const pipeMat = useMemo(() => new THREE.MeshPhysicalMaterial({
     color:              "#9eb0c2",
     metalness:          0.97,
@@ -494,7 +494,7 @@ function InsulatedPipe({ y, z, len, pR, iR, aR, delay, cycle }: PipeCfg) {
     const pNBR  = ss(clmp((t - cycle * 0.38) / (cycle * 0.32), 0, 1));
     const pAlum = ss(clmp((t - cycle * 0.75) / (cycle * 0.20), 0, 1));
 
-    /* Steel pipe — left end fixed, tip extends right */
+    /* Steel pipe - left end fixed, tip extends right */
     if (pipeRef.current) {
       const pLen = Math.max(pPipe * len, 0.01);
       const g = pipeRef.current.geometry as THREE.CylinderGeometry;
@@ -505,7 +505,7 @@ function InsulatedPipe({ y, z, len, pR, iR, aR, delay, cycle }: PipeCfg) {
       pipeRef.current.position.y = -len / 2 + pLen / 2;
     }
 
-    /* NBR foam — right end fixed, sleeve slides left */
+    /* NBR foam - right end fixed, sleeve slides left */
     if (nbrRef.current) {
       const iLen = Math.max(pNBR * len, 0.01);
       const g = nbrRef.current.geometry as THREE.CylinderGeometry;
@@ -517,7 +517,7 @@ function InsulatedPipe({ y, z, len, pR, iR, aR, delay, cycle }: PipeCfg) {
       nbrRef.current.visible    = pNBR > 0.006;
     }
 
-    /* Aluminium jacket — right end fixed, slides left */
+    /* Aluminium jacket - right end fixed, slides left */
     if (alumRef.current) {
       const aLen = Math.max(pAlum * len, 0.01);
       const g = alumRef.current.geometry as THREE.CylinderGeometry;
@@ -558,7 +558,7 @@ function InsulatedPipe({ y, z, len, pR, iR, aR, delay, cycle }: PipeCfg) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SCENE — three staggered foreground pipes
+   SCENE - three staggered foreground pipes
    Delays 0 / 3.2 / 6.5 s ensure perpetual cascading motion.
 ═══════════════════════════════════════════════════════════ */
 const PIPES: PipeCfg[] = [
@@ -614,7 +614,7 @@ export default function PipeInsulationBackground() {
     >
       {/*
         Fog colour matches the hero cream background.
-        Distant objects fade naturally into the page — no hard edge.
+        Distant objects fade naturally into the page - no hard edge.
         near=8 keeps foreground pipes crisp; far=22 fades the deep background.
       */}
       <fog attach="fog" args={["#f2ede6", 8, 22]} />
@@ -622,7 +622,7 @@ export default function PipeInsulationBackground() {
       <Suspense fallback={null}>
         <ambientLight intensity={0.30} />
 
-        {/* Key light — warm sun upper-right */}
+        {/* Key light - warm sun upper-right */}
         <directionalLight
           position={[10, 13, 8]}
           intensity={3.4}

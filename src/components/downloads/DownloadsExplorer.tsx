@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Award,
-  BookOpen,
   Check,
   Copy,
   Download,
@@ -13,7 +12,6 @@ import {
   FileText,
   Filter,
   Grid3x3,
-  Layers,
   List,
   Package,
   Search,
@@ -50,14 +48,10 @@ const categories: Category[] = [
     accent: "249,115,22",
     desc: "Full product specifications, performance data, and application guidance.",
     files: [
-      { name: "Gulf-O-Flex® NBR — Full Datasheet", size: "2.4 MB", type: "PDF", badge: "POPULAR", downloads: 12480, updated: "2026-04-12" },
-      { name: "Gulf-O-Flex® XLPE — Full Datasheet", size: "1.9 MB", type: "PDF", downloads: 7320, updated: "2026-03-04" },
-      { name: "Gulf-O-Flex® Sound — Full Datasheet", size: "2.1 MB", type: "PDF", downloads: 5210, updated: "2026-02-22" },
-      { name: "Gulf-O-Flex® Aluglass — Datasheet", size: "1.6 MB", type: "PDF", downloads: 6810, updated: "2026-03-18" },
-      { name: "Gulf-O-Flex® Aluclad — Datasheet", size: "1.8 MB", type: "PDF", downloads: 5904, updated: "2026-03-19" },
-      { name: "Gulf-O-Flex® Ultra — Datasheet", size: "2.6 MB", type: "PDF", badge: "NEW", downloads: 412, updated: "2026-05-15" },
-      { name: "Gulf-O-Flex® UltraLine — Datasheet", size: "2.8 MB", type: "PDF", badge: "NEW", downloads: 388, updated: "2026-05-15" },
-      { name: "Accessories & Adhesives Catalogue", size: "2.7 MB", type: "PDF", downloads: 4150, updated: "2026-01-30" },
+      { name: "Gulf-O-Flex® NBR - Full Datasheet", size: "2.4 MB", type: "PDF", badge: "POPULAR", href: "/images/downloads/Gulf_O_Flex tds.pdf", downloads: 12480, updated: "2026-04-12" },
+      { name: "Gulf-O-Flex® Aluglass - Datasheet", size: "1.6 MB", type: "PDF", href: "/images/downloads/TDS Aluglass_Final.pdf", downloads: 6810, updated: "2026-03-18" },
+      { name: "Material Safety Data Sheet (MSDS)", size: "0.8 MB", type: "PDF", href: "/images/downloads/MSDS_design.pdf", downloads: 4210, updated: "2026-03-01" },
+      { name: "Storage & Handling Guide", size: "1.2 MB", type: "PDF", href: "/images/downloads/Storage and Handling.pdf", downloads: 3520, updated: "2026-02-15" },
     ],
   },
   {
@@ -70,11 +64,11 @@ const categories: Category[] = [
       { name: "ISO 9001:2015 Quality Management Certificate", size: "0.5 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-9001.pdf", downloads: 9210, updated: "2025-11-08" },
       { name: "ISO 14001:2015 Environmental Management Certificate", size: "0.5 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-14001:2015.pdf", downloads: 6450, updated: "2025-11-08" },
       { name: "ISO 45001:2018 Occupational H&S Certificate", size: "0.5 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-45001-2028.pdf", downloads: 5104, updated: "2025-11-08" },
-      { name: "FM Approved Certificate — FM 4924", size: "1.2 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-FM-4924.pdf", badge: "POPULAR", downloads: 8820, updated: "2026-02-01" },
-      { name: "UL Listed Certificate — ASTM E84 / UL 723", size: "0.8 MB", type: "PDF", downloads: 4710, updated: "2026-01-22" },
-      { name: "DCL Certificate — Dubai Central Laboratory", size: "0.6 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCL-Al-Safat-Dubai-Green-Building.pdf", downloads: 3940, updated: "2026-02-14" },
-      { name: "DCD Approval — Dubai Civil Defence", size: "0.7 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCD.pdf", downloads: 4280, updated: "2026-02-14" },
-      { name: "EPD — Environmental Product Declaration", size: "1.4 MB", type: "PDF", badge: "UPDATED", downloads: 2810, updated: "2026-04-30" },
+      { name: "FM Approved Certificate - FM 4924", size: "1.2 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-FM-4924.pdf", badge: "POPULAR", downloads: 8820, updated: "2026-02-01" },
+      { name: "UL Listed Certificate - ASTM E84 / UL 723", size: "0.8 MB", type: "PDF", downloads: 4710, updated: "2026-01-22" },
+      { name: "DCL Certificate - Dubai Central Laboratory", size: "0.6 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCL-Al-Safat-Dubai-Green-Building.pdf", downloads: 3940, updated: "2026-02-14" },
+      { name: "DCD Approval - Dubai Civil Defence", size: "0.7 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCD.pdf", downloads: 4280, updated: "2026-02-14" },
+      { name: "EPD - Environmental Product Declaration", size: "1.4 MB", type: "PDF", badge: "UPDATED", downloads: 2810, updated: "2026-04-30" },
     ],
   },
   {
@@ -82,42 +76,12 @@ const categories: Category[] = [
     icon: Wrench,
     name: "Installation Guides",
     accent: "194,65,12",
-    desc: "Step-by-step instructions, best practice guides, and maintenance recommendations.",
+    desc: "Step-by-step instructions and best practice guides for installation.",
     files: [
-      { name: "NBR Pipe Insulation Installation Guide", size: "3.2 MB", type: "PDF", downloads: 7820, updated: "2026-03-11" },
-      { name: "Sheet Insulation Installation Guide", size: "2.4 MB", type: "PDF", downloads: 4920, updated: "2026-03-11" },
-      { name: "Ductwork Insulation Guide", size: "2.8 MB", type: "PDF", downloads: 6320, updated: "2026-03-11" },
-      { name: "Adhesive Application Guidelines", size: "1.1 MB", type: "PDF", downloads: 3210, updated: "2026-01-18" },
-      { name: "Cold Storage Installation Manual", size: "2.5 MB", type: "PDF", downloads: 2104, updated: "2026-02-04" },
-      { name: "UltraLine Pre-Insulated Line Setup", size: "2.1 MB", type: "PDF", badge: "NEW", downloads: 198, updated: "2026-05-15" },
+      { name: "Installation Manual - Gulf-O-Flex®", size: "3.5 MB", type: "PDF", badge: "POPULAR", href: "/images/downloads/Installation Manual - Gulf O Flex®.pdf", downloads: 8920, updated: "2026-03-15" },
     ],
   },
-  {
-    key: "brochures",
-    icon: BookOpen,
-    name: "Brochures & Catalogues",
-    accent: "115,115,115",
-    desc: "Marketing brochures, company profile, and product family catalogues for project specifiers.",
-    files: [
-      { name: "Gulf-O-Flex® Master Catalogue 2026", size: "8.4 MB", type: "PDF", badge: "UPDATED", downloads: 9410, updated: "2026-01-08" },
-      { name: "Company Profile & Capability Statement", size: "3.6 MB", type: "PDF", downloads: 5720, updated: "2026-01-08" },
-      { name: "Aluclad Outdoor Insulation Brochure", size: "2.4 MB", type: "PDF", downloads: 2980, updated: "2025-12-04" },
-      { name: "Sustainability Report 2025", size: "4.8 MB", type: "PDF", downloads: 1820, updated: "2026-02-20" },
-    ],
-  },
-  {
-    key: "specs",
-    icon: Layers,
-    name: "Specification Tools",
-    accent: "251,146,60",
-    desc: "Master specification text, calculation worksheets, and CSI / NBS-ready spec sections.",
-    files: [
-      { name: "Master Specification (Section 23 07 00)", size: "0.4 MB", type: "DOCX", downloads: 4210, updated: "2026-03-29" },
-      { name: "Thermal Loss Calculation Workbook", size: "0.9 MB", type: "XLSX", badge: "POPULAR", downloads: 6890, updated: "2026-02-15" },
-      { name: "Condensation Control Worksheet", size: "0.7 MB", type: "XLSX", downloads: 3450, updated: "2026-02-15" },
-      { name: "Spec Sheet Generator — Web Tool", size: "—", type: "WEB", href: "/gulf-o-flex-assist", downloads: 2210, updated: "2026-05-22" },
-    ],
-  },
+
 ];
 
 const allTypes = Array.from(new Set(categories.flatMap((c) => c.files.map((f) => f.type)))).sort();

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Sparkles, Calculator, FileCheck, TrendingUp, Package, Bot, GraduationCap } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
@@ -6,23 +6,23 @@ import PageHero from "@/components/layout/PageHero";
 export const metadata: Metadata = {
   title: "Gulf-O-Flex Assist | AI-Powered Insulation Engineering Platform",
   description:
-    "Gulf-O-Flex Assist is the world's first AI-powered insulation engineering platform. Calculate insulation thickness, generate compliance reports, and get expert support — free for MEP engineers.",
+    "Gulf-O-Flex Assist is the world's first AI-powered insulation engineering platform. Calculate insulation thickness, generate compliance reports, and get expert support - free for MEP engineers.",
   alternates: { canonical: "https://gulfoflex.com/gulf-o-flex-assist" },
 };
 
 const features = [
   { icon: Calculator, title: "AI Insulation Calculator", desc: "Instantly calculate optimal insulation thickness per ASHRAE 90.1, pipe size, fluid temperature, and ambient conditions. Accurate, code-compliant results in seconds." },
   { icon: FileCheck, title: "Compliance Reports", desc: "Generate project-ready compliance reports for ASHRAE, LEED, and local energy codes. Download PDF reports ready for consultant submission." },
-  { icon: TrendingUp, title: "Energy Savings Analysis", desc: "Model energy savings, CO₂ reduction, and ROI projections for insulation investment. Quantify the business case for optimal insulation thickness." },
-  { icon: Package, title: "Product Selector", desc: "Intelligent product selection tool that recommends the right Gulf-O-Flex® product for your application based on temperature, application type, and environment." },
-  { icon: Bot, title: "Technical Support AI", desc: "AI assistant trained on Gulf-O-Flex® technical data, installation guides, and engineering standards. Expert answers to your questions — 24/7." },
+  { icon: TrendingUp, title: "Energy Savings Analysis", desc: "Model energy savings, CO2 reduction, and ROI projections for insulation investment. Quantify the business case for optimal insulation thickness." },
+  { icon: Package, title: "Product Selector", desc: "Intelligent product selection tool that recommends the right Gulf-O-Flex  product for your application based on temperature, application type, and environment." },
+  { icon: Bot, title: "Technical Support AI", desc: "AI assistant trained on Gulf-O-Flex  technical data, installation guides, and engineering standards. Expert answers to your questions - 24/7." },
   { icon: GraduationCap, title: "MEP Learning Hub", desc: "Free courses, installation guides, and technical videos covering insulation engineering, MEP design, and energy efficiency for professional development." },
 ];
 
 export default function GOFAssistPage() {
   return (
     <>
-      {/* ── Hero ── */}
+      {/* -- Hero -- */}
       <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
         <PageHero src="https://images.unsplash.com/photo-1734340216653-fb2cd5aaf9ac?auto=format&fit=crop&w=2400&q=80" focalY="center" />
         <div className="container-wide relative z-10">
@@ -33,7 +33,7 @@ export default function GOFAssistPage() {
                 <span className="text-neutral-300">/</span>
                 <span className="text-neutral-700">GOF Assist</span>
               </nav>
-              <div className="eyebrow mb-6"><span className="eyebrow-dot" />AI Engineering Platform · Free</div>
+              <div className="eyebrow mb-6"><span className="eyebrow-dot" />AI Engineering Platform - Free</div>
               <h1 className="text-neutral-900 leading-[0.95] mb-6"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.75rem, 6vw, 5.5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
                 Gulf-O-Flex<br />
@@ -80,7 +80,7 @@ export default function GOFAssistPage() {
         </div>
       </section>
 
-      {/* ── Features ── */}
+      {/* -- Features -- */}
       <section className="py-20 md:py-28 bg-white relative">
         <div className="container-wide">
           <div className="max-w-3xl mb-12">
@@ -110,7 +110,7 @@ export default function GOFAssistPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* -- CTA -- */}
       <section className="relative overflow-hidden py-20" style={{ background: "#0a0a0a" }}>
         <div className="absolute inset-0 grid-bg opacity-[0.10]" />
         <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-orange-500/20 blur-[90px] pointer-events-none" />
@@ -137,3 +137,4 @@ export default function GOFAssistPage() {
     </>
   );
 }
+

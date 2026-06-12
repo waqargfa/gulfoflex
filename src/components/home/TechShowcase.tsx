@@ -13,7 +13,7 @@ const features = [
   {
     icon: Activity,
     title: "Compliance Reports",
-    desc: "Generate instant compliance reports to ASHRAE 90.1, local energy codes, and international standards — ready for specification and approval.",
+    desc: "Generate instant compliance reports to ASHRAE 90.1, local energy codes, and international standards - ready for specification and approval.",
     tag: "Instant",
   },
   {
@@ -66,7 +66,7 @@ export default function TechShowcase() {
               className="text-neutral-900 mb-5 leading-[1.02]"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.25rem, 4.5vw, 4.25rem)", fontWeight: 700, letterSpacing: "-0.035em" }}
             >
-              Gulf-O-Flex Assist —<br />
+              Gulf-O-Flex Assist -<br />
               <span className="serif-italic text-orange-600">your smart MEP partner.</span>
             </h2>
             <p className="text-neutral-500 leading-relaxed mb-8">
@@ -87,7 +87,7 @@ export default function TechShowcase() {
             </div>
           </div>
 
-          {/* Platform preview visual — premium light app UI */}
+          {/* Platform preview visual - premium light app UI */}
           <div className="reveal relative">
             {/* App window chrome */}
             <div className="relative rounded-3xl bg-white border border-neutral-200 overflow-hidden max-w-md ml-auto shadow-[0_32px_80px_-16px_rgba(10,10,10,0.14),0_0_0_1px_rgba(10,10,10,0.04)]">
@@ -178,7 +178,7 @@ export default function TechShowcase() {
               <div className="text-orange-600 font-black text-xl" style={{ fontFamily: "var(--font-display)" }}>AI</div>
               <div className="text-neutral-400 text-[10px] uppercase tracking-wide">Powered</div>
             </div>
-            {/* Second floating badge — top right */}
+            {/* Second floating badge - top right */}
             <div className="absolute -right-3 top-1/4 bg-white rounded-xl px-3 py-2.5 border border-neutral-200 shadow-[0_8px_32px_rgba(10,10,10,0.10)] flex items-center gap-2">
               <div className="w-6 h-6 rounded-lg bg-orange-500/10 flex items-center justify-center">
                 <Thermometer size={12} className="text-orange-600" />

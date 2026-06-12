@@ -40,7 +40,7 @@ export default function OurJourney() {
             <span className="serif-italic text-orange-600">excellence.</span>
           </h2>
           <p className="text-neutral-500 text-lg leading-relaxed">
-            From a single facility in Ajman to five plants across three countries — a story of ambition, quality, and relentless innovation.
+            From a single facility in Ajman to five plants across three countries - a story of ambition, quality, and relentless innovation.
           </p>
         </div>
 

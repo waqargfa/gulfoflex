@@ -6,7 +6,7 @@ import PageHero from "@/components/layout/PageHero";
 export const metadata: Metadata = {
   title: "Careers at Gulf-O-Flex® | Join the UAE's Leading Insulation Manufacturer",
   description:
-    "Build your career at Gulf-O-Flex® — the GCC's leading rubber insulation manufacturer. Explore engineering, sales, manufacturing, and management roles across UAE, Saudi Arabia, and globally.",
+    "Build your career at Gulf-O-Flex® - the GCC's leading rubber insulation manufacturer. Explore engineering, sales, manufacturing, and management roles across UAE, Saudi Arabia, and globally.",
   alternates: { canonical: "https://gulfoflex.com/careers" },
 };
 
@@ -22,7 +22,7 @@ const openRoles = [
     requirements: ["B.Eng Mechanical or HVAC", "5+ years MEP/HVAC experience", "ASHRAE / BS 5422 knowledge", "Arabic language a plus"],
   },
   {
-    title: "Territory Sales Manager — KSA",
+    title: "Territory Sales Manager - KSA",
     dept: "Commercial",
     location: "Riyadh, Saudi Arabia",
     type: "Full-time",

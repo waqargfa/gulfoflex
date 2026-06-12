@@ -428,7 +428,7 @@ export default function NewsExperience({
                   Events &amp; <span className="serif-italic text-orange-400">happenings.</span>
                 </h2>
                 <p className="text-white/60 mt-4 max-w-xl leading-relaxed">
-                  From global trade shows to in-house technical workshops — connect with the Gulf-O-Flex® team in person or online.
+                  From global trade shows to in-house technical workshops - connect with the Gulf-O-Flex® team in person or online.
                 </p>
               </div>
 
@@ -661,7 +661,7 @@ export default function NewsExperience({
                   Get the Gulf-O-Flex® <span className="serif-italic text-orange-400">monthly brief.</span>
                 </h3>
                 <p className="text-white/60 max-w-lg leading-relaxed">
-                  Curated product launches, certification updates, project wins and technical notes — straight to your inbox. No spam.
+                  Curated product launches, certification updates, project wins and technical notes - straight to your inbox. No spam.
                 </p>
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-5 text-white/50 text-xs">
                   <span className="inline-flex items-center gap-1.5"><CheckCircle2 size={13} className="text-orange-400" /> Once a month</span>
@@ -1105,7 +1105,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
         No stories match your filters.
       </h4>
       <p className="text-neutral-500 max-w-md mx-auto mb-6">
-        Try a different keyword or category — we cover product launches, certifications, projects, and operations across
+        Try a different keyword or category - we cover product launches, certifications, projects, and operations across
         every market.
       </p>
       <button onClick={onReset} className="btn-primary">

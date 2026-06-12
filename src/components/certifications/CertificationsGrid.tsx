@@ -161,7 +161,7 @@ export default function CertificationsGrid({ certifications }: { certifications:
                   </div>
                 </div>
 
-                {/* Tabs — only shown when a PDF exists */}
+                {/* Tabs - only shown when a PDF exists */}
                 {hasPdf && (
                   <div className="flex items-center gap-1 mt-5 p-1 rounded-xl bg-neutral-100 w-fit">
                     <button
@@ -220,7 +220,7 @@ export default function CertificationsGrid({ certifications }: { certifications:
                             <FileText size={18} className="text-orange-600" />
                           </div>
                           <div className="text-left">
-                            <div className="text-sm font-bold text-neutral-900">{active.name} — Official Certificate</div>
+                            <div className="text-sm font-bold text-neutral-900">{active.name} - Official Certificate</div>
                             <div className="text-xs text-neutral-500">PDF · Issued by {active.authority}</div>
                           </div>
                         </div>
@@ -276,7 +276,7 @@ export default function CertificationsGrid({ certifications }: { certifications:
                         style={{ minHeight: "58vh", border: "none" }}
                         loading="lazy"
                       />
-                      {/* Fallback overlay shown via CSS if iframe fails — user can still use the Open/Download buttons */}
+                      {/* Fallback overlay shown via CSS if iframe fails - user can still use the Open/Download buttons */}
                     </div>
                   </div>
                 )}

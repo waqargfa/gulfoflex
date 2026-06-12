@@ -8,7 +8,7 @@ const strengths = [
   "56% of GCC rubber insulation supply",
   "5 state-of-the-art manufacturing facilities",
   "ISO 9001 & ISO 14001 certified",
-  "0 ODP — CFC & HCFC free products",
+  "0 ODP - CFC & HCFC free products",
   "Full technical support & training programs",
   "Customizable solutions for every application",
 ];
@@ -112,7 +112,7 @@ export default function About() {
               Founded in 1993 by the Shaikhani Group, Rubber World Industry (RWI) has grown into the GCC&rsquo;s most trusted rubber insulation manufacturer. With five state-of-the-art facilities across the UAE, Sri Lanka, and Saudi Arabia, we supply premium closed-cell elastomeric insulation to 90+ countries.
             </p>
             <p className="text-neutral-500 leading-relaxed mb-8">
-              Gulf-O-Flex® technology delivers unmatched thermal and acoustic performance — saving energy, extending system lifespans, and meeting the most stringent international fire safety and compliance standards.
+              Gulf-O-Flex® technology delivers unmatched thermal and acoustic performance - saving energy, extending system lifespans, and meeting the most stringent international fire safety and compliance standards.
             </p>
 
             {/* Strengths */}

@@ -25,7 +25,7 @@ import type { LucideIcon } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 
 /* ──────────────────────────────────────────────────────────────────
-   Technology data — 6 material technologies + 1 digital platform
+   Technology data - 6 material technologies + 1 digital platform
 ─────────────────────────────────────────────────────────────────── */
 type Tech = {
   id: string;
@@ -51,7 +51,7 @@ const technologies: Tech[] = [
     tier: "Core",
     accent: "#f97316",
     tint: "rgba(249,115,22,0.10)",
-    desc: "Nitrile Butadiene Rubber closed-cell foam — our flagship insulation. The closed-cell structure prevents moisture absorption (the #1 cause of insulation failure in humid climates) while delivering class-leading thermal performance across HVAC and process applications.",
+    desc: "Nitrile Butadiene Rubber closed-cell foam - our flagship insulation. The closed-cell structure prevents moisture absorption (the #1 cause of insulation failure in humid climates) while delivering class-leading thermal performance across HVAC and process applications.",
     specs: [
       { label: "Thermal Conductivity", value: "≤0.036 W/(m·K)" },
       { label: "Temperature Range",   value: "−40°C to +105°C" },
@@ -68,7 +68,7 @@ const technologies: Tech[] = [
     tier: "Premium",
     accent: "#737373",
     tint: "rgba(115,115,115,0.10)",
-    desc: "Ultra-density NBR engineered for projects that demand the best — district cooling mains, chiller plants, and critical pharma/data-centre piping. Higher cell density delivers improved thermal lambda and stronger mechanical performance over standard NBR.",
+    desc: "Ultra-density NBR engineered for projects that demand the best - district cooling mains, chiller plants, and critical pharma/data-centre piping. Higher cell density delivers improved thermal lambda and stronger mechanical performance over standard NBR.",
     specs: [
       { label: "Thermal Conductivity", value: "≤0.033 W/(m·K)" },
       { label: "Temperature Range",   value: "−50°C to +110°C" },
@@ -85,7 +85,7 @@ const technologies: Tech[] = [
     tier: "Premium",
     accent: "#f97316",
     tint: "rgba(249,115,22,0.10)",
-    desc: "Pre-formed, line-extruded NBR Ultra tubes and sheets cut to project lengths in our factory — eliminating site-seam losses, ensuring uniform thickness, and dramatically reducing installation time on long pipe runs and large-diameter plant.",
+    desc: "Pre-formed, line-extruded NBR Ultra tubes and sheets cut to project lengths in our factory - eliminating site-seam losses, ensuring uniform thickness, and dramatically reducing installation time on long pipe runs and large-diameter plant.",
     specs: [
       { label: "Tube Lengths",          value: "2 m / 5 m / Custom" },
       { label: "Thicknesses",           value: "9 → 50 mm" },
@@ -152,7 +152,7 @@ const assistFeatures = [
   { Icon: Calculator,    title: "AI Calculators",       desc: "Thermal, condensation, BTU, and pipe-sizing calculators that auto-spec the right Gulf-O-Flex® product." },
   { Icon: FileCheck2,    title: "Compliance Reports",   desc: "Instant ASHRAE 90.1, Estidama Pearl and Dubai Green Building reports in PDF." },
   { Icon: Bot,           title: "Smart Support Agents", desc: "24/7 AI agents trained on Gulf-O-Flex® datasheets, fire approvals and case studies." },
-  { Icon: GraduationCap, title: "Free MEP Courses",     desc: "On-demand training for engineers, contractors and technicians — with certificates." },
+  { Icon: GraduationCap, title: "Free MEP Courses",     desc: "On-demand training for engineers, contractors and technicians - with certificates." },
 ];
 
 /* ──────────────────────────────────────────────────────────────────
@@ -214,7 +214,7 @@ export default function TechnologiesPage() {
                 <span className="serif-italic text-orange-600">.</span>
               </h1>
               <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Every Gulf-O-Flex® product is built on decades of material science research, real-world performance data, and — now — AI-assisted specification through Gulf-O-Flex Assist.
+                Every Gulf-O-Flex® product is built on decades of material science research, real-world performance data, and - now - AI-assisted specification through Gulf-O-Flex Assist.
               </p>
             </div>
 
@@ -502,7 +502,7 @@ export default function TechnologiesPage() {
                   { name: "NBR Ultra Line",  tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "Pre-formed factory runs",           accent: "#f97316" },
                   { name: "XLPE",            tier: "Core",     lambda: "≤0.038", temp: "−50° → +120°",  best: "Hot water, solar, industrial",      accent: "#737373" },
                   { name: "Sound",           tier: "Specialty",lambda: "≤0.036", temp: "−40° → +105°",  best: "Acoustic-critical zones",           accent: "#737373" },
-                  { name: "Aluglass / Aluclad",tier: "Specialty",lambda: "—",     temp: "−30° → +80°",   best: "Outdoor, plant rooms, UV exposure", accent: "#f97316" },
+                  { name: "Aluglass / Aluclad",tier: "Specialty",lambda: "-",     temp: "−30° → +80°",   best: "Outdoor, plant rooms, UV exposure", accent: "#f97316" },
                 ].map((row) => (
                   <tr
                     key={row.name}
@@ -603,7 +603,7 @@ export default function TechnologiesPage() {
                 <span className="serif-italic text-white/80">your smart MEP partner.</span>
               </h2>
               <p className="text-white/65 text-lg leading-relaxed max-w-xl mb-8">
-                The first all-in-one digital platform built for HVAC and MEP engineers — AI-powered calculators, instant compliance reports, intelligent support agents, and free training, all in one workspace.
+                The first all-in-one digital platform built for HVAC and MEP engineers - AI-powered calculators, instant compliance reports, intelligent support agents, and free training, all in one workspace.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">

@@ -3,7 +3,7 @@ import Image from "next/image";
 type PageHeroProps = {
   /** Absolute /images/... path or remote URL whitelisted in next.config.ts */
   src: string;
-  /** Decorative — kept empty by default since the image is purely background art */
+  /** Decorative - kept empty by default since the image is purely background art */
   alt?: string;
   /** Vertical focal point of the image (e.g. "center", "30%", "top") */
   focalY?: string;
@@ -13,8 +13,8 @@ type PageHeroProps = {
    */
   intensity?: number;
   /**
-   * "light" (default) — warm white veil for dark text on white sections.
-   * "dark" — black veil for white text on dark sections.
+   * "light" (default) - warm white veil for dark text on white sections.
+   * "dark" - black veil for white text on dark sections.
    */
   variant?: "light" | "dark";
 };
@@ -37,7 +37,7 @@ export default function PageHero({
   const isDark = variant === "dark";
   return (
     <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Real image — slow Ken-Burns zoom */}
+      {/* Real image - slow Ken-Burns zoom */}
       <div className="absolute inset-0 page-hero-kenburns">
         <Image
           src={src}
@@ -50,7 +50,7 @@ export default function PageHero({
         />
       </div>
 
-      {/* Veil — lighter at top so the photograph reads, heavier at bottom for legibility */}
+      {/* Veil - lighter at top so the photograph reads, heavier at bottom for legibility */}
       <div
         className="absolute inset-0"
         style={{

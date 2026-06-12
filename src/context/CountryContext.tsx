@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
@@ -41,11 +41,11 @@ export const COUNTRIES: CountryData[] = [
     address: "Ajman Industrial Area 2, Ajman, UAE",
     heroSubtitle:
       "Driving the UAE's Net Zero 2050 ambition certified low-carbon NBR & XLPE insulation for green buildings, clean energy, and sustainable infrastructure.",
-    tagline: "UAE Net Zero 2050 — Insulation That Counts",
+    tagline: "UAE Net Zero 2050 - Insulation That Counts",
     initiative: {
       title: "UAE Net Zero 2050",
       tagline:
-        "Gulf-O-Flex® insulation directly reduces building energy consumption and carbon emissions supporting the UAE's landmark Net Zero by 2050 Strategic Initiative.",
+        "Gulf-O-Flex insulation directly reduces building energy consumption and carbon emissions, supporting the UAE's landmark Net Zero by 2050 Strategic Initiative.",
       themeColor: "#9a3f10",
       accentColor: "#f97316",
       metrics: [
@@ -77,13 +77,13 @@ export const COUNTRIES: CountryData[] = [
     email: "ksa@gulfoflex.com",
     address: "Riyadh, Kingdom of Saudi Arabia",
     heroSubtitle:
-      "Engineering the Kingdom's future — certified NBR & XLPE insulation for NEOM, Red Sea, Qiddiya and every Vision 2030 mega-project.",
+      "Engineering the Kingdom's future - certified NBR & XLPE insulation for NEOM, Red Sea, Qiddiya and every Vision 2030 mega-project.",
     tagline: "Saudi Vision 2030 Aligned Insulation Partner",
     initiative: {
       badge: "Saudi Vision 2030 Aligned Partner",
       title: "Saudi Vision 2030",
       tagline:
-        "Gulf-O-Flex® is actively supplying insulation solutions across Saudi Arabia's most ambitious Vision 2030 infrastructure and development projects.",
+        "Gulf-O-Flex is actively supplying insulation solutions across Saudi Arabia's most ambitious Vision 2030 infrastructure and development projects.",
       themeColor: "#c2410c",
       accentColor: "#fb923c",
       metrics: [
@@ -121,13 +121,13 @@ export const COUNTRIES: CountryData[] = [
     email: "srilanka@gulfoflex.com",
     address: "Colombo, Sri Lanka",
     heroSubtitle:
-      "Supporting Sri Lanka's green recovery and Port City ambitions — NBR & XLPE insulation engineered for sustainable MEP, hospitality, and industrial projects.",
-    tagline: "Green Economy Partner · Sri Lanka",
+      "Supporting Sri Lanka's green recovery and Port City ambitions - NBR & XLPE insulation engineered for sustainable MEP, hospitality, and industrial projects.",
+    tagline: "Green Economy Partner - Sri Lanka",
     initiative: {
       badge: "Sri Lanka Green Economy Partner",
       title: "Sri Lanka Green Economy",
       tagline:
-        "Gulf-O-Flex® supports Sri Lanka's sustainable development agenda — delivering energy-efficient insulation for Port City Colombo, hospitality, and renewable energy infrastructure.",
+        "Gulf-O-Flex supports Sri Lanka's sustainable development agenda - delivering energy-efficient insulation for Port City Colombo, hospitality, and renewable energy infrastructure.",
       themeColor: "#7c3410",
       accentColor: "#f97316",
       metrics: [
@@ -163,13 +163,13 @@ export const COUNTRIES: CountryData[] = [
     email: "egypt@gulfoflex.com",
     address: "Cairo, Egypt",
     heroSubtitle:
-      "Insulating Egypt's New Republic — certified NBR & XLPE solutions for the New Administrative Capital, Benban Solar, and Egypt Vision 2030 mega-projects.",
+      "Insulating Egypt's New Republic - certified NBR & XLPE solutions for the New Administrative Capital, Benban Solar, and Egypt Vision 2030 mega-projects.",
     tagline: "Egypt Vision 2030 Infrastructure Partner",
     initiative: {
       badge: "Egypt Vision 2030 Partner",
       title: "Egypt Vision 2030",
       tagline:
-        "Gulf-O-Flex® delivers certified thermal and acoustic insulation across Egypt's transformative Vision 2030 projects — from the New Administrative Capital to the world's largest solar park at Benban.",
+        "Gulf-O-Flex delivers certified thermal and acoustic insulation across Egypt's transformative Vision 2030 projects - from the New Administrative Capital to the world's largest solar park at Benban.",
       themeColor: "#7c2d12",
       accentColor: "#fb923c",
       metrics: [
@@ -207,13 +207,13 @@ export const COUNTRIES: CountryData[] = [
     email: "pakistan@gulfoflex.com",
     address: "Karachi, Pakistan",
     heroSubtitle:
-      "Powering Pakistan's CPEC corridor and energy agenda — premium NBR & XLPE insulation for power plants, industrial cities, and landmark construction projects.",
+      "Powering Pakistan's CPEC corridor and energy agenda - premium NBR & XLPE insulation for power plants, industrial cities, and landmark construction projects.",
     tagline: "CPEC & Pakistan Development Insulation Partner",
     initiative: {
       badge: "CPEC & Pakistan Vision Partner",
       title: "CPEC & Pakistan Vision 2025",
       tagline:
-        "Gulf-O-Flex® is a trusted insulation supplier across Pakistan's CPEC energy corridor and major infrastructure programmes — delivering certified performance in power, industrial, and residential projects.",
+        "Gulf-O-Flex is a trusted insulation supplier across Pakistan's CPEC energy corridor and major infrastructure programmes - delivering certified performance in power, industrial, and residential projects.",
       themeColor: "#9a3f10",
       accentColor: "#f97316",
       metrics: [
@@ -249,13 +249,13 @@ export const COUNTRIES: CountryData[] = [
     email: "africa@gulfoflex.com",
     address: "Johannesburg, South Africa",
     heroSubtitle:
-      "Insulating Africa's rise — NBR & XLPE solutions for the continent's energy, industrial, and smart-city projects under African Union Agenda 2063.",
+      "Insulating Africa's rise - NBR & XLPE solutions for the continent's energy, industrial, and smart-city projects under African Union Agenda 2063.",
     tagline: "African Union Agenda 2063 Infrastructure Partner",
     initiative: {
       badge: "AU Agenda 2063 Infrastructure Partner",
       title: "African Union Agenda 2063",
       tagline:
-        "Gulf-O-Flex® supports Africa's continental transformation agenda — delivering high-performance insulation for energy, industrial, and urban infrastructure projects across the continent.",
+        "Gulf-O-Flex supports Africa's continental transformation agenda - delivering high-performance insulation for energy, industrial, and urban infrastructure projects across the continent.",
       themeColor: "#92400e",
       accentColor: "#fb923c",
       metrics: [
@@ -306,3 +306,4 @@ export function CountryProvider({ children }: { children: ReactNode }) {
 export function useCountry() {
   return useContext(CountryContext);
 }
+

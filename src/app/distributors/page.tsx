@@ -15,7 +15,7 @@ const regions = [
     name: "GCC & Middle East",
     color: "orange",
     countries: [
-      { name: "United Arab Emirates", dist: "Direct — Gulf-O-Flex®", city: "Ajman, Dubai, Abu Dhabi", phone: "+971 6 743 4176", email: "sales@gulfoflex.com" },
+      { name: "United Arab Emirates", dist: "Direct - Gulf-O-Flex®", city: "Ajman, Dubai, Abu Dhabi", phone: "+971 6 743 4176", email: "sales@gulfoflex.com" },
       { name: "Saudi Arabia", dist: "Gulf-O-Flex® KSA", city: "Riyadh, Jeddah, Dammam", phone: "+966 11 XXX XXXX", email: "ksa@gulfoflex.com" },
       { name: "Qatar", dist: "Authorized Distributor", city: "Doha", phone: "Contact HQ", email: "info@gulfoflex.com" },
       { name: "Kuwait", dist: "Authorized Distributor", city: "Kuwait City", phone: "Contact HQ", email: "info@gulfoflex.com" },

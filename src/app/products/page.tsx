@@ -43,7 +43,7 @@ const products = [
     name: "Gulf-O-Flex® XLPE",
     shortName: "Crosslinked Polyethylene Foam",
     tagline: "Closed-cell XLPE with alupet facing",
-    desc: "Chemically crosslinked polyethylene closed-cell foam with a thin alupet facing — a passive, self-sustaining solution engineered for difficult environments. Lightweight, high-pressure tolerant, and self-extinguishing for thermal and acoustic insulation.",
+    desc: "Chemically crosslinked polyethylene closed-cell foam with a thin alupet facing - a passive, self-sustaining solution engineered for difficult environments. Lightweight, high-pressure tolerant, and self-extinguishing for thermal and acoustic insulation.",
     keyFeatures: ["λ 0.045 W/m·K @ 35°C", "Class O Fire Rated (BS 476)", "μ ≥ 11,000 (foil side)", "Operating −183°C to +115°C"],
     applications: ["HVAC Ducts", "Underfloor", "Automotive", "Marine"],
     tag: "Premium",
@@ -55,7 +55,7 @@ const products = [
     name: "Gulf O Sound",
     shortName: "Open-Cell Acoustic Elastomeric Foam",
     tagline: "Engineered sound absorption",
-    desc: "Flexible, open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R systems, pipelines, plant rooms, and industrial applications — made from 100% recycled materials.",
+    desc: "Flexible, open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R systems, pipelines, plant rooms, and industrial applications - made from 100% recycled materials.",
     keyFeatures: ["NRC up to 1.00", "High Flexibility", "Class 1 Fire Rated", "100% Recycled Material"],
     applications: ["HVAC Duct Liner", "Plant Rooms", "Conference Rooms", "OEM"],
     tag: "Acoustic",
@@ -67,7 +67,7 @@ const products = [
     name: "Gulf-O-Flex® Aluglass",
     shortName: "NBR Foam with Aluglass Facing",
     tagline: "Best-selling rubber insulation, self-sustaining energy efficiency",
-    desc: "Flexible NBR elastomeric foam (6–50mm) finished with a factory-applied 7μm aluminum + 110 GSM glass fiber cloth facing. Passive thermal insulation with zero water vapour transmission, Class O fire rating, and FM Approved performance — in sheet and tube forms, with or without self-adhesive.",
+    desc: "Flexible NBR elastomeric foam (6–50mm) finished with a factory-applied 7μm aluminum + 110 GSM glass fiber cloth facing. Passive thermal insulation with zero water vapour transmission, Class O fire rating, and FM Approved performance - in sheet and tube forms, with or without self-adhesive.",
     keyFeatures: ["High Flexibility", "Sustainable · Zero ODP", "Physical Protection", "Easy Installation"],
     applications: ["Hot & Cold Plumbing", "Refrigeration Lines", "HVAC Ducts", "Oil & Gas"],
     tag: "Best Seller",
@@ -79,8 +79,8 @@ const products = [
     name: "Gulf-O-Flex® Aluclad",
     shortName: "NBR Foam with Alu-Clad Facing",
     tagline: "Outdoor-ready insulation",
-    desc: "Best-selling closed-cell NBR insulation with factory-applied Alu-Clad facing — a passive, self-sustaining solution for mechanical systems and outdoor environments. UV, moisture, and fire resistant.",
-    keyFeatures: ["UV Stable — 8+ Years / 10,000h", "Self-Extinguishing (Class O)", "0.00 Perm Vapour Barrier", "Sheet or Tube, ± Self-Adhesive"],
+    desc: "Best-selling closed-cell NBR insulation with factory-applied Alu-Clad facing - a passive, self-sustaining solution for mechanical systems and outdoor environments. UV, moisture, and fire resistant.",
+    keyFeatures: ["UV Stable - 8+ Years / 10,000h", "Self-Extinguishing (Class O)", "0.00 Perm Vapour Barrier", "Sheet or Tube, ± Self-Adhesive"],
     applications: ["Outdoor", "HVAC Ducts", "Plumbing", "Refrigeration"],
     tag: "Best Seller",
     image: "/assets/ALUCLAD 2 (2).png",
@@ -91,7 +91,7 @@ const products = [
     name: "Gulf-O-Flex® Ultra",
     shortName: "Ultra-Low Conductivity Premium Foam",
     tagline: "Next-gen NBR/EPDM blend, λ 0.030 W/m·K",
-    desc: "Premium closed-cell NBR/EPDM hybrid insulation with an industry-leading thermal conductivity of 0.030 W/m·K at 0°C and an extended operating window from -50°C to +115°C. FM Approved, UL Listed, EPD Verified — engineered for chilled water, district cooling, and low-temperature process lines.",
+    desc: "Premium closed-cell NBR/EPDM hybrid insulation with an industry-leading thermal conductivity of 0.030 W/m·K at 0°C and an extended operating window from -50°C to +115°C. FM Approved, UL Listed, EPD Verified - engineered for chilled water, district cooling, and low-temperature process lines.",
     keyFeatures: ["λ 0.030 W/m·K @ 0°C", "Operating −50°C to +115°C", "μ > 10,000 (BS EN 12086)", "Class O Fire Rated · Zero ODP"],
     applications: ["Chilled Water", "District Cooling", "Cryogenic Piping", "Data Centres"],
     tag: "Premium",
@@ -102,8 +102,8 @@ const products = [
     icon: Layers,
     name: "Gulf-O-Flex® UltraLine",
     shortName: "Pre-Insulated Continuous Tube Line System",
-    tagline: "Factory pre-insulated copper line — coils up to 50 m",
-    desc: "Complete factory pre-insulated copper tube line system supplied in continuous coils up to 50 m. Nitrogen-charged copper tube + closed-cell NBR core + UV-stable LDPE jacket — a one-pull, joint-free vapour barrier for VRF/VRV, split AC, chilled-water mini-loops, and solar thermal piping.",
+    tagline: "Factory pre-insulated copper line - coils up to 50 m",
+    desc: "Complete factory pre-insulated copper tube line system supplied in continuous coils up to 50 m. Nitrogen-charged copper tube + closed-cell NBR core + UV-stable LDPE jacket - a one-pull, joint-free vapour barrier for VRF/VRV, split AC, chilled-water mini-loops, and solar thermal piping.",
     keyFeatures: ["Continuous Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral Vapour Barrier", "UV-Stable LDPE Outer Jacket"],
     applications: ["VRF / VRV", "Split AC", "Chilled Water", "Solar Thermal"],
     tag: "System",
@@ -115,7 +115,7 @@ const products = [
     name: "Accessories & Adhesives",
     shortName: "Adhesives, Sealants, Tapes & Anti-Vibration",
     tagline: "Complete system accessories",
-    desc: "Gulf O Glue, Gulf-O-Seal 81-10 & 32-17 adhesives and sealants; Aluglass, Aluminium Foil, Alupet, PVC, and NBR Foam tapes; plus Anti-Vibration Cork and Metal Sandwich pads — all engineered for full compatibility with Gulf-O-Flex® insulation.",
+    desc: "Gulf O Glue, Gulf-O-Seal 81-10 & 32-17 adhesives and sealants; Aluglass, Aluminium Foil, Alupet, PVC, and NBR Foam tapes; plus Anti-Vibration Cork and Metal Sandwich pads - all engineered for full compatibility with Gulf-O-Flex® insulation.",
     keyFeatures: ["Low-VOC Polychloroprene Adhesive", "Fire-Resistive Duct Sealant", "Foil / Glass / PVC / Alupet Tapes", "Cork & Metal Anti-Vibration Pads"],
     applications: ["Adhesives", "Duct Sealing", "Vapour Sealing", "Anti-Vibration"],
     tag: "System",
@@ -287,7 +287,7 @@ export default function ProductsPage() {
               See every product <span className="serif-italic text-orange-400">in motion.</span>
             </h2>
             <p className="text-white/55 max-w-2xl mx-auto">
-              A live, cinematic walkthrough of how each Gulf-O-Flex® system performs — engineered animations show
+              A live, cinematic walkthrough of how each Gulf-O-Flex® system performs - engineered animations show
               structure, application, and the science behind the spec.
             </p>
           </div>
@@ -381,7 +381,7 @@ export default function ProductsPage() {
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
             <div className="inline-flex items-center gap-2 text-white/55 text-[12px]">
               <Sparkles size={14} className="text-orange-400" />
-              Animations are illustrative — request a sample for true material performance.
+              Animations are illustrative - request a sample for true material performance.
             </div>
           </div>
         </div>
@@ -406,7 +406,7 @@ export default function ProductsPage() {
               Every component, <span className="serif-italic text-orange-400">engineered together.</span>
             </h2>
             <p className="text-white/55 max-w-2xl mx-auto">
-              From the insulation core to the facing, adhesive, and accessory — every Gulf-O-Flex® product is engineered to perform as one certified system.
+              From the insulation core to the facing, adhesive, and accessory - every Gulf-O-Flex® product is engineered to perform as one certified system.
             </p>
           </div>
 

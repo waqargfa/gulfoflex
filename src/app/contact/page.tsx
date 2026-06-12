@@ -31,7 +31,7 @@ export default function ContactPage() {
             <span className="gradient-text">next project</span> <span className="serif-italic text-orange-600">together.</span>
           </h1>
           <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-3xl">
-            From product enquiries and technical specifications to sample requests and distributor information — our team is ready to help.
+            From product enquiries and technical specifications to sample requests and distributor information - our team is ready to help.
           </p>
         </div>
       </section>

@@ -9,16 +9,17 @@ import { useCountry } from "@/context/CountryContext";
 const COUNTRY_CODE_MAP: Record<string, string> = {
   ae: "uae",
   sa: "ksa",
-  qa: "qatar",
-  kw: "kuwait",
-  bh: "bahrain",
-  om: "oman",
+  qa: "other-gcc",
+  kw: "other-gcc",
+  bh: "other-gcc",
+  om: "other-gcc",
+  lk: "srilanka",
 };
 
 type TeamMember = {
   name: string;
   role: string;
-  roleType: "head" | "sales";
+  roleType: "head" | "sales" | "retail";
   email?: string;
   phone?: string;
 };
@@ -36,14 +37,18 @@ const teams: CountryTeam[] = [
     flag: "🇦🇪",
     code: "uae",
     members: [
-      { name: "Arjun",   role: "Head of Sales",    roleType: "head",  email: "sales@gulfoflex.com", phone: "+971 6 000 0000" },
-      { name: "Jiswan",  role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
-      { name: "Vijay",   role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
-      { name: "Jesfer",  role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
-      { name: "Deepak",  role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
-      { name: "Rohit",   role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
-      { name: "Nirmal",  role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
-      { name: "Tanveer", role: "Sales Executive",  roleType: "sales", email: "sales@gulfoflex.com" },
+       { name: "Vijay Vaidyanathan",   role: "Head-Technical and Commercial-GCC ",  roleType: "head", email: "vijay.v@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Arjun Pradeep",   role: "Assistance Sales Manager",    roleType: "sales",  email: "sales@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Jiswan Pm",  role: "Sr. Sales Engineer",  roleType: "sales", email: "jiswan@gulfoflex.com", phone: "+971 6 000 0000"},
+      { name: "Rohith S",   role: "Sales engineer",  roleType: "sales", email: "rohith@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Deepak Balaji",  role: "Specification manager",  roleType: "sales", email: "deepak@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Nirmal Philip",  role: "Specification engineer",  roleType: "sales", email: "nirmal@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Mohammed Thanveer", role: "Technical engineer",  roleType: "sales", email: "technical@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Jesfer Thaivalappil",  role: "Retails Head",  roleType: "head", email: "jesfer@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Muhammed Jinshad",  role: "Retail Sales Engineer",  roleType: "retail", email: "Jinshad@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Anees Aboobacker",  role: "Retail Sales Engineer",  roleType: "retail", email: "sales@ultralamin.ae", phone: "+971 6 000 0000" },
+      { name: "Anwarul Hak",  role: "Retail Sales Engineer",  roleType: "retail", email: "abudhabi@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Shaik Nissar Ahmed",  role: "Retail Sales Engineer",  roleType: "retail", email: "sales.dubai@gulfoflex.com", phone: "+971 6 000 0000" },
     ],
   },
   {
@@ -51,44 +56,30 @@ const teams: CountryTeam[] = [
     flag: "🇸🇦",
     code: "ksa",
     members: [
-      { name: "Shabaz",      role: "Head of Sales — KSA", roleType: "head",  email: "ksa@gulfoflex.com", phone: "+966 00 000 0000" },
-      { name: "Sai Taj",     role: "Sales Executive",     roleType: "sales", email: "ksa@gulfoflex.com" },
-      { name: "Shadab Khan", role: "Sales Executive",     roleType: "sales", email: "ksa@gulfoflex.com" },
+      { name: "Shadab Ahmed",      role: "Head of Sales-KSA", roleType: "head",  email: "shad@rwi.sa", phone: "+966 00 000 0000" },
+      { name: "Sai Taj",     role: "Sales Engineer",     roleType: "sales", email: "saiteja@gulfoflex.com", phone: "+966 00 000 0000" },
+      { name: "Deepak Balaji",  role: "Specification manager",  roleType: "sales", email: "deepak@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Shahbaz Mirza", role: "Sales Engineer",     roleType: "sales", email: "Shahbaz@rwi.sa", phone: "+966 00 000 0000" },
+      { name: "Muhammad Saquib", role: "Retail Sales Engineer",     roleType: "sales", email: "saquib@rwi.sa", phone: "+966 00 000 0000" },
+      { name: "Hammad Raza", role: "Retail Sales Engineer",     roleType: "sales", email: "hammad@rwi.sa", phone: "+966 00 000 0000" },
     ],
   },
   {
-    country: "Qatar",
-    flag: "🇶🇦",
-    code: "qatar",
+    country: "Other GCC Countries",
+    flag: "GC",
+    code: "other-gcc",
     members: [
-      { name: "TBA", role: "Head of Sales — Qatar", roleType: "head", email: "qatar@gulfoflex.com", phone: "+974 000 00000" },
-      { name: "TBA", role: "Sales Executive", roleType: "sales", email: "qatar@gulfoflex.com" },
+      { name: "Jubin Varghese", role: "Sales Engineer", roleType: "sales", email: "sales@gulfoflex.com", phone: "+971 6 000 0000" },
+      { name: "Deepak Balaji",  role: "Specification manager",  roleType: "sales", email: "deepak@gulfoflex.com", phone: "+971 6 000 0000" },
     ],
   },
   {
-    country: "Kuwait",
-    flag: "🇰🇼",
-    code: "kuwait",
+    country: "Sri Lanka",
+    flag: "🇱🇰",
+    code: "srilanka",
     members: [
-      { name: "TBA", role: "Head of Sales — Kuwait", roleType: "head", email: "kuwait@gulfoflex.com", phone: "+965 0000 0000" },
-      { name: "TBA", role: "Sales Executive", roleType: "sales", email: "kuwait@gulfoflex.com" },
-    ],
-  },
-  {
-    country: "Bahrain",
-    flag: "🇧🇭",
-    code: "bahrain",
-    members: [
-      { name: "TBA", role: "Head of Sales — Bahrain", roleType: "head", email: "bahrain@gulfoflex.com", phone: "+973 0000 0000" },
-    ],
-  },
-  {
-    country: "Oman",
-    flag: "🇴🇲",
-    code: "oman",
-    members: [
-      { name: "TBA", role: "Head of Sales — Oman", roleType: "head", email: "oman@gulfoflex.com", phone: "+968 0000 0000" },
-      { name: "TBA", role: "Sales Executive", roleType: "sales", email: "oman@gulfoflex.com" },
+      { name: "Oswin", role: "Sales & Specification Engineer", roleType: "sales", email: "oswin@gulfoflex.com", phone: "+94 11 000 0000" },
+      { name: "Mohsin", role: "Sales Executive", roleType: "sales", email: "sales@rwi.lk" },
     ],
   },
   {
@@ -96,15 +87,15 @@ const teams: CountryTeam[] = [
     flag: "🇪🇬",
     code: "egypt",
     members: [
-      { name: "Khalid", role: "Head of Sales — Egypt", roleType: "head", email: "africa@gulfoflex.com" },
+      { name: "Mohamed Khaled Mamdouh", role: "Retail Sales Engineer", roleType: "sales", email: "sales.egypt@gulfoflex.com", phone: "+966 00 000 0000" },
     ],
   },
   {
     country: "Africa",
-    flag: "🌍",
+    flag: "Af",
     code: "africa",
     members: [
-      { name: "Moryao", role: "Head of Sales — Africa", roleType: "head", email: "africa@gulfoflex.com" },
+      { name: "Morayo Durojaye", role: "Retail Sales Engineer", roleType: "sales", email: "sales.africa@gulfoflex.com", phone: "+966 00 000 0000" },
     ],
   },
 ];
@@ -123,10 +114,8 @@ function getInitials(name: string) {
 const COUNTRY_ACCENT: Record<string, { rgb: string; label: string }> = {
   uae:     { rgb: "249,115,22",  label: "Dubai · Sharjah · Abu Dhabi" },
   ksa:     { rgb: "234,88,12",   label: "Riyadh · Jeddah · Dammam" },
-  qatar:   { rgb: "194,65,12",   label: "Doha" },
-  kuwait:  { rgb: "251,146,60",  label: "Kuwait City" },
-  bahrain: { rgb: "249,115,22",  label: "Manama" },
-  oman:    { rgb: "234,88,12",   label: "Muscat · Sohar" },
+  "other-gcc": { rgb: "194,65,12", label: "Qatar · Kuwait · Bahrain · Oman" },
+  srilanka: { rgb: "251,146,60",  label: "Colombo" },
   egypt:   { rgb: "194,65,12",   label: "Cairo · Alexandria" },
   africa:  { rgb: "251,146,60",  label: "Lagos · Nairobi · Accra" },
 };
@@ -198,7 +187,7 @@ export default function TeamSection() {
               <span className="serif-italic text-orange-600">.</span>
             </h2>
             <p className="text-neutral-600 text-base md:text-lg leading-relaxed max-w-xl">
-              A regional team of specification engineers and account managers — embedded across the GCC to support consultants, contractors, and developers from spec to site.
+              A regional team of specification engineers and account managers - embedded across the GCC to support consultants, contractors, and developers from spec to site.
             </p>
           </div>
 
@@ -411,7 +400,7 @@ export default function TeamSection() {
                               style={{ fontFamily: "var(--font-display, var(--font-syne))", letterSpacing: "-0.02em" }}
                             >
                               {isUnnamed ? (
-                                <span className="text-neutral-400 italic">Name — TBA</span>
+                                <span className="text-neutral-400 italic">Name - TBA</span>
                               ) : (
                                 member.name
                               )}
@@ -481,7 +470,7 @@ export default function TeamSection() {
                 Need a quote, datasheet, or site visit?
               </h3>
               <p className="text-white/65 text-sm md:text-base leading-relaxed">
-                Reach the regional team directly — we route your enquiry to the right specifier within one business day.
+                Reach the regional team directly - we route your enquiry to the right specifier within one business day.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">

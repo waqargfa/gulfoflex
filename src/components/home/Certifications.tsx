@@ -82,7 +82,7 @@ export default function Certifications() {
       <div className="hidden md:block absolute bottom-10 right-10 w-10 h-10 border-b border-r border-white/10 pointer-events-none" />
 
       <div className="container-wide relative z-10">
-        {/* Section header — centered */}
+        {/* Section header - centered */}
         <div className="text-center max-w-2xl mx-auto mb-12 reveal">
           <h2
             id="certs-heading"
@@ -93,7 +93,7 @@ export default function Certifications() {
             <span className="serif-italic text-orange-500">Universally trusted.</span>
           </h2>
           <p className="text-white/55 text-base leading-relaxed">
-            The most stringent international approvals — giving engineers, consultants,
+            The most stringent international approvals - giving engineers, consultants,
             and project owners full confidence to specify Gulf&#8209;O&#8209;Flex® on any critical project worldwide.
           </p>
         </div>

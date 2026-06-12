@@ -17,9 +17,9 @@ const GEO_URL =
   "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 /* ── ISO-3166-1 numeric codes for color tiers ──────────────── */
-// Tier 1 — GCC (orange)
+// Tier 1 - GCC (orange)
 const GCC_IDS = new Set([784, 682, 634, 512, 48, 414]);
-// Tier 2 — Key distributor countries (amber)
+// Tier 2 - Key distributor countries (amber)
 const DIST_IDS = new Set([
   356, 144, 566, 818, 504, 586, 50, 702, 458, 360, 826, 276, 250, 792, 380,
   724, 528, 616, 300, 76, 484, 36, 710, 288, 12, 788, 231, 404, 440, 116, 704,

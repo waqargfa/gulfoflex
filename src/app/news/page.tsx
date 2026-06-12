@@ -4,7 +4,7 @@ import NewsExperience, { type Article, type GofEvent, type GalleryItem } from "@
 export const metadata: Metadata = {
   title: "News & Media | Gulf-O-Flex® Press Releases & Industry News",
   description:
-    "Latest news, press releases, and industry updates from Gulf-O-Flex® — the GCC's leading rubber insulation manufacturer. Stay current with product launches, certifications, and market insights.",
+    "Latest news, press releases, and industry updates from Gulf-O-Flex® - the GCC's leading rubber insulation manufacturer. Stay current with product launches, certifications, and market insights.",
   alternates: { canonical: "https://gulfoflex.com/news" },
 };
 
@@ -16,7 +16,7 @@ const articles: Article[] = [
     category: "Events",
     color: "orange",
     summary:
-      "Gulf-O-Flex® returns to Lagos to showcase its full range of advanced thermal, acoustic, and fire-rated insulation solutions at HVACR Nigeria 2026 — Africa's premier HVAC, refrigeration and building services exhibition.",
+      "Gulf-O-Flex® returns to Lagos to showcase its full range of advanced thermal, acoustic, and fire-rated insulation solutions at HVACR Nigeria 2026 - Africa's premier HVAC, refrigeration and building services exhibition.",
     featured: true,
     readTime: 4,
     author: "Marketing",
@@ -61,7 +61,7 @@ const articles: Article[] = [
     category: "Events",
     color: "blue",
     summary:
-      "Gulf-O-Flex® joined the world's largest HVACR show — AHR Expo 2026 in Las Vegas — to meet US specifiers, contractors and distributors and demonstrate its UL-listed and FM-approved insulation product range.",
+      "Gulf-O-Flex® joined the world's largest HVACR show - AHR Expo 2026 in Las Vegas - to meet US specifiers, contractors and distributors and demonstrate its UL-listed and FM-approved insulation product range.",
     readTime: 4,
     author: "Commercial Desk",
     tags: ["AHR Expo", "USA", "Las Vegas"],
@@ -88,7 +88,7 @@ const articles: Article[] = [
     category: "Awards",
     color: "emerald",
     summary:
-      "Gulf-O-Flex® has been recognized with the Innovation in Sustainable Engineering and Green Solution Award at the One UAE Awards 2026 — celebrating our zero-ODP, low-GWP product range and our 40% reduction in embodied carbon.",
+      "Gulf-O-Flex® has been recognized with the Innovation in Sustainable Engineering and Green Solution Award at the One UAE Awards 2026 - celebrating our zero-ODP, low-GWP product range and our 40% reduction in embodied carbon.",
     featured: true,
     readTime: 5,
     author: "Sustainability",
@@ -103,7 +103,7 @@ const articles: Article[] = [
     category: "Events",
     color: "orange",
     summary:
-      "Gulf-O-Flex® participated as a leading insulation brand at Big 5 Construct Saudi 2025 in Riyadh — meeting Saudi consultants, contractors and Vision 2030 mega-project teams to discuss locally manufactured Tier-1 insulation supply.",
+      "Gulf-O-Flex® participated as a leading insulation brand at Big 5 Construct Saudi 2025 in Riyadh - meeting Saudi consultants, contractors and Vision 2030 mega-project teams to discuss locally manufactured Tier-1 insulation supply.",
     readTime: 4,
     author: "KSA Team",
     tags: ["Big 5", "KSA", "Riyadh"],
@@ -130,7 +130,7 @@ const articles: Article[] = [
     category: "Events",
     color: "purple",
     summary:
-      "Gulf-O-Flex® returned to Lagos for Big 5 Nigeria 2025 — engaging African MEP consultants, distributors and contractors with live demos of its rubber, glass-faced and aluminium-clad insulation systems.",
+      "Gulf-O-Flex® returned to Lagos for Big 5 Nigeria 2025 - engaging African MEP consultants, distributors and contractors with live demos of its rubber, glass-faced and aluminium-clad insulation systems.",
     readTime: 3,
     author: "Marketing",
     tags: ["Big 5", "Nigeria", "Africa"],
@@ -143,7 +143,7 @@ const articles: Article[] = [
     category: "Events",
     color: "cyan",
     summary:
-      "Gulf-O-Flex® joined leading Saudi MEP consultants and contractors at the MEPIC KSA Conference 2025 — sharing best-practice condensation control and fire-safety insulation specifications for Kingdom mega-projects.",
+      "Gulf-O-Flex® joined leading Saudi MEP consultants and contractors at the MEPIC KSA Conference 2025 - sharing best-practice condensation control and fire-safety insulation specifications for Kingdom mega-projects.",
     readTime: 3,
     author: "KSA Team",
     tags: ["MEPIC", "KSA", "Conference"],
@@ -156,7 +156,7 @@ const articles: Article[] = [
     category: "Events",
     color: "orange",
     summary:
-      "Rubber World Industry — the makers of Gulf-O-Flex® — proudly exhibited at ACREX India 2024 in Mumbai, India's premier HVAC&R show, presenting our full insulation range to the Indian and South Asian engineering community.",
+      "Rubber World Industry - the makers of Gulf-O-Flex® - proudly exhibited at ACREX India 2024 in Mumbai, India's premier HVAC&R show, presenting our full insulation range to the Indian and South Asian engineering community.",
     readTime: 3,
     author: "APAC Team",
     tags: ["ACREX", "India", "Mumbai"],
@@ -169,7 +169,7 @@ const articles: Article[] = [
     category: "Events",
     color: "orange",
     summary:
-      "Gulf-O-Flex® showcased its complete portfolio of NBR, XLPE, Aluglass, Aluclad and Sound insulation systems at Big 5 Global 2023 — the Middle East's largest construction event — at Dubai World Trade Centre.",
+      "Gulf-O-Flex® showcased its complete portfolio of NBR, XLPE, Aluglass, Aluclad and Sound insulation systems at Big 5 Global 2023 - the Middle East's largest construction event - at Dubai World Trade Centre.",
     readTime: 3,
     author: "Marketing",
     tags: ["Big 5", "Dubai", "Global"],
@@ -182,7 +182,7 @@ const articles: Article[] = [
     category: "Awards",
     color: "amber",
     summary:
-      "Rubber World Industry, the manufacturer behind Gulf-O-Flex®, was honoured with awards in two categories at the CBNME MEP Awards 2022 — recognising our innovation in insulation manufacturing and our contribution to the regional MEP industry.",
+      "Rubber World Industry, the manufacturer behind Gulf-O-Flex®, was honoured with awards in two categories at the CBNME MEP Awards 2022 - recognising our innovation in insulation manufacturing and our contribution to the regional MEP industry.",
     featured: true,
     readTime: 4,
     author: "GOF Newsroom",
@@ -196,7 +196,7 @@ const articles: Article[] = [
     category: "Awards",
     color: "amber",
     summary:
-      "Gulf-O-Flex® was proud to sponsor the MEP Awards 2023 — supporting the Middle East's premier celebration of engineering excellence across mechanical, electrical and plumbing disciplines.",
+      "Gulf-O-Flex® was proud to sponsor the MEP Awards 2023 - supporting the Middle East's premier celebration of engineering excellence across mechanical, electrical and plumbing disciplines.",
     readTime: 3,
     author: "Marketing",
     tags: ["MEP Awards", "Sponsor", "Industry"],
@@ -209,7 +209,7 @@ const articles: Article[] = [
     category: "Awards",
     color: "blue",
     summary:
-      "Gulf-O-Flex® was nominated at the 11th Annual Climate Control Awards — the region's most respected platform for honouring HVACR product excellence and engineering innovation.",
+      "Gulf-O-Flex® was nominated at the 11th Annual Climate Control Awards - the region's most respected platform for honouring HVACR product excellence and engineering innovation.",
     readTime: 3,
     author: "Marketing",
     tags: ["Climate Control", "HVACR", "Awards"],
@@ -235,7 +235,7 @@ const articles: Article[] = [
     category: "Events",
     color: "purple",
     summary:
-      "Gulf-O-Flex® joined regional MEP leaders at the MEP Conference 2021 — engaging in panel discussions on sustainable insulation, energy efficiency, and the post-pandemic outlook for the GCC construction industry.",
+      "Gulf-O-Flex® joined regional MEP leaders at the MEP Conference 2021 - engaging in panel discussions on sustainable insulation, energy efficiency, and the post-pandemic outlook for the GCC construction industry.",
     readTime: 3,
     author: "Marketing",
     tags: ["MEP", "Conference", "GCC"],
@@ -248,7 +248,7 @@ const articles: Article[] = [
     category: "Sustainability",
     color: "emerald",
     summary:
-      "Gulf-O-Flex® launched its Green Thinking initiative — committing to long-term carbon reduction, sustainable raw material sourcing, and full lifecycle accountability across our insulation manufacturing operations.",
+      "Gulf-O-Flex® launched its Green Thinking initiative - committing to long-term carbon reduction, sustainable raw material sourcing, and full lifecycle accountability across our insulation manufacturing operations.",
     readTime: 5,
     author: "Sustainability",
     tags: ["Green", "Sustainability", "Initiative"],
@@ -311,7 +311,7 @@ const events: GofEvent[] = [
     dateLabel: "9 July 2026 · 14:00 GST",
     location: "Online · Microsoft Teams",
     summary:
-      "Deep-dive into Gulf-O-Flex® Sound — STC ratings, installation best practices, and case studies from Riyadh Metro Phase 2.",
+      "Deep-dive into Gulf-O-Flex® Sound - STC ratings, installation best practices, and case studies from Riyadh Metro Phase 2.",
     image: "/images/products/sound-1.webp",
     cta: { label: "Register free", href: "#" },
     status: "upcoming",
@@ -326,13 +326,13 @@ const events: GofEvent[] = [
     dateLabel: "3 – 5 September 2026",
     location: "Bombay Exhibition Centre, India",
     summary:
-      "Gulf-O-Flex® returns to MEP Expo with our APAC distribution partners — featuring the new low-GWP NBR range and Aluclad jacketing systems.",
+      "Gulf-O-Flex® returns to MEP Expo with our APAC distribution partners - featuring the new low-GWP NBR range and Aluclad jacketing systems.",
     image: "/images/products/aluclad-2.webp",
     cta: { label: "View details", href: "#" },
     status: "upcoming",
   },
   {
-    title: "ISH Frankfurt 2025 — Recap",
+    title: "ISH Frankfurt 2025 - Recap",
     tagline: "Three days. 190+ qualified leads.",
     type: "Trade Show",
     color: "blue",
@@ -364,14 +364,14 @@ const events: GofEvent[] = [
 ];
 
 const gallery: GalleryItem[] = [
-  { src: "/images/products/aluclad-install.webp", caption: "Aluclad jacketing — on-site, Dubai", tag: "Project" },
-  { src: "/images/products/sound-2.webp", caption: "Sound insulation — Metro Phase 2", tag: "Acoustics" },
-  { src: "/images/products/nbr-banner.jpeg", caption: "NBR production — KSA facility", tag: "Manufacturing" },
-  { src: "/images/products/xlpe-banner.jpg", caption: "XLPE — FM Approved range", tag: "Certification" },
-  { src: "/images/products/aluglass-install.webp", caption: "Aluglass install — Riyadh tower", tag: "Project" },
-  { src: "/images/products/aluclad-2.webp", caption: "Aluclad — long-run delivery", tag: "Logistics" },
+  { src: "/images/products/aluclad-install.webp", caption: "Aluclad jacketing - on-site, Dubai", tag: "Project" },
+  { src: "/images/products/sound-2.webp", caption: "Sound insulation - Metro Phase 2", tag: "Acoustics" },
+  { src: "/images/products/nbr-banner.jpeg", caption: "NBR production - KSA facility", tag: "Manufacturing" },
+  { src: "/images/products/xlpe-banner.jpg", caption: "XLPE - FM Approved range", tag: "Certification" },
+  { src: "/images/products/aluglass-install.webp", caption: "Aluglass install - Riyadh tower", tag: "Project" },
+  { src: "/images/products/aluclad-2.webp", caption: "Aluclad - long-run delivery", tag: "Logistics" },
   { src: "/images/products/sound-1.webp", caption: "Acoustic test chamber", tag: "R&D" },
-  { src: "/images/products/nbr-pipe.jpeg", caption: "Pipe section — pre-cut to spec", tag: "Product" },
+  { src: "/images/products/nbr-pipe.jpeg", caption: "Pipe section - pre-cut to spec", tag: "Product" },
 ];
 
 export default function NewsPage() {

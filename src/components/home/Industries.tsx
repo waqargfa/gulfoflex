@@ -66,7 +66,7 @@ const industries = [
     shortName: "Marine",
     icon: Anchor,
     image: "/images/products/aluglass-tube.webp",
-    imageAlt: "Aluglass-faced rubber foam tube insulation — used in marine and offshore piping systems",
+    imageAlt: "Aluglass-faced rubber foam tube insulation - used in marine and offshore piping systems",
     tagline: "Salt-spray & humidity resistant",
     desc: "Marine-grade insulation engineered to withstand harsh sea environments, salt spray, humidity, and vibration on ships, offshore platforms, and naval vessels. Certified to international marine standards.",
     applications: ["HVAC systems", "Engine rooms", "Piping systems", "Refrigeration", "Acoustic damping"],

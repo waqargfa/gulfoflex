@@ -13,6 +13,7 @@ import {
   Mail,
   ArrowRight,
   Zap,
+  Sparkles,
   Shield,
   Layers,
   Package,
@@ -57,6 +58,12 @@ const products = [
     icon: Wrench,
   },
   {
+    name: "Gulf-O-Flex Ultra",
+    desc: "Ultra-low conductivity premium insulation",
+    href: "/products/ultra",
+    icon: Sparkles,
+  },
+  {
     name: "Accessories",
     desc: "Tapes, glues and installation accessories",
     href: "/products/accessories",
@@ -65,10 +72,9 @@ const products = [
 ];
 
 const industries = [
-  { name: "HVAC & MEP", href: "/industries/hvac", icon: Building2 },
+  { name: "HVAC & Construction", href: "/industries/hvac", icon: Building2 },
   { name: "Oil & Gas", href: "/industries/oil-gas", icon: Zap },
   { name: "Marine", href: "/industries/marine", icon: Globe },
-  { name: "Construction", href: "/industries/construction", icon: Building2 },
   { name: "District Cooling", href: "/industries/district-cooling", icon: Shield },
   { name: "Industrial Plants", href: "/industries/industrial", icon: Wrench },
 ];
