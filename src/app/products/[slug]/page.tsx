@@ -631,11 +631,11 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                 {product.description.map((p, i) => <p key={i}>{p}</p>)}
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="rounded-xl border bg-white p-4" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
                   <Factory size={16} className="text-orange-600 mb-2.5" />
                   <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-neutral-400 mb-1">Manufactured</div>
-                  <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>UAE · Saudi Arabia</div>
+                  <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>UAE, Saudi Arabia, Srilanka</div>
                 </div>
                 <div className="rounded-xl border bg-white p-4" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
                   <Globe2 size={16} className="text-orange-600 mb-2.5" />
@@ -646,11 +646,6 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                   <Clock size={16} className="text-orange-600 mb-2.5" />
                   <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-neutral-400 mb-1">Lead time</div>
                   <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>2–4 weeks</div>
-                </div>
-                <div className="rounded-xl border bg-white p-4" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
-                  <ShieldCheck size={16} className="text-orange-600 mb-2.5" />
-                  <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-neutral-400 mb-1">Warranty</div>
-                  <div className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "var(--font-display)" }}>10 years system</div>
                 </div>
               </div>
             </div>

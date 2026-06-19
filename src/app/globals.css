@@ -525,6 +525,8 @@
     gap: 4rem;
     animation: marquee 40s linear infinite;
     width: max-content;
+    will-change: transform;
+    contain: layout style;
   }
 
   .marquee-mask {

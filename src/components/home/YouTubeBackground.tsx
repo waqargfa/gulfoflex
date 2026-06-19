@@ -52,7 +52,7 @@ export default function VideoBackground({
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         style={{
           position:   "absolute",
           inset:      0,

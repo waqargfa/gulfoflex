@@ -50,7 +50,6 @@ const industries = [
     desc: "High-performance thermal insulation rated for extreme temperatures found in refineries, petrochemical plants, pipelines, and offshore platforms. Engineered to meet the most demanding international standards.",
     applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Fan coil units"],
     products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Aluclad", "Gulf-O-Flex Ultra"],
-    projects: "500+",
     stat: { label: "Temp. Range", value: "-40°C to 105°C" },
     color: "text-orange-500",
     accentRgb: "249 115 22",
@@ -124,6 +123,8 @@ const industries = [
   },
 ];
 
+const trustedSectors = ["Manufacturer", "Data Center", "Healthcare", "Hospitality"];
+
 export default function Industries() {
   const [active, setActive] = useState(industries[0].id);
 
@@ -153,6 +154,16 @@ export default function Industries() {
           <p className="text-neutral-500 text-lg">
             Gulf-O-Flex® insulation powers critical infrastructure across five major industries, delivering consistent performance in the most demanding environments.
           </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+            {trustedSectors.map((sector) => (
+              <span
+                key={sector}
+                className="px-3 py-1.5 rounded-full text-xs font-semibold border border-orange-200 bg-orange-50 text-orange-700"
+              >
+                {sector}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Interactive Panel */}

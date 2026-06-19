@@ -37,7 +37,6 @@ const industries = {
     requirements: ["NORSOK M-501 Compliance", "Cryogenic to High-Temp Range", "Fire Safety (IMO/NFPA)", "Corrosion Resistance"],
     keyProjects: [],
     stats: [
-      { n: "1,800+", l: "O&G Projects" },
       { n: "-200°C", l: "Min Temperature" },
       { n: "IMO", l: "FTP Certified" },
       { n: "25+", l: "Years O&G Experience" },

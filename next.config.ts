@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     minimumCacheTTL: 86400,
   },
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion", "react-simple-maps", "d3-geo"],
+  },
   async headers() {
     const isProd = process.env.NODE_ENV === "production";
     return [

@@ -238,6 +238,7 @@ export default function Products() {
                   muted
                   loop
                   playsInline
+                  preload="none"
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ zIndex: 1 }}
                 >

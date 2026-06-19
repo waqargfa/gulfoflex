@@ -28,7 +28,6 @@ const industries = [
     tagline: "Engineered for the harshest process environments",
     desc: "Process piping insulation for refineries, petrochemical plants, upstream production, and LNG storage. Meeting NORSOK, API, and international offshore standards.",
     applications: ["Process Pipe Insulation", "LNG Storage Systems", "Flare Systems", "Offshore Platforms"],
-    projects: "1,800+",
     color: "orange",
   },
   {

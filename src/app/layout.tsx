@@ -5,20 +5,21 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import PageLoader from "@/components/layout/PageLoader";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import { CountryProvider } from "@/context/CountryContext";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const manrope = Manrope({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -100,6 +101,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#F97316" />
         <script
@@ -158,6 +161,7 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
             <Footer />
+            <WhatsAppButton />
           </SmoothScroll>
         </CountryProvider>
       </body>

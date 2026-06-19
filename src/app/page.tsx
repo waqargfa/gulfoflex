@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Hero from "@/components/home/Hero";
 import Marquee from "@/components/home/Marquee";
-import Products from "@/components/home/Products";
-import Industries from "@/components/home/Industries";
-import Certifications from "@/components/home/Certifications";
-import Contact from "@/components/home/Contact";
 import CountryInitiativeBanner from "@/components/home/CountryInitiativeBanner";
 import UAENetZeroSection from "@/components/home/UAENetZeroSection";
-import Projects from "@/components/home/Projects";
+import Products from "@/components/home/Products";
+import Industries from "@/components/home/Industries";
 import Awards from "@/components/home/Awards";
+import Projects from "@/components/home/Projects";
 import GlobalPresence from "@/components/home/GlobalPresence";
+import Certifications from "@/components/home/Certifications";
+import Contact from "@/components/home/Contact";
 
 export const metadata: Metadata = {
   title: "Gulf-O-Flex® | Premium NBR Rubber Insulation Manufacturer | UAE Since 1993",
@@ -31,7 +32,9 @@ export default function HomePage() {
       <Industries />
       <Awards />
       <Projects />
-      <GlobalPresence />
+      <Suspense fallback={null}>
+        <GlobalPresence />
+      </Suspense>
       <Certifications />
       <Contact />
     </>
