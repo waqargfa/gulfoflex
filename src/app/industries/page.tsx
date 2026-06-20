@@ -73,7 +73,7 @@ const industries = [
 ];
 
 export default function IndustriesPage() {
-  const totalProjects = industries.reduce((sum, ind) => sum + parseInt(ind.projects.replace(/[^0-9]/g, ""), 10), 0);
+  const totalProjects = industries.reduce((sum, ind) => sum + parseInt((ind.projects ?? "0").replace(/[^0-9]/g, ""), 10), 0);
 
   return (
     <>

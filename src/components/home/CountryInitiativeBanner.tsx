@@ -77,10 +77,10 @@ export default function CountryInitiativeBanner() {
         style={{ background: `linear-gradient(90deg, transparent, ${accentColor}50, transparent)` }}
       />
 
-      <div className="container-wide py-8 sm:py-10 lg:py-12 relative z-10">
+      <div className="container-wide py-6 sm:py-7 lg:py-8 relative z-10">
 
         {/* ── Header: badge + title + tagline ── */}
-        <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-8 sm:mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6 sm:mb-7">
 
           {/* Initiative emblem */}
           <div
@@ -171,48 +171,6 @@ export default function CountryInitiativeBanner() {
           className="h-px mb-6 sm:mb-8"
           style={{ background: `linear-gradient(90deg, ${accentColor}40, ${accentColor}15, transparent)` }}
         />
-
-        {/* ── Key projects ── */}
-        <div>
-          <p
-            className="text-[10px] sm:text-xs font-bold tracking-[0.22em] uppercase mb-4"
-            style={{ color: `${accentColor}80` }}
-          >
-            Key Projects &amp; Programmes
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {v.keyProjects.map((p) => {
-              const regionLabel = /\bOMAN\b/i.test(p.name) ? "Oman" : p.type;
-
-              return (
-              <span
-                key={`${p.name}-${regionLabel}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
-                style={{
-                  background: "rgba(255,255,255,0.07)",
-                  border: "1px solid rgba(255,255,255,0.13)",
-                  color: "rgba(255,255,255,0.80)",
-                }}
-              >
-                <span
-                  className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                  style={{ background: accentColor }}
-                />
-                <span>{p.name}</span>
-                <span
-                  suppressHydrationWarning
-                  className="text-[9px] font-semibold tracking-wide px-1.5 py-0.5 rounded-full"
-                  style={{
-                    background: `${accentColor}20`,
-                    color: accentColor,
-                  }}
-                >
-                  {regionLabel}
-                </span>
-              </span>
-            )})}
-          </div>
-        </div>
       </div>
     </section>
   );

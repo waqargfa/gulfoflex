@@ -37,16 +37,6 @@ const certs: Cert[] = [
   { abbr: "Saudi Made", name: "Saudi Made",     sub: "Saudi Arabia",         Icon: ShieldCheck, since: "MODON" },
 ];
 
-const standards = [
-  "FM 4924",
-  "ASTM E84 / UL 723",
-  "ISO 14025",
-  "EN 15804",
-  "LEED Compliant",
-  "BREEAM",
-  "Estidama",
-  "BS 476 Part 4 & 7",
-];
 
 const trustStats = [
   { value: "12+",  label: "Active certifications" },
@@ -159,43 +149,20 @@ export default function Certifications() {
           })}
         </div>
 
-        {/* Standards strip + CTA */}
-        <div
-          className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pt-8 reveal"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
-        >
-          <div>
-            <div className="text-white/45 text-[10px] font-bold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-              <Sparkles size={11} className="text-orange-400" />
-              Testing &amp; Compliance Standards
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {standards.map((s) => (
-                <span
-                  key={s}
-                  className="px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 hover:text-white hover:border-orange-400/40 hover:bg-orange-500/10"
-                  style={{ border: "1px solid rgba(255,255,255,0.09)", background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.65)" }}
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-            <Link href="/downloads" className="btn-primary whitespace-nowrap">
-              <Download size={14} />
-              Download Certificates
-              <ArrowRight size={14} />
-            </Link>
-            <Link
-              href="/certifications"
-              className="btn-ghost whitespace-nowrap text-center"
-              style={{ color: "rgba(255,255,255,0.70)", borderColor: "rgba(255,255,255,0.16)", background: "rgba(255,255,255,0.04)" }}
-            >
-              All Certifications
-            </Link>
-          </div>
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-8 reveal">
+          <Link href="/downloads" className="btn-primary whitespace-nowrap">
+            <Download size={14} />
+            Download Certificates
+            <ArrowRight size={14} />
+          </Link>
+          <Link
+            href="/certifications"
+            className="btn-ghost whitespace-nowrap text-center"
+            style={{ color: "rgba(255,255,255,0.70)", borderColor: "rgba(255,255,255,0.16)", background: "rgba(255,255,255,0.04)" }}
+          >
+            All Certifications
+          </Link>
         </div>
       </div>
 

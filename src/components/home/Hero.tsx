@@ -125,7 +125,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex flex-col overflow-hidden"
+      className="relative min-h-[62vh] flex flex-col overflow-hidden"
       aria-label="Hero"
       style={{ background: "#0d0c0b" }}
     >
@@ -175,7 +175,7 @@ export default function Hero() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 flex-1 flex items-center pt-28 md:pt-36 pb-24 overflow-hidden">
+      <div className="relative z-10 flex-1 flex items-center pt-24 md:pt-28 pb-10 overflow-hidden">
         <div
           className={`container-wide w-full flex ${isRight ? "justify-end" : "justify-start"} transition-[justify-content] duration-500`}
         >

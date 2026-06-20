@@ -18,7 +18,7 @@ const products = [
     short: "NBR",
     category: "Thermal & Acoustic",
     tagline: "Closed-cell elastomeric rubber insulation - the industry benchmark for thermal efficiency, moisture resistance, and acoustic performance across HVAC and industrial environments.",
-    features: ["−40°C to +105°C", "Class O fire rated", "CFC & HCFC free"],
+    features: ["−40°C to +105°C", "FM Approved", "Versatile & flexible"],
     icon: Thermometer,
     image: "/images/products/nbr-roll.webp",
     video: "/videos/products/nbr.mp4",
@@ -31,7 +31,7 @@ const products = [
     short: "XLPE",
     category: "Cross-Linked Polyethylene",
     tagline: "Superior compressive strength, chemical resistance, and excellent thermal properties for demanding industrial and marine applications worldwide.",
-    features: ["−50°C to +100°C", "Chemical resistant", "UV stable"],
+    features: ["Aesthetic Finish", "Free from VOC", "Excellent UV"],
     icon: Layers,
     image: "/images/products/xlpe-banner.jpg",
     video: "/videos/products/xlpe.mp4",
@@ -45,7 +45,7 @@ const products = [
     short: "SND",
     category: "Acoustic Insulation",
     tagline: "Engineered for superior sound attenuation in mechanical rooms, duct systems, and industrial environments - combining thermal and acoustic performance in one solution.",
-    features: ["25dB+ noise reduction", "Dual-function", "Vibration damping"],
+    features: ["Noise Reduction", "Shock Absorption", "Excellent Flexibility"],
     icon: Volume2,
     image: "/images/products/sound-1.webp",
     href: "/products/sound",
@@ -57,7 +57,7 @@ const products = [
     short: "ALG",
     category: "Aluminum Facing",
     tagline: "Premium aluminum glass fibre reinforced facing for exceptional protection against mechanical damage, moisture ingress, and UV degradation in external applications.",
-    features: ["Weatherproof", "UV resistant", "Professional finish"],
+    features: ["High resistance to water vapour diffusion", "FM Approved"],
     icon: ZapIcon,
     image: "/images/products/aluglass-tube.webp",
     video: "/videos/products/aluglass.mp4",
@@ -70,7 +70,7 @@ const products = [
     short: "ALC",
     category: "Cladding Systems",
     tagline: "Heavy-duty aluminum cladding and jacketing for industrial pipe insulation protection. Engineered for harsh environments and demanding construction sites.",
-    features: ["Up to +600°C", "Corrosion resistant", "Multiple profiles"],
+    features: ["UV Resistant", "Mechanical Protection", "Anti-corrosion"],
     icon: Wrench,
     image: "/images/products/aluclad-1.webp",
     video: "/videos/products/aluclad.mp4",
@@ -83,7 +83,7 @@ const products = [
     short: "ULT",
     category: "Ultra-Low Conductivity",
     tagline: "Next-generation NBR/EPDM hybrid closed-cell foam with industry-leading thermal conductivity of 0.030 W/m·K at 0°C - engineered for chilled water, district cooling, and low-temperature process lines.",
-    features: ["λ 0.030 W/m·K @ 0°C", "−50°C to +115°C", "μ > 7,300"],
+    features: ["Product with reaction to fire Europlus B-S1-D0", "Low VOC & no ROHS detected", "Aesthetic finish"],
     icon: ShieldCheck,
     image: "/images/products/ultra/ultra.png",
     href: "/products/ultra",
@@ -95,7 +95,7 @@ const products = [
     short: "ULN",
     category: "Pre-Insulated Tube Line",
     tagline: "Factory pre-insulated continuous copper tube line system - nitrogen-charged copper + closed-cell NBR core + UV-stable LDPE jacket, supplied in coils up to 50 m for VRF/VRV, split AC, chilled water and solar thermal piping.",
-    features: ["Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral vapour barrier"],
+    features: ["UV Resistant", "Polymeric Jacketing", "Mechanical Protection"],
     icon: Layers,
     image: "/images/products/ultra/ultraline.png",
     href: "/products/ultraline",
@@ -185,7 +185,7 @@ export default function Products() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-end gap-6">
             <p className="text-neutral-600 text-base md:text-lg leading-relaxed max-w-md">
-              A complete portfolio of certified thermal, acoustic and protective insulation - manufactured in the UAE, specified across{" "}
+              A complete portfolio of certified thermal, acoustic and protective insulation - manufactured in the UAE, KSA and Sri Lanka, specified across{" "}
               <span className="text-neutral-900 font-semibold">90+ markets</span>.
             </p>
             <div className="flex items-center gap-3">
@@ -250,26 +250,6 @@ export default function Products() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" style={{ zIndex: 2 }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(130deg, rgba(249,115,22,0.22), transparent 52%)", zIndex: 2 }} />
 
-              {/* ── TOP bar: badge + counter ── */}
-              <div className="absolute top-0 left-0 right-0 px-7 pt-7 flex items-start justify-between z-10">
-                <span
-                  key={`badge-${animKey}`}
-                  className="gof-fade-in text-[10px] font-bold tracking-[0.22em] uppercase px-3 py-1.5 rounded-full bg-white/[0.12] text-white backdrop-blur-md border border-white/[0.18]"
-                >
-                  {active.badge}
-                </span>
-                <div className="text-right">
-                  <div
-                    className="font-bold tabular-nums leading-none"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.1rem, 1.5vw, 1.5rem)", letterSpacing: "-0.025em" }}
-                  >
-                    <span className="text-orange-400">{String(activeIndex + 1).padStart(2, "0")}</span>
-                    <span className="text-white/25 mx-0.5">/</span>
-                    <span className="text-white/35">{String(products.length).padStart(2, "0")}</span>
-                  </div>
-                </div>
-              </div>
-
               {/* Large watermark shortcode */}
               <div
                 className="absolute right-5 md:right-9 top-1/2 -translate-y-1/2 select-none pointer-events-none font-black text-white leading-none"
@@ -286,14 +266,6 @@ export default function Products() {
 
               {/* ── BOTTOM animated info - re-mounts to trigger slide-up ── */}
               <div key={`info-${animKey}`} className="absolute bottom-0 left-0 right-0 px-7 pb-8 z-10">
-                <div
-                  className="gof-slide-up flex items-center gap-2 text-[10px] font-bold tracking-[0.28em] uppercase text-orange-300 mb-2.5"
-                  style={{ animationDelay: "0ms" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400 inline-block animate-pulse" />
-                  {active.category}
-                </div>
-
                 <h3
                   className="gof-slide-up text-white font-bold leading-[1.0] mb-3"
                   style={{
@@ -335,10 +307,6 @@ export default function Products() {
                       <ArrowUpRight size={14} />
                     </span>
                   </Link>
-                  <div className="hidden md:flex items-center gap-1.5 text-[10px] font-bold tracking-[0.20em] uppercase text-white/40">
-                    <ShieldCheck size={11} className="text-orange-300/60" />
-                    ISO 9001 · 14001 · 45001
-                  </div>
                 </div>
               </div>
 
@@ -443,12 +411,7 @@ export default function Products() {
                       >
                         {p.name}
                       </div>
-                      <div
-                        className="text-[10px] font-semibold tracking-[0.18em] uppercase mt-0.5 truncate transition-colors duration-300"
-                        style={{ color: isActive ? "#a16207" : "#d0d0d0" }}
-                      >
-                        {p.category}
-                      </div>
+
                     </div>
 
                     {/* Arrow circle */}
@@ -479,41 +442,6 @@ export default function Products() {
             </div>
           </div>
         </div>
-
-        {/* ── Trust strip ── */}
-        <div
-          className="mt-9 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border reveal"
-          style={{ background: "rgba(0,0,0,0.055)", borderColor: "rgba(0,0,0,0.07)" }}
-        >
-          {[
-            { icon: Award, label: "Quality Standard", value: "ISO 9001:2015" },
-            { icon: ShieldCheck, label: "Fire Rated", value: "Class O · BS 476" },
-            { icon: Layers, label: "Product SKUs", value: "200+ Variants" },
-            { icon: CheckCircle2, label: "Global Markets", value: "90+ Countries" },
-          ].map((s) => (
-            <div key={s.label} className="bg-white px-5 py-5 flex items-center gap-3.5">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                style={{
-                  background: "linear-gradient(135deg, rgba(249,115,22,0.13), rgba(249,115,22,0.04))",
-                  border: "1px solid rgba(249,115,22,0.18)",
-                }}
-              >
-                <s.icon size={15} className="text-orange-600" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-[9px] font-bold tracking-[0.22em] uppercase text-neutral-400 mb-0.5">{s.label}</div>
-                <div
-                  className="text-neutral-900 font-bold text-sm leading-tight truncate"
-                  style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
-                >
-                  {s.value}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* ── Dark CTA strip ── */}
         <div
           className="mt-9 relative overflow-hidden rounded-3xl p-8 md:p-12 reveal"
@@ -539,9 +467,9 @@ export default function Products() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
-              <Link href="/gulf-o-flex-assist" className="btn-primary text-sm py-3 px-6">
+              <a href="https://gulfoflexassist.com" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-3 px-6">
                 Try GOF Assist AI <ArrowRight size={14} />
-              </Link>
+              </a>
               <Link
                 href="/downloads"
                 className="btn-ghost text-sm py-3 px-6"

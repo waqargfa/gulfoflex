@@ -226,7 +226,7 @@ export default function Marquee() {
 
       {/* ── Logo row ── */}
       <div
-        className="relative mb-8"
+        className="relative mb-8 pb-8"
         style={{
           maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
           WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
@@ -243,40 +243,6 @@ export default function Marquee() {
             : genericDoubled!.map((p, i) => (
                 <MonogramBadge key={`${p.name}-${i}`} partner={p} />
               ))}
-        </div>
-      </div>
-
-      {/* ── Specs ticker ── */}
-      <div
-        className="relative pb-8"
-        style={{
-          maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
-          WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
-        }}
-      >
-        <div
-          className="flex w-max"
-          style={{ gap: "3.5rem", animation: "marquee 65s linear infinite reverse" }}
-        >
-          {[...specs, ...specs].map((s, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-2 flex-shrink-0 text-neutral-400 hover:text-orange-500 transition-colors duration-300"
-            >
-              <span className="text-orange-500/40" style={{ fontSize: "0.5rem" }}>�-�</span>
-              <span
-                style={{
-                  fontSize: "0.6875rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.12em",
-                  whiteSpace: "nowrap",
-                  fontFamily: "var(--font-inter)",
-                }}
-              >
-                {s}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>

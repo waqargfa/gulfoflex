@@ -27,14 +27,11 @@ export default function HomePage() {
       <Hero />
       <CountryInitiativeBanner />
       <UAENetZeroSection />
-      <Marquee />
       <Products />
       <Industries />
-      <Awards />
+      <Marquee />
       <Projects />
-      <Suspense fallback={null}>
-        <GlobalPresence />
-      </Suspense>
+      <Awards />
       <Certifications />
       <Contact />
     </>
