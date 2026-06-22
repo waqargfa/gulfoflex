@@ -1,74 +1,96 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Wind, Flame, Anchor, Building, Thermometer, Factory } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ArrowUpRight, Building2, Flame, Anchor, Snowflake, Cog, Factory, Server, HeartPulse } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
-  title: "Industries Served | Gulf-O-Flex® HVAC, Oil & Gas, Marine, Construction",
+  title: "Industries Served | Gulf-O-Flex® HVAC, Oil & Gas, Marine, Data Centers & More",
   description:
-    "Gulf-O-Flex® serves HVAC & MEP, Oil & Gas, Marine, Construction, District Cooling, and Industrial sectors. Premium insulation solutions for the world's most demanding environments.",
+    "Gulf-O-Flex® serves HVAC & MEP, Oil & Gas, Marine, District Cooling, Industrial, OEM, Data Centers, and Healthcare & Hospitality sectors. Premium insulation solutions for the world's most demanding environments.",
   alternates: { canonical: "https://gulfoflex.com/industries" },
 };
 
 const industries = [
   {
     slug: "hvac",
-    icon: Wind,
-    name: "HVAC & MEP",
-    tagline: "The thermal insulation backbone of every MEP system",
-    desc: "Gulf-O-Flex® NBR is the preferred choice for HVAC, plumbing, and MEP insulation in the Middle East and beyond. Engineered for chilled water pipes, AHU connections, FCUs, and district cooling networks.",
-    applications: ["Chilled Water Piping", "AHU & FCU Connections", "Cold Water Plumbing", "Duct Lining & Wrap"],
+    icon: Building2,
+    name: "HVAC, MEP & Construction",
+    tagline: "Energy-efficient building services",
+    desc: "Comprehensive insulation solutions for heating, ventilation, air conditioning, mechanical, electrical & plumbing systems, and building construction. Reduces energy consumption, prevents condensation.",
+    applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Green buildings"],
     projects: "6,500+",
-    color: "orange",
+    image: "/images/industries/hvac.jpg",
   },
   {
     slug: "oil-gas",
     icon: Flame,
-    name: "Oil & Gas",
-    tagline: "Engineered for the harshest process environments",
-    desc: "Process piping insulation for refineries, petrochemical plants, upstream production, and LNG storage. Meeting NORSOK, API, and international offshore standards.",
-    applications: ["Process Pipe Insulation", "LNG Storage Systems", "Flare Systems", "Offshore Platforms"],
-    color: "orange",
+    name: "Oil & Gas Industries",
+    tagline: "Extreme-temperature performance",
+    desc: "High-performance thermal insulation rated for extreme temperatures found in refineries, petrochemical plants, pipelines, and offshore platforms. Engineered to meet the most demanding international standards.",
+    applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Duct insulation"],
+    projects: "1,200+",
+    image: "/images/industries/oil-gas.jpg",
   },
   {
     slug: "marine",
     icon: Anchor,
-    name: "Marine & Shipbuilding",
-    tagline: "IMO FTP Code compliant insulation for sea applications",
-    desc: "Marine-grade insulation systems meeting IMO FTP Code requirements for ships, offshore vessels, naval vessels, and port infrastructure. Corrosion and moisture resistant.",
-    applications: ["Ship HVAC Systems", "Engine Room Insulation", "Cargo Hold Insulation", "Offshore Vessels"],
+    name: "Marine Manufacturing & Offshores",
+    tagline: "Salt-spray & humidity resistant",
+    desc: "Marine-grade insulation engineered to withstand harsh sea environments, salt spray, humidity, and vibration on ships, offshore platforms, and naval vessels. Certified to international marine standards.",
+    applications: ["HVAC systems", "Engine rooms", "Piping systems", "Refrigeration", "Offshore platforms"],
     projects: "850+",
-    color: "neutral",
-  },
-  {
-    slug: "construction",
-    icon: Building,
-    name: "Construction",
-    tagline: "From residential towers to iconic landmark projects",
-    desc: "Comprehensive insulation solutions for commercial, residential, hospitality, and healthcare construction. Compliant with Dubai Green Building Regulations, ADBC, and international green building standards.",
-    applications: ["High-Rise Towers", "Hotels & Resorts", "Hospitals & Healthcare", "Data Centers"],
-    projects: "12,000+",
-    color: "orange",
+    image: "/images/industries/marine.jpg",
   },
   {
     slug: "district-cooling",
-    icon: Thermometer,
-    name: "District Cooling",
-    tagline: "Specialized solutions for district cooling networks",
-    desc: "Gulf-O-Flex® insulation is specified across the GCC for district cooling distribution networks, chiller plant rooms, and end-user connections - ensuring energy efficiency and condensation control.",
-    applications: ["Distribution Pipes", "Chiller Plant Rooms", "End-User Connections", "Storage Tanks"],
+    icon: Snowflake,
+    name: "District Cooling Sector",
+    tagline: "GCC-scale cooling networks",
+    desc: "Specialized insulation for district cooling networks, the backbone of sustainable urban cooling in GCC cities. Prevents energy loss across extensive pipe networks and ensures maximum system efficiency.",
+    applications: ["Distribution mains", "Energy transfer stations", "Chiller plants", "Storage tanks"],
     projects: "380+",
-    color: "neutral",
+    image: "/images/industries/district-cooling.jpg",
   },
   {
     slug: "industrial",
-    icon: Factory,
+    icon: Cog,
     name: "Industrial Plants",
-    tagline: "Engineered insulation for demanding process environments",
-    desc: "Industrial thermal and acoustic insulation for manufacturing plants, power generation, food processing, pharmaceutical, and water treatment facilities across the region.",
-    applications: ["Process Piping", "Steam Systems", "Cold Storage Plants", "Power Generation"],
+    tagline: "Process-grade durability",
+    desc: "Heavy-duty thermal insulation for manufacturing plants, food processing facilities, pharmaceutical plants, and general industrial processes requiring precise temperature control and long-term durability.",
+    applications: ["HVAC systems", "Chilled water pipes", "Air handling units", "Duct insulation"],
     projects: "2,200+",
-    color: "neutral",
+    image: "/images/industries/industrial.jpg",
+  },
+  {
+    slug: "oem",
+    icon: Factory,
+    name: "Manufacturing & OEM",
+    tagline: "Custom-engineered solutions",
+    desc: "Tailored insulation products for original equipment manufacturers. Gulf-O-Flex partners with OEMs to develop custom-spec insulation integrated directly into HVAC units, refrigeration equipment, and industrial machinery.",
+    applications: ["HVAC equipment", "Refrigeration units", "Custom fabrication", "Equipment lining"],
+    projects: "120+",
+    image: "/images/industries/oem.jpg",
+  },
+  {
+    slug: "data-center",
+    icon: Server,
+    name: "Data Centers",
+    tagline: "Mission-critical cooling",
+    desc: "High-reliability insulation for data center cooling infrastructure. Prevents condensation on chilled water systems, maintains precise temperature control, and supports 24/7 uptime requirements.",
+    applications: ["Chilled water loops", "CRAH/CRAC units", "Cooling towers", "Liquid cooling systems"],
+    projects: "100+",
+    image: "/images/industries/data-center.jpg",
+  },
+  {
+    slug: "healthcare-hospitality",
+    icon: HeartPulse,
+    name: "Healthcare & Hospitality",
+    tagline: "Hygienic, quiet & efficient",
+    desc: "Insulation solutions for hospitals, laboratories, pharmaceutical facilities, hotels, resorts, and leisure complexes. Meets stringent hygiene standards, prevents microbial growth, delivers superior acoustic performance.",
+    applications: ["Hospital HVAC", "Clean rooms", "Guest room HVAC", "Swimming pool piping"],
+    projects: "1,800+",
+    image: "/images/industries/healthcare-hospitality.jpg",
   },
 ];
 
@@ -89,7 +111,7 @@ export default function IndustriesPage() {
           </nav>
 
           <div className="max-w-4xl">
-            <div className="eyebrow mb-6"><span className="eyebrow-dot" />Industry Expertise · 6 Sectors</div>
+            <div className="eyebrow mb-6"><span className="eyebrow-dot" />Industry Expertise · 8 Sectors</div>
             <h1 className="text-neutral-900 leading-[0.95] mb-6"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
               {/* Line 1 */}
@@ -130,14 +152,27 @@ export default function IndustriesPage() {
               <Link
                 key={ind.slug}
                 href={`/industries/${ind.slug}`}
-                className="group relative rounded-3xl border bg-white p-8 overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_-30px_rgba(234,88,12,0.35)] hover:border-orange-300/60"
+                className="group relative rounded-3xl border bg-white overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_-30px_rgba(234,88,12,0.35)] hover:border-orange-300/60"
                 style={{ borderColor: "rgba(0,0,0,0.08)" }}
                 aria-label={`View ${ind.name} solutions`}
               >
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute top-5 right-5 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-400">
-                  0{i + 1}
+                {/* Industry image */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={ind.image}
+                    alt={ind.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute top-4 right-4 text-[10px] font-bold tracking-[0.18em] uppercase text-white/70">
+                    0{i + 1}
+                  </div>
                 </div>
+
+                <div className="p-8">
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative">
                   <div className="flex items-center justify-between mb-5">
@@ -176,6 +211,7 @@ export default function IndustriesPage() {
                       style={{ borderColor: "rgba(0,0,0,0.10)" }}>
                       <ArrowUpRight size={15} />
                     </span>
+                  </div>
                   </div>
                 </div>
               </Link>

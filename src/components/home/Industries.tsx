@@ -29,7 +29,7 @@ const industries = [
     image: "/images/industries/hvac.jpg",
     imageAlt: "HVAC mechanical room with insulated chilled water piping and air handling units",
     tagline: "Energy-efficient building services",
-    desc: "Comprehensive insulation solutions for heating, ventilation, air conditioning, mechanical, electrical & plumbing systems, and building construction. Reduces energy consumption, prevents condensation, and meets the latest international energy codes and sustainability standards across commercial buildings, residential complexes, hotels, and hospitals.",
+    desc: "Comprehensive insulation solutions for heating, ventilation, air conditioning, mechanical, electrical & plumbing systems, and building construction. Reduces energy consumption, prevents condensation",
     applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Green buildings"],
     products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Sound", "Gulf-O-Flex Ultra"],
     stat: { label: "Energy Savings", value: "Up to 30%" },
@@ -90,9 +90,9 @@ const industries = [
     imageAlt: "Industrial plant with insulated process piping and manufacturing equipment",
     tagline: "Process-grade durability",
     desc: "Heavy-duty thermal insulation for manufacturing plants, food processing facilities, pharmaceutical plants, and general industrial processes requiring precise temperature control and long-term durability.",
-    applications: ["HVAC systems", "Chilled water pipes", "Air handling units", "Ductwork insulation", "Ventilation systems"],
+    applications: ["HVAC systems", "Chilled water pipes", "Air handling units", "Duct insulation", "Ventilation systems"],
     products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Aluclad", "Gulf-O-Flex Ultra"],
-    stat: { label: "Service Life", value: "25+ Years" },
+    stat: { label: "Service Life", value: "20+ Years" },
     color: "text-orange-500",
     accentRgb: "249 115 22",
     bg: "bg-orange-500/8",
@@ -112,7 +112,7 @@ const industries = [
     desc: "Tailored insulation products for original equipment manufacturers. Gulf-O-Flex partners with OEMs to develop custom-spec insulation integrated directly into HVAC units, refrigeration equipment, and industrial machinery during production.",
     applications: ["HVAC equipment", "Refrigeration units", "Custom fabrication", "Equipment lining", "Appliance insulation"],
     products: ["Gulf-O-Flex NBR", "Gulf-O-Flex XLPE", "Gulf-O-Flex Ultra"],
-    stat: { label: "OEM Partners", value: "120+" },
+    stat: { label: "OEM Clients", value: "120+" },
     color: "text-orange-500",
     accentRgb: "249 115 22",
     bg: "bg-orange-500/8",
@@ -132,7 +132,7 @@ const industries = [
     desc: "High-reliability insulation for data center cooling infrastructure. Prevents condensation on chilled water systems, maintains precise temperature control, and supports 24/7 uptime requirements for hyperscale and colocation facilities.",
     applications: ["Chilled water loops", "CRAH/CRAC units", "Cooling towers", "Hot/cold aisle containment", "Liquid cooling systems"],
     products: ["Gulf-O-Flex NBR", "Gulf-O-Flex Ultra", "Gulf-O-Flex Aluclad"],
-    stat: { label: "Uptime Support", value: "99.999%" },
+    stat: { label: "Datacenters Projects", value: "100+" },
     color: "text-orange-500",
     accentRgb: "249 115 22",
     bg: "bg-orange-500/8",
@@ -266,11 +266,7 @@ export default function Industries() {
                     >
                       {ind.shortName}
                     </span>
-                    {ind.projects && (
-                      <span className="block text-[10px] uppercase tracking-[0.12em] font-bold text-neutral-400 mt-0.5">
-                        {ind.projects} projects
-                      </span>
-                    )}
+
                   </div>
                   {isActive && (
                     <ChevronRight
@@ -296,7 +292,7 @@ export default function Industries() {
               style={{ background: `rgb(${current.accentRgb})` }}
             />
 
-            <div className="relative z-10 grid lg:grid-cols-[1fr_minmax(280px,420px)] gap-0">
+            <div className="relative z-10 grid lg:grid-cols-[1fr_minmax(280px,420px)] gap-0 lg:min-h-[600px]">
               {/* ── Left: main info ── */}
               <div className="p-7 lg:p-10">
                 <AnimatePresence mode="wait">
@@ -393,7 +389,7 @@ export default function Industries() {
               </div>
 
               {/* ── Right: real image hero with overlay stat ── */}
-              <div className="relative min-h-[200px] sm:min-h-[320px] lg:min-h-full overflow-hidden">
+              <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`${active}-img`}
@@ -462,17 +458,7 @@ export default function Industries() {
                             {current.stat.value}
                           </div>
                         </div>
-                        {current.projects && (
-                          <div
-                            className="rounded-xl px-3 py-2 border border-white/20 text-white text-xs font-bold"
-                            style={{ background: `rgba(${current.accentRgb},0.55)` }}
-                          >
-                            {current.projects}
-                            <div className="text-[9px] font-semibold tracking-[0.14em] uppercase opacity-80">
-                              projects
-                            </div>
-                          </div>
-                        )}
+
                       </div>
 
                       {/* progress dots */}

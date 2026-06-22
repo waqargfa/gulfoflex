@@ -7,9 +7,9 @@ import UAENetZeroSection from "@/components/home/UAENetZeroSection";
 import Products from "@/components/home/Products";
 import Industries from "@/components/home/Industries";
 import Awards from "@/components/home/Awards";
-import Projects from "@/components/home/Projects";
-import GlobalPresence from "@/components/home/GlobalPresence";
+import TrustAndProjects from "@/components/home/TrustAndProjects";
 import Certifications from "@/components/home/Certifications";
+import GlobalPresence from "@/components/home/GlobalPresence";
 import Contact from "@/components/home/Contact";
 
 export const metadata: Metadata = {
@@ -30,7 +30,6 @@ export default function HomePage() {
       <Products />
       <Industries />
       <Marquee />
-      <Projects />
       <Awards />
       <Certifications />
       <Contact />

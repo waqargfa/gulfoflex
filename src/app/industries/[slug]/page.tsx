@@ -1,20 +1,20 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowUpRight, Wind, Flame, Anchor, Building, Thermometer, Factory, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, Flame, Anchor, Snowflake, Cog, Factory, Server, HeartPulse, CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 
 const industries = {
   hvac: {
-    icon: Wind,
-    name: "HVAC & MEP",
-    tagline: "The thermal insulation backbone of every MEP system",
+    icon: Building2,
+    name: "HVAC, MEP & Construction",
+    tagline: "Energy-efficient building services",
     color: "orange",
     description: [
       "Gulf-O-Flex® NBR is the region's most widely specified thermal insulation for HVAC and MEP applications. Its closed-cell structure provides outstanding vapor barrier performance, preventing condensation on chilled water pipes and cold surfaces in the Gulf's high-humidity environment.",
       "From mega-mall district cooling connections to individual apartment FCU lines, Gulf-O-Flex® delivers consistent performance backed by FM Approval and full compliance with ASHRAE 90.1 energy efficiency standards.",
     ],
-    products: ["Gulf-O-Flex® NBR Tubes", "Gulf-O-Flex® NBR Sheets", "Aluglass Duct Facing", "GOF Contact Adhesive"],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® XLPE", "Gulf-O-Flex® Sound", "Gulf-O-Flex® Ultra"],
     requirements: ["ASHRAE 90.1 Energy Compliance", "Condensation Prevention", "Fire Spread Control", "Acoustic Attenuation"],
     keyProjects: [],
     stats: [
@@ -23,110 +23,148 @@ const industries = {
       { n: "#1", l: "Specified Brand" },
       { n: "30+", l: "Years Experience" },
     ],
+    heroImage: "/images/industries/hvac.jpg",
   },
   "oil-gas": {
     icon: Flame,
-    name: "Oil & Gas",
-    tagline: "Process insulation for upstream, midstream and downstream operations",
+    name: "Oil & Gas Industries",
+    tagline: "Extreme-temperature performance",
     color: "orange",
     description: [
       "The oil and gas sector demands insulation that performs reliably in extreme temperatures, corrosive environments, and safety-critical applications. Gulf-O-Flex® provides certified insulation solutions for refineries, petrochemical plants, LNG facilities, and offshore platforms.",
       "Our insulation systems meet NORSOK, API, and ISO requirements for process piping and are compatible with fire protection systems, supporting safety-critical applications from cryogenic storage to high-temperature steam systems.",
     ],
-    products: ["Gulf-O-Flex® NBR (Process)", "Gulf-O-Flex® Aluclad Jacketing", "Stainless Steel Cladding", "Vapor Seal Systems"],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® Aluclad", "Gulf-O-Flex® Ultra"],
     requirements: ["NORSOK M-501 Compliance", "Cryogenic to High-Temp Range", "Fire Safety (IMO/NFPA)", "Corrosion Resistance"],
     keyProjects: [],
     stats: [
-      { n: "-200°C", l: "Min Temperature" },
-      { n: "IMO", l: "FTP Certified" },
+      { n: "1,200+", l: "O&G Projects" },
+      { n: "-40°C", l: "Min Temperature" },
+      { n: "+105°C", l: "Max Temperature" },
       { n: "25+", l: "Years O&G Experience" },
     ],
+    heroImage: "/images/industries/oil-gas.jpg",
   },
   marine: {
     icon: Anchor,
-    name: "Marine & Shipbuilding",
-    tagline: "IMO FTP compliant insulation systems for sea applications",
-    color: "neutral",
+    name: "Marine Manufacturing & Offshores",
+    tagline: "Salt-spray & humidity resistant",
+    color: "orange",
     description: [
       "Marine environments present unique challenges: salt air corrosion, constant vibration, high humidity, and strict fire safety regulations governed by the International Maritime Organization (IMO) FTP Code. Gulf-O-Flex® marine-grade insulation is specifically formulated to meet these demands.",
       "From HVAC systems on cruise ships to process piping on offshore production platforms, Gulf-O-Flex® delivers certified performance backed by IMO FTP Code compliance and major class society approvals.",
     ],
-    products: ["Gulf-O-Flex® NBR Marine Grade", "Gulf-O-Flex® Aluclad Marine", "Fire Barrier Systems", "Acoustic Panels"],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® Sound", "Gulf-O-Flex® Ultra", "Gulf-O-Flex® Ultraline"],
     requirements: ["IMO FTP Code Compliance", "Class Society Approval", "Salt Spray Resistance", "Vibration Resistance"],
     keyProjects: [],
     stats: [
       { n: "850+", l: "Marine Projects" },
       { n: "IMO", l: "FTP Approved" },
-      { n: "Class", l: "Society Approved" },
+      { n: "99.9%", l: "Humidity Resistance" },
       { n: "20+", l: "Years Marine Experience" },
     ],
-  },
-  construction: {
-    icon: Building,
-    name: "Construction",
-    tagline: "From residential towers to landmark commercial developments",
-    color: "orange",
-    description: [
-      "Construction projects across the GCC depend on Gulf-O-Flex® for thermal and acoustic insulation of HVAC systems, plumbing, and building services. Our products meet Dubai Green Building Regulations, ADBC, and international green building certification requirements including LEED and BREEAM.",
-      "With over 12,000 completed construction projects, Gulf-O-Flex® is the contractor's first choice - backed by comprehensive technical support, regional availability, and a trusted brand recognized by consultants and authorities.",
-    ],
-    products: ["Gulf-O-Flex® NBR Tubes & Sheets", "Gulf-O-Flex® Sound", "Aluglass Facing", "Installation Accessories"],
-    requirements: ["LEED & BREEAM Credits", "Dubai Green Building Regs", "Fire Classification", "Acoustic Compliance"],
-    keyProjects: [],
-    stats: [
-      { n: "12,000+", l: "Construction Projects" },
-      { n: "LEED", l: "Compatible Products" },
-      { n: "#1", l: "Builder Preference" },
-      { n: "All GCC", l: "Markets Covered" },
-    ],
+    heroImage: "/images/industries/marine.jpg",
   },
   "district-cooling": {
-    icon: Thermometer,
-    name: "District Cooling",
-    tagline: "High-efficiency insulation for district cooling networks",
-    color: "neutral",
+    icon: Snowflake,
+    name: "District Cooling Sector",
+    tagline: "GCC-scale cooling networks",
+    color: "orange",
     description: [
       "The GCC operates some of the world's largest district cooling networks, with Dubai and Abu Dhabi leading in district cooling adoption. Gulf-O-Flex® is the primary insulation specified for district cooling distribution mains, branch connections, and end-user interfaces.",
       "Our closed-cell NBR insulation's extremely high vapor diffusion resistance factor (μ ≥ 7,300) ensures zero condensation on chilled water pipes carrying temperatures as low as 3°C, even in the region's extreme humidity conditions.",
     ],
-    products: ["Gulf-O-Flex® NBR (Large Bore)", "Aluglass Facing Systems", "Pipe Hanger Insulation Kits", "Pre-insulated Systems"],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® Aluclad", "Gulf-O-Flex® Ultra"],
     requirements: ["Zero Condensation (3°C Pipes)", "ASHRAE 90.1 Compliance", "Long-Term Vapor Barrier", "Fire Safety (NFPA 90A)"],
     keyProjects: [],
     stats: [
       { n: "380+", l: "DC Projects" },
-      { n: "μ≥10k", l: "Vapor Resistance Factor" },
-      { n: "3°C", l: "Min Design Temp" },
+      { n: "μ≥7,300", l: "Vapor Resistance Factor" },
+      { n: "35%", l: "Heat Loss Reduction" },
       { n: "ASHRAE", l: "90.1 Compliant" },
     ],
+    heroImage: "/images/industries/district-cooling.jpg",
   },
   industrial: {
-    icon: Factory,
+    icon: Cog,
     name: "Industrial Plants",
-    tagline: "Insulation solutions for process-critical industrial applications",
-    color: "neutral",
+    tagline: "Process-grade durability",
+    color: "orange",
     description: [
       "Industrial manufacturing plants, power generation facilities, food processing plants, pharmaceutical factories, and water treatment works all have demanding insulation requirements. Gulf-O-Flex® provides complete industrial insulation systems engineered for reliability, safety, and regulatory compliance.",
       "Our products are compatible with standard pipe sizes up to DN500 and are available in thicknesses up to 100mm, covering the widest range of industrial applications from cold utilities to high-temperature process systems.",
     ],
-    products: ["Gulf-O-Flex® NBR (Industrial)", "Gulf-O-Flex® Aluclad", "High-Temp Composite Systems", "Custom Fabrications"],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® XLPE", "Gulf-O-Flex® Aluclad", "Gulf-O-Flex® Ultra"],
     requirements: ["Process Temperature Range", "Chemical Resistance", "Mechanical Protection", "Maintenance Access"],
     keyProjects: [],
     stats: [
       { n: "2,200+", l: "Industrial Projects" },
       { n: "DN500", l: "Max Pipe Size" },
+      { n: "20+", l: "Years Service Life" },
       { n: "100mm", l: "Max Thickness" },
-      { n: "Chemical", l: "Resistant Grades" },
     ],
+    heroImage: "/images/industries/industrial.jpg",
   },
-};
-
-const industryHeroImages: Record<string, string> = {
-  hvac: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=2400&q=80",
-  "oil-gas": "https://images.unsplash.com/photo-1518707399486-6d702f84bd07?auto=format&fit=crop&w=2400&q=80",
-  marine: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=2400&q=80",
-  construction: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=2400&q=80",
-  "district-cooling": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2400&q=80",
-  industrial: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2400&q=80",
+  oem: {
+    icon: Factory,
+    name: "Manufacturing & OEM",
+    tagline: "Custom-engineered solutions",
+    color: "orange",
+    description: [
+      "Gulf-O-Flex® partners with original equipment manufacturers to develop custom-specification insulation integrated directly into HVAC units, refrigeration equipment, and industrial machinery during production.",
+      "Our OEM solutions include custom-cut tubes, sheets, and roll goods manufactured to precise tolerances, with dedicated technical support for material selection, thickness optimization, and compliance documentation across global markets.",
+    ],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® XLPE", "Gulf-O-Flex® Ultra"],
+    requirements: ["Custom Specifications", "Volume Manufacturing", "Consistent Quality", "Technical Support"],
+    keyProjects: [],
+    stats: [
+      { n: "120+", l: "OEM Clients" },
+      { n: "Custom", l: "Fabrication Available" },
+      { n: "ISO 9001", l: "Certified Production" },
+      { n: "Global", l: "Supply Chain" },
+    ],
+    heroImage: "/images/industries/oem.jpg",
+  },
+  "data-center": {
+    icon: Server,
+    name: "Data Centers",
+    tagline: "Mission-critical cooling",
+    color: "orange",
+    description: [
+      "Data center cooling infrastructure demands insulation that delivers zero condensation, precise temperature control, and 24/7 reliability. Gulf-O-Flex® is specified across hyperscale, colocation, and enterprise data centers for chilled water piping, CRAH/CRAC units, and liquid cooling systems.",
+      "Our closed-cell NBR insulation prevents moisture ingress on sub-ambient chilled water loops, protecting critical IT infrastructure from water damage while ensuring energy-efficient cooling performance in high-density server environments.",
+    ],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® Ultra", "Gulf-O-Flex® Aluclad"],
+    requirements: ["Zero Condensation Risk", "24/7 Uptime Support", "Energy Efficiency", "Fire Safety Compliance"],
+    keyProjects: [],
+    stats: [
+      { n: "100+", l: "DC Projects" },
+      { n: "24/7", l: "Uptime Support" },
+      { n: "Zero", l: "Condensation Risk" },
+      { n: "Tier III+", l: "Facility Grade" },
+    ],
+    heroImage: "/images/industries/data-center.jpg",
+  },
+  "healthcare-hospitality": {
+    icon: HeartPulse,
+    name: "Healthcare & Hospitality",
+    tagline: "Hygienic, quiet & efficient",
+    color: "orange",
+    description: [
+      "Hospitals, laboratories, pharmaceutical facilities, hotels, resorts, and leisure complexes require insulation that meets stringent hygiene standards while delivering superior acoustic and thermal performance. Gulf-O-Flex® anti-microbial insulation prevents mold and mildew growth, ensuring safe indoor environments.",
+      "Our acoustic insulation solutions reduce mechanical noise transmission to patient rooms and guest suites, while our thermal products maintain precise climate control for operating theatres, clean rooms, and temperature-sensitive storage areas.",
+    ],
+    products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® Ultra", "Gulf-O-Flex® Sound", "Gulf-O-Flex® XLPE"],
+    requirements: ["Hygiene & Anti-microbial", "Acoustic Performance", "Fire Classification", "Energy Efficiency"],
+    keyProjects: [],
+    stats: [
+      { n: "1,800+", l: "Projects Delivered" },
+      { n: "25dB", l: "Noise Reduction" },
+      { n: "Anti-microbial", l: "Certified" },
+      { n: "Class 1", l: "Fire Rated" },
+    ],
+    heroImage: "/images/industries/healthcare-hospitality.jpg",
+  },
 };
 
 type Params = { slug: string };
@@ -155,9 +193,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
   if (!industry) notFound();
 
   const Icon = industry.icon;
-  const heroImage =
-    industryHeroImages[slug] ??
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2400&q=80";
+  const heroImage = industry.heroImage;
 
   return (
     <>

@@ -125,7 +125,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[62vh] flex flex-col overflow-hidden"
+      className="relative min-h-[50vh] flex flex-col overflow-hidden"
       aria-label="Hero"
       style={{ background: "#0d0c0b" }}
     >
@@ -194,8 +194,8 @@ export default function Hero() {
                 className="block overflow-hidden"
                 style={{
                   animation: `hero-word 700ms cubic-bezier(0.19,1,0.22,1) ${isRight ? "120ms" : "80ms"} both`,
-                  paddingTop: "0.08em",
-                  marginTop: "-0.08em",
+                  paddingTop: "0.18em",
+                  marginTop: "-0.18em",
                 }}
               >
                 <span className="inline-block text-white" style={{ lineHeight: 1.02 }}>{slide.line1}</span>

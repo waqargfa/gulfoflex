@@ -10,6 +10,150 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 /* ─────────────────────────────────────────────────────────
+   NBR RENDER SEQUENCE
+───────────────────────────────────────────────────────── */
+
+type RenderSeqProps = {
+  progressRef: React.MutableRefObject<number>;
+  folder: string;
+  prefix: string;
+  frameCount: number;
+  padLength?: number;
+  ext?: string;
+};
+
+function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4, ext = "png" }: RenderSeqProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const loadedRef = useRef<boolean[]>(new Array(frameCount).fill(false));
+  const lastFrameRef = useRef(-1);
+
+  useEffect(() => {
+    const imgs: HTMLImageElement[] = [];
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      const filename = `${prefix}${String(i).padStart(padLength, "0")}.${ext}`;
+      img.src = `/${folder}/${filename}`;
+      img.onload = () => {
+        loadedRef.current[i] = true;
+        if (i === 0) {
+          drawFrame(0);
+        }
+      };
+      imgs.push(img);
+    }
+    imagesRef.current = imgs;
+  }, [folder, prefix, frameCount, padLength, ext]);
+
+  const drawFrame = (frameIndex: number) => {
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    const img = imagesRef.current[frameIndex];
+    if (!canvas || !container || !img || !img.naturalWidth) return;
+
+    const rect = container.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    const w = Math.round(rect.width * dpr);
+    const h = Math.round(rect.height * dpr);
+
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Draw image to cover the full canvas
+    const imgRatio = img.naturalWidth / img.naturalHeight;
+    const canvasRatio = w / h;
+    let dw: number, dh: number, dx: number, dy: number;
+    if (imgRatio > canvasRatio) {
+      dh = h;
+      dw = h * imgRatio;
+      dx = (w - dw) / 2;
+      dy = 0;
+    } else {
+      dw = w;
+      dh = w / imgRatio;
+      dx = 0;
+      dy = (h - dh) / 2;
+    }
+    ctx.drawImage(img, dx, dy, dw, dh);
+    lastFrameRef.current = frameIndex;
+  };
+
+  useEffect(() => {
+    let rafId: number;
+    const draw = () => {
+      const p = progressRef.current;
+      const frameIndex = Math.min(Math.floor(p * (frameCount - 1)), frameCount - 1);
+      if (frameIndex !== lastFrameRef.current && loadedRef.current[frameIndex]) {
+        drawFrame(frameIndex);
+      }
+      rafId = requestAnimationFrame(draw);
+    };
+    rafId = requestAnimationFrame(draw);
+    return () => cancelAnimationFrame(rafId);
+  }, [progressRef]);
+
+  return (
+    <div ref={containerRef} className="absolute inset-0 w-full h-full">
+      <canvas
+        ref={canvasRef}
+        style={{ width: "100%", height: "100%", display: "block" }}
+      />
+    </div>
+  );
+}
+
+/* Two-panel NBR render: Pipe + Duct side by side */
+function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<number> }) {
+  const [activePanel, setActivePanel] = useState<"pipe" | "duct">("pipe");
+
+  return (
+    <div className="absolute inset-0">
+      {/* Render panels - full height */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 transition-opacity duration-700"
+          style={{ opacity: activePanel === "pipe" ? 1 : 0, pointerEvents: activePanel === "pipe" ? "auto" : "none" }}
+        >
+          <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Pipe" frameCount={181} padLength={5} ext="jpg" />
+        </div>
+        <div
+          className="absolute inset-0 transition-opacity duration-700"
+          style={{ opacity: activePanel === "duct" ? 1 : 0, pointerEvents: activePanel === "duct" ? "auto" : "none" }}
+        >
+          <RenderSequence progressRef={progressRef} folder="Render/duct" prefix="Render" frameCount={361} padLength={4} ext="png" />
+        </div>
+      </div>
+
+      {/* Tab switcher - overlaid at bottom */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+        {(["pipe", "duct"] as const).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActivePanel(tab)}
+            className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 backdrop-blur-md"
+            style={{
+              background: activePanel === tab ? "rgba(249,115,22,0.25)" : "rgba(0,0,0,0.4)",
+              border: `1px solid ${activePanel === tab ? "rgba(249,115,22,0.6)" : "rgba(255,255,255,0.15)"}`,
+              color: activePanel === tab ? "#f97316" : "rgba(255,255,255,0.6)",
+            }}
+          >
+            {tab === "pipe" ? "Pipe" : "Duct"}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
    LAYER DATA
 ───────────────────────────────────────────────────────── */
 type LayerSpec = {
@@ -1053,7 +1197,6 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
 
   const sectionRef     = useRef<HTMLDivElement>(null);
   const stickyRef      = useRef<HTMLDivElement>(null);
-  const textRefs       = useRef<(HTMLDivElement | null)[]>([]);
   const progressBarRef = useRef<HTMLDivElement>(null);
 
   const progressRef = useRef(0);
@@ -1061,11 +1204,6 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const texts = textRefs.current;
-    texts.forEach((el, i) => {
-      if (el) gsap.set(el, { opacity: i === 0 ? 1 : 0, y: i === 0 ? 0 : 60 });
-    });
-
     // Compute step thresholds inside the effect so its dependency list
     // only contains primitive `stepCount` - otherwise the array literal
     // would change identity every render and continuously kill / recreate
@@ -1095,18 +1233,6 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
     return () => { st.kill(); };
   }, [stepCount]);
 
-  useEffect(() => {
-    textRefs.current.forEach((el, i) => {
-      if (!el) return;
-      gsap.to(el, {
-        opacity: i === activeStep ? 1 : 0,
-        y:       i === activeStep ? 0 : (i < activeStep ? -60 : 60),
-        duration: 0.7,
-        ease:    "power3.out",
-      });
-    });
-  }, [activeStep]);
-
   return (
     <section
       ref={sectionRef}
@@ -1135,14 +1261,19 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
           <div className="noise" style={{ opacity: 0.06 }} />
         </div>
 
-        {/* 3D Canvas */}
+        {/* 3D Canvas / NBR Render Sequence */}
         <div
           className="absolute inset-0 pl-canvas-wrap"
           style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% 55%, #130f0a 0%, #0a0806 55%, #060504 100%)",
+            background: variant === "nbr"
+              ? "#0a0806"
+              : "radial-gradient(ellipse 70% 55% at 50% 55%, #130f0a 0%, #0a0806 55%, #060504 100%)",
+            zIndex: variant === "nbr" ? 3 : undefined,
           }}
         >
+          {variant === "nbr" ? (
+            <NbrDualRender progressRef={progressRef} />
+          ) : (
           <Canvas
             shadows="soft"
             dpr={[1, 2]}
@@ -1204,9 +1335,11 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
 
             <CameraRig progressRef={progressRef} variant={variant} />
           </Canvas>
+          )}
         </div>
 
-        {/* Right vignette */}
+        {/* Right vignette - only for full variant with 3D */}
+        {variant !== "nbr" && (
         <div
           className="absolute inset-y-0 right-0 w-full lg:w-[60%] pointer-events-none"
           style={{
@@ -1215,254 +1348,16 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
             zIndex: 2,
           }}
         />
+        )}
 
         {/* Foreground UI */}
-        <div className="relative h-full container-wide flex flex-col py-6 md:py-8" style={{ zIndex: 5 }}>
-          {/* TOP */}
-          <header className="flex items-start justify-between gap-6">
-            <div>
-              <div className="eyebrow mb-4">
-                <span className="eyebrow-dot" />
-                How It Works · Live 3D
-              </div>
-              <h2
-                className="text-white"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(1.4rem, 2.4vw, 2.25rem)",
-                  fontWeight: 700,
-                  letterSpacing: "-0.03em",
-                  lineHeight: 1.05,
-                  maxWidth: 560,
-                }}
-              >
-                Layer by layer -{" "}
-                <span className="orange-text">engineered protection.</span>
-              </h2>
-            </div>
+        <div
+          className="relative h-full container-wide flex flex-col py-6 md:py-8"
+          style={{ zIndex: variant === "nbr" ? 1 : 5, pointerEvents: variant === "nbr" ? "none" : "auto" }}
+        >
 
-            <div className="hidden md:flex flex-col items-end gap-2 pt-2">
-              <span
-                style={{
-                  fontSize: "0.6rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.34em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
-                Step {String(activeStep + 1).padStart(2, "0")} / {String(stepCount).padStart(2, "0")}
-              </span>
-              <div
-                className="font-bold"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "0.95rem",
-                  color: layers[activeStep].accent,
-                  letterSpacing: "-0.01em",
-                  textShadow: `0 0 18px ${layers[activeStep].accent}55`,
-                  transition: "color 0.5s ease",
-                }}
-              >
-                {layers[activeStep].label.replace(/Gulf-O-Flex® /, "")}
-              </div>
-            </div>
-          </header>
-
-          {/* MIDDLE - text panels */}
-          <div className="flex-1 grid lg:grid-cols-[1fr_minmax(0,500px)] items-center mt-4">
-            <div />
-            <div className="relative" style={{ minHeight: 420 }}>
-              {layers.map((layer, i) => (
-                <div
-                  key={layer.id}
-                  ref={(el) => { textRefs.current[i] = el; }}
-                  className="absolute inset-0 flex flex-col justify-center"
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        padding: "0.45rem 0.85rem",
-                        borderRadius: 999,
-                        background: "rgba(255,255,255,0.04)",
-                        border: `1px solid ${layer.accent}33`,
-                        backdropFilter: "blur(10px)",
-                        fontSize: "0.625rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.22em",
-                        textTransform: "uppercase",
-                        color: "rgba(255,255,255,0.7)",
-                      }}
-                    >
-                      <span
-                        style={{
-                          width: 6, height: 6, borderRadius: "50%",
-                          background: layer.accent,
-                          boxShadow: `0 0 10px ${layer.accent}`,
-                        }}
-                      />
-                      {layer.sublabel}
-                    </span>
-                  </div>
-
-                  <h3
-                    className="text-white mb-4"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: "clamp(1.6rem, 3.2vw, 2.8rem)",
-                      fontWeight: 800,
-                      letterSpacing: "-0.03em",
-                      lineHeight: 1.02,
-                    }}
-                  >
-                    {layer.label}
-                  </h3>
-
-                  <p
-                    className="mb-5"
-                    style={{
-                      fontSize: "clamp(0.85rem, 1.05vw, 0.98rem)",
-                      lineHeight: 1.6,
-                      color: "rgba(255,255,255,0.62)",
-                      maxWidth: 480,
-                    }}
-                  >
-                    {layer.description}
-                  </p>
-
-                  {/* Key metric callout */}
-                  {layer.keyMetric && (
-                    <div
-                      className="flex items-center gap-4 mb-5 rounded-xl px-4 py-3"
-                      style={{
-                        background: `linear-gradient(135deg, ${layer.accent}18, ${layer.accent}08)`,
-                        border: `1px solid ${layer.accent}40`,
-                        backdropFilter: "blur(12px)",
-                        maxWidth: 480,
-                      }}
-                    >
-                      <div>
-                        <span
-                          style={{
-                            fontFamily: "var(--font-display)",
-                            fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
-                            fontWeight: 800,
-                            color: layer.accent,
-                            letterSpacing: "-0.03em",
-                            lineHeight: 1,
-                            display: "block",
-                          }}
-                        >
-                          {layer.keyMetric.value}
-                          {layer.keyMetric.unit && (
-                            <span style={{ fontSize: "0.52em", fontWeight: 600, marginLeft: 5, opacity: 0.85 }}>
-                              {layer.keyMetric.unit}
-                            </span>
-                          )}
-                        </span>
-                        <span
-                          style={{
-                            fontSize: "0.6rem",
-                            fontWeight: 600,
-                            letterSpacing: "0.12em",
-                            textTransform: "uppercase",
-                            color: "rgba(255,255,255,0.45)",
-                            display: "block",
-                            marginTop: 3,
-                          }}
-                        >
-                          {layer.keyMetric.label}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-
-                  <div
-                    className="grid gap-1.5 mb-4"
-                    style={{ gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", maxWidth: 480 }}
-                  >
-                    {layer.specs.map((spec) => (
-                      <div
-                        key={spec}
-                        className="flex items-center gap-2 px-2.5 py-1.5 rounded-md"
-                        style={{
-                          background: "rgba(255,255,255,0.025)",
-                          border: "1px solid rgba(255,255,255,0.06)",
-                          backdropFilter: "blur(8px)",
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: 3, height: 12, borderRadius: 2,
-                            background: layer.accent,
-                            boxShadow: `0 0 8px ${layer.accent}aa`,
-                            flexShrink: 0,
-                          }}
-                        />
-                        <span
-                          style={{
-                            fontSize: "0.66rem",
-                            fontWeight: 600,
-                            color: "rgba(255,255,255,0.82)",
-                            letterSpacing: "0.01em",
-                          }}
-                        >
-                          {spec}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Highlights - certifications and key performance claims */}
-                  {layer.highlights && layer.highlights.length > 0 && (
-                    <ul className="space-y-1.5 mt-1" style={{ maxWidth: 480 }}>
-                      {layer.highlights.map((h) => (
-                        <li key={h} className="flex items-center gap-2.5">
-                          <span
-                            style={{
-                              width: 16,
-                              height: 16,
-                              borderRadius: "50%",
-                              background: `${layer.accent}20`,
-                              border: `1px solid ${layer.accent}55`,
-                              display: "inline-flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              flexShrink: 0,
-                            }}
-                          >
-                            <span
-                              style={{
-                                width: 4,
-                                height: 4,
-                                borderRadius: "50%",
-                                background: layer.accent,
-                                boxShadow: `0 0 6px ${layer.accent}`,
-                              }}
-                            />
-                          </span>
-                          <span
-                            style={{
-                              fontSize: "0.68rem",
-                              fontWeight: 600,
-                              color: "rgba(255,255,255,0.68)",
-                              letterSpacing: "0.01em",
-                              lineHeight: 1.4,
-                            }}
-                          >
-                            {h}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* MIDDLE - spacer (text panels removed) */}
+          <div className="flex-1" />
 
           {/* BOTTOM - progress rail */}
           <footer className="pt-6">

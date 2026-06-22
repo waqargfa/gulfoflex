@@ -195,48 +195,6 @@ export const COUNTRIES: CountryData[] = [
     },
   },
 
-  /* --- Pakistan --- */
-  {
-    code: "pk",
-    name: "Pakistan",
-    siteUrl: "https://gfa.rwims.com/pk",
-    phone: "+92 21 0000 0000",
-    phoneHref: "tel:+922100000000",
-    whatsapp: "+92 21 0000 0000",
-    whatsappHref: "https://wa.me/922100000000",
-    email: "pakistan@gulfoflex.com",
-    address: "Karachi, Pakistan",
-    heroSubtitle:
-      "Powering Pakistan's CPEC corridor and energy agenda - premium NBR & XLPE insulation for power plants, industrial cities, and landmark construction projects.",
-    tagline: "CPEC & Pakistan Development Insulation Partner",
-    initiative: {
-      badge: "CPEC & Pakistan Vision Partner",
-      title: "CPEC & Pakistan Vision 2025",
-      tagline:
-        "Gulf-O-Flex is a trusted insulation supplier across Pakistan's CPEC energy corridor and major infrastructure programmes - delivering certified performance in power, industrial, and residential projects.",
-      themeColor: "#9a3f10",
-      accentColor: "#f97316",
-      metrics: [
-        { value: "60+", label: "Pakistan Projects" },
-        { value: "CPEC", label: "Corridor Active" },
-        { value: "Power", label: "Plants Insulated" },
-        { value: "ISO", label: "9001 Certified" },
-      ],
-      keyProjects: [
-        { name: "CPEC Corridor", type: "Infrastructure" },
-        { name: "Gwadar Port", type: "Logistics" },
-        { name: "Lahore Orange Line", type: "Transit" },
-        { name: "Thar Coal Complex", type: "Energy" },
-        { name: "Ravi Riverfront City", type: "Urban" },
-        { name: "Diamer-Bhasha Dam", type: "Hydro Power" },
-        { name: "KARACHI Nuclear", type: "Clean Power" },
-        { name: "Sahiwal Power Plant", type: "Energy" },
-        { name: "Industrial Zones", type: "Industrial" },
-        { name: "DHA Developments", type: "Real Estate" },
-      ],
-    },
-  },
-
   /* --- Africa --- */
   {
     code: "za",

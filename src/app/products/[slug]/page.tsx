@@ -827,7 +827,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
 
       {/* Live 3D Installation Walkthrough */}
       {slug !== "accessories" && (
-        <PipeLayerSectionClient variant={slug === "nbr" ? "nbr" : "full"} />
+        <PipeLayerSectionClient variant="nbr" />
       )}
 
       {/* CTA - light premium */}

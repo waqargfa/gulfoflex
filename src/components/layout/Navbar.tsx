@@ -23,6 +23,13 @@ import {
   Users,
   Building2,
   Wrench,
+  Snowflake,
+  Cog,
+  Factory,
+  Server,
+  HeartPulse,
+  Flame,
+  Anchor,
 } from "lucide-react";
 import { useCountry } from "@/context/CountryContext";
 
@@ -73,10 +80,13 @@ const products = [
 
 const industries = [
   { name: "HVAC & Construction", href: "/industries/hvac", icon: Building2 },
-  { name: "Oil & Gas", href: "/industries/oil-gas", icon: Zap },
-  { name: "Marine", href: "/industries/marine", icon: Globe },
-  { name: "District Cooling", href: "/industries/district-cooling", icon: Shield },
-  { name: "Industrial Plants", href: "/industries/industrial", icon: Wrench },
+  { name: "Oil & Gas", href: "/industries/oil-gas", icon: Flame },
+  { name: "Marine & Offshores", href: "/industries/marine", icon: Anchor },
+  { name: "District Cooling", href: "/industries/district-cooling", icon: Snowflake },
+  { name: "Industrial Plants", href: "/industries/industrial", icon: Cog },
+  { name: "Manufacturing & OEM", href: "/industries/oem", icon: Factory },
+  { name: "Data Centers", href: "/industries/data-center", icon: Server },
+  { name: "Healthcare & Hospitality", href: "/industries/healthcare-hospitality", icon: HeartPulse },
 ];
 
 const company = [
