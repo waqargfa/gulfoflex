@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import Hero from "@/components/home/Hero";
-import Marquee from "@/components/home/Marquee";
 import CountryInitiativeBanner from "@/components/home/CountryInitiativeBanner";
-import UAENetZeroSection from "@/components/home/UAENetZeroSection";
-import Products from "@/components/home/Products";
-import Industries from "@/components/home/Industries";
-import Awards from "@/components/home/Awards";
-import TrustAndProjects from "@/components/home/TrustAndProjects";
-import Certifications from "@/components/home/Certifications";
-import GlobalPresence from "@/components/home/GlobalPresence";
-import Contact from "@/components/home/Contact";
+
+const UAENetZeroSection = dynamic(() => import("@/components/home/UAENetZeroSection"));
+const Products = dynamic(() => import("@/components/home/Products"));
+const Industries = dynamic(() => import("@/components/home/Industries"));
+const Marquee = dynamic(() => import("@/components/home/Marquee"));
+const Awards = dynamic(() => import("@/components/home/Awards"));
+const Certifications = dynamic(() => import("@/components/home/Certifications"));
+const Contact = dynamic(() => import("@/components/home/Contact"));
 
 export const metadata: Metadata = {
   title: "Gulf-O-Flex® | Premium NBR Rubber Insulation Manufacturer | UAE Since 1993",

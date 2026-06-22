@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
@@ -25,28 +25,19 @@ type RenderSeqProps = {
 function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4, ext = "png" }: RenderSeqProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(frameCount).fill(null));
   const loadedRef = useRef<boolean[]>(new Array(frameCount).fill(false));
+  const loadingRef = useRef<Set<number>>(new Set());
   const lastFrameRef = useRef(-1);
 
-  useEffect(() => {
-    const imgs: HTMLImageElement[] = [];
-    for (let i = 0; i < frameCount; i++) {
-      const img = new Image();
-      const filename = `${prefix}${String(i).padStart(padLength, "0")}.${ext}`;
-      img.src = `/${folder}/${filename}`;
-      img.onload = () => {
-        loadedRef.current[i] = true;
-        if (i === 0) {
-          drawFrame(0);
-        }
-      };
-      imgs.push(img);
-    }
-    imagesRef.current = imgs;
-  }, [folder, prefix, frameCount, padLength, ext]);
+  const WINDOW = 15; // load ±15 frames around current position
 
-  const drawFrame = (frameIndex: number) => {
+  const getUrl = useCallback((i: number) => {
+    const filename = `${prefix}${String(i).padStart(padLength, "0")}.${ext}`;
+    return `/${folder}/${filename}`;
+  }, [folder, prefix, padLength, ext]);
+
+  const drawFrame = useCallback((frameIndex: number) => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
     const img = imagesRef.current[frameIndex];
@@ -67,7 +58,6 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 
     ctx.clearRect(0, 0, w, h);
 
-    // Draw image to cover the full canvas
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const canvasRatio = w / h;
     let dw: number, dh: number, dx: number, dy: number;
@@ -84,13 +74,43 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
     }
     ctx.drawImage(img, dx, dy, dw, dh);
     lastFrameRef.current = frameIndex;
-  };
+  }, []);
+
+  const loadFrame = useCallback((i: number) => {
+    if (i < 0 || i >= frameCount || loadedRef.current[i] || loadingRef.current.has(i)) return;
+    loadingRef.current.add(i);
+    const img = new Image();
+    img.src = getUrl(i);
+    img.onload = () => {
+      loadedRef.current[i] = true;
+      loadingRef.current.delete(i);
+      imagesRef.current[i] = img;
+      if (i === 0 && lastFrameRef.current === -1) drawFrame(0);
+    };
+    img.onerror = () => { loadingRef.current.delete(i); };
+  }, [frameCount, getUrl, drawFrame]);
+
+  const loadWindow = useCallback((center: number) => {
+    // Load current frame first, then nearby frames
+    loadFrame(center);
+    for (let d = 1; d <= WINDOW; d++) {
+      loadFrame(center + d);
+      loadFrame(center - d);
+    }
+  }, [loadFrame]);
+
+  // Load first frame immediately
+  useEffect(() => { loadWindow(0); }, [loadWindow]);
 
   useEffect(() => {
     let rafId: number;
     const draw = () => {
       const p = progressRef.current;
       const frameIndex = Math.min(Math.floor(p * (frameCount - 1)), frameCount - 1);
+
+      // Load frames around current scroll position
+      loadWindow(frameIndex);
+
       if (frameIndex !== lastFrameRef.current && loadedRef.current[frameIndex]) {
         drawFrame(frameIndex);
       }
@@ -98,7 +118,7 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
     };
     rafId = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(rafId);
-  }, [progressRef]);
+  }, [progressRef, frameCount, loadWindow, drawFrame]);
 
   return (
     <div ref={containerRef} className="absolute inset-0 w-full h-full">
@@ -116,20 +136,14 @@ function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<nu
 
   return (
     <div className="absolute inset-0">
-      {/* Render panels - full height */}
+      {/* Render panels - only mount active panel */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 transition-opacity duration-700"
-          style={{ opacity: activePanel === "pipe" ? 1 : 0, pointerEvents: activePanel === "pipe" ? "auto" : "none" }}
-        >
+        {activePanel === "pipe" && (
           <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Pipe" frameCount={181} padLength={5} ext="jpg" />
-        </div>
-        <div
-          className="absolute inset-0 transition-opacity duration-700"
-          style={{ opacity: activePanel === "duct" ? 1 : 0, pointerEvents: activePanel === "duct" ? "auto" : "none" }}
-        >
+        )}
+        {activePanel === "duct" && (
           <RenderSequence progressRef={progressRef} folder="Render/duct" prefix="Render" frameCount={361} padLength={4} ext="png" />
-        </div>
+        )}
       </div>
 
       {/* Tab switcher - overlaid at bottom */}
