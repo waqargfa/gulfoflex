@@ -33,23 +33,20 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       // Prevent browsers/proxies from caching HTML pages so deploys are visible immediately.
-      // Static assets under /_next/static/ keep their long-cache headers below.
-      {
-        source: "/:path((?!_next/static|fonts|images|.*\\.(?:js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf)).*)",
-        headers: [
-          { key: "Cache-Control", value: "no-store, must-revalidate" },
-        ],
-      },
-      // Only apply aggressive static caching in production — in dev, Turbopack
-      // uses stable (non-hashed) chunk names so immutable caching breaks HMR.
+      // Skip in development to avoid Next.js dev cache-control warnings/behavior issues.
       ...(isProd
         ? [
             {
-              source: "/_next/static/(.*)",
+              source: "/:path((?!_next/static|fonts|images|.*\\.(?:js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf)).*)",
               headers: [
-                { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+                { key: "Cache-Control", value: "no-store, must-revalidate" },
               ],
             },
+          ]
+        : []),
+      // Apply immutable caching for custom static assets in production.
+      ...(isProd
+        ? [
             {
               source: "/fonts/(.*)",
               headers: [

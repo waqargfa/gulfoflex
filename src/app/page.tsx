@@ -7,6 +7,7 @@ const UAENetZeroSection = dynamic(() => import("@/components/home/UAENetZeroSect
 const Products = dynamic(() => import("@/components/home/Products"));
 const Industries = dynamic(() => import("@/components/home/Industries"));
 const Marquee = dynamic(() => import("@/components/home/Marquee"));
+const Testimonials = dynamic(() => import("@/components/home/Testimonials"));
 const Awards = dynamic(() => import("@/components/home/Awards"));
 const Certifications = dynamic(() => import("@/components/home/Certifications"));
 const Contact = dynamic(() => import("@/components/home/Contact"));
@@ -29,6 +30,7 @@ export default function HomePage() {
       <Products />
       <Industries />
       <Marquee />
+      <Testimonials />
       <Awards />
       <Certifications />
       <Contact />

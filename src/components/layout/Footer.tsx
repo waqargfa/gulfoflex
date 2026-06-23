@@ -44,6 +44,7 @@ const footerCompany = [
   { name: "Technologies", href: "/technologies" },
   { name: "Certifications", href: "/certifications" },
   { name: "Projects", href: "/projects" },
+  { name: "Testimonials", href: "/testimonials" },
   { name: "Careers", href: "/careers" },
   { name: "News & Media", href: "/news" },
 ];
