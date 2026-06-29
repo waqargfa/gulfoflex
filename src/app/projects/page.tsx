@@ -37,8 +37,8 @@ export default function ProjectsPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
-        <PageHero src="https://images.unsplash.com/photo-1777019309066-6ec5aa31f603?auto=format&fit=crop&w=2400&q=80" focalY="40%" />
+      <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
+        <PageHero src="/heroimg/projects.jpg" focalY="40%" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
             <div>

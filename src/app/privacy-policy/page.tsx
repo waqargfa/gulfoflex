@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
     <>
       {/* ── Hero ── */}
       <section
-        className="relative overflow-hidden pt-32 md:pt-40 pb-20"
+        className="relative overflow-hidden pt-20 md:pt-24 pb-8"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
         <PageHero src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2400&q=80" focalY="center" intensity={0.55} />

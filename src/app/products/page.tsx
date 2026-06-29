@@ -31,8 +31,8 @@ const products = [
     name: "Gulf-O-Flex® NBR",
     shortName: "NBR Rubber Insulation",
     tagline: "Closed-cell thermal benchmark",
-    desc: "Premium closed-cell Nitrile Butadiene Rubber (NBR) thermal and acoustic insulation. Engineered for HVAC, plumbing, refrigeration, and district cooling applications. Zero ODP, Class 1 fire rated.",
-    keyFeatures: ["Class 1 Fire Rated (ASTM E84)", "Zero ODP/GWP", "λ ≤ 0.036 W/mK", "Temp Range −40°C to +105°C"],
+    desc: "Premium closed-cell Nitrile Butadiene Rubber (NBR) thermal and acoustic insulation. Engineered for HVAC, plumbing, refrigeration, and district cooling applications. Zero ODP, Class O fire rated.",
+    keyFeatures: ["Class O Fire Rated (ASTM E84)", "Zero ODP/GWP", "λ ≤ 0.036 W/mK", "Temp Range −40°C to +105°C"],
     applications: ["HVAC", "District Cooling", "Cold Water", "Industrial"],
     tag: "Best Seller",
     image: "/assets/plain/C_107249.jpg",
@@ -56,7 +56,7 @@ const products = [
     shortName: "Open-Cell Acoustic Elastomeric Foam",
     tagline: "Engineered sound absorption",
     desc: "Flexible, open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R systems, pipelines, plant rooms, and industrial applications - made from 100% recycled materials.",
-    keyFeatures: ["NRC up to 1.00", "High Flexibility", "Class 1 Fire Rated", "100% Recycled Material"],
+    keyFeatures: ["NRC up to 1.00", "High Flexibility", "Class O Fire Rated", "100% Recycled Material"],
     applications: ["HVAC Duct Liner", "Plant Rooms", "Conference Rooms", "OEM"],
     tag: "Acoustic",
     image: "/assets/plain/C_107300.jpg",
@@ -127,7 +127,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
+      <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
         <PageHero src="https://images.unsplash.com/photo-1769695832202-0f10d9d21f27?auto=format&fit=crop&w=2400&q=80" focalY="center" />
 
         <div className="container-wide relative z-10">

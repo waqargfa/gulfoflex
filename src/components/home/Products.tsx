@@ -20,8 +20,13 @@ const products = [
     tagline: "Closed-cell elastomeric rubber insulation - the industry benchmark for thermal efficiency, moisture resistance, and acoustic performance across HVAC and industrial environments.",
     features: ["−40°C to +105°C", "FM Approved", "Versatile & flexible"],
     icon: Thermometer,
-    image: "/images/products/nbr-roll.webp",
-    video: "/videos/products/nbr.mp4",
+    images: [
+      "/images/products/nbr/White NBR_C10009.png",
+      "/images/products/nbr/White NBR_C20009.png",
+      "/images/products/nbr/White NBR_C30009.png",
+      "/images/products/nbr/White NBR_C40009.png",
+    ],
+    image: "/images/products/nbr/White NBR_C10009.png",
     href: "/products/nbr",
     badge: "Best Seller",
   },
@@ -34,7 +39,6 @@ const products = [
     features: ["Aesthetic Finish", "Free from VOC", "Excellent UV"],
     icon: Layers,
     image: "/images/products/xlpe-banner.jpg",
-    video: "/videos/products/xlpe.mp4",
     objectPosition: "center",
     href: "/products/xlpe",
     badge: "Industrial Grade",
@@ -59,8 +63,13 @@ const products = [
     tagline: "Premium aluminum glass fibre reinforced facing for exceptional protection against mechanical damage, moisture ingress, and UV degradation in external applications.",
     features: ["High resistance to water vapour diffusion", "FM Approved"],
     icon: ZapIcon,
-    image: "/images/products/aluglass-tube.webp",
-    video: "/videos/products/aluglass.mp4",
+    images: [
+      "/images/products/aluglass/White Aluglass_C1.0010016.png",
+      "/images/products/aluglass/White Aluglass_C2.0010016.png",
+      "/images/products/aluglass/White Aluglass_C3.0010016.png",
+      "/images/products/aluglass/White Aluglass_C4.0010016.png",
+    ],
+    image: "/images/products/aluglass/White Aluglass_C1.0010016.png",
     href: "/products/aluglass",
     badge: "External Use",
   },
@@ -72,8 +81,13 @@ const products = [
     tagline: "Heavy-duty aluminum cladding and jacketing for industrial pipe insulation protection. Engineered for harsh environments and demanding construction sites.",
     features: ["UV Resistant", "Mechanical Protection", "Anti-corrosion"],
     icon: Wrench,
-    image: "/images/products/aluclad-1.webp",
-    video: "/videos/products/aluclad.mp4",
+    images: [
+      "/images/products/aluclad/White Aluclad_C1.0010048.png",
+      "/images/products/aluclad/White Aluclad_C2.0010048.png",
+      "/images/products/aluclad/White Aluclad_C3.0010048.png",
+      "/images/products/aluclad/White Aluclad_C4.0010048.png",
+    ],
+    image: "/images/products/aluclad/White Aluclad_C1.0010048.png",
     href: "/products/aluclad",
     badge: "Heavy Duty",
   },
@@ -118,10 +132,12 @@ const products = [
 export default function Products() {
   const [activeId, setActiveId] = useState<string>(products[0].id);
   const [animKey, setAnimKey] = useState(0);
+  const [imgIndex, setImgIndex] = useState(0);
 
   const active = products.find((p) => p.id === activeId) ?? products[0];
   const activeIndex = products.indexOf(active);
   const ActiveIcon = active.icon;
+  const activeImages = (active as { images?: string[] }).images;
 
   const advance = useCallback(() => {
     setActiveId((prev) => {
@@ -129,6 +145,7 @@ export default function Products() {
       return products[(i + 1) % products.length].id;
     });
     setAnimKey((k) => k + 1);
+    setImgIndex(0);
   }, []);
 
   useEffect(() => {
@@ -136,10 +153,20 @@ export default function Products() {
     return () => clearTimeout(t);
   }, [activeId, advance]);
 
+  // Cycle through multiple images for products that have them
+  useEffect(() => {
+    if (!activeImages || activeImages.length <= 1) return;
+    const interval = setInterval(() => {
+      setImgIndex((prev) => (prev + 1) % activeImages.length);
+    }, 1200);
+    return () => clearInterval(interval);
+  }, [activeId, activeImages]);
+
   const handleSelect = (id: string) => {
     if (id === activeId) return;
     setActiveId(id);
     setAnimKey((k) => k + 1);
+    setImgIndex(0);
   };
 
   return (
@@ -210,41 +237,33 @@ export default function Products() {
             <div className="relative h-full" style={{ minHeight: "inherit" }}>
 
               {/* Cross-fading product images */}
-              {products.map((p) => (
-                <Image
-                  key={p.id}
-                  src={p.image}
-                  alt={p.name}
-                  fill
-                  className="object-cover"
-                  style={{
-                    objectPosition: (p as { objectPosition?: string }).objectPosition ?? "center",
-                    opacity: p.id === activeId ? 1 : 0,
-                    transform: p.id === activeId ? "scale(1.05)" : "scale(1)",
-                    transitionProperty: "opacity, transform",
-                    transitionTimingFunction: "cubic-bezier(0.4,0,0.2,1)",
-                    transitionDuration: "0.9s, 1.8s",
-                  }}
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  priority={p.id === products[0].id}
-                />
-              ))}
+              {products.map((p) => {
+                const pImages = (p as { images?: string[] }).images;
+                const currentSrc = p.id === activeId && pImages && pImages.length > 1
+                  ? pImages[imgIndex]
+                  : p.image;
+                return (
+                  <Image
+                    key={p.id === activeId && pImages ? `${p.id}-${imgIndex}` : p.id}
+                    src={currentSrc}
+                    alt={p.name}
+                    fill
+                    className="object-cover"
+                    style={{
+                      objectPosition: (p as { objectPosition?: string }).objectPosition ?? "center",
+                      opacity: p.id === activeId ? 1 : 0,
+                      transform: p.id === activeId ? "scale(1.05)" : "scale(1)",
+                      transitionProperty: "opacity, transform",
+                      transitionTimingFunction: "cubic-bezier(0.4,0,0.2,1)",
+                      transitionDuration: "0.9s, 1.8s",
+                    }}
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    priority={p.id === products[0].id}
+                  />
+                );
+              })}
 
-              {/* Auto-playing product video - fades in above the fallback image */}
-              {(active as { video?: string }).video && (
-                <video
-                  key={`vid-${activeId}`}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="none"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ zIndex: 1 }}
-                >
-                  <source src={(active as { video?: string }).video} type="video/mp4" />
-                </video>
-              )}
+
 
               {/* Cinematic overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" style={{ zIndex: 2 }} />

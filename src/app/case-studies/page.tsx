@@ -642,7 +642,7 @@ export default function CaseStudiesPage() {
       {/* ── Hero ── */}
       <section
         ref={heroRef}
-        className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24"
+        className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
         {/* parallax background */}

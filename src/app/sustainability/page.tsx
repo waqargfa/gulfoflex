@@ -23,8 +23,8 @@ const commitments = [
     icon: Sun,
     title: "Low GWP Formulation",
     color: "orange",
-    desc: "Our next-generation NBR formulation uses a low-GWP blowing agent, reducing the product's embedded carbon footprint by 40% versus conventional HFC-based cellular insulation.",
-    metric: "–40%",
+    desc: "Our next-generation NBR formulation uses a low-GWP blowing agent, reducing the product's embedded carbon footprint by 5% versus conventional HFC-based cellular insulation.",
+    metric: "–5%",
     metricLabel: "Embodied Carbon Reduction",
   },
   {
@@ -45,26 +45,23 @@ const commitments = [
   },
   {
     icon: Droplets,
-    title: "Water Conservation",
+    title: "Natural Cooling System",
     color: "neutral",
-    desc: "Our Ajman facilities recycle 100% of process water through a closed-loop cooling system, reducing freshwater consumption by 85% versus conventional manufacturing approaches.",
-    metric: "85%",
-    metricLabel: "Water Recycled",
+    desc: "Our Ajman facilities use a natural air-cooling system for manufacturing processes, eliminating the need for water-based cooling entirely and reducing overall resource consumption.",
+    metric: "0",
+    metricLabel: "Water Used in Cooling",
   },
   {
     icon: Wind,
     title: "Carbon-Neutral Target",
     color: "orange",
-    desc: "Gulf-O-Flex® has committed to achieving carbon-neutral manufacturing by 2030, through a combination of renewable energy procurement, process efficiency, and verified carbon offsetting.",
-    metric: "2030",
+    desc: "Gulf-O-Flex® has committed to achieving carbon-neutral manufacturing by 2035, through a combination of renewable energy procurement, process efficiency, and verified carbon offsetting.",
+    metric: "2035",
     metricLabel: "Carbon-Neutral Target Year",
   },
 ];
 
 const standards = [
-  "LEED v4.1 Material Credit Eligible",
-  "Estidama Pearl Rating Compatible",
-  "BREEAM Specification Compliant",
   "Dubai Green Building Regulations",
   "UAE Net Zero 2050 Aligned",
   "ISO 14001 Environmental Management",
@@ -74,7 +71,7 @@ export default function SustainabilityPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
+      <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
         <PageHero src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=80" focalY="40%" />
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
@@ -84,7 +81,6 @@ export default function SustainabilityPage() {
                 <span className="text-neutral-300">/</span>
                 <span className="text-neutral-700">Sustainability</span>
               </nav>
-              <div className="eyebrow mb-6"><span className="eyebrow-dot" />Environmental Commitment · ESG</div>
               <h1 className="text-neutral-900 leading-[0.95] mb-6"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
                 Insulation that<br />
@@ -108,9 +104,9 @@ export default function SustainabilityPage() {
                 <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
                   {[
                     { n: "0", l: "ODP rating" },
-                    { n: "–40%", l: "Embodied carbon" },
+                    { n: "–5%", l: "Embodied carbon" },
                     { n: "95%", l: "Offcuts recycled" },
-                    { n: "2030", l: "Carbon-neutral" },
+                    { n: "2035", l: "Carbon-neutral" },
                   ].map((s) => (
                     <div key={s.l} className="bg-white p-6">
                       <div className="text-neutral-900 font-black mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.4vw, 2.25rem)", letterSpacing: "-0.025em" }}>{s.n}</div>

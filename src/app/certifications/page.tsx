@@ -150,7 +150,7 @@ export default function CertificationsPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-16 md:pb-20" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
+      <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
         <PageHero
           src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=2400&q=80"
           focalY="45%"

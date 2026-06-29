@@ -20,9 +20,11 @@ type RenderSeqProps = {
   frameCount: number;
   padLength?: number;
   ext?: string;
+  scale?: number;
+  topCrop?: number;
 };
 
-function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4, ext = "png" }: RenderSeqProps) {
+function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4, ext = "png", scale = 1, topCrop = 0 }: RenderSeqProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(frameCount).fill(null));
@@ -72,9 +74,14 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
       dx = 0;
       dy = (h - dh) / 2;
     }
+    // Optional scale-down and top crop (shift image up by topCrop fraction of height)
+    dw *= scale;
+    dh *= scale;
+    dx = (w - dw) / 2;
+    dy = (h - dh) / 2 - h * topCrop;
     ctx.drawImage(img, dx, dy, dw, dh);
     lastFrameRef.current = frameIndex;
-  }, []);
+  }, [scale, topCrop]);
 
   const loadFrame = useCallback((i: number) => {
     if (i < 0 || i >= frameCount || loadedRef.current[i] || loadingRef.current.has(i)) return;
@@ -132,7 +139,7 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 
 /* Two-panel NBR render: Pipe + Duct side by side */
 function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<number> }) {
-  const [activePanel, setActivePanel] = useState<"pipe" | "duct">("pipe");
+  const [activePanel, setActivePanel] = useState<"pipe" | "duct" | "aluglass">("pipe");
 
   return (
     <div className="absolute inset-0">
@@ -142,13 +149,16 @@ function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<nu
           <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Pipe" frameCount={181} padLength={5} ext="jpg" />
         )}
         {activePanel === "duct" && (
-          <RenderSequence progressRef={progressRef} folder="Render/duct" prefix="Render" frameCount={361} padLength={4} ext="png" />
+          <RenderSequence progressRef={progressRef} folder="Render/duct/nbr" prefix="NBR_Final_Ducts_" frameCount={361} padLength={5} ext="png" scale={0.6} topCrop={-0.12} />
+        )}
+        {activePanel === "aluglass" && (
+          <RenderSequence progressRef={progressRef} folder="Render/duct/aluglass" prefix="Alu_Glass_Ducts" frameCount={361} padLength={5} ext="png" scale={0.6} topCrop={-0.12} />
         )}
       </div>
 
       {/* Tab switcher - overlaid at bottom */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
-        {(["pipe", "duct"] as const).map((tab) => (
+        {(["pipe", "duct", "aluglass"] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActivePanel(tab)}
@@ -159,7 +169,7 @@ function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<nu
               color: activePanel === tab ? "#f97316" : "rgba(255,255,255,0.6)",
             }}
           >
-            {tab === "pipe" ? "Pipe" : "Duct"}
+            {tab === "pipe" ? "Pipe" : tab === "duct" ? "Duct" : "Aluglass"}
           </button>
         ))}
       </div>
@@ -210,7 +220,7 @@ const LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 02  ·  Gulf-O-Flex® NBR",
     label: "Gulf-O-Flex® NBR Insulation",
     description:
-      "Premium closed-cell Nitrile Butadiene Rubber (NBR) elastomeric insulation - the regional benchmark for HVAC, district cooling, and plumbing. Engineered with a honeycomb closed-cell structure that acts as its own integral vapour barrier - zero water absorption, Class 1 fire rated, CFC/HCFC free. Manufactured in the UAE since 1993.",
+      "Premium closed-cell Nitrile Butadiene Rubber (NBR) elastomeric insulation - the regional benchmark for HVAC, district cooling, and plumbing. Engineered with a closed-cell structure that acts as its own integral vapour barrier - zero water absorption, Class O fire rated, CFC/HCFC free. Manufactured in the UAE since 1993.",
     keyMetric: { value: "0.032", unit: "W/mK", label: "Thermal conductivity at 35°C (ASTM C518)" },
     specs: [
       "λ = 0.032 W/mK at 35°C (ASTM C518)",
@@ -221,7 +231,7 @@ const LAYERS: readonly LayerSpec[] = [
       "WVT 0.00 Perm in - zero vapour pass (ASTM E96)",
       "Vapour diffusion factor μ ≥ 7,300",
       "NRC 0.30 / 0.40 / 0.45 at 13 / 19 / 25 mm",
-      "Class 1 / Class O fire rated (BS 476 Pt 6 & 7)",
+      "Class O fire rated (BS 476 Pt 6 & 7)",
       "FSI ≤ 25 · SDI ≤ 50 (ASTM E84 / UL 723)",
       "Thickness 6 – 50 mm tubes · 6 – 100 mm sheets",
       "Tubes · Sheets · Rolls · Self-adhesive forms",
@@ -338,13 +348,13 @@ const NBR_LAYERS: readonly LayerSpec[] = [
       "Thickness: 6 – 50 mm (tubes) · 6 – 100 mm (sheets)",
       "Pre-slit design - adhesive seam, no thermal bridges",
       "Tubes · Sheets · Rolls · Self-adhesive forms",
-      "Cell structure: closed-cell honeycomb mesh + scrim",
+      "Cell structure: closed-cell",
     ],
     highlights: [
       "FM Approved · UL Listed · EPD Verified · ISO 9001",
       "Zero ODP - CFC and HCFC free, low GWP refrigerant-safe",
       "Anti-microbial: resists mold, mildew and fungi growth",
-      "Self-extinguishing - Class 1 / Class O (BS 476 & ASTM E84)",
+      "Self-extinguishing - Class O (BS 476 & ASTM E84)",
       "Closed-cell structure = integral vapour barrier, no foil tape needed",
       "Passive performance - 0 active maintenance over 30+ year service life",
     ],
@@ -355,12 +365,12 @@ const NBR_LAYERS: readonly LayerSpec[] = [
     sublabel: "Step 03  ·  Sealed System",
     label: "Vapor-Sealed & Fire-Safe",
     description:
-      "The closed-cell honeycomb structure is its own integral vapour barrier - no foil laminate, no butt tape, no failure points at joints. The fully sealed NBR system delivers zero condensation, Class 1 / Class 0 fire safety, and a 30+ year passive service life across HVAC, district cooling, refrigeration, and plumbing.",
+      "The closed-cell structure is its own integral vapour barrier - no foil laminate, no butt tape, no failure points at joints. The fully sealed NBR system delivers zero condensation, Class O fire safety, and a 30+ year passive service life across HVAC, district cooling, refrigeration, and plumbing.",
     keyMetric: { value: "7,300", unit: "μ", label: "Vapour diffusion resistance factor (ASTM E96)" },
     specs: [
       "Vapour diffusion factor μ ≥ 7,300 (ASTM E96/96M)",
       "WVT = 0.00 Perm in - absolute zero vapour pass",
-      "Class 1 / Class O fire rated (BS 476 Part 6 & 7)",
+      "Class O fire rated (BS 476 Part 6 & 7)",
       "FSI ≤ 25 · SDI ≤ 50 (ASTM E84 / UL 723)",
       "Self-extinguishing - no active fire suppression needed",
       "FM Approved · UL Listed · ISO 9001 certified",

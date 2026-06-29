@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/layout/PageHero";
 import {
   ArrowUpRight,
@@ -62,10 +63,10 @@ const values = [
 ];
 
 const facilities = [
-  { location: "Ajman, UAE",       country: "UAE",      desc: "Flagship manufacturing campus , head office and primary production facility",  capacity: "Primary Campus",    status: "Operational" },
-  { location: "Ajman, UAE",       country: "UAE",      desc: "Secondary production and logistics hub within the industrial area",            capacity: "Secondary Hub",     status: "Operational" },
-  { location: "Sri Lanka",        country: "Asia",     desc: "Offshore manufacturing facility serving Asian markets",                        capacity: "Asia Pacific",      status: "Operational" },
-  { location: "Saudi Arabia",     country: "KSA",      desc: "In-Kingdom manufacturing supporting Vision 2030 localization",                 capacity: "KSA Operations",    status: "Operational" },
+  { location: "Ajman, UAE",       country: "UAE",      desc: "Flagship manufacturing campus , head office and primary production facility",  capacity: "Primary Campus",    status: "Operational", img: "/images/factory/UAE-1.png",         alt: "Gulf-O-Flex flagship manufacturing facility in Ajman, UAE" },
+  { location: "Ajman, UAE",       country: "UAE",      desc: "Secondary production and logistics hub within the industrial area",            capacity: "Secondary Hub",     status: "Operational", img: "/images/factory/ultra.jpeg",        alt: "Gulf-O-Flex secondary production and logistics hub" },
+  { location: "Sri Lanka",        country: "Asia",     desc: "Offshore manufacturing facility serving Asian markets",                        capacity: "Asia Pacific",      status: "Operational", img: "/images/factory/Srilanka-1.png",   alt: "RWI Industries manufacturing plant in Sri Lanka" },
+  { location: "Saudi Arabia",     country: "KSA",      desc: "In-Kingdom manufacturing supporting Vision 2030 localization",                 capacity: "KSA Operations",    status: "Operational", img: "/images/factory/KSA-1.jpg",        alt: "Gulf-O-Flex in-Kingdom manufacturing facility in Saudi Arabia" },
 ];
 
 const milestones = [
@@ -104,22 +105,6 @@ const certCards = [
   { abbr: "EPD",         label: "Environmental Product Decl.",   body: "Independently verified life-cycle data.",            Icon: Sparkles },
 ];
 
-const regions = [
-  { name: "Gulf Cooperation Council", share: 56, countries: 6,  highlight: "Market leader" },
-  { name: "Middle East & Africa",     share: 22, countries: 24, highlight: "Project specified" },
-  { name: "Asia Pacific",             share: 14, countries: 18, highlight: "Local manufacturing" },
-  { name: "Europe & Americas",        share: 8,  countries: 42, highlight: "OEM partnerships" },
-];
-
-const proofPoints = [
-  { icon: Thermometer, value: "0.0321", unit: "W/m·K",  label: "Thermal conductivity",  detail: "At 35°C mean ASTM C518" },
-  { icon: Flame,       value: "Class O", unit: "",        label: "Fire reaction",         detail: "BS 476 Part 6 & 7 / ASTM E84" },
-  { icon: Droplets,    value: ">7,300", unit: "μ",       label: "Vapour resistance",     detail: "Closed-cell, Perm-in ≈ 0.00" },
-  { icon: Volume2,     value: "NRC 1.00", unit: "",       label: "Sound absorption",      detail: "50mm Gulf-O-Sound ASTM C423" },
-  { icon: Gauge,       value: "-40 → +105", unit: "°C", label: "Service temperature",  detail: "NBR / XLPE elastomeric range" },
-  { icon: Atom,        value: "0",        unit: "ODP",     label: "Ozone depletion",       detail: "REACH & RoHS compliant" },
-];
-
 const recognitions = [
   { Icon: Crown,      title: "One UAE Award",          org: "UAE Excellence Programme",       year: undefined, featured: true  },
   { Icon: Trophy,     title: "Meera Award",            org: "Industry Recognition",           year: undefined, featured: true  },
@@ -146,7 +131,7 @@ export default function AboutPage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28"
+        className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
         <PageHero src="https://images.unsplash.com/photo-1670309178236-d8180b68e2f1?auto=format&fit=crop&w=2400&q=80" focalY="50%" />
@@ -323,6 +308,42 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Corporate Video ── */}
+      <section className="relative overflow-hidden">
+        <div className="relative w-full">
+          {/* Overlay content */}
+          <div className="absolute inset-0 z-10 flex items-end pointer-events-none">
+            <div className="w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 py-12 md:py-20">
+              <div className="container-wide">
+                <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.25em] uppercase text-orange-400 mb-3">
+                  <Sparkles size={12} /> Our Story
+                </span>
+                <h2
+                  className="text-white leading-[1.05] max-w-2xl"
+                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
+                >
+                  Engineering excellence <span className="serif-italic text-orange-400">since 1993.</span>
+                </h2>
+                <p className="mt-3 text-white/70 text-base max-w-xl leading-relaxed">
+                  From raw NBR compounds to finished insulation covering the world&rsquo;s most critical infrastructure.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* Video */}
+          <video
+            className="w-full aspect-[21/9] object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+          >
+            <source src="https://gulfoflex.com/CORPORATE%20VIDEO-HD.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
@@ -536,210 +557,96 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Engineered Numbers , premium technical proof ── */}
-      <section className="relative section-padding overflow-hidden bg-white">
-        <div className="absolute inset-0 grid-bg opacity-[0.10] pointer-events-none" />
-        <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[420px] h-[420px] bg-orange-500/[0.06] rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[420px] h-[420px] bg-orange-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
-        <div className="container-wide relative z-10">
-          <Reveal>
-            <div className="max-w-3xl mb-12">
-              <h2
-                className="text-neutral-900 leading-[1.05] mb-4"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
-              >
-                Not adjectives. <span className="serif-italic text-orange-600">Measurements.</span>
-              </h2>
-              <p className="text-neutral-500 text-lg leading-relaxed max-w-2xl">
-                Six numbers behind every Gulf-O-Flex® datasheet , tested against ASTM, BS, EN and DIN protocols.
-              </p>
-            </div>
-          </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {proofPoints.map((p, i) => (
-              <Reveal key={p.label} delay={i * 60}>
-                <div
-                  className="group relative h-full rounded-2xl border bg-white p-6 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_25px_60px_-25px_rgba(234,88,12,0.30)]"
-                  style={{ borderColor: "rgba(0,0,0,0.07)" }}
-                >
-                  <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-orange-500/0 group-hover:bg-orange-500/8 transition-colors duration-500 blur-2xl" />
-                  <div className="relative flex items-start justify-between gap-4">
-                    <div className="min-w-0">
-                      <div className="flex items-baseline gap-1.5 mb-2">
-                        <span
-                          className="text-neutral-900 font-black leading-none tabular-nums tracking-tight"
-                          style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", letterSpacing: "-0.04em" }}
-                        >
-                          {p.value}
-                        </span>
-                        {p.unit && (
-                          <span className="text-orange-600 font-bold text-sm tracking-tight">{p.unit}</span>
-                        )}
-                      </div>
-                      <div className="text-neutral-900 font-bold text-[15px] mb-1" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.015em" }}>
-                        {p.label}
-                      </div>
-                      <div className="text-neutral-500 text-xs leading-relaxed">{p.detail}</div>
-                    </div>
-                    <div
-                      className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.03))",
-                        border: "1px solid rgba(249,115,22,0.22)",
-                      }}
-                    >
-                      <p.icon size={17} className="text-orange-600" strokeWidth={2.2} />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={300}>
-            <div className="mt-8 flex items-center justify-between flex-wrap gap-4 rounded-2xl border bg-neutral-50/60 px-5 py-3.5" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-              <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-neutral-500">
-                Independent lab-tested · Third-party certified
-              </span>
-              <Link href="/downloads" className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 hover:text-orange-700 transition-colors">
-                Download full TDS pack <ArrowUpRight size={13} />
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── Global presence ── */}
-      <section
-        className="relative section-padding overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #fafafa 0%, #fff 100%)" }}
-      >
-        <div className="absolute inset-0 dotted-bg opacity-[0.35]" />
-        <div className="container-wide relative">
-          <Reveal>
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-end mb-12">
-              <div>
-                <h2
-                  className="text-neutral-900 leading-[1.05]"
-                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
-                >
-                  90+ countries. <span className="serif-italic text-orange-600">One standard.</span>
-                </h2>
-              </div>
-              <p className="text-neutral-500 text-lg leading-relaxed">
-                From the GCC&rsquo;s most demanding mega-projects to OEM partnerships in Europe and Asia , Gulf-O-Flex® performs to the same specification, on every continent.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {regions.map((r, i) => (
-              <Reveal key={r.name} delay={i * 80}>
-                <div
-                  className="group relative h-full rounded-3xl border bg-white p-6 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_25px_60px_-20px_rgba(234,88,12,0.25)]"
-                  style={{ borderColor: "rgba(0,0,0,0.07)" }}
-                >
-                  <div className="flex items-center justify-between mb-5">
-                    <Globe size={18} className="text-orange-600" />
-                    <span className="text-[9px] font-bold tracking-[0.18em] uppercase text-orange-700 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full">
-                      {r.highlight}
-                    </span>
-                  </div>
-                  <h3
-                    className="text-neutral-900 font-bold text-base mb-4"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
-                  >
-                    {r.name}
-                  </h3>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex items-baseline justify-between mb-1">
-                        <span className="text-[10px] font-bold tracking-wider uppercase text-neutral-400">Region share</span>
-                        <span className="text-neutral-900 font-bold text-sm tabular-nums">
-                          <AnimatedCounter value={r.share} suffix="%" />
-                        </span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-neutral-100 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-1000 ease-out"
-                          style={{ width: `${r.share}%` }}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: "rgba(0,0,0,0.05)" }}>
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-neutral-400">Countries</span>
-                      <span className="text-neutral-700 font-bold text-sm tabular-nums">
-                        <AnimatedCounter value={r.countries} />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── Facilities ── */}
-      <section className="section-padding bg-white relative">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-orange-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
         <div className="container-wide relative z-10">
           <Reveal>
-            <div className="text-center mb-12">
+            <div className="max-w-2xl mb-12">
+              <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.25em] uppercase text-orange-600 mb-4">
+                <Factory size={12} /> Global Manufacturing Footprint
+              </span>
               <h2
-                className="text-neutral-900 leading-[1.05] mb-3 whitespace-nowrap"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.5rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
+                className="text-neutral-900 leading-[1.05] mb-3"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.2vw, 2.75rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
               >
                 4 world-class <span className="serif-italic text-orange-600">facilities.</span>
               </h2>
-              <p className="text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 text-lg leading-relaxed">
                 Strategically located across three countries , engineered for capacity, redundancy, and proximity to our customers.
               </p>
             </div>
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {facilities.map((f, i) => (
-              <Reveal key={i} delay={i * 60}>
-                <div
-                  className="group relative h-full rounded-2xl border bg-white p-6 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_25px_60px_-20px_rgba(234,88,12,0.25)]"
-                  style={{ borderColor: "rgba(0,0,0,0.08)" }}
-                >
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="flex items-start justify-between mb-4">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.04))",
-                        border: "1px solid rgba(249,115,22,0.20)",
-                      }}
-                    >
-                      <Factory size={16} className="text-orange-600" />
-                    </div>
-                    <span className="text-[9px] font-bold tracking-[0.18em] uppercase text-orange-700 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full">
+
+          {/* Featured flagship + supporting grid */}
+          <div className="grid lg:grid-cols-12 gap-5">
+            {/* Featured UAE flagship */}
+            <Reveal className="lg:col-span-7">
+              <article className="group relative h-full min-h-[360px] rounded-3xl overflow-hidden border shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+                <Image
+                  src={facilities[0].img}
+                  alt={facilities[0].alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  className="object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                <div className="absolute top-5 left-5 flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.18em] uppercase text-white bg-orange-600/90 backdrop-blur px-3 py-1.5 rounded-full">
+                    <Star size={11} /> Headquarters
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-white/90 bg-white/15 backdrop-blur px-3 py-1.5 rounded-full border border-white/20">
+                    {facilities[0].country}
+                  </span>
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <div className="flex items-center gap-1.5 text-orange-300 text-[10px] font-bold uppercase tracking-[0.18em] mb-2">
+                    <MapPin size={11} /> {facilities[0].location}
+                  </div>
+                  <h3 className="text-white font-bold text-2xl md:text-3xl mb-2" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}>
+                    {facilities[0].capacity}
+                  </h3>
+                  <p className="text-white/70 max-w-lg leading-relaxed mb-4">{facilities[0].desc}</p>
+                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold text-white">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> {facilities[0].status}
+                  </span>
+                </div>
+              </article>
+            </Reveal>
+
+            {/* Supporting facilities */}
+            <div className="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-5">
+              {facilities.slice(1).map((f, i) => (
+                <Reveal key={i} delay={(i + 1) * 80}>
+                  <article className="group relative h-full min-h-[168px] rounded-3xl overflow-hidden border shadow-[0_20px_50px_-25px_rgba(0,0,0,0.3)]" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+                    <Image
+                      src={f.img}
+                      alt={f.alt}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 28vw"
+                      className="object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                    <span className="absolute top-4 right-4 inline-flex items-center text-[9px] font-bold tracking-[0.18em] uppercase text-white bg-white/15 backdrop-blur px-2.5 py-1 rounded-full border border-white/20">
                       {f.country}
                     </span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-neutral-400 text-[10px] font-semibold uppercase tracking-wider mb-1">
-                    <MapPin size={10} /> Location
-                  </div>
-                  <div
-                    className="text-neutral-900 font-bold text-lg mb-1.5"
-                    style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
-                  >
-                    {f.location}
-                  </div>
-                  <p className="text-neutral-500 text-sm leading-relaxed mb-4">{f.desc}</p>
-                  <div className="flex items-center justify-between pt-4 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-600">{f.capacity}</span>
-                    <span className="flex items-center gap-1.5 text-[11px] text-orange-600 font-semibold">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                      {f.status}
-                    </span>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <div className="flex items-center gap-1.5 text-orange-300 text-[9px] font-bold uppercase tracking-[0.18em] mb-1">
+                        <MapPin size={10} /> {f.location}
+                      </div>
+                      <h3 className="text-white font-bold text-lg leading-tight mb-1" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}>
+                        {f.capacity}
+                      </h3>
+                      <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-white/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> {f.status}
+                      </span>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

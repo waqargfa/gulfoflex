@@ -161,7 +161,7 @@ const industries = {
       { n: "1,800+", l: "Projects Delivered" },
       { n: "25dB", l: "Noise Reduction" },
       { n: "Anti-microbial", l: "Certified" },
-      { n: "Class 1", l: "Fire Rated" },
+      { n: "Class O", l: "Fire Rated" },
     ],
     heroImage: "/images/industries/healthcare-hospitality.jpg",
   },
@@ -198,7 +198,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
+      <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
         <PageHero src={heroImage} focalY="35%" />
         <div className="container-wide relative z-10">
           <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-8" aria-label="Breadcrumb">

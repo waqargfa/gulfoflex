@@ -180,7 +180,7 @@ export default function TechnologiesPage() {
     <>
       {/* ── Hero ── */}
       <section
-        className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-24"
+        className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
         <PageHero src="/images/products/nbr-banner.jpeg" focalY="45%" />

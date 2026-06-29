@@ -108,7 +108,7 @@ export default function SitemapPageRoute() {
     <>
       {/* ── Hero ── */}
       <section
-        className="relative overflow-hidden pt-32 md:pt-40 pb-20"
+        className="relative overflow-hidden pt-20 md:pt-24 pb-8"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
         <PageHero

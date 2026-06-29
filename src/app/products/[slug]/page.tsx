@@ -20,31 +20,31 @@ const products = {
     tagline: "The benchmark for thermal and acoustic pipe insulation in HVAC and MEP applications across the Middle East.",
     color: "orange",
     description: [
-      "Gulf-O-Flex® NBR is a Flexible Elastomeric Foam made of Nitrile Butadiene Rubber (NBR), available in thicknesses from 6mm to 50mm in both sheet (with or without self-adhesive) and tube forms. Its closed-cell structure with honeycomb mesh and scrim is a self-sustaining, passive solution to energy efficiency requiring no active maintenance to deliver consistent thermal and acoustic performance.",
+      "Gulf-O-Flex® NBR is a Flexible Elastomeric Foam made of Nitrile Butadiene Rubber (NBR), available in thicknesses from 6mm to 50mm in both sheet (with or without self-adhesive) and tube forms. Its closed-cell structure is a self-sustaining, passive solution to energy efficiency requiring no active maintenance to deliver consistent thermal and acoustic performance.",
       "With outstanding resistance to moisture vapor, mold, and mildew growth, Gulf-O-Flex® NBR ensures long service life, minimal downtime, and continuing efficiency across HVAC, district cooling, hot & cold water plumbing, refrigeration, and industrial applications. CFC and HCFC free with zero ODP FM Approved, UL Listed, and EPD Verified.",
     ],
     features: [
       "Closed-cell structure, water absorption only 0.16 vol% (ASTM C534)",
       "Zero water vapour transmission, 0.00 Perm in (ASTM E96/96M)",
-      "Self-extinguishing, Class 1 / Class O fire rated (BS 476 & ASTM E84)",
+      "Self-extinguishing, Class O fire rated (BS 476 & ASTM E84)",
       "FSI ≤ 25, SDI ≤ 50, verified per ASTM E84 / UL 723",
       "Zero ODP, CFC and HCFC free, helps reduce greenhouse gas emissions",
       "Anti-microbial: resists mold and mildew growth for long service life",
       "High flexibility, covers pipes, bends, ducts, tanks, vessels and flat surfaces",
-      "Available with or without self-adhesive application and scrim",
+      "Available with or without self-adhesive application",
     ],
     specs: [
       { label: "Thermal Conductivity (λ)", value: "0.0321 W/m·K at 35°C (ASTM C518-17)" },
       { label: "Operating Temperature", value: "-40°C to +105°C (ASTM C 534)" },
       { label: "Density", value: "50–70 kg/m³ (ASTM C 302-13)" },
-      { label: "Fire Rating", value: "Class 1 / Class O - FSI ≤ 25, SDI ≤ 50" },
+      { label: "Fire Rating", value: "Class O - FSI ≤ 25, SDI ≤ 50" },
       { label: "Water Absorption", value: "0.16 vol% (ASTM C534 / C209-2015)" },
       { label: "Water Vapour Transmission", value: "0.00 Perm in (ASTM E96/96M)" },
       { label: "Vapour Diffusion Factor (μ)", value: "> 7,300 (ASTM E96/96M)" },
       { label: "NRC - 13mm / 19mm / 25mm", value: "0.30 / 0.40 / 0.45 (ASTM C423-01)" },
       { label: "Cell Structure", value: "Closed Cell" },
       { label: "Thickness Range", value: "6mm to 50mm" },
-      { label: "Available Forms", value: "Tubes, Sheets (plain & self-adhesive)" },
+      { label: "Available Forms", value: "Tubes, Sheets" },
       { label: "Color", value: "Black (standard)" },
     ],
     certifications: ["ISO 9001", "FM Approved", "UL Listed", "EPD Verified", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
@@ -72,12 +72,12 @@ const products = {
     color: "neutral",
     description: [
       "Gulf-O-Flex® XLPE is a chemically crosslinked polyethylene closed-cell foam, finished with a thin layer of alupet facing and engineered for difficult environments in the long term. Its thin-layer, lightweight construction allows it to withstand high-pressure environments while delivering reliable thermal and acoustic performance.",
-      "As a passive solution to energy efficiency, XLPE requires no active maintenance to perform - making it an asset across HVAC, ductwork, automotive, marine, and industrial insulation applications. Self-extinguishing with Class O / Class 1 fire rating per BS 476.",
+      "As a passive solution to energy efficiency, XLPE requires no active maintenance to perform - making it an asset across HVAC, ductwork, automotive, marine, and industrial insulation applications. Self-extinguishing with Class O fire rating per BS 476.",
     ],
     features: [
       "Closed-cell chemically crosslinked polyethylene structure",
       "Factory-applied alupet facing for vapour and surface protection",
-      "Self-extinguishing - Class O / Class 1 (BS 476 Part 6 & 7)",
+      "Self-extinguishing - Class O (BS 476 Part 6 & 7)",
       "FSI ≤ 25, SDI ≤ 50 (ASTM E84)",
       "Excellent water vapour barrier - μ ≥ 11,000 (foil side)",
       "Withstands high-pressure environments - thin & lightweight",
@@ -94,7 +94,7 @@ const products = {
       { label: "Water Vapour Transmission (foil side)", value: "0.041 g/m²/24h over 7 days (ASTM E96)" },
       { label: "Vapour Diffusion Factor (μ) - Foam", value: "≥ 8,000 (BS EN 12086)" },
       { label: "Vapour Diffusion Factor (μ) - Foil", value: "≥ 11,000 (BS EN 12086)" },
-      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class O" },
       { label: "Surface Burning", value: "FSI ≤ 25, SDI ≤ 50 (ASTM E84)" },
       { label: "Flammability", value: "Self-Extinguishing" },
       { label: "Facing", value: "Alupet (thin layer)" },
@@ -124,14 +124,14 @@ const products = {
       "Easy installation - cut, bend, apply and seal without additional steps",
       "Resistant to moisture vapor, mold and mildew growth",
       "Open-cell structure with superior air flow resistance",
-      "Class 1 fire performance (BS 476 Part 7)",
+      "Class O fire performance (BS 476 Part 7)",
       "Made from 100% recycled materials",
     ],
     specs: [
       { label: "Operating Temperature", value: "-20°C to +85°C (EN 14706)" },
       { label: "Density", value: "210 ± 30 kg/m³ (ASTM D1622)" },
       { label: "Thermal Conductivity", value: "0.058 W/m·K at 0°C (ASTM C518)" },
-      { label: "Fire Performance", value: "Class 1 (BS 476 Part 7)" },
+      { label: "Fire Performance", value: "Class O (BS 476 Part 7)" },
       { label: "NRC - 6 / 10 / 15 mm", value: "0.15 / 0.40 / 0.60" },
       { label: "NRC - 20 / 25 / 50 mm", value: "0.65 / 0.70 / 1.00" },
       { label: "Thickness Range", value: "6mm to 50mm (sheet form)" },
@@ -163,7 +163,7 @@ const products = {
       "Closed-cell NBR foam - water absorption only 0.09 vol%",
       "Zero water vapour transmission - 0.00 Perm in (ASTM E96/96M)",
       "Water vapour diffusion resistance factor (μ) 76,366 (BS EN 12086:2013)",
-      "Self-extinguishing - Class 1 / Class O fire rated (BS 476 Parts 6 & 7)",
+      "Self-extinguishing - Class O fire rated (BS 476 Parts 6 & 7)",
       "FSI ≤ 25, SDI ≤ 50 - verified per ASTM E84 / UL 723",
       "Zero ODP - CFC and HCFC free, helps reduce greenhouse gas emissions",
       "High flexibility - covers pipes, bends, ducts, tanks, vessels and flat surfaces",
@@ -175,17 +175,17 @@ const products = {
       { label: "Density", value: "50–70 kg/m³ (ASTM C 302-13 / BS EN 1602:2013)" },
       { label: "Thermal Conductivity (λ)", value: "0.0321 W/m·K at 35°C (ASTM C518-17)" },
       { label: "Operating Temperature", value: "-183°C to +105°C (ASTM C 534)" },
-      { label: "Water Absorption", value: "0.09 vol% (ASTM C534/C534M-20 / ASTM C 209-2015)" },
+      { label: "Water Absorption", value: "0.09 vol% (ASTM C534 / C534M-20 / ASTM C 209-2015)" },
       { label: "Water Vapour Transmission", value: "0.00 Perm in (ASTM E96/96M)" },
       { label: "Vapour Diffusion Factor (μ)", value: "76,366 (BS EN 12086:2013)" },
       { label: "Aluminium Foil", value: "7 microns" },
       { label: "Glass Fiber Cloth", value: "110 GSM" },
       { label: "Tensile Strength", value: "250 N/25mm (ASTM D828)" },
       { label: "Flammability", value: "Self-Extinguishing" },
-      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Fire Rating", value: "BS 476 Part 6 & Part 7 Class O" },
       { label: "Surface Burning", value: "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)" },
       { label: "Thickness Range", value: "6mm to 50mm" },
-      { label: "Available Forms", value: "Sheets (plain & self-adhesive), Tubes" },
+      { label: "Available Forms", value: "Sheets, Tubes" },
     ],
     certifications: ["FM Approved", "UL Listed", "EPD Verified", "ISO 9001", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
     applications: [
@@ -217,7 +217,7 @@ const products = {
       "Factory-applied Alu-Clad facing - UV protected, no further cladding required",
       "Closed-cell NBR foam - water absorption only 0.16 vol% (ASTM C534)",
       "Zero water vapour transmission - 0.00 Perm in (ASTM E96/96M)",
-      "Self-extinguishing - Class O / Class 1 (BS 476 Part 6 & 7)",
+      "Self-extinguishing - Class O (BS 476 Part 6 & 7)",
       "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)",
       "UV stability - over 10,000 hours with no surface cracking (8 years)",
       "Zero ODP - CFC and HCFC free, sustainable & energy efficient",
@@ -228,11 +228,11 @@ const products = {
       { label: "Cell Structure", value: "Closed Cell" },
       { label: "Density", value: "50–70 kg/m³ (ASTM C 302-13 / BS EN 1602:2013)" },
       { label: "Thermal Conductivity (λ)", value: "0.0321 W/m·K at 35°C (ASTM C518-17)" },
-      { label: "Operating Temperature", value: "-183°C to +105°C (ASTM C 534)" },
+      { label: "Operating Temperature", value: "-40°C to +105°C (ASTM C 534)" },
       { label: "Water Absorption", value: "0.16 vol% (ASTM C534 / C209-2015)" },
       { label: "Water Vapour Transmission", value: "0.00 Perm in (ASTM E96/96M)" },
       { label: "Vapour Diffusion Factor (μ)", value: "> 76,366 (BS EN 12086:2013)" },
-      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Fire Rating", value: "BS 476 Part 6 & Part 7 Class O" },
       { label: "Surface Burning", value: "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)" },
       { label: "Foil Thickness", value: "0.230 ± 0.05 mm (340 g/m²)" },
       { label: "Foil Tensile Strength", value: "200 N/15 mm (EN ISO 527-3)" },
@@ -241,7 +241,7 @@ const products = {
       { label: "UV Stability", value: "8 Years (internal weatherometer test)" },
       { label: "Emissivity", value: "0.065" },
       { label: "Thickness Range", value: "6mm to 50mm" },
-      { label: "Available Forms", value: "Tubes, Sheets (plain & self-adhesive)" },
+      { label: "Available Forms", value: "Tubes, Sheets" },
     ],
     certifications: ["FM Approved", "UL Listed", "EPD Verified", "BS 476 Part 6 & 7", "ASTM E84 / UL 723", "ISO 9001"],
     applications: [
@@ -267,7 +267,7 @@ const products = {
     color: "orange",
     description: [
       "Gulf-O-Flex® Ultra is a premium closed-cell elastomeric foam engineered with an advanced NBR/EPDM polymer blend to deliver an industry-leading thermal conductivity of just 0.030 W/m·K at 0°C. Available in sheet (with or without self-adhesive) and tube forms from 6mm to 50mm, it brings measurable energy savings and longer service life to chilled water, district cooling, refrigeration, and low-temperature process lines.",
-      "Ultra extends the proven Gulf-O-Flex® platform with enhanced UV resistance, an extended operating window from -50°C to +115°C, and an ultra-high water vapour diffusion resistance factor (μ > 7,300). FM Approved, UL Listed and EPD Verified - Zero ODP, CFC and HCFC free, and certified Class O / Class 1 for fire safety.",
+      "Ultra extends the proven Gulf-O-Flex® platform with enhanced UV resistance, an extended operating window from -50°C to +115°C, and an ultra-high water vapour diffusion resistance factor (μ > 7,300). FM Approved, UL Listed and EPD Verified - Zero ODP, CFC and HCFC free, and certified Class O for fire safety.",
     ],
     features: [
       "Ultra-low thermal conductivity - λ 0.030 W/m·K at 0°C (ASTM C518)",
@@ -275,11 +275,11 @@ const products = {
       "Advanced NBR/EPDM polymer blend - improved UV & ozone resistance",
       "Water vapour diffusion resistance factor μ > 10,000 (BS EN 12086)",
       "Water absorption ≤ 0.10 vol% (ASTM C534)",
-      "Self-extinguishing - Class O / Class 1 (BS 476 Part 6 & 7)",
+      "Self-extinguishing - Class O (BS 476 Part 6 & 7)",
       "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)",
       "Zero ODP, CFC & HCFC free - EPD Verified low embodied carbon",
       "Anti-microbial - resists mould and mildew growth",
-      "Available in sheet (plain & self-adhesive) and tube forms, 6–50mm",
+      "Available in sheet and tube forms, 6–50mm",
     ],
     specs: [
       { label: "Material", value: "Closed-Cell NBR/EPDM Elastomeric Foam" },
@@ -289,11 +289,11 @@ const products = {
       { label: "Water Absorption", value: "≤ 0.10 vol% (ASTM C534)" },
       { label: "Water Vapour Transmission", value: "0.00 Perm in (ASTM E96/96M)" },
       { label: "Vapour Diffusion Factor (μ)", value: "> 10,000 (BS EN 12086)" },
-      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Fire Rating", value: "BS 476 Part 6 & Part 7 Class O" },
       { label: "Surface Burning", value: "FSI ≤ 25, SDI ≤ 50 (ASTM E84 / UL 723)" },
       { label: "Cell Structure", value: "Closed Cell" },
       { label: "Thickness Range", value: "6mm to 50mm" },
-      { label: "Available Forms", value: "Sheets (plain & self-adhesive), Tubes" },
+      { label: "Available Forms", value: "Sheets, Tubes" },
     ],
     certifications: ["ISO 9001", "FM Approved", "UL Listed", "EPD Verified", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
     applications: [
@@ -327,7 +327,7 @@ const products = {
       "Closed-cell NBR insulation core - λ 0.034 W/m·K at 0°C",
       "UV-stable, water-tight LDPE outer jacket - IP-rated for outdoor runs",
       "Zero water vapour transmission - continuous integral vapour barrier",
-      "Self-extinguishing - Class O / Class 1 (BS 476 Part 6 & 7)",
+      "Self-extinguishing - Class O (BS 476 Part 6 & 7)",
       "Available single, twin (liquid + suction), and multi-tube configurations",
       "Optional integrated communication / control cable (ECC)",
       "Diameter range 1/4\" to 1-1/8\" with 9 / 13 / 19 / 25 mm insulation thickness",
@@ -343,7 +343,7 @@ const products = {
       { label: "Tube Diameter Range", value: '1/4" to 1-1/8" (6.35 – 28.58 mm OD)' },
       { label: "Coil Length", value: "Up to 50 m continuous" },
       { label: "Configurations", value: "Single Tube / Twin Tube / Multi-Tube" },
-      { label: "Fire Rating", value: "BS 476 Part 6 Class O / Part 7 Class 1" },
+      { label: "Fire Rating", value: "BS 476 Part 6 & Part 7 Class O" },
       { label: "Vapour Barrier", value: "Integral - 0.00 Perm in (ASTM E96/96M)" },
       { label: "Tube Charge", value: "Dehydrated, nitrogen-charged, sealed ends" },
     ],
@@ -464,7 +464,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
 
   const pillars = [
     { icon: Thermometer, label: "Thermal", value: product.specs.find(s => /thermal|conduct/i.test(s.label))?.value ?? product.specs[0]?.value, sub: "Conductivity" },
-    { icon: Flame, label: "Fire Safety", value: product.specs.find(s => /fire/i.test(s.label))?.value ?? "Class 1 / 0", sub: "Reaction to fire" },
+    { icon: Flame, label: "Fire Safety", value: product.specs.find(s => /fire/i.test(s.label))?.value ?? "Class O", sub: "Reaction to fire" },
     { icon: Droplets, label: "Moisture", value: product.specs.find(s => /vapor|water|moist|perm/i.test(s.label))?.value ?? "Closed-cell", sub: "Vapour barrier" },
     { icon: Gauge, label: "Temperature", value: product.specs.find(s => /temperature/i.test(s.label))?.value ?? "Wide range", sub: "Service window" },
   ];
@@ -472,7 +472,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
   return (
     <>
       {/* HERO - Editorial dark premium */}
-      <section className="relative overflow-hidden pt-32 md:pt-40 pb-24 md:pb-32 bg-[#080808] text-white">
+      <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10 bg-[#080808] text-white">
         <PageHero src={product.heroImage ?? "https://images.unsplash.com/photo-1543674892-7d64d45df18b?auto=format&fit=crop&w=2400&q=80"} focalY="40%" variant="dark" intensity={0.85} />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -779,52 +779,6 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
         </div>
       </section>
 
-      {/* DOWNLOADS */}
-      <section className="relative py-20 md:py-24 bg-neutral-50/70 border-y" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-        <div className="container-wide relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <div>
-              <div className="eyebrow mb-4"><span className="eyebrow-dot" />Resources</div>
-              <h2 className="text-neutral-900 leading-[1.05]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.85rem, 3.4vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
-                Documentation & <span className="serif-italic text-orange-600">datasheets.</span>
-              </h2>
-            </div>
-            <p className="text-neutral-500 max-w-md text-sm">Engineering-ready files - datasheets, installation guides and compliance certificates.</p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {product.downloads.map((d, i) => (
-              <div key={d.name} className="group relative rounded-2xl border bg-white p-6 flex flex-col gap-5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/60 hover:shadow-[0_25px_60px_-25px_rgba(234,88,12,0.35)] cursor-pointer"
-                style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-orange-500/0 via-orange-500 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="flex items-start justify-between">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, rgba(249,115,22,0.15), rgba(249,115,22,0.04))", border: "1px solid rgba(249,115,22,0.18)" }}>
-                    <FileText size={20} className="text-orange-600" strokeWidth={1.6} />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-300">DOC · 0{i + 1}</span>
-                </div>
-                <div>
-                  <div className="text-neutral-900 text-base font-bold leading-snug mb-1.5" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.015em" }}>{d.name}</div>
-                  <div className="text-neutral-500 text-xs flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 font-bold tracking-wider uppercase text-[10px]">{d.format}</span>
-                    <span>·</span>
-                    <span>{d.size}</span>
-                  </div>
-                </div>
-                <div className="mt-auto pt-2 flex items-center justify-between border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange-600">Download</span>
-                  <span className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-orange-600 group-hover:text-white"
-                    style={{ background: "rgba(249,115,22,0.10)", color: "#ea580c" }}>
-                    <Download size={14} />
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Live 3D Installation Walkthrough */}
       {slug !== "accessories" && (
         <PipeLayerSectionClient variant="nbr" />
@@ -869,7 +823,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
               {/* Trust micro-row */}
               <div className="mt-10 pt-6 border-t border-neutral-200 flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.18em] font-bold text-neutral-400">
                 <span className="flex items-center gap-2"><BadgeCheck size={13} className="text-orange-500" /> ISO 9001</span>
-                <span className="flex items-center gap-2"><ShieldCheck size={13} className="text-orange-500" /> Class 1 / Class 0</span>
+                <span className="flex items-center gap-2"><ShieldCheck size={13} className="text-orange-500" /> Class O</span>
                 <span className="flex items-center gap-2"><Globe2 size={13} className="text-orange-500" /> 50+ Countries</span>
               </div>
             </div>

@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/certifications", priority: 0.85, changeFrequency: "monthly" as const },
     { url: "/projects", priority: 0.8, changeFrequency: "weekly" as const },
     { url: "/downloads", priority: 0.75, changeFrequency: "weekly" as const },
+    { url: "/training", priority: 0.75, changeFrequency: "monthly" as const },
     { url: "/news", priority: 0.75, changeFrequency: "weekly" as const },
     { url: "/careers", priority: 0.65, changeFrequency: "weekly" as const },
     { url: "/contact", priority: 0.8, changeFrequency: "monthly" as const },

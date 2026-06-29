@@ -17,7 +17,6 @@ import {
   Shield,
   Layers,
   Package,
-  Globe,
   Award,
   FileText,
   Users,
@@ -30,10 +29,17 @@ import {
   HeartPulse,
   Flame,
   Anchor,
+  GraduationCap,
+  Leaf,
+  Briefcase,
+  Quote,
+  Download,
+  Newspaper,
+  HelpCircle,
 } from "lucide-react";
 import { useCountry } from "@/context/CountryContext";
 
-const products = [
+const solutions = [
   {
     name: "Gulf-O-Flex NBR",
     desc: "Closed-cell elastomeric rubber insulation",
@@ -89,21 +95,43 @@ const industries = [
   { name: "Healthcare & Hospitality", href: "/industries/healthcare-hospitality", icon: HeartPulse },
 ];
 
-const company = [
-  { name: "About Us", href: "/about", icon: Users },
-  { name: "Certifications", href: "/certifications", icon: Award },
-  { name: "Projects", href: "/projects", icon: FileText },
-  { name: "Case Studies", href: "/case-studies", icon: FileText },
-  { name: "Downloads", href: "/downloads", icon: FileText },
-  { name: "News & Media", href: "/news", icon: FileText },
-  { name: "Careers", href: "/careers", icon: Users },
+const companyGroups = [
+  {
+    label: "Who We Are",
+    items: [
+      { name: "About Us", desc: "Our story, people & manufacturing", href: "/about", icon: Users },
+      { name: "Sustainability", desc: "Net-zero & responsible production", href: "/sustainability", icon: Leaf },
+      { name: "Certifications", desc: "Global standards & approvals", href: "/certifications", icon: Award },
+      { name: "Careers", desc: "Join the Gulf-O-Flex® team", href: "/careers", icon: Briefcase },
+    ],
+  },
+  {
+    label: "Our Work",
+    items: [
+      { name: "Projects", desc: "Flagship installations worldwide", href: "/projects", icon: Building2 },
+      { name: "Case Studies", desc: "In-depth project breakdowns", href: "/case-studies", icon: FileText },
+      { name: "Testimonials", desc: "What our partners say", href: "/testimonials", icon: Quote },
+    ],
+  },
+  {
+    label: "Resources",
+    items: [
+      { name: "Downloads", desc: "Datasheets, TDS & brochures", href: "/downloads", icon: Download },
+      { name: "Training", desc: "Installation video modules", href: "/training", icon: GraduationCap },
+      { name: "News & Media", desc: "Latest updates & press", href: "/news", icon: Newspaper },
+      { name: "FAQ", desc: "Common questions answered", href: "/faq", icon: HelpCircle },
+    ],
+  },
 ];
 
+// Flat list used by the mobile drawer
+const company = companyGroups.flatMap((g) => g.items);
+
 const navLinks = [
-  { name: "Solutions", href: "/products", mega: "products" },
+  { name: "Solutions", href: "/solutions", mega: "solutions" },
   { name: "Industries", href: "/industries", mega: "industries" },
   { name: "Innovation", href: "/technologies" },
-  { name: "About", href: "/about", mega: "company" },
+  { name: "Company", href: "/about", mega: "company" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -286,8 +314,8 @@ export default function Navbar() {
                   </Link>
 
                   {/* Mega menu */}
-                  {link.mega === "products" && activeMenu === "products" && (
-                    <MegaMenuProducts onMouseEnter={() => handleMouseEnter("products")} onMouseLeave={handleMouseLeave} />
+                  {link.mega === "solutions" && activeMenu === "solutions" && (
+                    <MegaMenuSolutions onMouseEnter={() => handleMouseEnter("solutions")} onMouseLeave={handleMouseLeave} />
                   )}
                   {link.mega === "industries" && activeMenu === "industries" && (
                     <MegaMenuIndustries onMouseEnter={() => handleMouseEnter("industries")} onMouseLeave={handleMouseLeave} />
@@ -370,7 +398,7 @@ export default function Navbar() {
                     </button>
                     {mobileExpanded === link.mega && (
                       <div className="bg-neutral-50 border-y border-neutral-200/60">
-                        {(link.mega === "products" ? products : link.mega === "industries" ? industries : company).map((item) => (
+                        {(link.mega === "solutions" ? solutions : link.mega === "industries" ? industries : company).map((item) => (
                           <Link
                             key={item.name}
                             href={item.href}
@@ -426,7 +454,7 @@ export default function Navbar() {
   );
 }
 
-function MegaMenuProducts({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void; onMouseLeave: () => void }) {
+function MegaMenuSolutions({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void; onMouseLeave: () => void }) {
   return (
     <div
       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
@@ -436,11 +464,11 @@ function MegaMenuProducts({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => 
       <div className="flex items-center gap-2 mb-5">
         <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-orange-600 border border-orange-500/30 bg-orange-500/8 px-2.5 py-1 rounded-full">
           <span className="w-1 h-1 rounded-full bg-orange-500 animate-pulse" />
-          Our Product Range
+          Our Solutions
         </span>
       </div>
       <div className="grid grid-cols-2 gap-2">
-        {products.map((p) => (
+        {solutions.map((p) => (
           <Link
             key={p.name}
             href={p.href}
@@ -500,7 +528,7 @@ function MegaMenuIndustries({ onMouseEnter, onMouseLeave }: { onMouseEnter: () =
 function MegaMenuCompany({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void; onMouseLeave: () => void }) {
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[320px] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[720px] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -510,18 +538,34 @@ function MegaMenuCompany({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => v
           Company
         </span>
       </div>
-      <div className="space-y-1">
-        {company.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-100 transition-all duration-200 group"
-          >
-            <item.icon size={15} className="text-orange-600" />
-            <span className="text-sm font-medium text-neutral-800 group-hover:text-neutral-900 transition-colors">{item.name}</span>
-          </Link>
+      <div className="grid grid-cols-3 gap-x-5 gap-y-1">
+        {companyGroups.map((group) => (
+          <div key={group.label}>
+            <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-400 px-3 mb-1.5">
+              {group.label}
+            </div>
+            {group.items.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="flex items-start gap-3 p-3 rounded-xl hover:bg-neutral-100 transition-all duration-200 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500/20 transition-colors">
+                  <item.icon size={15} className="text-orange-600" />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900 group-hover:text-orange-600 transition-colors leading-tight">{item.name}</div>
+                  <div className="text-[11px] text-neutral-500 mt-0.5 leading-snug">{item.desc}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
         ))}
       </div>
+      <div className="tech-divider mt-5 mb-4" />
+      <Link href="/about" className="flex items-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-600 transition-colors">
+        About Gulf-O-Flex® <ArrowRight size={14} />
+      </Link>
     </div>
   );
 }
