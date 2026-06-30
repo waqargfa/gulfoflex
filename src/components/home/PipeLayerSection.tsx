@@ -138,15 +138,20 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 }
 
 /* Two-panel NBR render: Pipe + Duct side by side */
-function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<number> }) {
-  const [activePanel, setActivePanel] = useState<"pipe" | "duct" | "aluglass">("pipe");
+function NbrDualRender({ progressRef, productSlug }: { progressRef: React.MutableRefObject<number>; productSlug?: string }) {
+  const tabs = productSlug === "aluglass"
+    ? ["pipe", "aluglass"] as const
+    : productSlug === "nbr"
+      ? ["pipe", "duct"] as const
+      : ["pipe", "duct", "aluglass"] as const;
+  const [activePanel, setActivePanel] = useState<"pipe" | "duct" | "aluglass">(tabs[0]);
 
   return (
     <div className="absolute inset-0">
       {/* Render panels - only mount active panel */}
       <div className="absolute inset-0">
         {activePanel === "pipe" && (
-          <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Pipe" frameCount={181} padLength={5} ext="jpg" />
+          <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Render" frameCount={361} padLength={4} ext="png" />
         )}
         {activePanel === "duct" && (
           <RenderSequence progressRef={progressRef} folder="Render/duct/nbr" prefix="NBR_Final_Ducts_" frameCount={361} padLength={5} ext="png" scale={0.6} topCrop={-0.12} />
@@ -158,7 +163,7 @@ function NbrDualRender({ progressRef }: { progressRef: React.MutableRefObject<nu
 
       {/* Tab switcher - overlaid at bottom */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
-        {(["pipe", "duct", "aluglass"] as const).map((tab) => (
+        {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActivePanel(tab)}
@@ -1212,7 +1217,7 @@ function CameraRig({ progressRef, variant = "full" }: SceneProps) {
 /* ─────────────────────────────────────────────────────────
    MAIN SECTION
 ───────────────────────────────────────────────────────── */
-export default function PipeLayerSection({ variant = "full" }: { variant?: PipeLayerVariant } = {}) {
+export default function PipeLayerSection({ variant = "full", productSlug }: { variant?: PipeLayerVariant; productSlug?: string } = {}) {
   const layers      = variant === "nbr" ? NBR_LAYERS : LAYERS;
   const stepCount   = layers.length;
   // 3-step NBR walkthrough needs less scroll runway than the 4-step
@@ -1296,7 +1301,7 @@ export default function PipeLayerSection({ variant = "full" }: { variant?: PipeL
           }}
         >
           {variant === "nbr" ? (
-            <NbrDualRender progressRef={progressRef} />
+            <NbrDualRender progressRef={progressRef} productSlug={productSlug} />
           ) : (
           <Canvas
             shadows="soft"

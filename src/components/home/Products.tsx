@@ -99,6 +99,10 @@ const products = [
     tagline: "Next-generation NBR/EPDM hybrid closed-cell foam with industry-leading thermal conductivity of 0.030 W/m·K at 0°C - engineered for chilled water, district cooling, and low-temperature process lines.",
     features: ["Product with reaction to fire Europlus B-S1-D0", "Low VOC & no ROHS detected", "Aesthetic finish"],
     icon: ShieldCheck,
+    images: [
+      "/images/products/ultra/ultra.png",
+      "/images/products/ultra/ultra-1.png",
+    ],
     image: "/images/products/ultra/ultra.png",
     href: "/products/ultra",
     badge: "Premium",
@@ -111,7 +115,11 @@ const products = [
     tagline: "Factory pre-insulated continuous copper tube line system - nitrogen-charged copper + closed-cell NBR core + UV-stable LDPE jacket, supplied in coils up to 50 m for VRF/VRV, split AC, chilled water and solar thermal piping.",
     features: ["UV Resistant", "Polymeric Jacketing", "Mechanical Protection"],
     icon: Layers,
-    image: "/images/products/ultra/ultraline.png",
+    images: [
+      "/images/products/ultraline/ultraline.png",
+      "/images/products/ultraline/ultraline-1.png",
+    ],
+    image: "/images/products/ultraline/ultraline.png",
     href: "/products/ultraline",
     badge: "System",
   },

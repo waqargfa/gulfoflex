@@ -1,83 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Briefcase, MapPin, Clock, Users, Star, ChevronRight, Sparkles } from "lucide-react";
+import { MapPin, Users, Star, Sparkles, Heart, Factory, Globe, Leaf } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
   title: "Careers at Gulf-O-Flex® | Join the UAE's Leading Insulation Manufacturer",
   description:
-    "Build your career at Gulf-O-Flex® - the GCC's leading rubber insulation manufacturer. Explore engineering, sales, manufacturing, and management roles across UAE, Saudi Arabia, and globally.",
+    "Discover life at Gulf-O-Flex® - the GCC's leading rubber insulation manufacturer. Explore our office culture, state-of-the-art factory, and team environment across UAE and globally.",
   alternates: { canonical: "https://gulfoflex.com/careers" },
 };
-
-const openRoles = [
-  {
-    title: "Senior Applications Engineer",
-    dept: "Technical Sales",
-    location: "Dubai, UAE",
-    type: "Full-time",
-    level: "Senior",
-    color: "orange",
-    desc: "Provide technical guidance to MEP consultants, contractors and distributors on Gulf-O-Flex® product selection, thermal calculations, and system design. You will be the bridge between our product technology and real-world engineering challenges.",
-    requirements: ["B.Eng Mechanical or HVAC", "5+ years MEP/HVAC experience", "ASHRAE / BS 5422 knowledge", "Arabic language a plus"],
-  },
-  {
-    title: "Territory Sales Manager - KSA",
-    dept: "Commercial",
-    location: "Riyadh, Saudi Arabia",
-    type: "Full-time",
-    level: "Mid-Senior",
-    color: "neutral",
-    desc: "Lead sales strategy and key account management across the Kingdom of Saudi Arabia. Build distribution partnerships, win specification on major projects, and grow Gulf-O-Flex® market share in the Kingdom's booming construction and industrial sectors.",
-    requirements: ["5+ years construction sales", "Strong KSA market network", "Arabic speaker required", "Track record with large accounts"],
-  },
-  {
-    title: "Production Supervisor",
-    dept: "Manufacturing",
-    location: "Ajman, UAE",
-    type: "Full-time",
-    level: "Mid-level",
-    color: "orange",
-    desc: "Supervise day-to-day production operations at our flagship Ajman manufacturing facility. Coordinate shift teams, monitor output quality against ISO 9001 standards, and drive continuous improvement initiatives.",
-    requirements: ["Engineering diploma or degree", "3+ years in manufacturing", "ISO 9001 / Lean experience", "Mandarin or Hindi a plus"],
-  },
-  {
-    title: "Digital Marketing Specialist",
-    dept: "Marketing",
-    location: "Ajman, UAE (Hybrid)",
-    type: "Full-time",
-    level: "Mid-level",
-    color: "neutral",
-    desc: "Drive Gulf-O-Flex®'s digital presence across SEO, SEM, LinkedIn, and technical content marketing. Collaborate with engineering teams to create compelling technical content that resonates with HVAC consultants and procurement professionals.",
-    requirements: ["3+ years B2B digital marketing", "SEO & content strategy", "LinkedIn Ads experience", "Technical writing ability"],
-  },
-  {
-    title: "Export & Logistics Coordinator",
-    dept: "Operations",
-    location: "Ajman, UAE",
-    type: "Full-time",
-    level: "Junior-Mid",
-    color: "neutral",
-    desc: "Coordinate international shipments to our network of 90+ country distributors. Manage freight forwarders, export documentation, LC handling, and customer delivery communication.",
-    requirements: ["2+ years freight/logistics", "Export documentation knowledge", "ERP system experience", "English + Arabic required"],
-  },
-  {
-    title: "R&D Formulation Chemist",
-    dept: "Innovation",
-    location: "Ajman, UAE",
-    type: "Full-time",
-    level: "Senior",
-    color: "orange",
-    desc: "Lead elastomeric rubber compound development for our next generation of NBR and XLPE insulation products. Work in our in-house laboratory to develop formulations that meet evolving fire, environmental, and performance standards.",
-    requirements: ["B.Sc / M.Sc in Chemistry or Materials", "Rubber / polymer compounding", "Experience with fire testing", "Publications a plus"],
-  },
-];
 
 const perks = [
   { icon: Star, title: "Competitive Package", desc: "Market-leading salary, annual bonus, and performance incentives" },
   { icon: Users, title: "Diverse Team", desc: "Work alongside 500+ colleagues from 30+ nationalities" },
-  { icon: Briefcase, title: "Career Growth", desc: "Clear progression paths and internal promotion culture" },
-  { icon: MapPin, title: "Global Exposure", desc: "Work with clients and partners in 90+ countries" },
+  { icon: Factory, title: "World-Class Facility", desc: "State-of-the-art manufacturing plants with the latest technology" },
+  { icon: Globe, title: "Global Exposure", desc: "Work with clients and partners in 90+ countries" },
 ];
 
 export default function CareersPage() {
@@ -94,7 +31,7 @@ export default function CareersPage() {
                 <span className="text-neutral-300">/</span>
                 <span className="text-neutral-700">Careers</span>
               </nav>
-              <div className="eyebrow mb-6"><span className="eyebrow-dot" />Join Our Team · {openRoles.length} open roles</div>
+              <div className="eyebrow mb-6"><span className="eyebrow-dot" />Life at Gulf-O-Flex®</div>
               <h1 className="text-neutral-900 leading-[0.95] mb-6"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
                 Build the future of<br />
@@ -163,52 +100,84 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* ── Open Roles ── */}
+      {/* ── Our Culture & Environment ── */}
       <section className="py-20 md:py-28 bg-neutral-50 relative">
         <div className="absolute inset-0 grid-bg opacity-[0.10]" />
         <div className="container-wide relative z-10">
           <div className="max-w-3xl mb-12">
-            <div className="eyebrow mb-4"><span className="eyebrow-dot" />Open Positions · {openRoles.length}</div>
+            <div className="eyebrow mb-4"><span className="eyebrow-dot" />Our Environment</div>
             <h2 className="text-neutral-900 leading-[1.05]"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
-              Current <span className="serif-italic text-orange-600">opportunities.</span>
+              Where <span className="serif-italic text-orange-600">innovation happens.</span>
             </h2>
+            <p className="text-neutral-600 text-lg leading-relaxed mt-4">
+              From our state-of-the-art manufacturing plants in Ajman to our modern office spaces, Gulf-O-Flex® provides an environment where engineering excellence meets team collaboration.
+            </p>
           </div>
-          <div className="space-y-3">
-            {openRoles.map((role, i) => (
-              <Link key={role.title} href={`mailto:hr@gulfoflex.com?subject=Application: ${role.title}`}
-                className="group relative block rounded-2xl border bg-white p-6 lg:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-30px_rgba(234,88,12,0.25)] hover:border-orange-300/60"
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                icon: Factory,
+                title: "Advanced Manufacturing",
+                desc: "Our flagship Ajman plant features fully automated extrusion lines, in-house R&D labs, and rigorous quality testing - operating 24/7 to meet global demand.",
+              },
+              {
+                icon: Users,
+                title: "Collaborative Office Culture",
+                desc: "Open-plan offices with cross-functional teams working together - engineers, sales, and operations united by a shared mission to deliver insulation excellence.",
+              },
+              {
+                icon: Leaf,
+                title: "Sustainability Focused",
+                desc: "Our facilities are designed with sustainability in mind - from energy-efficient production processes to waste-reduction programs and EPD-verified products.",
+              },
+              {
+                icon: Globe,
+                title: "Global Team",
+                desc: "Over 500 team members from 30+ nationalities working together, bringing diverse perspectives and expertise to solve complex engineering challenges.",
+              },
+              {
+                icon: Heart,
+                title: "Employee Wellbeing",
+                desc: "We invest in our people with health & safety programs, regular team events, professional development opportunities, and a supportive work-life balance.",
+              },
+              {
+                icon: Star,
+                title: "Innovation-Driven",
+                desc: "Our in-house laboratory and R&D team continuously develop next-generation products, encouraging creative problem-solving and technical expertise at every level.",
+              },
+            ].map((item, i) => (
+              <div key={item.title}
+                className="group relative rounded-3xl border bg-white p-7 overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_-30px_rgba(234,88,12,0.30)] hover:border-orange-300/60"
                 style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase border px-2.5 py-1 rounded-full text-orange-700 bg-orange-50 border-orange-200">
-                        {role.dept}
-                      </span>
-                      <span className="text-[10px] font-semibold text-neutral-600 border border-neutral-200 bg-neutral-50 px-2.5 py-1 rounded-full flex items-center gap-1">
-                        <MapPin size={10} className="text-orange-600" />{role.location}
-                      </span>
-                      <span className="text-[10px] font-semibold text-neutral-600 border border-neutral-200 bg-neutral-50 px-2.5 py-1 rounded-full flex items-center gap-1">
-                        <Clock size={10} className="text-orange-600" />{role.type}
-                      </span>
-                      <span className="text-[10px] font-bold text-neutral-400 tracking-[0.18em] uppercase ml-1">0{i + 1}</span>
-                    </div>
-                    <h3 className="text-neutral-900 font-bold mb-2 group-hover:text-orange-600 transition-colors"
-                      style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.15rem, 1.6vw, 1.4rem)", letterSpacing: "-0.025em" }}>
-                      {role.title}
-                    </h3>
-                    <p className="text-neutral-600 text-sm leading-relaxed max-w-2xl">{role.desc}</p>
-                  </div>
-                  <div className="flex-shrink-0 flex items-center gap-3">
-                    <span className="btn-primary whitespace-nowrap">
-                      Apply Now <ChevronRight size={14} />
-                    </span>
-                  </div>
+                <div className="absolute top-6 right-7 text-[11px] font-bold tracking-[0.18em] uppercase text-neutral-400">0{i + 1}</div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.04))", border: "1px solid rgba(249,115,22,0.20)" }}>
+                  <item.icon size={20} className="text-orange-600" strokeWidth={2.2} />
                 </div>
-              </Link>
+                <h3 className="text-neutral-900 font-bold mb-2" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.01em" }}>{item.title}</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Join Us CTA ── */}
+      <section className="py-20 md:py-28 bg-white relative">
+        <div className="container-wide text-center max-w-3xl mx-auto">
+          <div className="eyebrow mb-4 justify-center"><span className="eyebrow-dot" />Get In Touch</div>
+          <h2 className="text-neutral-900 leading-[1.05] mb-6"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
+            Interested in joining <span className="serif-italic text-orange-600">our team?</span>
+          </h2>
+          <p className="text-neutral-600 text-lg leading-relaxed mb-8">
+            We&rsquo;re always looking for talented individuals who share our passion for engineering excellence. Send your CV to our HR team and we&rsquo;ll get back to you.
+          </p>
+          <Link href="mailto:hr@gulfoflex.com" className="btn-primary inline-flex">
+            Send Your CV <MapPin size={14} />
+          </Link>
         </div>
       </section>
 

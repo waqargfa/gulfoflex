@@ -188,9 +188,7 @@ export default function Contact() {
             <Link href="/contact" className="btn-primary justify-center py-2.5 text-sm">
               Full Contact Page <ArrowRight size={14} />
             </Link>
-            <Link href="/distributors" className="flex items-center justify-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-700 transition-colors py-1">
-              Find a Distributor <ArrowRight size={13} />
-            </Link>
+
           </div>
         </div>
       </div>

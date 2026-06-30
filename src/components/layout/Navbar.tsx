@@ -77,6 +77,12 @@ const solutions = [
     icon: Sparkles,
   },
   {
+    name: "Gulf-O-Flex UltraLine",
+    desc: "Pre-jacketed UV-resistant line-set insulation",
+    href: "/products/ultraline",
+    icon: Layers,
+  },
+  {
     name: "Accessories",
     desc: "Tapes, glues and installation accessories",
     href: "/products/accessories",

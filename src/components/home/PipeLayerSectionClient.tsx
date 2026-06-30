@@ -13,7 +13,7 @@ export type PipeLayerVariant = "full" | "nbr";
  * suspended by Chromium while it sits offscreen - a state where the
  * canvas becomes a blank rectangle that never recovers.
  */
-export default function PipeLayerSectionClient({ variant = "full" }: { variant?: PipeLayerVariant } = {}) {
+export default function PipeLayerSectionClient({ variant = "full", productSlug }: { variant?: PipeLayerVariant; productSlug?: string } = {}) {
   const sentinelRef = useRef<HTMLDivElement | null>(null);
   const [shouldMount, setShouldMount] = useState(false);
 
@@ -41,7 +41,7 @@ export default function PipeLayerSectionClient({ variant = "full" }: { variant?:
   // jumps when the canvas mounts.
   const placeholderHeight = variant === "nbr" ? "320vh" : "420vh";
 
-  if (shouldMount) return <PipeLayerSection variant={variant} />;
+  if (shouldMount) return <PipeLayerSection variant={variant} productSlug={productSlug} />;
 
   return (
     <div

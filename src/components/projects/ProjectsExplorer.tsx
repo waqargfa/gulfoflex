@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Globe2, MapPin, Search } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Globe2, MapPin, Search, X } from "lucide-react";
 
 export type Project = {
   id: number;
@@ -11,6 +11,7 @@ export type Project = {
   country: string;
   type: string;
   image: string;
+  gallery?: string[];
 };
 
 type CountryMeta = {
@@ -32,6 +33,7 @@ const COUNTRY_META: CountryMeta[] = [
 export default function ProjectsExplorer({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState<string>("ALL");
   const [query, setQuery] = useState("");
+  const [lightbox, setLightbox] = useState<{ project: Project; imageIndex: number } | null>(null);
 
   // Build tabs dynamically from the data, ordered by COUNTRY_META, then any extras
   const tabs = useMemo(() => {
@@ -70,6 +72,68 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
   }, [projects, active, query]);
 
   const activeMeta = tabs.find((t) => t.code === active);
+
+  const getGallery = (p: Project) => p.gallery?.length ? p.gallery : [p.image];
+
+  const openLightbox = useCallback((project: Project) => {
+    setLightbox({ project, imageIndex: 0 });
+  }, []);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+
+  const goNext = useCallback(() => {
+    setLightbox((prev) => {
+      if (!prev) return null;
+      const images = getGallery(prev.project);
+      return { ...prev, imageIndex: (prev.imageIndex + 1) % images.length };
+    });
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setLightbox((prev) => {
+      if (!prev) return null;
+      const images = getGallery(prev.project);
+      return { ...prev, imageIndex: (prev.imageIndex - 1 + images.length) % images.length };
+    });
+  }, []);
+
+  // Navigate between projects in the filtered list
+  const goNextProject = useCallback(() => {
+    setLightbox((prev) => {
+      if (!prev) return null;
+      const idx = filtered.findIndex((p) => p.id === prev.project.id);
+      if (idx === -1) return prev;
+      const next = filtered[(idx + 1) % filtered.length];
+      return { project: next, imageIndex: 0 };
+    });
+  }, [filtered]);
+
+  const goPrevProject = useCallback(() => {
+    setLightbox((prev) => {
+      if (!prev) return null;
+      const idx = filtered.findIndex((p) => p.id === prev.project.id);
+      if (idx === -1) return prev;
+      const next = filtered[(idx - 1 + filtered.length) % filtered.length];
+      return { project: next, imageIndex: 0 };
+    });
+  }, [filtered]);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowRight") goNext();
+      else if (e.key === "ArrowLeft") goPrev();
+      else if (e.key === "ArrowDown") goNextProject();
+      else if (e.key === "ArrowUp") goPrevProject();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [lightbox, closeLightbox, goNext, goPrev, goNextProject, goPrevProject]);
 
   return (
     <section className="py-20 md:py-28 bg-white relative">
@@ -189,9 +253,11 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
         {filtered.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((project, i) => (
-              <div
+              <button
                 key={project.id}
-                className="group relative rounded-3xl border bg-white overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_-30px_rgba(234,88,12,0.30)] hover:border-orange-300/60 flex flex-col"
+                type="button"
+                onClick={() => openLightbox(project)}
+                className="group relative rounded-3xl border bg-white overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_40px_80px_-30px_rgba(234,88,12,0.30)] hover:border-orange-300/60 flex flex-col text-left cursor-pointer"
                 style={{ borderColor: "rgba(0,0,0,0.06)" }}
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
@@ -247,7 +313,7 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
                     </div>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         ) : (
@@ -269,6 +335,124 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
           </div>
         )}
       </div>
+
+      {/* ── Lightbox Modal ── */}
+      {lightbox && (() => {
+        const images = getGallery(lightbox.project);
+        const currentImage = images[lightbox.imageIndex];
+        const projectIndex = filtered.findIndex((p) => p.id === lightbox.project.id);
+        return (
+          <div
+            className="fixed inset-0 z-[9999] flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" />
+
+            {/* Close button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-5 right-5 z-10 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              aria-label="Close gallery"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Project info */}
+            <div className="absolute top-5 left-5 z-10 text-white">
+              <h3 className="text-lg font-bold leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+                {lightbox.project.name}
+              </h3>
+              <div className="flex items-center gap-1.5 mt-1 text-sm text-white/70">
+                <MapPin size={13} className="text-orange-400" />
+                {lightbox.project.location}
+              </div>
+            </div>
+
+            {/* Main image */}
+            <div
+              className="relative w-full max-w-5xl mx-auto aspect-[4/3] px-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={currentImage}
+                alt={`${lightbox.project.name} - Image ${lightbox.imageIndex + 1}`}
+                fill
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="object-contain rounded-2xl"
+                priority
+              />
+
+              {/* Image navigation arrows (when multiple images in gallery) */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); goPrev(); }}
+                    className="absolute left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); goNext(); }}
+                    className="absolute right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Bottom bar: project navigation + image dots */}
+            <div className="absolute bottom-6 left-0 right-0 z-10 flex flex-col items-center gap-3">
+              {/* Image dots */}
+              {images.length > 1 && (
+                <div className="flex items-center gap-2">
+                  {images.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setLightbox((prev) => prev ? { ...prev, imageIndex: idx } : null);
+                      }}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        idx === lightbox.imageIndex
+                          ? "bg-orange-500 scale-125"
+                          : "bg-white/40 hover:bg-white/60"
+                      }`}
+                      aria-label={`Go to image ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Project navigation */}
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={(e) => { e.stopPropagation(); goPrevProject(); }}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
+                  aria-label="Previous project"
+                >
+                  <ChevronLeft size={14} />
+                  Prev Project
+                </button>
+                <span className="text-white/60 text-xs font-bold tracking-wider">
+                  {projectIndex + 1} / {filtered.length}
+                </span>
+                <button
+                  onClick={(e) => { e.stopPropagation(); goNextProject(); }}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
+                  aria-label="Next project"
+                >
+                  Next Project
+                  <ChevronRight size={14} />
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Hide scrollbar utility (local) */}
       <style jsx>{`

@@ -36,8 +36,8 @@ const SLIDES = [
     line2b:   "90+",
     line3:    "countries.",
     subtitle: "From HVAC mega-projects in the GCC to LNG terminals worldwide - Gulf-O-Flex® insulation is specified where failure is not an option.",
-    cta1:     { label: "Find a Distributor",  href: "/distributors" },
-    cta2:     { label: "About Us",            href: "/about" },
+    cta1:     { label: "About Us",            href: "/about" },
+    cta2:     { label: "Our Projects",        href: "/projects" },
   },
 ];
 

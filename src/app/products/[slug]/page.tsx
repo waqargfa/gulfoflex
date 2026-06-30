@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -65,7 +66,7 @@ const products = {
   xlpe: {
     name: "Gulf-O-Flex® XLPE",
     icon: Zap,
-    heroImage: "/assets/duct.webp",
+    heroImage: "/images/products/xlpe/xlpe.png",
     heroVideo: "/videos/products/xlpe.mp4",
     shortName: "Chemically Crosslinked Polyethylene Foam",
     tagline: "Closed-cell elastomeric XLPE foam with alupet facing - a passive, self-sustaining solution for thermal and acoustic insulation in demanding environments.",
@@ -101,6 +102,12 @@ const products = {
     ],
     certifications: ["BS 476 Part 6 & 7", "ASTM E84", "ASTM C518", "ASTM D 3575", "ISO 9001"],
     applications: ["HVAC Ductwork", "Underfloor Heating Systems", "Marine Insulation", "Automotive Soundproofing", "Construction Insulation", "Industrial Process Piping"],
+    gallery: [
+      { src: "/images/products/xlpe/xlpe.png", alt: "Gulf-O-Flex XLPE closed-cell foam" },
+      { src: "/images/products/xlpe/xlpe-2.png", alt: "XLPE foam with alupet facing" },
+      { src: "/images/products/xlpe/xlpe-3.png", alt: "XLPE insulation roll" },
+      { src: "/images/products/xlpe/xlpe-4.png", alt: "XLPE pipe insulation application" },
+    ],
     downloads: [
       { name: "XLPE Product Datasheet", format: "PDF", size: "1.9 MB" },
       { name: "XLPE Technical Guide", format: "PDF", size: "1.5 MB" },
@@ -261,7 +268,7 @@ const products = {
   ultra: {
     name: "Gulf-O-Flex® Ultra",
     icon: Sparkles,
-    heroImage: "/assets/plain/C_107249.jpg",
+    heroImage: "/images/products/ultra/ultra.png",
     shortName: "Ultra-Low Conductivity Premium Elastomeric Foam",
     tagline: "Next-generation closed-cell NBR/EPDM hybrid insulation with ultra-low thermal conductivity for the most demanding HVAC, refrigeration, and chilled-water applications.",
     color: "orange",
@@ -304,6 +311,10 @@ const products = {
       "Pharmaceutical & Data Centre Cooling",
       "Cold Storage Facilities",
     ],
+    gallery: [
+      { src: "/images/products/ultra/ultra.png", alt: "Gulf-O-Flex Ultra premium elastomeric foam" },
+      { src: "/images/products/ultra/ultra-1.png", alt: "Ultra NBR/EPDM insulation close-up" },
+    ],
     downloads: [
       { name: "Ultra Product Datasheet", format: "PDF", size: "2.6 MB" },
       { name: "Ultra Installation Guide", format: "PDF", size: "1.9 MB" },
@@ -313,53 +324,61 @@ const products = {
   ultraline: {
     name: "Gulf-O-Flex® UltraLine",
     icon: Layers,
-    heroImage: "/assets/duct.webp",
-    shortName: "Pre-Insulated Continuous Tube Line System",
-    tagline: "Factory pre-insulated continuous-length tube line system - chilled-water and refrigeration piping delivered ready to install with built-in vapour barrier and UV-stable jacket.",
+    heroImage: "/images/products/ultraline/ultraline.png",
+    shortName: "Pre-Jacketed UV-Resistant Line-Set Insulation",
+    tagline: "Next-generation pre-jacketed, UV-resistant flexible elastomeric line-set insulation - combining a closed-cell NBR/PVC foam core with a co-extruded polymeric jacket for superior outdoor protection.",
     color: "neutral",
     description: [
-      "Gulf-O-Flex® UltraLine is a complete factory pre-insulated copper tube line system, supplied in continuous coils up to 50 metres. Each line pairs a soft-temper, dehydrated and nitrogen-charged copper tube with a closed-cell NBR insulation core and a UV-stable, water-tight outer jacket - eliminating site insulation labour and ensuring a continuous, joint-free vapour barrier from end to end.",
-      "UltraLine is designed for VRF / VRV refrigerant lines, split AC connections, chilled water mini-loops, and solar thermal applications. Available as single tube, twin tube (liquid + suction), and multi-tube configurations in diameters from 1/4\" to 1-1/8\" - pre-paired with an optional ECC communication cable for a one-pull installation.",
+      "Gulf-O-Flex® UltraLine is a next-generation line-set insulation combining a closed-cell NBR/PVC elastomeric foam core with a co-extruded UV-resistant polymeric jacket. It delivers superior protection against thermal loss, condensation, UV radiation, and mechanical damage, eliminating the need for field-applied coating or additional jacketing.",
+      "Designed for outdoor refrigerant and condensate lines, roof-mounted piping, and exposed installations in tropical and coastal conditions, UltraLine provides an operating temperature range of -70°C to +105°C with peaks up to 121°C. Available in ID sizes from 1/4\" to 2-5/8\" with wall thicknesses of 1/2\", 3/4\", and 1\".",
     ],
     features: [
-      "Continuous-length pre-insulated copper line - coils up to 50 m",
-      "Factory dehydrated and nitrogen-charged copper tube - ready to braze",
-      "Closed-cell NBR insulation core - λ 0.034 W/m·K at 0°C",
-      "UV-stable, water-tight LDPE outer jacket - IP-rated for outdoor runs",
-      "Zero water vapour transmission - continuous integral vapour barrier",
-      "Self-extinguishing - Class O (BS 476 Part 6 & 7)",
-      "Available single, twin (liquid + suction), and multi-tube configurations",
-      "Optional integrated communication / control cable (ECC)",
-      "Diameter range 1/4\" to 1-1/8\" with 9 / 13 / 19 / 25 mm insulation thickness",
-      "Eliminates site insulation labour - faster, cleaner installation",
+      "Co-extruded UV-resistant polymeric jacket - no field coating required",
+      "Closed-cell NBR/PVC elastomeric foam core - excellent thermal performance",
+      "Thermal conductivity 0.036 W/m·K (0.230 Btu·in/hr·ft²·°F) at 24°C mean",
+      "UV resistance - no deterioration after 5,000 hours (ASTM G154)",
+      "Water vapor permeability < 0.00 perm-in (ASTM E96)",
+      "25/50 FSI/SDI rated (ASTM E84, UL 723, CAN/ULC S102.2)",
+      "Operating temperature range -70°C to +105°C (peaks to 121°C)",
+      "Tensile strength 1,200 psi minimum (ASTM D412)",
+      "pH neutral - zero corrosion risk (DIN 1988)",
+      "Dimensional stability < 7% linear shrinkage (ASTM C534)",
     ],
     specs: [
-      { label: "Inner Tube", value: "Soft-temper copper, ASTM B280 / EN 12735" },
-      { label: "Insulation Core", value: "Closed-Cell NBR Elastomeric Foam" },
-      { label: "Outer Jacket", value: "UV-Stable LDPE, water-tight" },
-      { label: "Thermal Conductivity (λ)", value: "0.034 W/m·K at 0°C (ASTM C518)" },
-      { label: "Operating Temperature", value: "-40°C to +105°C" },
-      { label: "Insulation Thickness", value: "9 mm / 13 mm / 19 mm / 25 mm" },
-      { label: "Tube Diameter Range", value: '1/4" to 1-1/8" (6.35 – 28.58 mm OD)' },
-      { label: "Coil Length", value: "Up to 50 m continuous" },
-      { label: "Configurations", value: "Single Tube / Twin Tube / Multi-Tube" },
-      { label: "Fire Rating", value: "BS 476 Part 6 & Part 7 Class O" },
-      { label: "Vapour Barrier", value: "Integral - 0.00 Perm in (ASTM E96/96M)" },
-      { label: "Tube Charge", value: "Dehydrated, nitrogen-charged, sealed ends" },
+      { label: "Main Composition", value: "Flame-retardant NBR/PVC elastomeric foam with proprietary copolymer blend jacket" },
+      { label: "Thermal Conductivity", value: "0.036 W/m·K (0.230 Btu·in/hr·ft²·°F) at 24°C mean (ASTM C177)" },
+      { label: "Density", value: "3–6 lb/ft³ (ASTM D1667)" },
+      { label: "Operating Temperature", value: "-57°C to +104°C / -70°F to +220°F (ASTM C534)" },
+      { label: "Water Vapor Permeability", value: "< 0.00 perm-in (ASTM E96)" },
+      { label: "Dimensional Stability", value: "< 7% Linear Shrinkage (ASTM C534)" },
+      { label: "Corrosion Risk", value: "pH neutral (DIN 1988)" },
+      { label: "UV Resistance", value: "Excellent - No Deterioration, 5,000 hours (ASTM G154)" },
+      { label: "Flammability", value: "25/50 FSI/SDI Rated (ASTM E84, UL 723, CAN/ULC S102.2)" },
+      { label: "Tensile Strength", value: "1,200 psi min. (ASTM D412)" },
+      { label: "Hot Surface Performance", value: "Pass at 250°F / 121°C (ASTM C411, NFPA 90A)" },
+      { label: "ID Range", value: '1/4" to 2-5/8" (6 mm to 67 mm)' },
+      { label: "Wall Thickness", value: '1/2" (13 mm) / 3/4" (19 mm) / 1" (25 mm)' },
+      { label: "Pipe R-Values (1/2\" wall)", value: "3.5 – 4.9" },
+      { label: "Pipe R-Values (3/4\" wall)", value: "5.6 – 6.1" },
+      { label: "Pipe R-Values (1\" wall)", value: "6 – 10.2" },
     ],
-    certifications: ["ISO 9001", "ASTM B280", "EN 12735", "BS 476 Part 6 & 7", "ASTM E84 / UL 723"],
+    certifications: ["ASTM E84 / UL 723", "CAN/ULC S102.2", "ASTM C534", "ASTM G154", "NFPA 90A", "FM Approved"],
     applications: [
-      "VRF / VRV Refrigerant Lines",
-      "Split AC Indoor–Outdoor Connections",
-      "Chilled Water Mini-Loops",
-      "Solar Thermal Hot Water",
-      "Refrigeration & Cold Room Piping",
-      "Heat Pump Installations",
+      "Outdoor Refrigerant & Condensate Lines (VRF/VRV & Ducted Split Systems)",
+      "Roof-Mounted Piping & Exposed Outdoor Runs",
+      "Tropical & Coastal Climate Installations",
+      "High UV Exposure Environments",
+      "Line-Sets Requiring No Additional Jacketing or Coating",
+      "Commercial & Residential HVAC Systems",
+    ],
+    gallery: [
+      { src: "/images/products/ultraline/ultraline.png", alt: "Gulf-O-Flex UltraLine pre-jacketed line-set insulation" },
+      { src: "/images/products/ultraline/ultraline-1.png", alt: "UltraLine UV-resistant insulation coil" },
     ],
     downloads: [
-      { name: "UltraLine Product Datasheet", format: "PDF", size: "2.8 MB" },
-      { name: "UltraLine Sizing & Selection Guide", format: "PDF", size: "2.1 MB" },
-      { name: "UltraLine Installation Manual", format: "PDF", size: "2.4 MB" },
+      { name: "UltraLine Product Catalogue", format: "PDF", size: "2.8 MB" },
+      { name: "UltraLine Technical Data Sheet", format: "PDF", size: "1.5 MB" },
+      { name: "UltraLine Installation Guide", format: "PDF", size: "2.1 MB" },
     ],
   },
   accessories: {
@@ -672,6 +691,25 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
         </div>
       </section>
 
+      {/* PRODUCT GALLERY */}
+      {"gallery" in product && Array.isArray((product as Record<string, unknown>).gallery) && (
+        <section className="relative py-20 md:py-24 bg-neutral-50 overflow-hidden">
+          <div className="container-wide relative z-10">
+            <div className="eyebrow mb-4"><span className="eyebrow-dot" />Gallery</div>
+            <h2 className="text-neutral-900 leading-[1.05] mb-10" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.85rem, 3.4vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
+              Product <span className="serif-italic text-orange-600">close-up.</span>
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {((product as Record<string, unknown>).gallery as { src: string; alt: string }[]).map((img) => (
+                <div key={img.src} className="group relative aspect-square rounded-2xl border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-25px_rgba(234,88,12,0.25)]" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+                  <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FULL SPECIFICATIONS - dark band */}
       <section id="specs" className="relative py-24 md:py-28 bg-[#0a0a0a] text-white overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-[0.06]" />
@@ -781,7 +819,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
 
       {/* Live 3D Installation Walkthrough */}
       {slug !== "accessories" && (
-        <PipeLayerSectionClient variant="nbr" />
+        <PipeLayerSectionClient variant="nbr" productSlug={productSlug} />
       )}
 
       {/* CTA - light premium */}

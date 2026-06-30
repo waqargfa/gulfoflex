@@ -36,6 +36,7 @@ const footerProducts = [
   { name: "Gulf-O-Flex Sound", href: "/products/sound" },
   { name: "Gulf-O-Flex Aluglass", href: "/products/aluglass" },
   { name: "Gulf-O-Flex Aluclad", href: "/products/aluclad" },
+  { name: "Gulf-O-Flex UltraLine", href: "/products/ultraline" },
   { name: "Accessories", href: "/products/accessories" },
 ];
 

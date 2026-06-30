@@ -321,48 +321,6 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      {/* ── Standards table ── */}
-      <section className="py-20 md:py-28 bg-neutral-50 relative">
-        <div className="absolute inset-0 grid-bg opacity-[0.10]" />
-        <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-12">
-            <div className="lg:col-span-7">
-              <div className="eyebrow mb-4"><span className="eyebrow-dot" />Compliance Standards · {standards.length}</div>
-              <h2 className="text-neutral-900 leading-[1.05]"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
-                Tested against the <span className="serif-italic text-orange-600">global rulebook.</span>
-              </h2>
-            </div>
-            <p className="lg:col-span-5 text-neutral-600 leading-relaxed">
-              Gulf-O-Flex® products are tested against the following international standards, enabling specification on projects worldwide , from a Class-O ceiling in Dubai to a LEED Platinum tower in North America.
-            </p>
-          </div>
-          <div className="rounded-3xl border bg-white overflow-hidden shadow-[0_30px_80px_-30px_rgba(0,0,0,0.10)]"
-            style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-            <div className="px-7 py-4 border-b flex items-center justify-between" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-              <div className="flex items-center gap-2">
-                <ShieldCheck size={14} className="text-orange-600" />
-                <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">International standards register</span>
-              </div>
-              <span className="text-xs text-neutral-400">{standards.length} entries</span>
-            </div>
-            {standards.map((s, i) => (
-              <div key={s.code}
-                className={`grid grid-cols-[140px_1fr_auto] items-center gap-4 px-7 py-4 transition-colors hover:bg-orange-50/40 ${i % 2 === 0 ? "bg-neutral-50/60" : "bg-white"}`}
-                style={{ borderTop: i === 0 ? "none" : "1px solid rgba(0,0,0,0.04)" }}>
-                <span className="inline-flex items-center justify-center text-[10px] font-bold tracking-[0.12em] uppercase text-orange-700 bg-orange-50 border border-orange-200 px-3 py-1.5 rounded-full">
-                  {s.code}
-                </span>
-                <span className="text-neutral-800 text-sm">{s.name}</span>
-                <span className="inline-flex items-center gap-1.5 text-neutral-500 text-xs">
-                  <Globe2 size={11} /> {s.region}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Why this matters ── */}
       <section className="py-20 md:py-28 bg-white relative">
         <div className="container-wide">

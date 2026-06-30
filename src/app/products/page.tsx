@@ -47,7 +47,7 @@ const products = [
     keyFeatures: ["λ 0.045 W/m·K @ 35°C", "Class O Fire Rated (BS 476)", "μ ≥ 11,000 (foil side)", "Operating −183°C to +115°C"],
     applications: ["HVAC Ducts", "Underfloor", "Automotive", "Marine"],
     tag: "Premium",
-    image: "/assets/duct.webp",
+    image: "/images/products/xlpe/xlpe.png",
   },
   {
     slug: "sound",
