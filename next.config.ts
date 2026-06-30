@@ -37,7 +37,7 @@ const nextConfig: NextConfig = {
       ...(isProd
         ? [
             {
-              source: "/:path((?!_next/static|fonts|images|.*\\.(?:js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf)).*)",
+              source: "/:path((?!_next/static|fonts|images|videos|.*\\.(?:js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|webm)).*)",
               headers: [
                 { key: "Cache-Control", value: "no-store, must-revalidate" },
               ],

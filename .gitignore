@@ -48,5 +48,5 @@ next-env.d.ts
 /public/assets/*.JPEG
 /public/assets/plain/
 
-# Large video files — serve from CDN/cloud storage
+# Large video files — upload manually to server
 /public/videos/
