@@ -15,7 +15,7 @@ const products = {
   nbr: {
     name: "Gulf-O-Flex® NBR",
     icon: Thermometer,
-    heroImage: "/assets/plain/C_107249.jpg",
+    heroImage: "/images/products/nbr/White NBR_C10009.png",
     heroVideo: "/videos/products/nbr.mp4",
     shortName: "Closed-Cell NBR Rubber Insulation",
     tagline: "The benchmark for thermal and acoustic pipe insulation in HVAC and MEP applications across the Middle East.",
@@ -56,6 +56,12 @@ const products = {
       "District Cooling Networks",
       "Industrial Process Piping",
       "Plumbing Condensation Control",
+    ],
+    gallery: [
+      { src: "/images/products/nbr/White NBR_C10009.png", alt: "Gulf-O-Flex NBR closed-cell rubber insulation" },
+      { src: "/images/products/nbr/White NBR_C20009.png", alt: "Gulf-O-Flex NBR pipe insulation" },
+      { src: "/images/products/nbr/White NBR_C30009.png", alt: "Gulf-O-Flex NBR sheet insulation" },
+      { src: "/images/products/nbr/White NBR_C40009.png", alt: "Gulf-O-Flex NBR insulation application" },
     ],
     downloads: [
       { name: "NBR Product Datasheet", format: "PDF", size: "2.4 MB" },
@@ -116,7 +122,7 @@ const products = {
   sound: {
     name: "Gulf O Sound",
     icon: Volume2,
-    heroImage: "/assets/plain/C_107300.jpg",
+    heroImage: "/images/products/sound-product.png",
     shortName: "Open-Cell Acoustic Elastomeric Foam",
     tagline: "Flexible open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R, pipelines, plant rooms and industrial environments.",
     color: "neutral",
@@ -147,6 +153,11 @@ const products = {
     ],
     certifications: ["BS 476 Part 7", "EN 14706", "ASTM D1622", "ASTM C518"],
     applications: ["HVAC Duct Liner", "Plant Room Acoustic Insulation", "Conference Rooms & Cabin Partitions", "OEM Equipment (Generators)", "Wall Partitions", "Oil & Gas / Automotive / Construction"],
+    gallery: [
+      { src: "/images/products/sound-product.png", alt: "Gulf O Sound open-cell acoustic foam" },
+      { src: "/images/products/sound-1.webp", alt: "Gulf O Sound insulation sheet" },
+      { src: "/images/products/sound-2.webp", alt: "Gulf O Sound acoustic application" },
+    ],
     downloads: [
       { name: "Gulf O Sound Product Datasheet", format: "PDF", size: "2.1 MB" },
       { name: "Acoustic Design Guide", format: "PDF", size: "3.4 MB" },
@@ -155,7 +166,7 @@ const products = {
   aluglass: {
     name: "Gulf-O-Flex® Aluglass",
     icon: Layers,
-    heroImage: "/assets/ALUGLASS.png",
+    heroImage: "/images/products/aluglass/White Aluglass_C1.0010016.png",
     heroVideo: "/videos/products/aluglass.mp4",
     shortName: "NBR Elastomeric Foam with Aluglass Facing",
     tagline: "Best-selling rubber insulation finished with a factory-applied aluminum glass cloth facing - a passive, self-sustaining solution for energy efficiency.",
@@ -204,6 +215,12 @@ const products = {
       "Oil & Gas",
       "Automotive Industry",
     ],
+    gallery: [
+      { src: "/images/products/aluglass/White Aluglass_C1.0010016.png", alt: "Gulf-O-Flex Aluglass insulation" },
+      { src: "/images/products/aluglass/White Aluglass_C2.0010016.png", alt: "Aluglass pipe insulation" },
+      { src: "/images/products/aluglass/White Aluglass_C3.0010016.png", alt: "Aluglass sheet insulation" },
+      { src: "/images/products/aluglass/White Aluglass_C4.0010016.png", alt: "Aluglass application" },
+    ],
     downloads: [
       { name: "Aluglass Product Datasheet", format: "PDF", size: "1.6 MB" },
     ],
@@ -211,7 +228,7 @@ const products = {
   aluclad: {
     name: "Gulf-O-Flex® Aluclad",
     icon: Shield,
-    heroImage: "/assets/ALUCLAD 2 (2).png",
+    heroImage: "/images/products/aluclad/White Aluclad_C1.0010048.png",
     heroVideo: "/videos/products/aluclad.mp4",
     shortName: "NBR Foam with Alu-Clad Facing",
     tagline: "Best-selling closed-cell NBR insulation with factory-applied Alu-Clad facing - a passive, self-sustaining solution for outdoor and mechanical systems.",
@@ -258,6 +275,12 @@ const products = {
       "Outdoor / External Pipework",
       "Residential & Commercial Properties",
       "Construction, Oil & Gas, Automotive",
+    ],
+    gallery: [
+      { src: "/images/products/aluclad/White Aluclad_C1.0010048.png", alt: "Gulf-O-Flex Aluclad insulation" },
+      { src: "/images/products/aluclad/White Aluclad_C2.0010048.png", alt: "Aluclad pipe jacketing" },
+      { src: "/images/products/aluclad/White Aluclad_C3.0010048.png", alt: "Aluclad sheet insulation" },
+      { src: "/images/products/aluclad/White Aluclad_C4.0010048.png", alt: "Aluclad outdoor application" },
     ],
     downloads: [
       { name: "Aluclad Product Datasheet", format: "PDF", size: "1.8 MB" },
@@ -384,7 +407,7 @@ const products = {
   accessories: {
     name: "Accessories & Adhesives",
     icon: Package,
-    heroImage: "/assets/aluminium.webp",
+    heroImage: "/images/products/accessories-glue1.webp",
     shortName: "Complete Installation System",
     tagline: "A complete range of adhesives, sealants, tapes, and anti-vibration accessories engineered for full system compatibility with Gulf-O-Flex® insulation.",
     color: "orange",
