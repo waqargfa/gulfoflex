@@ -152,14 +152,25 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
 
   const activePipe = pipeFolder[productSlug || ""] || pipeFolder.nbr;
 
-  // Determine available tabs based on product
-  const hasDuctNbr = !productSlug || productSlug === "nbr" || productSlug === "xlpe" || productSlug === "sound" || productSlug === "ultra" || productSlug === "ultraline" || productSlug === "aluclad";
-  const hasDuctAluglass = !productSlug || productSlug === "aluglass";
+  // Product-specific duct render folder mapping
+  const ductFolder: Record<string, { folder: string; prefix: string; frameCount: number }> = {
+    nbr: { folder: "Render/duct/nbr", prefix: "NBR_Final_Ducts_", frameCount: 361 },
+    xlpe: { folder: "Render/duct/xlpe", prefix: "XLPE DUCTS_", frameCount: 361 },
+    sound: { folder: "Render/duct/sound", prefix: "Sound Ducts_", frameCount: 375 },
+    aluglass: { folder: "Render/duct/aluglass", prefix: "Alu_Glass_Ducts", frameCount: 361 },
+    aluclad: { folder: "Render/duct/aluclad", prefix: "ALUCLAD DUCTS_", frameCount: 361 },
+    ultra: { folder: "Render/duct/ultra", prefix: "Ultra Ducts_", frameCount: 361 },
+    ultraline: { folder: "Render/duct/ultra", prefix: "Ultra Ducts_", frameCount: 361 },
+  };
 
-  type TabType = "pipe" | "duct" | "aluglass";
+  const activeDuct = ductFolder[productSlug || ""] || ductFolder.nbr;
+
+  // Determine available tabs based on product
+  const hasDuct = true;
+
+  type TabType = "pipe" | "duct";
   const tabs: TabType[] = ["pipe"];
-  if (hasDuctNbr) tabs.push("duct");
-  if (hasDuctAluglass) tabs.push("aluglass");
+  if (hasDuct) tabs.push("duct");
 
   const [activePanel, setActivePanel] = useState<TabType>(tabs[0]);
 
@@ -171,10 +182,7 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
           <RenderSequence progressRef={progressRef} folder={activePipe.folder} prefix={activePipe.prefix} frameCount={361} padLength={activePipe.padLength} ext="webp" />
         )}
         {activePanel === "duct" && (
-          <RenderSequence progressRef={progressRef} folder="Render/duct/nbr" prefix="NBR_Final_Ducts_" frameCount={361} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
-        )}
-        {activePanel === "aluglass" && (
-          <RenderSequence progressRef={progressRef} folder="Render/duct/aluglass" prefix="Alu_Glass_Ducts" frameCount={361} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
+          <RenderSequence progressRef={progressRef} folder={activeDuct.folder} prefix={activeDuct.prefix} frameCount={activeDuct.frameCount} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
         )}
       </div>
 
@@ -191,7 +199,7 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
               color: activePanel === tab ? "#f97316" : "rgba(255,255,255,0.6)",
             }}
           >
-            {tab === "pipe" ? "Pipe" : tab === "duct" ? "Duct" : "Aluglass"}
+            {tab === "pipe" ? "Pipe" : "Duct"}
           </button>
         ))}
       </div>
