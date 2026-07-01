@@ -139,19 +139,36 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 
 /* Two-panel NBR render: Pipe + Duct side by side */
 function NbrDualRender({ progressRef, productSlug }: { progressRef: React.MutableRefObject<number>; productSlug?: string }) {
-  const tabs = productSlug === "aluglass"
-    ? ["pipe", "aluglass"] as const
-    : productSlug === "nbr"
-      ? ["pipe", "duct"] as const
-      : ["pipe", "duct", "aluglass"] as const;
-  const [activePanel, setActivePanel] = useState<"pipe" | "duct" | "aluglass">(tabs[0]);
+  // Product-specific pipe render folder mapping
+  const pipeFolder: Record<string, { folder: string; prefix: string; padLength: number }> = {
+    nbr: { folder: "Render/pipe", prefix: "Render", padLength: 4 },
+    xlpe: { folder: "Render/pipe/XLPE", prefix: "XLPE_", padLength: 5 },
+    sound: { folder: "Render/pipe/Sound", prefix: "Sound_", padLength: 5 },
+    aluglass: { folder: "Render/pipe/Aluglass", prefix: "Aluglass_", padLength: 5 },
+    aluclad: { folder: "Render/pipe/Aluclad", prefix: "Aluclad_", padLength: 5 },
+    ultra: { folder: "Render/pipe/ultra", prefix: "Pipes Render Ultra_", padLength: 5 },
+    ultraline: { folder: "Render/pipe/ultra", prefix: "Pipes Render Ultra_", padLength: 5 },
+  };
+
+  const activePipe = pipeFolder[productSlug || ""] || pipeFolder.nbr;
+
+  // Determine available tabs based on product
+  const hasDuctNbr = !productSlug || productSlug === "nbr" || productSlug === "xlpe" || productSlug === "sound" || productSlug === "ultra" || productSlug === "ultraline" || productSlug === "aluclad";
+  const hasDuctAluglass = !productSlug || productSlug === "aluglass";
+
+  type TabType = "pipe" | "duct" | "aluglass";
+  const tabs: TabType[] = ["pipe"];
+  if (hasDuctNbr) tabs.push("duct");
+  if (hasDuctAluglass) tabs.push("aluglass");
+
+  const [activePanel, setActivePanel] = useState<TabType>(tabs[0]);
 
   return (
     <div className="absolute inset-0">
       {/* Render panels - only mount active panel */}
       <div className="absolute inset-0">
         {activePanel === "pipe" && (
-          <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Render" frameCount={361} padLength={4} ext="webp" />
+          <RenderSequence progressRef={progressRef} folder={activePipe.folder} prefix={activePipe.prefix} frameCount={361} padLength={activePipe.padLength} ext="webp" />
         )}
         {activePanel === "duct" && (
           <RenderSequence progressRef={progressRef} folder="Render/duct/nbr" prefix="NBR_Final_Ducts_" frameCount={361} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
