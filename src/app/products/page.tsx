@@ -59,7 +59,7 @@ const products = [
     keyFeatures: ["NRC up to 1.00", "High Flexibility", "Class O Fire Rated", "100% Recycled Material"],
     applications: ["HVAC Duct Liner", "Plant Rooms", "Conference Rooms", "OEM"],
     tag: "Acoustic",
-    image: "/assets/plain/C_107300.jpg",
+    image: "/images/products/sound/White Sound_C1.0040021.png",
   },
   {
     slug: "aluglass",
@@ -95,7 +95,7 @@ const products = [
     keyFeatures: ["λ 0.030 W/m·K @ 0°C", "Operating −50°C to +115°C", "μ > 10,000 (BS EN 12086)", "Class O Fire Rated · Zero ODP"],
     applications: ["Chilled Water", "District Cooling", "Cryogenic Piping", "Data Centres"],
     tag: "Premium",
-    image: "/assets/plain/C_107249.jpg",
+    image: "/images/products/ultra/ultra.png",
   },
   {
     slug: "ultraline",
@@ -107,7 +107,7 @@ const products = [
     keyFeatures: ["Continuous Coils up to 50 m", "Single / Twin / Multi-Tube", "Integral Vapour Barrier", "UV-Stable LDPE Outer Jacket"],
     applications: ["VRF / VRV", "Split AC", "Chilled Water", "Solar Thermal"],
     tag: "System",
-    image: "/assets/duct.webp",
+    image: "/images/products/ultraline/ultraline.png",
   },
   {
     slug: "accessories",

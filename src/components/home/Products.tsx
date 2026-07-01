@@ -56,7 +56,12 @@ const products = [
     tagline: "Engineered for superior sound attenuation in mechanical rooms, duct systems, and industrial environments - combining thermal and acoustic performance in one solution.",
     features: ["Noise Reduction", "Shock Absorption", "Excellent Flexibility"],
     icon: Volume2,
-    image: "/images/products/sound-1.webp",
+    images: [
+      "/images/products/sound/White Sound_C1.0040021.png",
+      "/images/products/sound/White Sound_C2.0040021.png",
+      "/images/products/sound/White Sound_C3.0030021.png",
+    ],
+    image: "/images/products/sound/White Sound_C1.0040021.png",
     href: "/products/sound",
     badge: "Acoustic Expert",
   },

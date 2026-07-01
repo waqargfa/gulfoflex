@@ -122,7 +122,7 @@ const products = {
   sound: {
     name: "Gulf O Sound",
     icon: Volume2,
-    heroImage: "/images/products/sound-product.png",
+    heroImage: "/images/products/sound/White Sound_C1.0040021.png",
     shortName: "Open-Cell Acoustic Elastomeric Foam",
     tagline: "Flexible open-cell elastomeric foam engineered to absorb sound and dampen vibration in HVAC/R, pipelines, plant rooms and industrial environments.",
     color: "neutral",
@@ -154,9 +154,9 @@ const products = {
     certifications: ["BS 476 Part 7", "EN 14706", "ASTM D1622", "ASTM C518"],
     applications: ["HVAC Duct Liner", "Plant Room Acoustic Insulation", "Conference Rooms & Cabin Partitions", "OEM Equipment (Generators)", "Wall Partitions", "Oil & Gas / Automotive / Construction"],
     gallery: [
-      { src: "/images/products/sound-product.png", alt: "Gulf O Sound open-cell acoustic foam" },
-      { src: "/images/products/sound-1.webp", alt: "Gulf O Sound insulation sheet" },
-      { src: "/images/products/sound-2.webp", alt: "Gulf O Sound acoustic application" },
+      { src: "/images/products/sound/White Sound_C1.0040021.png", alt: "Gulf O Sound open-cell acoustic foam" },
+      { src: "/images/products/sound/White Sound_C2.0040021.png", alt: "Gulf O Sound insulation sheet" },
+      { src: "/images/products/sound/White Sound_C3.0030021.png", alt: "Gulf O Sound acoustic application" },
     ],
     downloads: [
       { name: "Gulf O Sound Product Datasheet", format: "PDF", size: "2.1 MB" },
