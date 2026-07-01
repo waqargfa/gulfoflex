@@ -48,5 +48,5 @@ next-env.d.ts
 /public/assets/*.JPEG
 /public/assets/plain/
 
-# Large video files — upload manually to server
-/public/videos/
+# Keep MP4 originals out of git (too large)
+*.mp4
