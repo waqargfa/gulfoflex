@@ -5,7 +5,7 @@
  * animation (no controls, no audio, no user interaction required).
  *
  * Expected source files (add to /public/videos/products/):
- *   {slug}.webm (preferred, VP9) and {slug}.mp4 (fallback)
+ *   {slug}.webm (VP9)
  *
  * A poster image at /images/products/{slug}.jpg is used as a fallback while
  * the video loads or if the file is missing.
@@ -21,7 +21,6 @@ type Props = {
 
 export default function ProductAnimation({ slug, shortName }: Props) {
   const webmSrc = `/videos/products/${slug}.webm`;
-  const mp4Src = `/videos/products/${slug}.mp4`;
   const poster = `/images/products/${slug}.jpg`;
 
   return (
@@ -36,10 +35,8 @@ export default function ProductAnimation({ slug, shortName }: Props) {
         playsInline
         preload="metadata"
         aria-label={`${shortName} product animation`}
-      >
-        <source src={webmSrc} type="video/webm" />
-        <source src={mp4Src} type="video/mp4" />
-      </video>
+        src={webmSrc}
+      />
       {/* subtle cinematic vignette to blend with the surrounding dark panel */}
       <div
         aria-hidden

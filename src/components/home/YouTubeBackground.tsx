@@ -4,8 +4,7 @@
  * VideoBackground
  *
  * Full-bleed, muted, looping HTML5 video for the hero section.
- * Place your video at  public/hero-bg.mp4  (and optionally
- * public/hero-bg.webm for better compression on Chrome/Firefox).
+ * Place your video at  public/hero-bg.webm
  *
  * The video covers the container like background-size:cover
  * (object-fit: cover on an absolutely-positioned element).
@@ -15,15 +14,12 @@
 import { useRef, useEffect } from "react";
 
 interface Props {
-  /** Path relative to /public, e.g. "/hero-bg.mp4" */
+  /** Path relative to /public, e.g. "/hero-bg.webm" */
   src?: string;
-  /** Optional WebM source for better compression */
-  srcWebm?: string;
 }
 
 export default function VideoBackground({
-  src     = "/hero-bg.mp4",
-  srcWebm,
+  src = "/hero-bg.webm",
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -62,8 +58,7 @@ export default function VideoBackground({
           objectPosition: "center center",
         }}
       >
-        {srcWebm && <source src={srcWebm} type="video/webm" />}
-        <source src={src} type="video/mp4" />
+        <source src={src} type="video/webm" />
       </video>
 
       {/* Warm-dark overlay - keeps text readable over bright video frames */}

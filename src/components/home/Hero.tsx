@@ -131,7 +131,7 @@ export default function Hero() {
     >
       {/* ── Background ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <YouTubeBackground src="/slidervideo.mp4" />
+        <YouTubeBackground src="/slidervideo.webm" />
 
         {/* Ambient blooms */}
         <div
