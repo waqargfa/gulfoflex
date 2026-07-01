@@ -151,13 +151,13 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
       {/* Render panels - only mount active panel */}
       <div className="absolute inset-0">
         {activePanel === "pipe" && (
-          <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Render" frameCount={361} padLength={4} ext="png" />
+          <RenderSequence progressRef={progressRef} folder="Render/pipe" prefix="Render" frameCount={361} padLength={4} ext="webp" />
         )}
         {activePanel === "duct" && (
-          <RenderSequence progressRef={progressRef} folder="Render/duct/nbr" prefix="NBR_Final_Ducts_" frameCount={361} padLength={5} ext="png" scale={0.6} topCrop={-0.12} />
+          <RenderSequence progressRef={progressRef} folder="Render/duct/nbr" prefix="NBR_Final_Ducts_" frameCount={361} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
         )}
         {activePanel === "aluglass" && (
-          <RenderSequence progressRef={progressRef} folder="Render/duct/aluglass" prefix="Alu_Glass_Ducts" frameCount={361} padLength={5} ext="png" scale={0.6} topCrop={-0.12} />
+          <RenderSequence progressRef={progressRef} folder="Render/duct/aluglass" prefix="Alu_Glass_Ducts" frameCount={361} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
         )}
       </div>
 
