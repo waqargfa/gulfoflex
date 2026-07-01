@@ -94,7 +94,7 @@ export default function ExperienceCentrePage() {
         className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10"
         style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}
       >
-        <PageHero src="/images/experience/_DSC9952.jpg" focalY="40%" intensity={0.7} />
+        <PageHero src="/images/experience/side image.jpeg" focalY="40%" intensity={0.7} />
         <div className="noise" />
 
         <div className="container-wide relative z-10">
@@ -289,37 +289,6 @@ export default function ExperienceCentrePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Video Section ── */}
-      <section className="py-20 md:py-28 bg-neutral-50">
-        <div className="container-wide">
-          <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase text-orange-600 mb-4">
-              <Video size={13} /> Watch & Learn
-            </span>
-            <h2
-              className="text-neutral-900 mb-4"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, letterSpacing: "-0.03em" }}
-            >
-              Experience Centre Videos
-            </h2>
-            <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
-              Watch guided walkthroughs of our facility and live product demonstrations by our technical team.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="aspect-video rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-lg relative">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-                <div className="w-16 h-16 rounded-full bg-orange-500/10 border-2 border-orange-500/40 flex items-center justify-center">
-                  <Play size={28} className="text-orange-500 ml-0.5" />
-                </div>
-                <p className="text-neutral-500 text-sm font-medium">Video walkthrough coming soon</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
