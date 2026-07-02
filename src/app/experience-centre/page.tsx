@@ -293,38 +293,6 @@ export default function ExperienceCentrePage() {
         </div>
       </section>
 
-      {/* ── Inauguration Video ── */}
-      <section className="py-20 md:py-28 bg-neutral-50">
-        <div className="container-wide">
-          <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase text-orange-600 mb-4">
-              <Play size={13} /> Inauguration Day
-            </span>
-            <h2
-              className="text-neutral-900 mb-4"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, letterSpacing: "-0.03em" }}
-            >
-              Experience Centre Opening
-            </h2>
-            <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
-              Relive the inauguration of our state-of-the-art Experience Centre — a milestone moment for Gulf-O-Flex®.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="aspect-video rounded-2xl overflow-hidden border border-neutral-200 shadow-xl">
-              <iframe
-                src="https://www.youtube.com/embed/_xBbdDqPclk"
-                title="Gulf-O-Flex Experience Centre Inauguration"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Booking ── */}
       <BookingSection />
 

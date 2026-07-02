@@ -8,7 +8,6 @@ const Products = dynamic(() => import("@/components/home/Products"));
 const Industries = dynamic(() => import("@/components/home/Industries"));
 const Marquee = dynamic(() => import("@/components/home/Marquee"));
 const Awards = dynamic(() => import("@/components/home/Awards"));
-const Certifications = dynamic(() => import("@/components/home/Certifications"));
 const ExperienceCTA = dynamic(() => import("@/components/home/ExperienceCTA"));
 const Contact = dynamic(() => import("@/components/home/Contact"));
 
@@ -31,7 +30,6 @@ export default function HomePage() {
       <Industries />
       <Marquee />
       <Awards />
-      <Certifications />
       <ExperienceCTA />
       <Contact />
     </>

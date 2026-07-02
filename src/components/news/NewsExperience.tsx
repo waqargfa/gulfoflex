@@ -168,15 +168,26 @@ export default function NewsExperience({
   };
 
   const upcomingEvents = useMemo(
-    () => events.filter((e) => e.status === "upcoming").sort((a, b) => +new Date(a.startISO) - +new Date(b.startISO)),
+    () => {
+      const today = new Date().toISOString().slice(0, 10);
+      return events.filter((e) => e.endISO >= today).sort((a, b) => +new Date(a.startISO) - +new Date(b.startISO));
+    },
     [events],
   );
   const pastEvents = useMemo(
-    () => events.filter((e) => e.status === "past").sort((a, b) => +new Date(b.startISO) - +new Date(a.startISO)),
+    () => {
+      const today = new Date().toISOString().slice(0, 10);
+      return events.filter((e) => e.endISO < today).sort((a, b) => +new Date(b.startISO) - +new Date(a.startISO));
+    },
     [events],
   );
   const heroEvent = upcomingEvents.find((e) => e.featured) ?? upcomingEvents[0];
   const visibleEvents = eventsTab === "upcoming" ? upcomingEvents : pastEvents;
+
+  // Auto-switch to "past" tab if no upcoming events
+  useEffect(() => {
+    if (upcomingEvents.length === 0) setEventsTab("past");
+  }, [upcomingEvents.length]);
 
   // Lightbox keyboard navigation
   useEffect(() => {
