@@ -75,6 +75,21 @@ const accentMap: Record<string, { text: string; bg: string; border: string; ring
   cyan:   { text: "text-neutral-700",bg: "bg-neutral-50",border: "border-neutral-200",ring: "ring-neutral-500/30" },
 };
 
+/** Extract the 11-char YouTube video id from a watch/short/embed/youtu.be URL. */
+function getYouTubeId(url?: string): string | null {
+  if (!url) return null;
+  const m = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/)|youtu\.be\/)([\w-]{11})/,
+  );
+  return m ? m[1] : null;
+}
+
+/** Build a 16:9 thumbnail URL for a YouTube video (hqdefault always exists). */
+function youTubeThumb(url?: string): string | null {
+  const id = getYouTubeId(url);
+  return id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : null;
+}
+
 export default function NewsExperience({
   articles,
   categories,
@@ -97,7 +112,7 @@ export default function NewsExperience({
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [sliderIdx, setSliderIdx] = useState(0);
   const [sliderPaused, setSliderPaused] = useState(false);
-
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
   // Sticky filter bar shadow on scroll
   const [stuck, setStuck] = useState(false);
   useEffect(() => {
@@ -205,6 +220,20 @@ export default function NewsExperience({
     };
   }, [lightbox, gallery.length]);
 
+  // Video modal: escape to close + scroll lock
+  useEffect(() => {
+    if (!videoUrl) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setVideoUrl(null);
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [videoUrl]);
+
   return (
     <>
       {/* ── Hero Slider ── */}
@@ -215,15 +244,17 @@ export default function NewsExperience({
         onMouseLeave={() => setSliderPaused(false)}
       >
         {/* Slide backgrounds */}
-        {sliderSlides.map((slide, i) => (
+        {sliderSlides.map((slide, i) => {
+          const slideBg = slide.image ?? youTubeThumb(slide.video);
+          return (
           <div
             key={slide.iso + i}
             className="absolute inset-0 transition-opacity duration-1000"
             style={{ opacity: i === sliderIdx ? 1 : 0, zIndex: i === sliderIdx ? 1 : 0 }}
           >
-            {slide.image && (
+            {slideBg && (
               <Image
-                src={slide.image}
+                src={slideBg}
                 alt={slide.title}
                 fill
                 sizes="100vw"
@@ -235,7 +266,8 @@ export default function NewsExperience({
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
           </div>
-        ))}
+          );
+        })}
 
         {/* Navbar spacer */}
         <div className="relative z-10 pt-28 md:pt-36" />
@@ -318,9 +350,19 @@ export default function NewsExperience({
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <Link href="#all-stories" className="btn-primary">
-                      Read full story <ArrowUpRight size={16} />
-                    </Link>
+                    {slide.video ? (
+                      <button
+                        type="button"
+                        onClick={() => setVideoUrl(slide.video!)}
+                        className="btn-primary"
+                      >
+                        <PlayCircle size={18} /> Watch video
+                      </button>
+                    ) : (
+                      <Link href="#all-stories" className="btn-primary">
+                        Read full story <ArrowUpRight size={16} />
+                      </Link>
+                    )}
                     <Link href="#all-stories" className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white border border-white/20 hover:border-white/40 px-5 py-3 rounded-xl transition-all">
                       Browse all news
                     </Link>
@@ -580,13 +622,13 @@ export default function NewsExperience({
           ) : view === "grid" ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {filtered.map((a, i) => (
-                <ArticleCard key={a.title} a={a} index={i} bookmarked={!!bookmarks[a.title]} onBookmark={toggleBookmark} />
+                <ArticleCard key={a.title} a={a} index={i} bookmarked={!!bookmarks[a.title]} onBookmark={toggleBookmark} onPlay={setVideoUrl} />
               ))}
             </div>
           ) : (
             <div className="space-y-3">
               {filtered.map((a, i) => (
-                <ArticleRow key={a.title} a={a} index={i} bookmarked={!!bookmarks[a.title]} onBookmark={toggleBookmark} />
+                <ArticleRow key={a.title} a={a} index={i} bookmarked={!!bookmarks[a.title]} onBookmark={toggleBookmark} onPlay={setVideoUrl} />
               ))}
             </div>
           )}
@@ -762,6 +804,34 @@ export default function NewsExperience({
               <p className="text-white text-base font-semibold">{gallery[lightbox].caption}</p>
               <p className="text-white/50 text-xs mt-1">{lightbox + 1} / {gallery.length}</p>
             </div>
+          </div>
+          <style jsx>{`@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }`}</style>
+        </div>
+      )}
+
+      {/* ── Video player modal ── */}
+      {videoUrl && getYouTubeId(videoUrl) && (
+        <div
+          className="fixed inset-0 z-[110] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-[fadeIn_.2s_ease]"
+          onClick={() => setVideoUrl(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); setVideoUrl(null); }}
+            aria-label="Close video"
+            className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition"
+          >
+            <X size={18} />
+          </button>
+          <div className="relative w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src={`https://www.youtube.com/embed/${getYouTubeId(videoUrl)}?autoplay=1&rel=0&modestbranding=1`}
+              title="Video player"
+              className="absolute inset-0 w-full h-full rounded-2xl border border-white/10"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
           <style jsx>{`@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }`}</style>
         </div>
@@ -972,33 +1042,43 @@ function ArticleCard({
   index,
   bookmarked,
   onBookmark,
+  onPlay,
 }: {
   a: Article;
   index: number;
   bookmarked: boolean;
   onBookmark: (title: string) => void;
+  onPlay: (url: string) => void;
 }) {
   const c = accentMap[a.color] ?? accentMap.orange;
+  const thumb = a.image ?? youTubeThumb(a.video);
   return (
     <article
       className="group relative rounded-2xl border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(234,88,12,0.30)] hover:border-orange-300/60 cursor-pointer flex flex-col"
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
-      {(a.link || a.video) && (
+      {a.video ? (
+        <button
+          type="button"
+          onClick={() => onPlay(a.video!)}
+          aria-label={`Play ${a.title}`}
+          className="absolute inset-0 z-[1]"
+        />
+      ) : a.link ? (
         <a
-          href={a.video || a.link}
+          href={a.link}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={a.title}
           className="absolute inset-0 z-[1]"
         />
-      )}
+      ) : null}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
       <div className={`relative aspect-[16/9] overflow-hidden ${c.bg}`}>
-        {a.image ? (
+        {thumb ? (
           <>
             <Image
-              src={a.image}
+              src={thumb}
               alt={a.title}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -1073,37 +1153,54 @@ function ArticleRow({
   index,
   bookmarked,
   onBookmark,
+  onPlay,
 }: {
   a: Article;
   index: number;
   bookmarked: boolean;
   onBookmark: (title: string) => void;
+  onPlay: (url: string) => void;
 }) {
   const c = accentMap[a.color] ?? accentMap.orange;
+  const thumb = a.image ?? youTubeThumb(a.video);
   return (
     <article
       className="group relative rounded-2xl border bg-white p-6 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-30px_rgba(234,88,12,0.25)] hover:border-orange-300/60 cursor-pointer flex flex-col lg:flex-row gap-6"
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
-      {(a.link || a.video) && (
+      {a.video ? (
+        <button
+          type="button"
+          onClick={() => onPlay(a.video!)}
+          aria-label={`Play ${a.title}`}
+          className="absolute inset-0 z-[1]"
+        />
+      ) : a.link ? (
         <a
-          href={a.video || a.link}
+          href={a.link}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={a.title}
           className="absolute inset-0 z-[1]"
         />
-      )}
+      ) : null}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className={`hidden lg:flex shrink-0 w-32 aspect-square rounded-xl items-center justify-center ${c.bg} border ${c.border} relative overflow-hidden`}>
-        {a.image ? (
-          <Image
-            src={a.image}
-            alt={a.title}
-            fill
-            sizes="128px"
-            className="object-cover"
-          />
+        {thumb ? (
+          <>
+            <Image
+              src={thumb}
+              alt={a.title}
+              fill
+              sizes="128px"
+              className="object-cover"
+            />
+            {a.video && (
+              <span className="absolute inset-0 z-[2] flex items-center justify-center pointer-events-none">
+                <PlayCircle size={26} className="text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]" />
+              </span>
+            )}
+          </>
         ) : (
           <span
             className={`font-black ${c.text}`}
