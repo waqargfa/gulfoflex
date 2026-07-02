@@ -56,12 +56,12 @@ const teams: CountryTeam[] = [
     flag: "🇸🇦",
     code: "ksa",
     members: [
-      { name: "Shadab Ahmed",      role: "Head of Sales-KSA", roleType: "head",  email: "shad@rwi.sa", phone: "+966 00 000 0000" },
-      { name: "Sai Taj",     role: "Sales Engineer",     roleType: "sales", email: "saiteja@gulfoflex.com", phone: "+966 00 000 0000" },
+      { name: "Shadab Ahmed",      role: "Head of Sales-KSA", roleType: "head",  email: "shad@rwi.sa", phone: "+966 54 608 4319" },
+      { name: "Sai Taj",     role: "Sales Engineer",     roleType: "sales", email: "saiteja@gulfoflex.com", phone: "+966 54 608 4319" },
       { name: "Deepak Balaji",  role: "Specification manager",  roleType: "sales", email: "deepak@gulfoflex.com" },
-      { name: "Shahbaz Mirza", role: "Sales Engineer",     roleType: "sales", email: "Shahbaz@rwi.sa", phone: "+966 00 000 0000" },
-      { name: "Muhammad Saquib", role: "Retail Sales Engineer",     roleType: "sales", email: "saquib@rwi.sa", phone: "+966 00 000 0000" },
-      { name: "Hammad Raza", role: "Retail Sales Engineer",     roleType: "sales", email: "hammad@rwi.sa", phone: "+966 00 000 0000" },
+      { name: "Shahbaz Mirza", role: "Sales Engineer",     roleType: "sales", email: "Shahbaz@rwi.sa", phone: "+966 54 608 4319" },
+      { name: "Muhammad Saquib", role: "Retail Sales Engineer",     roleType: "sales", email: "saquib@rwi.sa", phone: "+966 54 608 4319" },
+      { name: "Hammad Raza", role: "Retail Sales Engineer",     roleType: "sales", email: "hammad@rwi.sa", phone: "+966 54 608 4319" },
     ],
   },
   {
@@ -78,7 +78,7 @@ const teams: CountryTeam[] = [
     flag: "🇱🇰",
     code: "srilanka",
     members: [
-      { name: "Oswin", role: "Sales & Specification Engineer", roleType: "sales", email: "oswin@gulfoflex.com", phone: "+94 11 000 0000" },
+      { name: "Oswin", role: "Sales & Specification Engineer", roleType: "sales", email: "oswin@gulfoflex.com", phone: "+94 771 666 139" },
       { name: "Mohsin", role: "Sales Executive", roleType: "sales", email: "sales@rwi.lk" },
     ],
   },
@@ -87,7 +87,7 @@ const teams: CountryTeam[] = [
     flag: "🇪🇬",
     code: "egypt",
     members: [
-      { name: "Mohamed Khaled Mamdouh", role: "Retail Sales Engineer", roleType: "sales", email: "sales.egypt@gulfoflex.com", phone: "+966 00 000 0000" },
+      { name: "Mohamed Khaled Mamdouh", role: "Retail Sales Engineer", roleType: "sales", email: "sales.egypt@gulfoflex.com", phone: "+966 54 608 4319" },
     ],
   },
   {
@@ -95,7 +95,7 @@ const teams: CountryTeam[] = [
     flag: "Af",
     code: "africa",
     members: [
-      { name: "Morayo Durojaye", role: "Retail Sales Engineer", roleType: "sales", email: "sales.africa@gulfoflex.com", phone: "+966 00 000 0000" },
+      { name: "Morayo Durojaye", role: "Retail Sales Engineer", roleType: "sales", email: "sales.africa@gulfoflex.com", phone: "+966 54 608 4319" },
     ],
   },
 ];
