@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/layout/PageHero";
+import BookingSection from "@/components/experience/BookingSection";
 import {
   ArrowUpRight,
   Building2,
   Camera,
+  CalendarDays,
   CheckCircle2,
   Compass,
   Eye,
@@ -18,8 +20,6 @@ import {
   RotateCcw,
   Sparkles,
   ThermometerSun,
-  Video,
-  Volume2,
   Zap,
 } from "lucide-react";
 
@@ -78,7 +78,7 @@ const tourFeatures = [
 ];
 
 const stats = [
-  { value: "500+", label: "Sq. Metres" },
+  { value: "3000+", label: "Sq. Metres" },
   { value: "7", label: "Product Zones" },
   { value: "30+", label: "Live Demos" },
   { value: "360°", label: "Virtual Tour" },
@@ -121,11 +121,11 @@ export default function ExperienceCentrePage() {
                 A world-class immersive showroom where engineers, consultants, and partners can explore, touch, and test our full range of insulation solutions — in person or through our interactive 3D virtual tour.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="#virtual-tour" className="btn-primary inline-flex items-center gap-2">
-                  <Compass size={18} /> Virtual Tour
+                <a href="#book-visit" className="btn-primary inline-flex items-center gap-2">
+                  <CalendarDays size={18} /> Book a Visit
                 </a>
-                <a href="#gallery" className="btn-ghost inline-flex items-center gap-2">
-                  <Camera size={16} /> View Gallery
+                <a href="#virtual-tour" className="btn-ghost inline-flex items-center gap-2">
+                  <Compass size={16} /> Virtual Tour
                 </a>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function ExperienceCentrePage() {
                 </div>
               </div>
               <Image
-                src="/images/experience/_DSC9952.jpg"
+                src="/images/experience/side image.jpeg"
                 alt="Experience Centre virtual tour preview"
                 fill
                 className="object-cover opacity-30"
@@ -293,6 +293,9 @@ export default function ExperienceCentrePage() {
         </div>
       </section>
 
+      {/* ── Booking ── */}
+      <BookingSection />
+
       {/* ── Visit CTA ── */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container-wide">
@@ -316,12 +319,12 @@ export default function ExperienceCentrePage() {
                   Schedule a private tour with our technical team. Whether you&apos;re an engineer, contractor, consultant, or distributor — we&apos;ll tailor the visit to your specific needs and projects.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link
-                    href="/contact"
+                  <a
+                    href="#book-visit"
                     className="btn-primary inline-flex items-center gap-2"
                   >
                     Book a Visit <ArrowUpRight size={16} />
-                  </Link>
+                  </a>
                   <a href="#virtual-tour" className="inline-flex items-center gap-2 text-neutral-300 hover:text-orange-400 transition-colors text-sm font-medium">
                     <Compass size={16} /> Or take the virtual tour
                   </a>

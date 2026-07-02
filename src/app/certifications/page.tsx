@@ -16,6 +16,7 @@ import {
   Award,
 } from "lucide-react";
 import CertificationsGrid from "@/components/certifications/CertificationsGrid";
+import { DownloadGateProvider } from "@/components/downloads/DownloadGate";
 import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
@@ -239,7 +240,9 @@ export default function CertificationsPage() {
       {/* ── Certifications grid ── */}
       <section className="py-20 md:py-28 bg-white relative">
         <div className="container-wide">
-          <CertificationsGrid certifications={certifications} />
+          <DownloadGateProvider>
+            <CertificationsGrid certifications={certifications} />
+          </DownloadGateProvider>
         </div>
       </section>
 

@@ -32,7 +32,6 @@ import {
   GraduationCap,
   Leaf,
   Briefcase,
-  Quote,
   Download,
   Newspaper,
   HelpCircle,
@@ -118,7 +117,6 @@ const companyGroups = [
       { name: "Experience Centre", desc: "Immersive 3D tour & product showcase", href: "/experience-centre", icon: Compass },
       { name: "Projects", desc: "Flagship installations worldwide", href: "/projects", icon: Building2 },
       { name: "Case Studies", desc: "In-depth project breakdowns", href: "/case-studies", icon: FileText },
-      { name: "Testimonials", desc: "What our partners say", href: "/testimonials", icon: Quote },
     ],
   },
   {

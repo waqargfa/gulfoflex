@@ -31,8 +31,10 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
   const loadedRef = useRef<boolean[]>(new Array(frameCount).fill(false));
   const loadingRef = useRef<Set<number>>(new Set());
   const lastFrameRef = useRef(-1);
+  const visibleRef = useRef(false);
 
-  const WINDOW = 15; // load ±15 frames around current position
+  const WINDOW = 10; // load ±10 frames around current position
+  const MAX_CONCURRENT = 4; // limit concurrent network requests
 
   const getUrl = useCallback((i: number) => {
     const filename = `${prefix}${String(i).padStart(padLength, "0")}.${ext}`;
@@ -85,8 +87,10 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 
   const loadFrame = useCallback((i: number) => {
     if (i < 0 || i >= frameCount || loadedRef.current[i] || loadingRef.current.has(i)) return;
+    if (loadingRef.current.size >= MAX_CONCURRENT) return; // throttle concurrent loads
     loadingRef.current.add(i);
     const img = new Image();
+    img.decoding = "async";
     img.src = getUrl(i);
     img.onload = () => {
       loadedRef.current[i] = true;
@@ -101,10 +105,23 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
     // Load current frame first, then nearby frames
     loadFrame(center);
     for (let d = 1; d <= WINDOW; d++) {
+      if (loadingRef.current.size >= MAX_CONCURRENT) break;
       loadFrame(center + d);
       loadFrame(center - d);
     }
   }, [loadFrame]);
+
+  // Visibility observer — only run rAF loop when in viewport
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { visibleRef.current = entry.isIntersecting; },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Load first frame immediately
   useEffect(() => { loadWindow(0); }, [loadWindow]);
@@ -112,6 +129,9 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
   useEffect(() => {
     let rafId: number;
     const draw = () => {
+      rafId = requestAnimationFrame(draw);
+      if (!visibleRef.current) return; // skip work when offscreen
+
       const p = progressRef.current;
       const frameIndex = Math.min(Math.floor(p * (frameCount - 1)), frameCount - 1);
 
@@ -121,7 +141,6 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
       if (frameIndex !== lastFrameRef.current && loadedRef.current[frameIndex]) {
         drawFrame(frameIndex);
       }
-      rafId = requestAnimationFrame(draw);
     };
     rafId = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(rafId);
@@ -1330,9 +1349,9 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
           ) : (
           <Canvas
             shadows="soft"
-            dpr={[1, 2]}
+            dpr={[1, 1.5]}
             camera={{ position: [2.4, 0.35, 5.0], fov: 28 }}
-            gl={{ antialias: true, alpha: true, powerPreference: "high-performance", preserveDrawingBuffer: false }}
+            gl={{ antialias: false, alpha: true, powerPreference: "high-performance", preserveDrawingBuffer: false }}
             style={{ background: "#080604" }}
             onCreated={({ gl }) => {
               const canvas = gl.domElement;
@@ -1356,8 +1375,8 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
               intensity={2.2}
               color="#fff2e0"
               castShadow
-              shadow-mapSize-width={2048}
-              shadow-mapSize-height={2048}
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
               shadow-camera-far={30}
               shadow-camera-left={-8}
               shadow-camera-right={8}

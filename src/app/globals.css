@@ -431,6 +431,28 @@
     padding-right: clamp(1.25rem, 5vw, 4rem);
   }
 
+  /* --- Booking form inputs --- */
+  .booking-input {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.10);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #171717 !important;
+    background: #fff;
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+    -webkit-text-fill-color: #171717;
+  }
+  .booking-input::placeholder {
+    color: #a3a3a3;
+    -webkit-text-fill-color: #a3a3a3;
+  }
+  .booking-input:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+  }
+
   /* --- Hover effects --- */
   .hover-lift {
     transition: transform 0.45s var(--ease-out-expo), box-shadow 0.45s var(--ease-smooth), border-color 0.35s ease;

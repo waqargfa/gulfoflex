@@ -32,7 +32,7 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "ae",
     name: "UAE",
-    siteUrl: "https://gfa.rwims.com/uae",
+    siteUrl: "https://gulfoflex.com/uae",
     phone: "+971 6 743 4176",
     phoneHref: "tel:+97167434176",
     whatsapp: "+971 6 743 4176",
@@ -69,7 +69,7 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "sa",
     name: "KSA",
-    siteUrl: "https://gfa.rwims.com/ksa",
+    siteUrl: "https://gulfoflex.com/ksa",
     phone: "+966 11 000 0000",
     phoneHref: "tel:+966110000000",
     whatsapp: "+966 11 000 0000",
@@ -113,7 +113,7 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "lk",
     name: "Sri Lanka",
-    siteUrl: "https://gfa.rwims.com/lk",
+    siteUrl: "https://gulfoflex.com/lk",
     phone: "+94 11 000 0000",
     phoneHref: "tel:+94110000000",
     whatsapp: "+94 11 000 0000",
@@ -155,7 +155,7 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "eg",
     name: "Egypt",
-    siteUrl: "https://gfa.rwims.com/eg",
+    siteUrl: "https://gulfoflex.com/eg",
     phone: "+20 2 0000 0000",
     phoneHref: "tel:+20200000000",
     whatsapp: "+20 2 0000 0000",
@@ -199,7 +199,7 @@ export const COUNTRIES: CountryData[] = [
   {
     code: "za",
     name: "Africa",
-    siteUrl: "https://gfa.rwims.com/africa",
+    siteUrl: "https://gulfoflex.com/africa",
     phone: "+27 11 000 0000",
     phoneHref: "tel:+27110000000",
     whatsapp: "+27 11 000 0000",

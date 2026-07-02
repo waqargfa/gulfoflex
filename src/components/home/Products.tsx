@@ -284,57 +284,11 @@ export default function Products() {
 
 
               {/* Cinematic overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" style={{ zIndex: 2 }} />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(130deg, rgba(249,115,22,0.22), transparent 52%)", zIndex: 2 }} />
-
-              {/* Large watermark shortcode */}
-              <div
-                className="absolute right-5 md:right-9 top-1/2 -translate-y-1/2 select-none pointer-events-none font-black text-white leading-none"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(5rem, 10vw, 10rem)",
-                  letterSpacing: "-0.07em",
-                  opacity: 0.11,
-                  transition: "opacity 0.8s ease",
-                }}
-              >
-                {active.short}
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" style={{ zIndex: 2 }} />
 
               {/* ── BOTTOM animated info - re-mounts to trigger slide-up ── */}
               <div key={`info-${animKey}`} className="absolute bottom-0 left-0 right-0 px-7 pb-8 z-10">
-                <h3
-                  className="gof-slide-up text-white font-bold leading-[1.0] mb-3"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.4rem, 2.8vw, 2.4rem)",
-                    letterSpacing: "-0.035em",
-                    animationDelay: "60ms",
-                  }}
-                >
-                  {active.name}
-                </h3>
-
-                <p
-                  className="gof-slide-up text-white/68 text-sm md:text-[15px] leading-relaxed max-w-xl mb-5 hidden sm:block"
-                  style={{ animationDelay: "110ms" }}
-                >
-                  {active.tagline}
-                </p>
-
-                <div className="gof-slide-up flex flex-wrap items-center gap-2 mb-6" style={{ animationDelay: "160ms" }}>
-                  {active.features.map((f) => (
-                    <span
-                      key={f}
-                      className="inline-flex items-center gap-1.5 text-[10px] md:text-[11px] font-semibold text-white/88 px-3 py-1.5 rounded-full bg-white/[0.09] backdrop-blur-sm border border-white/[0.15]"
-                    >
-                      <CheckCircle2 size={10} className="text-orange-300 shrink-0" />
-                      {f}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="gof-slide-up flex items-center justify-between gap-4" style={{ animationDelay: "210ms" }}>
+                <div className="gof-slide-up flex items-center justify-between gap-4" style={{ animationDelay: "60ms" }}>
                   <Link
                     href={active.href}
                     className="inline-flex items-center gap-2.5 text-sm font-bold text-white hover:text-orange-300 transition-colors duration-300"

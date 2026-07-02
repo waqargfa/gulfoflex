@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowDown, Download, Sparkles, ShieldCheck, Clock } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import DownloadsExplorer from "@/components/downloads/DownloadsExplorer";
+import { DownloadGateProvider } from "@/components/downloads/DownloadGate";
 
 export const metadata: Metadata = {
   title: "Download Center | Gulf-O-Flex® Technical Datasheets, Certifications & Guides",
@@ -104,7 +105,9 @@ export default function DownloadsPage() {
       </section>
 
       {/* ── Interactive Explorer (toolbar + results + CTA) ── */}
-      <DownloadsExplorer />
+      <DownloadGateProvider>
+        <DownloadsExplorer />
+      </DownloadGateProvider>
     </>
   );
 }

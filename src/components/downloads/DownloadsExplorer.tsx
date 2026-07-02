@@ -13,6 +13,7 @@ import {
   Filter,
   Grid3x3,
   List,
+  Lock,
   Package,
   Search,
   Share2,
@@ -20,6 +21,7 @@ import {
   Wrench,
   X,
 } from "lucide-react";
+import { useDownloadGate, openFile } from "./DownloadGate";
 
 type FileItem = {
   name: string;
@@ -38,6 +40,7 @@ type Category = {
   desc: string;
   accent: string; // tailwind-compatible RGB triplet, e.g. "249,115,22"
   files: FileItem[];
+  gated?: boolean; // require email + OTP verification before download
 };
 
 const categories: Category[] = [
@@ -60,6 +63,7 @@ const categories: Category[] = [
     name: "Certifications & Test Reports",
     accent: "234,88,12",
     desc: "ISO certifications, fire & life safety approvals, and UAE compliance documents.",
+    gated: true,
     files: [
       { name: "ISO 9001:2015 Quality Management Certificate", size: "0.5 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-9001.pdf", downloads: 9210, updated: "2025-11-08" },
       { name: "ISO 14001:2015 Environmental Management Certificate", size: "0.5 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-14001:2015.pdf", downloads: 6450, updated: "2025-11-08" },
@@ -96,12 +100,19 @@ const sortOptions = [
 type SortValue = (typeof sortOptions)[number]["value"];
 
 export default function DownloadsExplorer() {
+  const { ensureVerified } = useDownloadGate();
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState<string>("all");
   const [activeTypes, setActiveTypes] = useState<string[]>([]);
   const [view, setView] = useState<"grid" | "list">("list");
   const [sort, setSort] = useState<SortValue>("popular");
   const [copied, setCopied] = useState<string | null>(null);
+
+  const openGated = async (file: FileItem) => {
+    if (!file.href) return;
+    const ok = await ensureVerified();
+    if (ok) openFile(file.href);
+  };
 
   const toggleType = (t: string) =>
     setActiveTypes((cur) => (cur.includes(t) ? cur.filter((x) => x !== t) : [...cur, t]));
@@ -346,14 +357,14 @@ export default function DownloadsExplorer() {
                     >
                       <div className="divide-y" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                         {cat.files.map((f) => (
-                          <FileRow key={f.name} file={f} accent={cat.accent} onCopy={() => handleCopy(f.name, f.href)} copied={copied === f.name} />
+                          <FileRow key={f.name} file={f} accent={cat.accent} gated={!!cat.gated} onGuarded={() => openGated(f)} onCopy={() => handleCopy(f.name, f.href)} copied={copied === f.name} />
                         ))}
                       </div>
                     </div>
                   ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                       {cat.files.map((f) => (
-                        <FileCard key={f.name} file={f} accent={cat.accent} onCopy={() => handleCopy(f.name, f.href)} copied={copied === f.name} />
+                        <FileCard key={f.name} file={f} accent={cat.accent} gated={!!cat.gated} onGuarded={() => openGated(f)} onCopy={() => handleCopy(f.name, f.href)} copied={copied === f.name} />
                       ))}
                     </div>
                   )}
@@ -465,7 +476,7 @@ function BadgePill({ kind }: { kind: "NEW" | "UPDATED" | "POPULAR" }) {
   );
 }
 
-function FileRow({ file, accent, onCopy, copied }: { file: FileItem; accent: string; onCopy: () => void; copied: boolean }) {
+function FileRow({ file, accent, gated, onGuarded, onCopy, copied }: { file: FileItem; accent: string; gated?: boolean; onGuarded?: () => void; onCopy: () => void; copied: boolean }) {
   const href = file.href ?? "#";
   const external = !!file.href && file.href.startsWith("http");
   return (
@@ -511,21 +522,33 @@ function FileRow({ file, accent, onCopy, copied }: { file: FileItem; accent: str
         >
           {copied ? <Check size={13} className="text-orange-500" /> : <Share2 size={13} className="text-neutral-600" />}
         </button>
-        <a
-          href={href}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center gap-1.5 pl-3 pr-3 h-9 rounded-full text-white text-xs font-bold tracking-wider uppercase transition hover:scale-[1.04]"
-          style={{ background: `rgb(${accent})` }}
-        >
-          <Download size={13} /> Get
-        </a>
+        {gated ? (
+          <button
+            type="button"
+            onClick={onGuarded}
+            title="Verify your email to download"
+            className="inline-flex items-center gap-1.5 pl-3 pr-3 h-9 rounded-full text-white text-xs font-bold tracking-wider uppercase transition hover:scale-[1.04]"
+            style={{ background: `rgb(${accent})` }}
+          >
+            <Lock size={13} /> Get
+          </button>
+        ) : (
+          <a
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="inline-flex items-center gap-1.5 pl-3 pr-3 h-9 rounded-full text-white text-xs font-bold tracking-wider uppercase transition hover:scale-[1.04]"
+            style={{ background: `rgb(${accent})` }}
+          >
+            <Download size={13} /> Get
+          </a>
+        )}
       </div>
     </div>
   );
 }
 
-function FileCard({ file, accent, onCopy, copied }: { file: FileItem; accent: string; onCopy: () => void; copied: boolean }) {
+function FileCard({ file, accent, gated, onGuarded, onCopy, copied }: { file: FileItem; accent: string; gated?: boolean; onGuarded?: () => void; onCopy: () => void; copied: boolean }) {
   const href = file.href ?? "#";
   const external = !!file.href && file.href.startsWith("http");
   return (
@@ -557,15 +580,27 @@ function FileCard({ file, accent, onCopy, copied }: { file: FileItem; accent: st
         )}
       </div>
       <div className="flex items-center gap-2">
-        <a
-          href={href}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          className="flex-1 inline-flex items-center justify-center gap-1.5 h-10 rounded-xl text-white text-xs font-bold tracking-wider uppercase transition hover:scale-[1.02]"
-          style={{ background: `rgb(${accent})` }}
-        >
-          <Download size={13} /> Download
-        </a>
+        {gated ? (
+          <button
+            type="button"
+            onClick={onGuarded}
+            title="Verify your email to download"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 h-10 rounded-xl text-white text-xs font-bold tracking-wider uppercase transition hover:scale-[1.02]"
+            style={{ background: `rgb(${accent})` }}
+          >
+            <Lock size={13} /> Download
+          </button>
+        ) : (
+          <a
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="flex-1 inline-flex items-center justify-center gap-1.5 h-10 rounded-xl text-white text-xs font-bold tracking-wider uppercase transition hover:scale-[1.02]"
+            style={{ background: `rgb(${accent})` }}
+          >
+            <Download size={13} /> Download
+          </a>
+        )}
         <button
           type="button"
           onClick={onCopy}

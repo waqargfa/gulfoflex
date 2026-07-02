@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Award, X, ShieldCheck, ArrowUpRight, FileText, Download, ExternalLink, Info } from "lucide-react";
+import { Award, X, ShieldCheck, ArrowUpRight, FileText, Download, ExternalLink, Info, Lock } from "lucide-react";
 import Link from "next/link";
+import { useDownloadGate, openFile } from "@/components/downloads/DownloadGate";
 
 export type Certification = {
   name: string;
@@ -25,9 +26,22 @@ const accentMap: Record<string, string> = {
 };
 
 export default function CertificationsGrid({ certifications }: { certifications: Certification[] }) {
+  const { verified, ensureVerified } = useDownloadGate();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"details" | "pdf">("details");
   const active = activeIndex !== null ? certifications[activeIndex] : null;
+
+  // Reveal the certificate PDF only after email + OTP verification.
+  const revealPdf = async () => {
+    const ok = await ensureVerified();
+    if (ok) setActiveTab("pdf");
+  };
+
+  const guardedOpen = async (url?: string) => {
+    if (!url) return;
+    const ok = await ensureVerified();
+    if (ok) openFile(url);
+  };
 
   // Reset tab to "details" whenever a new cert is opened
   useEffect(() => {
@@ -177,14 +191,14 @@ export default function CertificationsGrid({ certifications }: { certifications:
                     </button>
                     <button
                       type="button"
-                      onClick={() => setActiveTab("pdf")}
+                      onClick={() => (verified ? setActiveTab("pdf") : revealPdf())}
                       className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold tracking-[0.12em] uppercase transition-all ${
                         activeTab === "pdf"
                           ? "bg-white text-neutral-900 shadow-sm"
                           : "text-neutral-500 hover:text-neutral-700"
                       }`}
                     >
-                      <FileText size={12} /> Certificate PDF
+                      {verified ? <FileText size={12} /> : <Lock size={12} />} Certificate PDF
                     </button>
                   </div>
                 )}
@@ -212,7 +226,7 @@ export default function CertificationsGrid({ certifications }: { certifications:
                     {hasPdf && (
                       <button
                         type="button"
-                        onClick={() => setActiveTab("pdf")}
+                        onClick={() => (verified ? setActiveTab("pdf") : revealPdf())}
                         className="w-full rounded-2xl border-2 border-dashed border-orange-200 bg-orange-50/60 py-4 px-5 flex items-center justify-between gap-3 hover:border-orange-400 hover:bg-orange-50 transition-colors group"
                       >
                         <div className="flex items-center gap-3">
@@ -221,11 +235,17 @@ export default function CertificationsGrid({ certifications }: { certifications:
                           </div>
                           <div className="text-left">
                             <div className="text-sm font-bold text-neutral-900">{active.name} - Official Certificate</div>
-                            <div className="text-xs text-neutral-500">PDF · Issued by {active.authority}</div>
+                            <div className="text-xs text-neutral-500">
+                              {verified ? `PDF · Issued by ${active.authority}` : "Verify your email to view & download"}
+                            </div>
                           </div>
                         </div>
                         <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 group-hover:gap-2 transition-all">
-                          View PDF <ArrowUpRight size={13} />
+                          {verified ? (
+                            <>View PDF <ArrowUpRight size={13} /></>
+                          ) : (
+                            <>Unlock <Lock size={12} /></>
+                          )}
                         </span>
                       </button>
                     )}
@@ -289,15 +309,25 @@ export default function CertificationsGrid({ certifications }: { certifications:
                 </span>
                 <div className="flex items-center gap-3">
                   {hasPdf && active.pdfUrl && (
-                    <a
-                      href={active.pdfUrl}
-                      download
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 hover:text-orange-700 transition-colors"
-                    >
-                      <Download size={12} /> Download PDF
-                    </a>
+                    verified ? (
+                      <a
+                        href={active.pdfUrl}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 hover:text-orange-700 transition-colors"
+                      >
+                        <Download size={12} /> Download PDF
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => guardedOpen(active.pdfUrl)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 hover:text-orange-700 transition-colors"
+                      >
+                        <Lock size={12} /> Download PDF
+                      </button>
+                    )
                   )}
                   {!hasPdf && (
                     <Link href="/downloads" className="inline-flex items-center gap-1.5 text-xs font-bold tracking-[0.12em] uppercase text-orange-600 hover:text-orange-700 transition-colors">
