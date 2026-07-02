@@ -41,6 +41,8 @@ export type Article = {
   tags: string[];
   trending?: boolean;
   image?: string;      // optional cover image
+  link?: string;       // external source (LinkedIn post, article, etc.)
+  video?: string;      // YouTube / video URL
 };
 
 export type GofEvent = {
@@ -774,6 +776,15 @@ function FeaturedHero({
       className="group relative rounded-3xl border bg-white overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_50px_100px_-30px_rgba(234,88,12,0.40)] hover:border-orange-300/60 cursor-pointer"
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
+      {(article.link || article.video) && (
+        <a
+          href={article.video || article.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={article.title}
+          className="absolute inset-0 z-[1]"
+        />
+      )}
       {/* Visual */}
       <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700">
         {article.image ? (
@@ -787,6 +798,13 @@ function FeaturedHero({
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+            {article.video && (
+              <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
+                <span className="inline-flex items-center gap-2 text-white bg-black/45 border border-white/25 backdrop-blur px-4 py-2 rounded-full text-sm font-semibold">
+                  <PlayCircle size={20} /> Watch video
+                </span>
+              </div>
+            )}
           </>
         ) : (
           <>
@@ -875,6 +893,15 @@ function FeaturedSide({
       className="group relative rounded-3xl border bg-white overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_40px_80px_-30px_rgba(0,0,0,0.20)] hover:border-orange-300/60 cursor-pointer"
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
+      {(article.link || article.video) && (
+        <a
+          href={article.video || article.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={article.title}
+          className="absolute inset-0 z-[1]"
+        />
+      )}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
       {article.image && (
         <div className="relative aspect-[16/9] overflow-hidden bg-neutral-100">
@@ -896,7 +923,7 @@ function FeaturedSide({
         <button
           onClick={(e) => { e.preventDefault(); onBookmark(article.title); }}
           aria-label={bookmarked ? "Remove bookmark" : "Bookmark"}
-          className={`w-8 h-8 rounded-full border flex items-center justify-center transition ${
+          className={`relative z-10 w-8 h-8 rounded-full border flex items-center justify-center transition ${
             bookmarked ? "bg-orange-50 text-orange-600 border-orange-200" : "text-neutral-400 hover:text-orange-600"
           }`}
           style={{ borderColor: bookmarked ? undefined : "rgba(0,0,0,0.08)" }}
@@ -946,6 +973,15 @@ function ArticleCard({
       className="group relative rounded-2xl border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-30px_rgba(234,88,12,0.30)] hover:border-orange-300/60 cursor-pointer flex flex-col"
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
+      {(a.link || a.video) && (
+        <a
+          href={a.video || a.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={a.title}
+          className="absolute inset-0 z-[1]"
+        />
+      )}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
       <div className={`relative aspect-[16/9] overflow-hidden ${c.bg}`}>
         {a.image ? (
@@ -958,6 +994,13 @@ function ArticleCard({
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+            {a.video && (
+              <div className="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
+                <span className="inline-flex items-center gap-1.5 text-white bg-black/45 border border-white/25 backdrop-blur px-3 py-1.5 rounded-full text-xs font-semibold">
+                  <PlayCircle size={16} /> Watch video
+                </span>
+              </div>
+            )}
           </>
         ) : (
           <>
@@ -1031,6 +1074,15 @@ function ArticleRow({
       className="group relative rounded-2xl border bg-white p-6 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_30px_60px_-30px_rgba(234,88,12,0.25)] hover:border-orange-300/60 cursor-pointer flex flex-col lg:flex-row gap-6"
       style={{ borderColor: "rgba(0,0,0,0.06)" }}
     >
+      {(a.link || a.video) && (
+        <a
+          href={a.video || a.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={a.title}
+          className="absolute inset-0 z-[1]"
+        />
+      )}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className={`hidden lg:flex shrink-0 w-32 aspect-square rounded-xl items-center justify-center ${c.bg} border ${c.border} relative overflow-hidden`}>
         {a.image ? (
@@ -1071,7 +1123,7 @@ function ArticleRow({
         <button
           onClick={(e) => { e.preventDefault(); onBookmark(a.title); }}
           aria-label={bookmarked ? "Remove bookmark" : "Bookmark"}
-          className={`w-9 h-9 rounded-full border flex items-center justify-center transition ${
+          className={`relative z-10 w-9 h-9 rounded-full border flex items-center justify-center transition ${
             bookmarked ? "bg-orange-50 text-orange-600 border-orange-200" : "text-neutral-500 hover:text-orange-600"
           }`}
           style={{ borderColor: bookmarked ? undefined : "rgba(0,0,0,0.10)" }}

@@ -22,7 +22,8 @@ const articles: Article[] = [
     author: "Marketing",
     tags: ["HVACR", "Nigeria", "Trade Show"],
     trending: true,
-    image: "/images/products/nbr-banner.jpeg",
+    image: "/images/news/hvacr-nigeria-2026.jpeg",
+    link: "https://www.linkedin.com/posts/rubberworldindustry_gulfoflex-rubberworldindustry-big5constructsaudi-activity-7296134791186247682-h760",
   },
   {
     title: "Gulf-O-Flex® Showcases Advanced Insulation at Stadiums & Sports Innovation Summit KSA 2026",
@@ -37,7 +38,7 @@ const articles: Article[] = [
     author: "KSA Team",
     tags: ["KSA", "Stadiums", "Acoustic"],
     trending: true,
-    image: "/images/products/sound-1.webp",
+    image: "/images/news/stadiums-ksa-2026.jpeg",
   },
   {
     title: "Gulf-O-Flex® Recognized with Innovation Award at ASHRAE Cairo HVACR-R Expo 2026",
@@ -52,7 +53,7 @@ const articles: Article[] = [
     author: "GOF Newsroom",
     tags: ["ASHRAE", "Cairo", "Award", "Innovation"],
     trending: true,
-    image: "/images/products/aluclad-install.webp",
+    image: "/images/news/ashrae-cairo-2026.jpeg",
   },
   {
     title: "Gulf-O-Flex® Showcases Advanced Insulation at AHR Expo Las Vegas, USA 2026",
@@ -66,7 +67,8 @@ const articles: Article[] = [
     author: "Commercial Desk",
     tags: ["AHR Expo", "USA", "Las Vegas"],
     trending: true,
-    image: "/images/products/xlpe-banner.jpg",
+    image: "/images/news/ahr-vegas-2026.jpg",
+    link: "https://www.linkedin.com/posts/rubberworldindustry_gulfoflex-rubberworldindustry-big5constructsaudi-activity-7296134791186247682-h760",
   },
   {
     title: "Gulf-O-Flex® Showcases Advanced Insulation at Pakistan HVACR Expo & Conference 2026",
@@ -79,7 +81,7 @@ const articles: Article[] = [
     readTime: 3,
     author: "APAC Team",
     tags: ["Pakistan", "HVACR", "South Asia"],
-    image: "/images/products/aluglass-install.webp",
+    image: "/images/news/pakistan-hvacr-2026.jpg",
   },
   {
     title: "Gulf-O-Flex® Wins Innovation in Sustainable Engineering and Green Solution Award at One UAE Awards 2026",
@@ -94,7 +96,7 @@ const articles: Article[] = [
     author: "Sustainability",
     tags: ["UAE Awards", "Sustainability", "Green Solution"],
     trending: true,
-    image: "/images/products/nbr-roll.webp",
+    image: "/images/news/one-uae-awards-2026.jpg",
   },
   {
     title: "Leading Insulation: Gulf-O-Flex® at Big 5 Construct Saudi 2025",
@@ -108,7 +110,8 @@ const articles: Article[] = [
     author: "KSA Team",
     tags: ["Big 5", "KSA", "Riyadh"],
     trending: true,
-    image: "/images/products/aluclad-2.webp",
+    image: "/images/news/big5-construct-saudi-2025.jpg",
+    link: "https://www.linkedin.com/posts/rubberworldindustry_gulfoflex-rubberworldindustry-big5constructsaudi-activity-7296134791186247682-h760",
   },
   {
     title: "Gulf-O-Flex® Showcases Advanced Insulation at AHR Expo Orlando, USA 2025",
@@ -121,7 +124,7 @@ const articles: Article[] = [
     readTime: 3,
     author: "Commercial Desk",
     tags: ["AHR Expo", "USA", "Orlando"],
-    image: "/images/products/nbr-pipe.jpeg",
+    image: "/images/news/ahr-orlando-2025.jpg",
   },
   {
     title: "Gulf-O-Flex® Showcases Advanced Insulation at Big 5 Nigeria 2025",
@@ -134,7 +137,7 @@ const articles: Article[] = [
     readTime: 3,
     author: "Marketing",
     tags: ["Big 5", "Nigeria", "Africa"],
-    image: "/images/products/aluglass-tube.webp",
+    image: "/images/news/big5-nigeria-2025.jpg",
   },
   {
     title: "Gulf-O-Flex® at MEPIC KSA Conference 2025",
@@ -147,7 +150,8 @@ const articles: Article[] = [
     readTime: 3,
     author: "KSA Team",
     tags: ["MEPIC", "KSA", "Conference"],
-    image: "/images/products/nbr-banner.jpeg",
+    image: "/images/news/mepic-ksa-2025.jpg",
+    link: "https://www.linkedin.com/feed/update/urn:li:share:7115628986302369793/",
   },
   {
     title: "Rubber World Industry Proudly Showcased at ACREX India 2024",
@@ -160,7 +164,8 @@ const articles: Article[] = [
     readTime: 3,
     author: "APAC Team",
     tags: ["ACREX", "India", "Mumbai"],
-    image: "/images/products/aluclad-install.webp",
+    image: "/images/news/acrex-india-2024.jpg",
+    link: "https://www.linkedin.com/feed/update/urn:li:share:7161966776719663104/",
   },
   {
     title: "Leading Insulation: Gulf-O-Flex® at Big 5 Global 2023",
@@ -173,7 +178,8 @@ const articles: Article[] = [
     readTime: 3,
     author: "Marketing",
     tags: ["Big 5", "Dubai", "Global"],
-    image: "/images/products/aluclad-1.webp",
+    image: "/images/news/big5-global-2023.jpg",
+    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7137494982529069056/",
   },
   {
     title: "Rubber World Industry Wins Major Awards in Two Categories at CBNME MEP Awards 2022",
@@ -187,7 +193,8 @@ const articles: Article[] = [
     readTime: 4,
     author: "GOF Newsroom",
     tags: ["CBNME", "MEP Awards", "Award"],
-    image: "/images/products/sound-2.webp",
+    image: "/images/news/cbnme-mep-awards-2022.jpg",
+    video: "https://www.youtube.com/watch?v=c5DBRwQfho4",
   },
   {
     title: "MEP Awards 2023 Sponsored by Gulf-O-Flex®",
@@ -200,7 +207,7 @@ const articles: Article[] = [
     readTime: 3,
     author: "Marketing",
     tags: ["MEP Awards", "Sponsor", "Industry"],
-    image: "/images/products/aluglass-sheet.webp",
+    image: "/images/news/mep-awards-2023.jpg",
   },
   {
     title: "11th Annual Climate Control Awards",
@@ -213,7 +220,7 @@ const articles: Article[] = [
     readTime: 3,
     author: "Marketing",
     tags: ["Climate Control", "HVACR", "Awards"],
-    image: "/images/products/xlpe-banner.jpg",
+    image: "/images/news/climate-control-awards.jpg",
   },
   {
     title: "Gulf-O-Flex® Proudly Co-hosts The Client Consultant Contractor Conference",
@@ -226,7 +233,8 @@ const articles: Article[] = [
     readTime: 3,
     author: "Events Team",
     tags: ["Conference", "MEP", "Networking"],
-    image: "/images/products/aluglass-install.webp",
+    image: "/images/news/ccc-conference.jpeg",
+    link: "https://gulfoflex.com/changing-the-world-through-green-thinking/",
   },
   {
     title: "MEP Conference 2021",
@@ -239,7 +247,8 @@ const articles: Article[] = [
     readTime: 3,
     author: "Marketing",
     tags: ["MEP", "Conference", "GCC"],
-    image: "/images/products/nbr-roll.webp",
+    image: "/images/news/mep-conference-2021.jpeg",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:6830508705906266112/",
   },
   {
     title: "Changing The World Through Green Thinking",
@@ -252,7 +261,8 @@ const articles: Article[] = [
     readTime: 5,
     author: "Sustainability",
     tags: ["Green", "Sustainability", "Initiative"],
-    image: "/images/products/aluclad-install.webp",
+    image: "/images/news/green-thinking.jpeg",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:6830508705906266112/",
   },
 ];
 
@@ -281,7 +291,7 @@ const events: GofEvent[] = [
     location: "Dubai World Trade Centre, UAE",
     summary:
       "Experience the full Gulf-O-Flex® range at the largest construction event in the Middle East. Live demos, technical clinics, and exclusive previews of our 2027 product roadmap.",
-    image: "/images/products/aluclad-install.webp",
+    image: "/images/news/big5-global-2023.jpg",
     cta: { label: "Book a meeting", href: "/contact" },
     featured: true,
     status: "upcoming",
@@ -297,7 +307,7 @@ const events: GofEvent[] = [
     location: "Riyadh Front Expo Centre, KSA",
     summary:
       "Meet the Gulf-O-Flex® KSA team and discover how our locally manufactured rubber insulation is fuelling the Kingdom's mega-projects under Vision 2030.",
-    image: "/images/products/nbr-banner.jpeg",
+    image: "/images/news/big5-construct-saudi-2025.jpg",
     cta: { label: "Add to calendar", href: "#" },
     status: "upcoming",
   },
@@ -312,7 +322,7 @@ const events: GofEvent[] = [
     location: "Online · Microsoft Teams",
     summary:
       "Deep-dive into Gulf-O-Flex® Sound - STC ratings, installation best practices, and case studies from Riyadh Metro Phase 2.",
-    image: "/images/products/sound-1.webp",
+    image: "/images/news/mepic-ksa-2025.jpg",
     cta: { label: "Register free", href: "#" },
     status: "upcoming",
   },
@@ -327,7 +337,7 @@ const events: GofEvent[] = [
     location: "Bombay Exhibition Centre, India",
     summary:
       "Gulf-O-Flex® returns to MEP Expo with our APAC distribution partners - featuring the new low-GWP NBR range and Aluclad jacketing systems.",
-    image: "/images/products/aluclad-2.webp",
+    image: "/images/news/acrex-india-2024.jpg",
     cta: { label: "View details", href: "#" },
     status: "upcoming",
   },
@@ -342,7 +352,7 @@ const events: GofEvent[] = [
     location: "Messe Frankfurt, Germany",
     summary:
       "Our European debut at ISH Frankfurt set new benchmarks for engagement. Watch the highlight reel and download the post-show report.",
-    image: "/images/products/xlpe-banner.jpg",
+    image: "/images/news/ahr-vegas-2026.jpg",
     cta: { label: "Watch recap", href: "#" },
     status: "past",
   },
@@ -357,21 +367,21 @@ const events: GofEvent[] = [
     location: "RAK Industrial Park, UAE",
     summary:
       "Customers, partners and media joined us for guided tours of the production line, R&D lab and quality control facilities.",
-    image: "/images/products/nbr-roll.webp",
+    image: "/images/news/green-thinking.jpeg",
     cta: { label: "View photos", href: "#" },
     status: "past",
   },
 ];
 
 const gallery: GalleryItem[] = [
-  { src: "/images/products/aluclad-install.webp", caption: "Aluclad jacketing - on-site, Dubai", tag: "Project" },
-  { src: "/images/products/sound-2.webp", caption: "Sound insulation - Metro Phase 2", tag: "Acoustics" },
-  { src: "/images/products/nbr-banner.jpeg", caption: "NBR production - KSA facility", tag: "Manufacturing" },
-  { src: "/images/products/xlpe-banner.jpg", caption: "XLPE - FM Approved range", tag: "Certification" },
-  { src: "/images/products/aluglass-install.webp", caption: "Aluglass install - Riyadh tower", tag: "Project" },
-  { src: "/images/products/aluclad-2.webp", caption: "Aluclad - long-run delivery", tag: "Logistics" },
-  { src: "/images/products/sound-1.webp", caption: "Acoustic test chamber", tag: "R&D" },
-  { src: "/images/products/nbr-pipe.jpeg", caption: "Pipe section - pre-cut to spec", tag: "Product" },
+  { src: "/images/news/big5-construct-saudi-2025.jpg", caption: "Big 5 Construct Saudi 2025 - Riyadh", tag: "Event" },
+  { src: "/images/news/ahr-vegas-2026.jpg", caption: "AHR Expo 2026 - Las Vegas, USA", tag: "Trade Show" },
+  { src: "/images/news/one-uae-awards-2026.jpg", caption: "One UAE Awards 2026 - Green Solution", tag: "Award" },
+  { src: "/images/news/acrex-india-2024.jpg", caption: "ACREX India 2024 - Mumbai", tag: "Event" },
+  { src: "/images/news/hvacr-nigeria-2026.jpeg", caption: "HVACR Nigeria 2026 - Lagos", tag: "Trade Show" },
+  { src: "/images/news/mep-awards-2023.jpg", caption: "MEP Awards 2023 - Sponsored", tag: "Award" },
+  { src: "/images/news/pakistan-hvacr-2026.jpg", caption: "Pakistan HVACR Expo 2026 - Karachi", tag: "Event" },
+  { src: "/images/news/big5-global-2023.jpg", caption: "Big 5 Global 2023 - Dubai", tag: "Trade Show" },
 ];
 
 export default function NewsPage() {
