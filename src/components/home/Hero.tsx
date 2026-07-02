@@ -223,17 +223,6 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* ── Subtitle ── */}
-            <p
-              className="mt-7 text-white/60 text-lg md:text-xl leading-relaxed max-w-xl text-pretty"
-              style={{
-                animation: "hero-fade-up 650ms cubic-bezier(0.19,1,0.22,1) 400ms both",
-                marginLeft: isRight ? "auto" : undefined,
-              }}
-            >
-              {slide.subtitle ?? country.heroSubtitle}
-            </p>
-
             {/* ── CTAs ── */}
             <div
               className={`mt-8 flex flex-wrap items-center gap-4 ${isRight ? "justify-end" : "justify-start"}`}
