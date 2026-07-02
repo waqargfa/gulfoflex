@@ -342,7 +342,7 @@ export default function AboutPage() {
             playsInline
             preload="auto"
           >
-            <source src="https://gulfoflex.com/CORPORATE%20VIDEO-HD.mp4" type="video/mp4" />
+            <source src="/CORPORATE VIDEO-HD.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
