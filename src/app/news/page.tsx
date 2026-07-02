@@ -323,6 +323,16 @@ const gallery: GalleryItem[] = [
   { src: "/images/news/big5-global-2023.jpg", caption: "Big 5 Global 2023 - Dubai", tag: "Trade Show" },
 ];
 
+const videos: VideoItem[] = [
+  { title: "Experience Centre Inauguration", url: "https://www.youtube.com/watch?v=_xBbdDqPclk" },
+  { title: "Gulf-O-Flex® Corporate Overview", url: "https://www.youtube.com/watch?v=_O2ZHFaFFyM" },
+  { title: "Product Range Showcase", url: "https://www.youtube.com/watch?v=qGekb0VosA4" },
+  { title: "Manufacturing Excellence", url: "https://www.youtube.com/watch?v=juoWIase370" },
+  { title: "Technical Applications", url: "https://www.youtube.com/watch?v=qAH6pfbrANY" },
+  { title: "Quality & Testing", url: "https://www.youtube.com/watch?v=m4O2Cl7SpYM" },
+  { title: "Global Presence", url: "https://www.youtube.com/watch?v=LhFXc1ToLbg" },
+];
+
 export default function NewsPage() {
-  return <NewsExperience articles={articles} categories={categories} events={events} gallery={gallery} />;
+  return <NewsExperience articles={articles} categories={categories} events={events} gallery={gallery} videos={videos} />;
 }

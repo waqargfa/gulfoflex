@@ -67,6 +67,11 @@ export type GalleryItem = {
   tag: string;
 };
 
+export type VideoItem = {
+  title: string;
+  url: string;
+};
+
 const accentMap: Record<string, { text: string; bg: string; border: string; ring: string }> = {
   orange: { text: "text-orange-700", bg: "bg-orange-50", border: "border-orange-200", ring: "ring-orange-500/30" },
   blue:   { text: "text-neutral-700",bg: "bg-neutral-50",border: "border-neutral-200",ring: "ring-neutral-500/30" },
@@ -95,11 +100,13 @@ export default function NewsExperience({
   categories,
   events = [],
   gallery = [],
+  videos = [],
 }: {
   articles: Article[];
   categories: string[];
   events?: GofEvent[];
   gallery?: GalleryItem[];
+  videos?: VideoItem[];
 }) {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState<string>("All");
@@ -681,6 +688,63 @@ export default function NewsExperience({
                       <span className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/15 backdrop-blur border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                         <PlayCircle size={14} className="text-white" />
                       </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Video Gallery */}
+          {videos.length > 0 && (
+            <div className="mt-20">
+              <div className="flex items-end justify-between gap-4 flex-wrap mb-6">
+                <div>
+                  <div className="eyebrow mb-3"><span className="eyebrow-dot" />Watch</div>
+                  <h3
+                    className="text-neutral-900"
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(1.5rem, 2.8vw, 2.25rem)",
+                      fontWeight: 800,
+                      letterSpacing: "-0.03em",
+                    }}
+                  >
+                    Video <span className="serif-italic text-orange-600">gallery.</span>
+                  </h3>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500">
+                  <PlayCircle size={12} /> {videos.length} videos · click to play
+                </span>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {videos.map((v) => {
+                  const id = getYouTubeId(v.url);
+                  if (!id) return null;
+                  return (
+                    <button
+                      key={v.url}
+                      onClick={() => setVideoUrl(v.url)}
+                      className="group relative aspect-video rounded-2xl overflow-hidden border bg-neutral-100 hover:shadow-xl transition-all duration-300"
+                      style={{ borderColor: "rgba(0,0,0,0.06)" }}
+                    >
+                      <Image
+                        src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+                        alt={v.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/40 flex items-center justify-center group-hover:bg-orange-500/90 group-hover:border-orange-400 transition-all duration-300">
+                          <PlayCircle size={28} className="text-white" />
+                        </div>
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 p-4 text-left">
+                        <p className="text-white text-sm font-semibold leading-snug">{v.title}</p>
+                      </div>
                     </button>
                   );
                 })}
