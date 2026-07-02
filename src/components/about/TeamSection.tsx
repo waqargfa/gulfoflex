@@ -87,7 +87,7 @@ const teams: CountryTeam[] = [
     flag: "🇪🇬",
     code: "egypt",
     members: [
-      { name: "Mohamed Khaled Mamdouh", role: "Retail Sales Engineer", roleType: "sales", email: "sales.egypt@gulfoflex.com", phone: "+966 54 608 4319" },
+      { name: "Mohamed Khaled Mamdouh", role: "Retail Sales Engineer", roleType: "sales", email: "sales.egypt@gulfoflex.com", phone: "+20 15 0009 1994" },
     ],
   },
   {
@@ -95,7 +95,7 @@ const teams: CountryTeam[] = [
     flag: "Af",
     code: "africa",
     members: [
-      { name: "Morayo Durojaye", role: "Retail Sales Engineer", roleType: "sales", email: "sales.africa@gulfoflex.com", phone: "+966 54 608 4319" },
+      { name: "Morayo Durojaye", role: "Retail Sales Engineer", roleType: "sales", email: "sales.africa@gulfoflex.com", phone: "+234 806 717 8147" },
     ],
   },
 ];
