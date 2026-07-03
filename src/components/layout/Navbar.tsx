@@ -34,7 +34,6 @@ import {
   Briefcase,
   Download,
   Newspaper,
-  HelpCircle,
   Compass,
 } from "lucide-react";
 import { useCountry } from "@/context/CountryContext";
@@ -125,7 +124,6 @@ const companyGroups = [
       { name: "Downloads", desc: "Datasheets, TDS & brochures", href: "/downloads", icon: Download },
       { name: "Training", desc: "Installation video modules", href: "/training", icon: GraduationCap },
       { name: "News & Media", desc: "Latest updates & press", href: "https://gulfoflex.com/news-media/", icon: Newspaper },
-      { name: "FAQ", desc: "Common questions answered", href: "/faq", icon: HelpCircle },
     ],
   },
 ];

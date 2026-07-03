@@ -53,6 +53,10 @@ const nextConfig: NextConfig = {
       { source: "/brand-new-page", destination: "/", statusCode: 301 },
       { source: "/slide-anything-popup-preview", destination: "/", statusCode: 301 },
 
+      // ---- Industries (legacy / merged pages) ----
+      // "Construction" is covered by the HVAC, MEP & Construction page.
+      { source: "/industries/construction", destination: "/industries/hvac", statusCode: 301 },
+
       // ---- Contact ----
       { source: "/contact-us", destination: "/contact", statusCode: 301 },
       { source: "/contact.asp", destination: "/contact", statusCode: 301 },

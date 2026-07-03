@@ -54,7 +54,7 @@ const footerIndustries = [
   { name: "HVAC & MEP", href: "/industries/hvac" },
   { name: "Oil & Gas", href: "/industries/oil-gas" },
   { name: "Marine", href: "/industries/marine" },
-  { name: "Construction", href: "/industries/construction" },
+  { name: "Construction", href: "/industries/hvac" },
   { name: "District Cooling", href: "/industries/district-cooling" },
   { name: "Industrial Plants", href: "/industries/industrial" },
 ];

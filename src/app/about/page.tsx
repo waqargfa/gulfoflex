@@ -34,6 +34,7 @@ import TeamSection from "@/components/about/TeamSection";
 import AnimatedCounter from "@/components/about/AnimatedCounter";
 import ScrollProgress from "@/components/about/ScrollProgress";
 import Reveal from "@/components/about/Reveal";
+import CorporateVideo from "@/components/about/CorporateVideo";
 
 export const metadata: Metadata = {
   title: "About Gulf-O-Flex® | Premium Insulation Manufacturer Since 1993",
@@ -312,43 +313,12 @@ export default function AboutPage() {
       </section>
 
       {/* ── Corporate Video ── */}
-      <section className="relative overflow-hidden">
-        <div className="relative w-full">
-          {/* Overlay content */}
-          <div className="absolute inset-0 z-10 flex items-end pointer-events-none">
-            <div className="w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 py-12 md:py-20">
-              <div className="container-wide">
-                <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.25em] uppercase text-orange-400 mb-3">
-                  <Sparkles size={12} /> Our Story
-                </span>
-                <h2
-                  className="text-white leading-[1.05] max-w-2xl"
-                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
-                >
-                  Engineering excellence <span className="serif-italic text-orange-400">since 1993.</span>
-                </h2>
-                <p className="mt-3 text-white/70 text-base max-w-xl leading-relaxed">
-                  From raw NBR compounds to finished insulation covering the world&rsquo;s most critical infrastructure.
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Video */}
-          <video
-            className="w-full aspect-[21/9] object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src="/CORPORATE VIDEO-HD.mp4" type="video/mp4" />
-          </video>
-        </div>
+      <section className="relative overflow-hidden py-24 md:py-32">
+        <CorporateVideo />
       </section>
 
       {/* ── Who we are + Timeline ── */}
-      <section className="relative pb-24" style={{ background: "linear-gradient(180deg, #fff 0%, #fafafa 100%)" }}>
+      <section className="relative py-24 md:py-32" style={{ background: "linear-gradient(180deg, #fff 0%, #fafafa 100%)" }}>
         <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 items-start">
             <div className="lg:sticky lg:top-28">
