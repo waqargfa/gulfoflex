@@ -85,7 +85,9 @@ export const metadata: Metadata = {
     canonical: "https://gulfoflex.com",
   },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },

@@ -24,10 +24,10 @@ export default function ProductAnimation({ slug, shortName }: Props) {
   const poster = `/images/products/${slug}.jpg`;
 
   return (
-    <div className="relative h-80 w-full overflow-hidden bg-black">
+    <div className="relative h-80 w-full overflow-hidden bg-black flex items-center justify-center">
       <video
         key={slug}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="h-full w-full object-contain"
         poster={poster}
         autoPlay
         loop
