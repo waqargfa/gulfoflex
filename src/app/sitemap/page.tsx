@@ -27,7 +27,7 @@ const categories = [
     color: "from-orange-500 to-orange-600",
     pages: [
       { title: "Home",         href: "/",             desc: "Gulf-O-Flex® homepage" },
-      { title: "About Us",     href: "/about",        desc: "Our story, team & facilities" },
+      { title: "About Us",     href: "https://gulfoflex.com/about-us/",        desc: "Our story, team & facilities" },
       { title: "Sustainability", href: "/sustainability", desc: "Our environmental commitment" },
     ],
   },
@@ -38,8 +38,8 @@ const categories = [
     pages: [
       { title: "All Products",      href: "/products",               desc: "Full product range overview" },
       { title: "NBR Rubber",        href: "/products/nbr",           desc: "Elastomeric NBR insulation" },
-      { title: "XLPE Foam",         href: "/products/xlpe",          desc: "Cross-linked polyethylene foam" },
-      { title: "Sound Insulation",  href: "/products/sound",         desc: "Acoustic insulation solutions" },
+      { title: "XLPE Foam",         href: "https://gulfoflex.com/gulf-o-flex-xlpe/",          desc: "Cross-linked polyethylene foam" },
+      { title: "Sound Insulation",  href: "https://gulfoflex.com/gulf-o-flex-sound/",         desc: "Acoustic insulation solutions" },
       { title: "Aluglass Facing",   href: "/products/aluglass",      desc: "Reinforced aluminium-glass facing" },
       { title: "Aluclad Facing",    href: "/products/aluclad",       desc: "Aluminium clad insulation" },
       { title: "Accessories",       href: "/products/accessories",   desc: "Adhesives, tapes, and fittings" },
@@ -76,7 +76,7 @@ const categories = [
     color: "from-orange-600 to-orange-700",
     pages: [
       { title: "Projects",   href: "/projects",  desc: "Featured project references" },
-      { title: "News",       href: "/news",       desc: "Latest news & announcements" },
+      { title: "News",       href: "https://gulfoflex.com/news-media/",       desc: "Latest news & announcements" },
       { title: "FAQ",        href: "/faq",        desc: "Frequently asked questions" },
     ],
   },
@@ -85,7 +85,7 @@ const categories = [
     icon: Phone,
     color: "from-neutral-600 to-neutral-700",
     pages: [
-      { title: "Contact Us",    href: "/contact",      desc: "Get in touch with our team" },
+      { title: "Contact Us",    href: "https://gulfoflex.com/contact-us/",      desc: "Get in touch with our team" },
       { title: "Distributors",  href: "/distributors", desc: "Find a local distributor" },
       { title: "Careers",       href: "/careers",      desc: "Join Rubber World Industry" },
     ],

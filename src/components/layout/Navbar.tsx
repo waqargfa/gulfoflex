@@ -49,13 +49,13 @@ const solutions = [
   {
     name: "Gulf-O-Flex XLPE",
     desc: "Cross-linked polyethylene foam insulation",
-    href: "/products/xlpe",
+    href: "https://gulfoflex.com/gulf-o-flex-xlpe/",
     icon: Zap,
   },
   {
     name: "Gulf-O-Flex Sound",
     desc: "Premium acoustic insulation solutions",
-    href: "/products/sound",
+    href: "https://gulfoflex.com/gulf-o-flex-sound/",
     icon: Shield,
   },
   {
@@ -105,7 +105,7 @@ const companyGroups = [
   {
     label: "Who We Are",
     items: [
-      { name: "About Us", desc: "Our story, people & manufacturing", href: "/about", icon: Users },
+      { name: "About Us", desc: "Our story, people & manufacturing", href: "https://gulfoflex.com/about-us/", icon: Users },
       { name: "Sustainability", desc: "Net-zero & responsible production", href: "/sustainability", icon: Leaf },
       { name: "Certifications", desc: "Global standards & approvals", href: "/certifications", icon: Award },
       { name: "Careers", desc: "Join the Gulf-O-Flex® team", href: "/careers", icon: Briefcase },
@@ -124,7 +124,7 @@ const companyGroups = [
     items: [
       { name: "Downloads", desc: "Datasheets, TDS & brochures", href: "/downloads", icon: Download },
       { name: "Training", desc: "Installation video modules", href: "/training", icon: GraduationCap },
-      { name: "News & Media", desc: "Latest updates & press", href: "/news", icon: Newspaper },
+      { name: "News & Media", desc: "Latest updates & press", href: "https://gulfoflex.com/news-media/", icon: Newspaper },
       { name: "FAQ", desc: "Common questions answered", href: "/faq", icon: HelpCircle },
     ],
   },
@@ -137,8 +137,8 @@ const navLinks = [
   { name: "Solutions", href: "/solutions", mega: "solutions" },
   { name: "Industries", href: "/industries", mega: "industries" },
   { name: "Innovation", href: "/technologies" },
-  { name: "Company", href: "/about", mega: "company" },
-  { name: "Contact", href: "/contact" },
+  { name: "Company", href: "https://gulfoflex.com/about-us/", mega: "company" },
+  { name: "Contact", href: "https://gulfoflex.com/contact-us/" },
 ];
 
 export default function Navbar() {

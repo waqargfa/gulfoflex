@@ -45,7 +45,7 @@ const products = [
       "/images/products/xlpe/xlpe-4.png",
     ],
     image: "/images/products/xlpe/xlpe.png",
-    href: "/products/xlpe",
+    href: "https://gulfoflex.com/gulf-o-flex-xlpe/",
     badge: "Industrial Grade",
   },
   {
@@ -62,7 +62,7 @@ const products = [
       "/images/products/sound/White Sound_C3.0030021.png",
     ],
     image: "/images/products/sound/White Sound_C1.0040021.png",
-    href: "/products/sound",
+    href: "https://gulfoflex.com/gulf-o-flex-sound/",
     badge: "Acoustic Expert",
   },
   {

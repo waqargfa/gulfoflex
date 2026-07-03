@@ -32,8 +32,8 @@ const XIcon = () => (
 
 const footerProducts = [
   { name: "Gulf-O-Flex NBR", href: "/products/nbr" },
-  { name: "Gulf-O-Flex XLPE", href: "/products/xlpe" },
-  { name: "Gulf-O-Flex Sound", href: "/products/sound" },
+  { name: "Gulf-O-Flex XLPE", href: "https://gulfoflex.com/gulf-o-flex-xlpe/" },
+  { name: "Gulf-O-Flex Sound", href: "https://gulfoflex.com/gulf-o-flex-sound/" },
   { name: "Gulf-O-Flex Aluglass", href: "/products/aluglass" },
   { name: "Gulf-O-Flex Aluclad", href: "/products/aluclad" },
   { name: "Gulf-O-Flex UltraLine", href: "/products/ultraline" },
@@ -41,13 +41,13 @@ const footerProducts = [
 ];
 
 const footerCompany = [
-  { name: "About Us", href: "/about" },
+  { name: "About Us", href: "https://gulfoflex.com/about-us/" },
   { name: "Technologies", href: "/technologies" },
   { name: "Certifications", href: "/certifications" },
   { name: "Projects", href: "/projects" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Careers", href: "/careers" },
-  { name: "News & Media", href: "/news" },
+  { name: "News & Media", href: "https://gulfoflex.com/news-media/" },
 ];
 
 const footerIndustries = [
