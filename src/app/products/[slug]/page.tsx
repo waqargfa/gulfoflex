@@ -586,23 +586,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                   index={Object.keys(products).indexOf(productSlug) + 1}
                 />
 
-                <div className="grid grid-cols-2 gap-px bg-white/[0.06]">
-                  {product.specs.slice(0, 4).map((s) => (
-                    <div key={s.label} className="bg-[#0c0c0c] px-5 py-5">
-                      <div className="text-orange-400/80 text-[9px] uppercase tracking-[0.2em] font-bold mb-1.5 leading-tight">{s.label}</div>
-                      <div className="text-white font-bold text-[14px] leading-tight" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.01em" }}>
-                        {s.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
 
-                <div className="flex items-center justify-between px-6 py-3 border-t border-white/10 bg-black/30">
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-white/50">
-                    <BadgeCheck size={12} className="text-orange-300" /> Compliant batch
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.18em] text-white/40">Lot · GOF-{slug.toUpperCase()}-26</div>
-                </div>
               </div>
             </div>
           </div>

@@ -22,7 +22,7 @@ const articles: Article[] = [
     author: "GOF Newsroom",
     tags: ["MEP", "Media", "Sustainability"],
     trending: true,
-    image: "/images/news/MEP Middle East.jpg",
+    image: "/images/news/mep-middle-east.jpg",
     link: "https://www.linkedin.com/posts/gulf-o-flex-rubber-world-industry-llc-has-share-7477963679293165569-qb91/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAALMuecBU1PMGDGlh7bSJ9D6mXy40CrQPtM",
   },
   {
@@ -38,7 +38,7 @@ const articles: Article[] = [
     author: "GOF Newsroom",
     tags: ["Construction Week", "Media", "GCC"],
     trending: true,
-    image: "/images/news/Construction Week Middle East.jpg",
+    image: "/images/news/construction-week-middle-east.jpg",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7478083674450780160/",
   },
   {
@@ -54,7 +54,7 @@ const articles: Article[] = [
     author: "KSA Team",
     tags: ["Startup Saudi", "KSA", "Sustainability"],
     trending: true,
-    image: "/images/news/Startup Saudi.jpg",
+    image: "/images/news/startup-saudi.jpg",
     link: "https://www.linkedin.com/posts/startup-saudi_dubai-construction-sustainability-activity-7478130417330638849-ut7n/?utm_source=share&utm_medium=member_ios&rcm=ACoAABc7zn0BdlC1Ou0tOxDIBCsjPPmHu6AWIDU",
   },
   {
