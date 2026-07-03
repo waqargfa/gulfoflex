@@ -620,48 +620,6 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
         </div>
       </section>
 
-      {/* PERFORMANCE PILLARS */}
-      <section className="relative py-20 md:py-24 bg-white overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/[0.04] to-transparent pointer-events-none" />
-        <div className="container-wide relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <div className="eyebrow mb-4"><span className="eyebrow-dot" />Performance</div>
-              <h2 className="text-neutral-900 leading-[1.05]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.85rem, 3.4vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
-                Engineered for <span className="serif-italic text-orange-600">extreme climates.</span>
-              </h2>
-            </div>
-            <p className="text-neutral-500 max-w-md leading-relaxed text-sm md:text-base">
-              Four pillars define every Gulf-O-Flex® roll, sheet and tube - measured, certified and serialised.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {pillars.map((p, i) => {
-              const PIcon = p.icon;
-              return (
-                <div key={p.label} className="group relative rounded-2xl border bg-white p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-orange-300/70 hover:shadow-[0_25px_60px_-25px_rgba(234,88,12,0.35)]"
-                  style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                  <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-orange-500/0 via-orange-500 to-orange-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="flex items-start justify-between mb-7">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{ background: "linear-gradient(135deg, rgba(249,115,22,0.15), rgba(249,115,22,0.04))", border: "1px solid rgba(249,115,22,0.18)" }}>
-                      <PIcon size={20} className="text-orange-600" strokeWidth={1.8} />
-                    </div>
-                    <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-300">0{i + 1}</span>
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-orange-600 mb-1.5">{p.label}</div>
-                  <div className="text-neutral-900 font-bold text-lg leading-tight mb-1" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.015em" }}>
-                    {p.value}
-                  </div>
-                  <div className="text-neutral-500 text-xs">{p.sub}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* OVERVIEW + FEATURES */}
       <section className="relative py-20 md:py-24 bg-neutral-50/70 border-y" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
         <div className="container-wide relative z-10">
@@ -786,16 +744,15 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
         </div>
       </section>
 
-      {/* APPLICATIONS + CERTIFICATIONS */}
+      {/* APPLICATIONS */}
       <section className="relative py-20 md:py-24 bg-white overflow-hidden">
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-14 lg:gap-16">
-            <div>
+          <div>
               <div className="eyebrow mb-4"><span className="eyebrow-dot" />Use Cases</div>
               <h2 className="text-neutral-900 leading-[1.05] mb-9" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.85rem, 3.4vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
                 Specified across <span className="serif-italic text-orange-600">critical projects.</span>
               </h2>
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {product.applications.map((a, i) => (
                   <div key={a} className="group relative rounded-2xl border bg-white p-5 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-300/60 hover:shadow-[0_20px_45px_-25px_rgba(234,88,12,0.3)]"
                     style={{ borderColor: "rgba(0,0,0,0.08)" }}>
@@ -810,34 +767,6 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div>
-              <div className="eyebrow mb-4"><span className="eyebrow-dot" />Compliance</div>
-              <h2 className="text-neutral-900 leading-[1.05] mb-9" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.85rem, 3.4vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
-                Independently <span className="serif-italic text-orange-600">certified.</span>
-              </h2>
-              <div className="rounded-3xl border bg-gradient-to-br from-neutral-50 to-white p-6 md:p-7" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                <div className="grid grid-cols-2 gap-3">
-                  {product.certifications.map((c) => (
-                    <div key={c} className="flex items-center gap-2.5 rounded-xl bg-white border px-3.5 py-3 transition-colors hover:border-orange-300/70 hover:bg-orange-50/40"
-                      style={{ borderColor: "rgba(0,0,0,0.07)" }}>
-                      <Award size={14} className="text-orange-600 flex-shrink-0" />
-                      <span className="text-neutral-800 text-[12px] font-bold uppercase tracking-wider truncate">{c}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-5 pt-5 border-t flex items-center justify-between" style={{ borderColor: "rgba(0,0,0,0.07)" }}>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={14} className="text-orange-600" />
-                    <span className="text-[11px] text-neutral-500">Verified · current revision</span>
-                  </div>
-                  <Link href="/certifications" className="text-[11px] font-bold uppercase tracking-[0.18em] text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
-                    All certs <ArrowRight size={11} />
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
