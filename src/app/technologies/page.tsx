@@ -17,8 +17,6 @@ import {
   Atom,
   ChevronRight,
   CheckCircle2,
-  Gauge,
-  Thermometer,
   Volume2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -53,7 +51,7 @@ const technologies: Tech[] = [
     tint: "rgba(249,115,22,0.10)",
     desc: "Nitrile Butadiene Rubber closed-cell foam - our flagship insulation. The closed-cell structure prevents moisture absorption (the #1 cause of insulation failure in humid climates) while delivering class-leading thermal performance across HVAC and process applications.",
     specs: [
-      { label: "Thermal Conductivity", value: "≤0.036 W/(m·K)" },
+      { label: "Thermal Conductivity", value: "≤0.0321 W/(m·K)" },
       { label: "Temperature Range",   value: "−40°C to +105°C" },
       { label: "Water Vapour Resist.", value: "μ ≥ 7,300" },
       { label: "Fire Class",           value: "B1 / BS Class O" },
@@ -322,17 +320,7 @@ export default function TechnologiesPage() {
                   >
                     {String(i + 1).padStart(2, "0")} / {String(technologies.length).padStart(2, "0")}
                   </div>
-                  {/* Tier badge */}
-                  <div
-                    className="absolute top-7 left-8 text-[9px] font-black tracking-[0.22em] uppercase px-2.5 py-1 rounded-full"
-                    style={{
-                      background: tech.tint,
-                      border: `1px solid ${tech.accent}33`,
-                      color: tech.accent,
-                    }}
-                  >
-                    {tech.tier}
-                  </div>
+
 
                   <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 p-8 lg:p-12 pt-20 items-start">
                     <div>
@@ -450,100 +438,7 @@ export default function TechnologiesPage() {
         </div>
       </section>
 
-      {/* ── Comparison Matrix ── */}
-      <section
-        className="relative section-padding overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #fafafa 0%, #fff 100%)" }}
-      >
-        <div className="absolute inset-0 dotted-bg opacity-[0.30]" />
-        <div className="container-wide relative">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="eyebrow mb-4 mx-auto w-fit">
-              <span className="eyebrow-dot" />At a glance
-            </div>
-            <h2
-              className="text-neutral-900 leading-[1.05]"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                fontWeight: 800,
-                letterSpacing: "-0.035em",
-              }}
-            >
-              The Gulf-O-Flex® <span className="serif-italic text-orange-600">technology matrix.</span>
-            </h2>
-          </div>
 
-          <div
-            className="overflow-x-auto rounded-2xl border bg-white"
-            style={{ borderColor: "rgba(0,0,0,0.07)" }}
-          >
-            <table className="w-full text-sm min-w-[760px]">
-              <thead>
-                <tr
-                  className="text-left text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500"
-                  style={{ background: "#fafafa", borderBottom: "1px solid rgba(0,0,0,0.06)" }}
-                >
-                  <th className="px-5 py-4">Technology</th>
-                  <th className="px-5 py-4">Tier</th>
-                  <th className="px-5 py-4">
-                    <span className="inline-flex items-center gap-1"><Thermometer size={11} /> λ</span>
-                  </th>
-                  <th className="px-5 py-4">
-                    <span className="inline-flex items-center gap-1"><Gauge size={11} /> Temp Range</span>
-                  </th>
-                  <th className="px-5 py-4">Best for</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { name: "NBR", tier: "Core",     lambda: "≤0.036", temp: "−40° → +105°",  best: "HVAC chilled water, ducts",         accent: "#f97316" },
-                  { name: "NBR Ultra",       tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "District cooling mains, plants",    accent: "#737373" },
-                  { name: "NBR Ultra Line",  tier: "Premium",  lambda: "≤0.033", temp: "−50° → +110°",  best: "Pre-formed factory runs",           accent: "#f97316" },
-                  { name: "XLPE",            tier: "Core",     lambda: "≤0.038", temp: "−50° → +120°",  best: "Hot water, solar, industrial",      accent: "#737373" },
-                  { name: "Sound",           tier: "Specialty",lambda: "≤0.036", temp: "−40° → +105°",  best: "Acoustic-critical zones",           accent: "#737373" },
-                  { name: "Aluglass / Aluclad",tier: "Specialty",lambda: "-",     temp: "−30° → +80°",   best: "Outdoor, plant rooms, UV exposure", accent: "#f97316" },
-                ].map((row) => (
-                  <tr
-                    key={row.name}
-                    className="transition-colors hover:bg-orange-50/30"
-                    style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}
-                  >
-                    <td className="px-5 py-3.5 font-bold text-neutral-900">
-                      <span className="inline-flex items-center gap-2">
-                        <span
-                          className="w-1.5 h-1.5 rounded-full"
-                          style={{ background: row.accent }}
-                        />
-                        {row.name}
-                      </span>
-                    </td>
-                    <td className="px-5 py-3.5">
-                      <span
-                        className="text-[9px] font-black tracking-[0.18em] uppercase px-2 py-0.5 rounded-full"
-                        style={{
-                          background: `${row.accent}14`,
-                          border: `1px solid ${row.accent}33`,
-                          color: row.accent,
-                        }}
-                      >
-                        {row.tier}
-                      </span>
-                    </td>
-                    <td className="px-5 py-3.5 text-neutral-700 tabular-nums" style={{ fontFamily: "var(--font-display)" }}>
-                      {row.lambda}
-                    </td>
-                    <td className="px-5 py-3.5 text-neutral-700 tabular-nums" style={{ fontFamily: "var(--font-display)" }}>
-                      {row.temp}
-                    </td>
-                    <td className="px-5 py-3.5 text-neutral-500">{row.best}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
 
       {/* ── Gulf-O-Flex Assist Showcase (futuristic / AI theme) ── */}
       <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: "#0a0a0a" }}>

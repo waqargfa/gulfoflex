@@ -6,6 +6,7 @@ import { Environment, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Sparkles, CheckCircle2 } from "lucide-react";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -350,93 +351,93 @@ const LAYERS: readonly LayerSpec[] = [
   },
 ];
 
-/* NBR-focused walkthrough (used on the /products/nbr page).
-   Only the bare service pipe and the NBR sleeve are shown in 3D -
-   the third “sealed” step keeps the NBR fully installed and
-   highlights the closed-cell vapor seal performance. */
-const NBR_LAYERS: readonly LayerSpec[] = [
-  {
+/* Product display names for the walkthrough copy */
+const WALKTHROUGH_NAMES: Record<string, string> = {
+  nbr: "Gulf-O-Flex® NBR",
+  xlpe: "Gulf-O-Flex® XLPE",
+  sound: "Gulf-O-Flex® Sound",
+  aluglass: "Gulf-O-Flex® Aluglass",
+  aluclad: "Gulf-O-Flex® Aluclad",
+  ultra: "Gulf-O-Flex® Ultra",
+  ultraline: "Gulf-O-Flex® UltraLine",
+};
+
+/* Product walkthrough — TWO steps only, shared across every product page:
+   01 · the bare, uninsulated pipe / duct, and
+   02 · the Gulf-O-Flex® insulation applied over it.
+   The pipe step is generic; the insulation step is named per product.
+   NBR keeps its full, independently-verified data set. */
+function buildNbrLayers(productSlug?: string): readonly LayerSpec[] {
+  const name = WALKTHROUGH_NAMES[productSlug || ""] || "Gulf-O-Flex®";
+
+  const pipeStep: LayerSpec = {
     id: "pipe",
-    sublabel: "Step 01  ·  Service Pipe",
-    label: "Bare Service Pipe",
+    sublabel: "Step 01  ·  Uninsulated",
+    label: "Bare Pipe / Duct Surface",
     description:
-      "A chilled-water service pipe operating at +6°C in a +48°C ambient. Without insulation, the cold steel surface condenses humidity, drips on ceilings, corrodes the line, and bleeds cooling capacity into the air. This is the unprotected baseline - condensation forms immediately.",
+      "A chilled-water line operating at +6°C in a +48°C ambient. Without insulation the cold surface condenses humidity, drips on ceilings, corrodes the line, and bleeds cooling capacity into the air. This is the unprotected baseline - condensation forms immediately.",
     keyMetric: { value: "+48°C", unit: "", label: "Typical GCC ambient temperature" },
     specs: [
-      "DN15 – DN400 bore diameter",
+      "DN15 – DN400 bore / rectangular ducts",
       "+6°C chilled-water media temperature",
       "+48°C peak ambient (GCC summer)",
-      "Carbon steel / Copper / SS304",
-      "ΔT = 42°C across pipe surface",
+      "Carbon steel / Copper / SS304 / GI duct",
       "Condensation onset: immediate without insulation",
-      "Corrosion rate: accelerated in humid GCC climate",
     ],
     highlights: [
-      "Uninsulated pipe loses up to 30% cooling capacity",
+      "Uninsulated lines lose up to 30% cooling capacity",
       "Surface condensation causes ceiling staining and corrosion",
       "Biological growth risk in humid environments above 80% RH",
     ],
     accent: "#9ca3af",
-  },
-  {
+  };
+
+  const nbrInsulationStep: LayerSpec = {
     id: "insulation",
     sublabel: "Step 02  ·  Gulf-O-Flex® NBR",
     label: "Closed-Cell NBR Rubber Insulation",
     description:
-      "Pre-slit Gulf-O-Flex® NBR tube slides over the pipe and seals along the factory-cut seam with Gulf-O-Flex® adhesive - no mechanical fixings, no thermal bridges. The flexible closed-cell Nitrile Butadiene Rubber structure encapsulates the pipe in an integral vapour barrier that cannot delaminate or fail at joints.",
+      "Pre-slit Gulf-O-Flex® NBR tube slides over the line and seals along the factory-cut seam with Gulf-O-Flex® adhesive - no mechanical fixings, no thermal bridges. The flexible closed-cell Nitrile Butadiene Rubber encapsulates the pipe in an integral vapour barrier that cannot delaminate or fail at joints.",
     keyMetric: { value: "0.032", unit: "W/mK", label: "Thermal conductivity at 35°C (ASTM C518)" },
     specs: [
       "λ = 0.032 W/mK at 35°C (ASTM C518)",
-      "λ ≤ 0.036 W/mK at 0°C (ASTM C518)",
       "−40°C to +105°C operating range",
-      "Density 50–70 kg/m³ (ASTM C302-13)",
-      "Water absorption only 0.16 vol% (ASTM C534)",
       "WVT = 0.00 Perm in - zero vapour pass (ASTM E96)",
-      "Vapour diffusion factor μ ≥ 7,300",
-      "NRC 0.30 / 0.40 / 0.45 at 13 / 19 / 25 mm",
-      "Thickness: 6 – 50 mm (tubes) · 6 – 100 mm (sheets)",
-      "Pre-slit design - adhesive seam, no thermal bridges",
-      "Tubes · Sheets · Rolls · Self-adhesive forms",
-      "Cell structure: closed-cell",
+      "Class O fire rated (BS 476 Part 6 & 7)",
+      "Density 50–70 kg/m³ (ASTM C302-13)",
     ],
     highlights: [
       "FM Approved · UL Listed · EPD Verified · ISO 9001",
-      "Zero ODP - CFC and HCFC free, low GWP refrigerant-safe",
-      "Anti-microbial: resists mold, mildew and fungi growth",
-      "Self-extinguishing - Class O (BS 476 & ASTM E84)",
-      "Closed-cell structure = integral vapour barrier, no foil tape needed",
-      "Passive performance - 0 active maintenance over 30+ year service life",
+      "Zero ODP - CFC and HCFC free, low GWP",
+      "Closed-cell = integral vapour barrier, no foil tape needed",
     ],
     accent: "#f97316",
-  },
-  {
-    id: "sealed",
-    sublabel: "Step 03  ·  Sealed System",
-    label: "Vapor-Sealed & Fire-Safe",
+  };
+
+  const genericInsulationStep: LayerSpec = {
+    id: "insulation",
+    sublabel: `Step 02  ·  ${name}`,
+    label: `${name} Applied`,
     description:
-      "The closed-cell structure is its own integral vapour barrier - no foil laminate, no butt tape, no failure points at joints. The fully sealed NBR system delivers zero condensation, Class O fire safety, and a 30+ year passive service life across HVAC, district cooling, refrigeration, and plumbing.",
-    keyMetric: { value: "7,300", unit: "μ", label: "Vapour diffusion resistance factor (ASTM E96)" },
+      `Pre-cut ${name} is installed over the service line and sealed along the seam - no mechanical fixings, no thermal bridges. It encapsulates the pipe or duct in a continuous, closed-cell barrier for stable thermal and acoustic performance and long-term condensation control.`,
+    keyMetric: { value: "30+", unit: "yrs", label: "Passive service life with zero maintenance" },
     specs: [
-      "Vapour diffusion factor μ ≥ 7,300 (ASTM E96/96M)",
-      "WVT = 0.00 Perm in - absolute zero vapour pass",
-      "Class O fire rated (BS 476 Part 6 & 7)",
-      "FSI ≤ 25 · SDI ≤ 50 (ASTM E84 / UL 723)",
-      "Self-extinguishing - no active fire suppression needed",
-      "FM Approved · UL Listed · ISO 9001 certified",
-      "Zero ODP · Low GWP (CFC & HCFC free)",
-      "Anti-microbial: resists mold, mildew and fungi",
-      "Service life: 30+ years with zero maintenance",
+      "Continuous closed-cell insulation barrier",
+      "Integral vapour control - no separate barrier needed",
+      "No mechanical fixings, no thermal bridges",
+      "Stable thermal & acoustic performance",
+      "Suitable for HVAC, district cooling & plumbing",
     ],
     highlights: [
-      "EPD Verified - independently certified environmental data",
-      "Tested per ASTM, BS EN, ISO and FM Global standards",
-      "No secondary vapour barrier required - simplifies installation",
-      "Suitable for GCC district cooling networks up to 40 bar",
-      "Manufactured under ISO 9001 QMS in the UAE since 1993",
+      "Closed-cell structure = integral vapour barrier",
+      "CFC & HCFC free - zero ODP",
+      "Passive performance - 30+ year service life",
     ],
-    accent: "#737373",
-  },
-];
+    accent: "#f97316",
+  };
+
+  return [pipeStep, productSlug === "nbr" ? nbrInsulationStep : genericInsulationStep];
+}
 
 export type PipeLayerVariant = "full" | "nbr";
 
@@ -1262,7 +1263,7 @@ function CameraRig({ progressRef, variant = "full" }: SceneProps) {
    MAIN SECTION
 ───────────────────────────────────────────────────────── */
 export default function PipeLayerSection({ variant = "full", productSlug }: { variant?: PipeLayerVariant; productSlug?: string } = {}) {
-  const layers      = variant === "nbr" ? NBR_LAYERS : LAYERS;
+  const layers      = variant === "nbr" ? buildNbrLayers(productSlug) : LAYERS;
   const stepCount   = layers.length;
   // 3-step NBR walkthrough needs less scroll runway than the 4-step
   // full walkthrough.
@@ -1334,19 +1335,14 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
           <div className="noise" style={{ opacity: 0.06 }} />
         </div>
 
-        {/* 3D Canvas / NBR Render Sequence */}
+        {/* 3D Canvas — full-screen only for the full variant */}
+        {variant !== "nbr" && (
         <div
           className="absolute inset-0 pl-canvas-wrap"
           style={{
-            background: variant === "nbr"
-              ? "#0a0806"
-              : "radial-gradient(ellipse 70% 55% at 50% 55%, #130f0a 0%, #0a0806 55%, #060504 100%)",
-            zIndex: variant === "nbr" ? 3 : undefined,
+            background: "radial-gradient(ellipse 70% 55% at 50% 55%, #130f0a 0%, #0a0806 55%, #060504 100%)",
           }}
         >
-          {variant === "nbr" ? (
-            <NbrDualRender progressRef={progressRef} productSlug={productSlug} />
-          ) : (
           <Canvas
             shadows="soft"
             dpr={[1, 1.5]}
@@ -1408,8 +1404,8 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
 
             <CameraRig progressRef={progressRef} variant={variant} />
           </Canvas>
-          )}
         </div>
+        )}
 
         {/* Right vignette - only for full variant with 3D */}
         {variant !== "nbr" && (
@@ -1426,11 +1422,73 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
         {/* Foreground UI */}
         <div
           className="relative h-full container-wide flex flex-col py-6 md:py-8"
-          style={{ zIndex: variant === "nbr" ? 1 : 5, pointerEvents: variant === "nbr" ? "none" : "auto" }}
+          style={{ zIndex: 5, pointerEvents: "auto" }}
         >
 
-          {/* MIDDLE - spacer (text panels removed) */}
-          <div className="flex-1" />
+          {/* MIDDLE */}
+          {variant === "nbr" ? (
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center flex-1 min-h-0">
+              {/* LEFT — scroll-synced product description */}
+              <div className="max-w-xl">
+                <div
+                  className="inline-flex items-center gap-2 mb-5 text-[10px] font-bold tracking-[0.24em] uppercase px-3.5 py-1.5 rounded-full backdrop-blur-sm"
+                  style={{
+                    color: layers[activeStep].accent,
+                    background: `${layers[activeStep].accent}1a`,
+                    border: `1px solid ${layers[activeStep].accent}40`,
+                    transition: "color 0.5s ease, background 0.5s ease, border-color 0.5s ease",
+                  }}
+                >
+                  <Sparkles size={11} /> {layers[activeStep].sublabel}
+                </div>
+                <h2
+                  className="text-white leading-[1.02] mb-5"
+                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.7rem, 3.2vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}
+                >
+                  {layers[activeStep].label}
+                </h2>
+                <p className="text-white/60 leading-relaxed mb-7 text-[14px] md:text-[15px]">
+                  {layers[activeStep].description}
+                </p>
+                {layers[activeStep].keyMetric && (
+                  <div className="flex items-baseline gap-3 mb-6">
+                    <span
+                      className="font-bold"
+                      style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.9rem, 3.6vw, 2.75rem)", color: layers[activeStep].accent, letterSpacing: "-0.03em", lineHeight: 1 }}
+                    >
+                      {layers[activeStep].keyMetric!.value}
+                      <span className="text-white/50 text-base ml-1">{layers[activeStep].keyMetric!.unit}</span>
+                    </span>
+                    <span className="text-white/45 text-[11px] max-w-[190px] leading-snug">
+                      {layers[activeStep].keyMetric!.label}
+                    </span>
+                  </div>
+                )}
+                <ul className="space-y-2.5">
+                  {layers[activeStep].highlights?.slice(0, 3).map((h) => (
+                    <li key={h} className="flex items-start gap-2.5 text-white/70 text-[13px] leading-snug">
+                      <CheckCircle2 size={14} style={{ color: layers[activeStep].accent }} className="mt-0.5 flex-shrink-0" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* RIGHT — compact 3D render container */}
+              <div className="relative">
+                <div
+                  aria-hidden
+                  className="absolute -inset-6 rounded-[2.5rem] blur-2xl pointer-events-none"
+                  style={{ background: `radial-gradient(ellipse at 60% 40%, ${layers[activeStep].accent}22, transparent 70%)`, transition: "background 1.2s ease" }}
+                />
+                <div className="relative w-full h-[46vh] lg:h-[64vh] max-h-[640px] rounded-3xl border border-white/10 overflow-hidden bg-[#0a0806] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+                  <NbrDualRender progressRef={progressRef} productSlug={productSlug} />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="flex-1" />
+          )}
 
           {/* BOTTOM - progress rail */}
           <footer className="pt-6">
@@ -1478,8 +1536,8 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
                           transition: "color 0.5s ease",
                         }}
                       >
-                        {layer.id === "pipe" ? "Pipe" :
-                         layer.id === "insulation" ? "NBR Insulation" :
+                        {layer.id === "pipe" ? "Uninsulated" :
+                         layer.id === "insulation" ? "Insulation" :
                          layer.id === "vapor" ? "Vapor Barrier" : "Cladding"}
                       </span>
                       <span

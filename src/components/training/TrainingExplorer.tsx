@@ -10,7 +10,7 @@ import {
   Layers,
   Wrench,
   ListChecks,
-  Lock,
+  Video,
   Sparkles,
   Maximize2,
 } from "lucide-react";
@@ -375,7 +375,7 @@ export default function TrainingExplorer() {
                         ) : isActive ? (
                           <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                         ) : (
-                          <Lock size={13} className="text-white/20 group-hover:text-white/35 transition-colors" />
+                          <Video size={13} className="text-white/20 group-hover:text-white/35 transition-colors" />
                         )}
                       </span>
                     </div>

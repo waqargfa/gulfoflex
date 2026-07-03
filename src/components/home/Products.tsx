@@ -141,7 +141,7 @@ const products = [
     tagline: "Premium adhesives, tapes, scrims, and installation accessories engineered to complement and enhance the performance of every Gulf-O-Flex insulation system.",
     features: ["Pressure-sensitive adhesive", "Self-adhesive tapes", "Full color range"],
     icon: Package,
-    image: "/images/products/accessories-nbr-glue.webp",
+    image: "/images/products/accessiores/whiet accesories_C1.0030016.png",
     href: "/products/accessories",
     badge: "Essential",
   },

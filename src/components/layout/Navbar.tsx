@@ -44,49 +44,49 @@ const solutions = [
     name: "Gulf-O-Flex NBR",
     desc: "Closed-cell elastomeric rubber insulation",
     href: "/products/nbr",
-    icon: Layers,
+    image: "/images/products/nbr/White NBR_C10009.png",
   },
   {
     name: "Gulf-O-Flex XLPE",
     desc: "Cross-linked polyethylene foam insulation",
     href: "https://gulfoflex.com/gulf-o-flex-xlpe/",
-    icon: Zap,
+    image: "/images/products/xlpe/xlpe-2.png",
   },
   {
     name: "Gulf-O-Flex Sound",
     desc: "Premium acoustic insulation solutions",
     href: "https://gulfoflex.com/gulf-o-flex-sound/",
-    icon: Shield,
+    image: "/images/products/sound/White Sound_C1.0040021.png",
   },
   {
     name: "Gulf-O-Flex Aluglass",
     desc: "Aluminum glass fibre reinforced facing",
     href: "/products/aluglass",
-    icon: Package,
+    image: "/images/products/aluglass/White Aluglass_C1.0010016.png",
   },
   {
     name: "Gulf-O-Flex Aluclad",
     desc: "Aluminum cladding & jacketing systems",
     href: "/products/aluclad",
-    icon: Wrench,
+    image: "/images/products/aluclad/White Aluclad_C1.0010048.png",
   },
   {
     name: "Gulf-O-Flex Ultra",
     desc: "Ultra-low conductivity premium insulation",
     href: "/products/ultra",
-    icon: Sparkles,
+    image: "/images/products/ultra/ultra-1.png",
   },
   {
     name: "Gulf-O-Flex UltraLine",
     desc: "Pre-jacketed UV-resistant line-set insulation",
     href: "/products/ultraline",
-    icon: Layers,
+    image: "/images/products/ultraline/ultraline-1.png",
   },
   {
     name: "Accessories",
     desc: "Tapes, glues and installation accessories",
     href: "/products/accessories",
-    icon: Package,
+    image: "/images/products/accessiores/whiet accesories_C1.0030016.png",
   },
 ];
 
@@ -480,8 +480,8 @@ function MegaMenuSolutions({ onMouseEnter, onMouseLeave }: { onMouseEnter: () =>
             href={p.href}
             className="flex items-start gap-3 p-3 rounded-xl hover:bg-neutral-100 transition-all duration-200 group"
           >
-            <div className="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500/20 transition-colors">
-              <p.icon size={16} className="text-orange-600" />
+            <div className="w-9 h-9 rounded-lg bg-neutral-50 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-50 transition-colors overflow-hidden">
+              <Image src={p.image} alt={p.name} width={32} height={32} className="object-contain" />
             </div>
             <div>
               <div className="text-sm font-semibold text-neutral-900 group-hover:text-orange-600 transition-colors">{p.name}</div>

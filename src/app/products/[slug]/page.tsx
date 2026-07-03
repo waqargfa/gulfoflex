@@ -410,6 +410,7 @@ const products = {
     name: "Accessories & Adhesives",
     icon: Package,
     heroImage: "/images/products/accessories-glue1.webp",
+    heroVideo: "/videos/products/accessories.webm",
     shortName: "Complete Installation System",
     tagline: "A complete range of adhesives, sealants, tapes, and anti-vibration accessories engineered for full system compatibility with Gulf-O-Flex® insulation.",
     color: "orange",
@@ -530,24 +531,22 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
             <span className="text-white/75">{product.name}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-14 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-[1.4fr_0.6fr] gap-12 lg:gap-16 items-center">
+            {/* Left — Product description */}
             <div>
               <div className="inline-flex items-center gap-2 mb-7 text-[10px] font-bold tracking-[0.22em] uppercase text-orange-300 bg-orange-500/10 border border-orange-500/30 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
                 <Sparkles size={11} /> {product.shortName}
               </div>
               <h1
                 className="leading-[0.92] mb-6"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.045em" }}
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)", fontWeight: 800, letterSpacing: "-0.045em" }}
               >
                 <span className="block text-white/90">{product.name}</span>
-                <span className="block serif-italic text-orange-400 mt-1" style={{ fontSize: "0.55em", fontWeight: 500 }}>
-                  Engineered insulation, Middle East proven.
-                </span>
               </h1>
-              <p className="text-orange-300/90 font-medium text-base md:text-lg mb-6 leading-relaxed max-w-xl">
-                {product.tagline}
-              </p>
-              <p className="text-white/55 leading-relaxed mb-9 max-w-2xl">{product.description[0]}</p>
+
+              <div className="space-y-5 text-white/65 leading-relaxed max-w-2xl mb-9">
+                {product.description.map((p, i) => <p key={i}>{p}</p>)}
+              </div>
 
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="btn-primary">
@@ -558,26 +557,12 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                   View Specifications <FileText size={15} />
                 </Link>
               </div>
-
-              <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-6 max-w-lg">
-                <div>
-                  <div className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>30<span className="text-orange-400">+</span></div>
-                  <div className="text-[10px] uppercase tracking-[0.18em] text-white/45 mt-1">Years</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>{product.certifications.length}<span className="text-orange-400">/{product.certifications.length}</span></div>
-                  <div className="text-[10px] uppercase tracking-[0.18em] text-white/45 mt-1">Certifications</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>{product.applications.length}<span className="text-orange-400">+</span></div>
-                  <div className="text-[10px] uppercase tracking-[0.18em] text-white/45 mt-1">Applications</div>
-                </div>
-              </div>
             </div>
 
+            {/* Right — Compact animation/sequence */}
             <div className="relative">
-              <div className="absolute -inset-10 bg-gradient-to-br from-orange-500/25 via-orange-500/5 to-transparent rounded-[3rem] blur-3xl pointer-events-none" />
-              <div className="relative rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.015] backdrop-blur-2xl overflow-hidden shadow-[0_40px_120px_-20px_rgba(0,0,0,0.6)]">
+              <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/20 via-orange-500/5 to-transparent rounded-[2rem] blur-2xl pointer-events-none" />
+              <div className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.015] backdrop-blur-2xl overflow-hidden shadow-[0_30px_80px_-15px_rgba(0,0,0,0.5)]">
                 <ProductAnimation
                   slug={productSlug}
                   shortName={product.shortName}
@@ -585,8 +570,6 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
                   productCount={Object.keys(products).length}
                   index={Object.keys(products).indexOf(productSlug) + 1}
                 />
-
-
               </div>
             </div>
           </div>
@@ -669,7 +652,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {((product as Record<string, unknown>).gallery as { src: string; alt: string }[]).map((img) => (
                 <div key={img.src} className="group relative aspect-square rounded-2xl border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-25px_rgba(234,88,12,0.25)]" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                  <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" />
                 </div>
               ))}
             </div>
