@@ -22,7 +22,7 @@ export default function ExperienceCTA() {
                 See it. Touch it. Test it.
               </h2>
               <p className="text-neutral-400 text-base leading-relaxed mb-8 max-w-xl">
-                Visit our immersive showroom for hands-on product demonstrations, live performance testing, and one-on-one technical consultations — book your private one-hour slot today.
+                Visit our immersive showroom for hands-on product demonstrations, live performance testing, and one-on-one technical consultations. Book your private one-hour slot today.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link

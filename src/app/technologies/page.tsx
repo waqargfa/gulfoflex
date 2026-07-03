@@ -49,7 +49,7 @@ const technologies: Tech[] = [
     tier: "Core",
     accent: "#f97316",
     tint: "rgba(249,115,22,0.10)",
-    desc: "Nitrile Butadiene Rubber closed-cell foam - our flagship insulation. The closed-cell structure prevents moisture absorption (the #1 cause of insulation failure in humid climates) while delivering class-leading thermal performance across HVAC and process applications.",
+    desc: "Nitrile Butadiene Rubber closed-cell foam - our flagship insulation. The closed-cell structure prevents moisture absorption (the number 1 cause of insulation failure in humid climates) while delivering class-leading thermal performance across HVAC and process applications.",
     specs: [
       { label: "Thermal Conductivity", value: "≤0.0321 W/(m·K)" },
       { label: "Temperature Range",   value: "−40°C to +105°C" },

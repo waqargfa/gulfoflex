@@ -24,7 +24,7 @@ const caseStudies = [
   {
     slug: "sobha-hartland",
     title: "Sobha Hartland - GI Duct Insulation",
-    subtitle: "On-site technical training resolved bond failures — zero detachments since install.",
+    subtitle: "On-site technical training resolved bond failures, zero detachments since install.",
     client: "Sobha Hartland",
     location: "Dubai, UAE",
     sector: "Luxury Residential · HVAC",
@@ -300,7 +300,7 @@ export default function TrustAndProjects() {
             </h3>
             <p className="text-white/55 text-base leading-relaxed max-w-xl mx-auto">
               Every Gulf&#8209;O&#8209;Flex® product is independently tested and approved by the world&rsquo;s most
-              respected labs — so you can specify with complete confidence.
+              respected labs so you can specify with complete confidence.
             </p>
           </div>
 

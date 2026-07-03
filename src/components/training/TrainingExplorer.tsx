@@ -35,7 +35,7 @@ const lessons: Lesson[] = [
     index: "00",
     title: "Installation Steps",
     subtitle: "Complete installation walkthrough",
-    desc: "A complete overview of the Gulf-O-Flex® insulation installation process — from surface preparation to final application. Watch this first to understand the full workflow before diving into each individual step.",
+    desc: "A complete overview of the Gulf-O-Flex® insulation installation process, from surface preparation to final application. Watch this first to understand the full workflow before diving into each individual step.",
     youtubeId: "tAUscoXxMi0",
     duration: "Full guide",
     icon: ListChecks,
@@ -99,7 +99,7 @@ const lessons: Lesson[] = [
     index: "04",
     title: "Application",
     subtitle: "Final fitting & finishing",
-    desc: "The final step — fitting the insulation onto the system and finishing the installation. Learn how to seal seams, secure the insulation, and inspect the work for a clean, professional result.",
+    desc: "The final step, fitting the insulation onto the system and finishing the installation. Learn how to seal seams, secure the insulation, and inspect the work for a clean, professional result.",
     youtubeId: "IzzhMwTe7Z8",
     duration: "Module 4",
     icon: Layers,
@@ -390,7 +390,7 @@ export default function TrainingExplorer() {
                 <ListChecks size={13} className="text-orange-400" /> Recommended Path
               </div>
               <p className="text-neutral-400 text-sm leading-relaxed">
-                Begin with the full overview, then complete each module in order — Surface Preparation → Measuring &amp; Cutting → Gluing &amp; Shaping → Application — for a certified-grade installation.
+                Begin with the full overview, then complete each module in order: Surface Preparation → Measuring &amp; Cutting → Gluing &amp; Shaping → Application for a certified-grade installation.
               </p>
             </div>
           </div>

@@ -36,7 +36,7 @@ const highlights = [
   {
     icon: Layers,
     title: "Full Product Range",
-    desc: "Explore every Gulf-O-Flex® product line — NBR, XLPE, Sound, Ultra, Aluglass, Aluclad & UltraLine — all in one immersive space.",
+    desc: "Explore every Gulf-O-Flex® product line: NBR, XLPE, Sound, Ultra, Aluglass, Aluclad & UltraLine, all in one immersive space.",
   },
   {
     icon: ThermometerSun,
@@ -56,12 +56,12 @@ const highlights = [
   {
     icon: Eye,
     title: "Material Comparison Lab",
-    desc: "Side-by-side comparisons of insulation types, densities, and facing options — feel the difference and understand the science.",
+    desc: "Side-by-side comparisons of insulation types, densities, and facing options. Feel the difference and understand the science.",
   },
   {
     icon: Sparkles,
     title: "Innovation Showcase",
-    desc: "Preview upcoming products and R&D breakthroughs before they hit the market — exclusive to centre visitors.",
+    desc: "Preview upcoming products and R&D breakthroughs before they hit the market, exclusive to centre visitors.",
   },
 ];
 
@@ -118,7 +118,7 @@ export default function ExperienceCentrePage() {
                 <span className="serif-italic">Step inside.</span>
               </h1>
               <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
-                A world-class immersive showroom where engineers, consultants, and partners can explore, touch, and test our full range of insulation solutions — in person or through our interactive 3D virtual tour.
+                A world-class immersive showroom where engineers, consultants, and partners can explore, touch, and test our full range of insulation solutions, in person or through our interactive 3D virtual tour.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#book-visit" className="btn-primary inline-flex items-center gap-2">
@@ -167,7 +167,7 @@ export default function ExperienceCentrePage() {
               More Than a Showroom
             </h2>
             <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
-              Our Experience Centre is designed to educate, inspire, and empower — giving you hands-on access to our full product ecosystem.
+              Our Experience Centre is designed to educate, inspire, and empower, giving you hands-on access to our full product ecosystem.
             </p>
           </div>
 
@@ -266,7 +266,7 @@ export default function ExperienceCentrePage() {
               Photo Gallery
             </h2>
             <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
-              Get a glimpse into our state-of-the-art facility — designed to showcase the full breadth of Gulf-O-Flex® innovation.
+              Get a glimpse into our state-of-the-art facility, designed to showcase the full breadth of Gulf-O-Flex® innovation.
             </p>
           </div>
 
@@ -316,7 +316,7 @@ export default function ExperienceCentrePage() {
                   Visit Our Experience Centre
                 </h2>
                 <p className="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
-                  Schedule a private tour with our technical team. Whether you&apos;re an engineer, contractor, consultant, or distributor — we&apos;ll tailor the visit to your specific needs and projects.
+                  Schedule a private tour with our technical team. Whether you&apos;re an engineer, contractor, consultant, or distributor, we&apos;ll tailor the visit to your specific needs and projects.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a

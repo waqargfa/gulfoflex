@@ -68,7 +68,7 @@ export default function TrainingPage() {
                 <span className="serif-italic">Made simple.</span>
               </h1>
               <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
-                Master the correct way to install Gulf-O-Flex® rubber insulation with our practical, step-by-step video guides — covering everything from surface preparation to the final finish.
+                Master the correct way to install Gulf-O-Flex® rubber insulation with our practical, step-by-step video guides, covering everything from surface preparation to the final finish.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#training" className="btn-primary inline-flex items-center gap-2">
