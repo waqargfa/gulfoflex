@@ -161,11 +161,11 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 function NbrDualRender({ progressRef, productSlug }: { progressRef: React.MutableRefObject<number>; productSlug?: string }) {
   // Product-specific pipe render folder mapping
   const pipeFolder: Record<string, { folder: string; prefix: string; padLength: number }> = {
-    nbr: { folder: "Render/pipe", prefix: "Render", padLength: 4 },
-    xlpe: { folder: "Render/pipe/XLPE", prefix: "XLPE_", padLength: 5 },
-    sound: { folder: "Render/pipe/Sound", prefix: "Sound_", padLength: 5 },
-    aluglass: { folder: "Render/pipe/Aluglass", prefix: "Aluglass_", padLength: 5 },
-    aluclad: { folder: "Render/pipe/Aluclad", prefix: "Aluclad_", padLength: 5 },
+    nbr: { folder: "Render/pipe/NBR", prefix: "NBR PIPES RENDER_", padLength: 5 },
+    xlpe: { folder: "Render/pipe/XLPE", prefix: "XLPE PIPES RENDER_", padLength: 5 },
+    sound: { folder: "Render/pipe/Sound", prefix: "SOUND PIPES Render_", padLength: 5 },
+    aluglass: { folder: "Render/pipe/Aluglass", prefix: "ALUGLASS PIPES Render_", padLength: 5 },
+    aluclad: { folder: "Render/pipe/Aluclad", prefix: "ALUCLAD PIPES Render_", padLength: 5 },
     ultra: { folder: "Render/pipe/ultra", prefix: "Pipes Render Ultra_", padLength: 5 },
     ultraline: { folder: "Render/pipe/ultra", prefix: "Pipes Render Ultra_", padLength: 5 },
   };
@@ -174,13 +174,13 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
 
   // Product-specific duct render folder mapping
   const ductFolder: Record<string, { folder: string; prefix: string; frameCount: number }> = {
-    nbr: { folder: "Render/duct/nbr", prefix: "NBR_Final_Ducts_", frameCount: 361 },
-    xlpe: { folder: "Render/duct/xlpe", prefix: "XLPE DUCTS_", frameCount: 361 },
-    sound: { folder: "Render/duct/sound", prefix: "Sound Ducts_", frameCount: 375 },
-    aluglass: { folder: "Render/duct/aluglass", prefix: "Alu_Glass_Ducts", frameCount: 361 },
-    aluclad: { folder: "Render/duct/aluclad", prefix: "ALUCLAD DUCTS_", frameCount: 361 },
-    ultra: { folder: "Render/duct/ultra", prefix: "Ultra Ducts_", frameCount: 361 },
-    ultraline: { folder: "Render/duct/ultra", prefix: "Ultra Ducts_", frameCount: 361 },
+    nbr: { folder: "Render/duct/nbr", prefix: "NBR DUCTS  Render_", frameCount: 126 },
+    xlpe: { folder: "Render/duct/xlpe", prefix: "XLPE DUCTS  Render_", frameCount: 126 },
+    sound: { folder: "Render/duct/sound", prefix: "SOUND DUCTS  Render_", frameCount: 126 },
+    aluglass: { folder: "Render/duct/aluglass", prefix: "Aluglass Ducts Render_", frameCount: 126 },
+    aluclad: { folder: "Render/duct/aluclad", prefix: "ALU CLAD DUCTS Render_", frameCount: 126 },
+    ultra: { folder: "Render/duct/ultra", prefix: "Ultra DUCTS Render_", frameCount: 126 },
+    ultraline: { folder: "Render/duct/ultra", prefix: "Ultra DUCTS Render_", frameCount: 126 },
   };
 
   const activeDuct = ductFolder[productSlug || ""] || ductFolder.nbr;
@@ -199,7 +199,7 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
       {/* Render panels - only mount active panel */}
       <div className="absolute inset-0">
         {activePanel === "pipe" && (
-          <RenderSequence progressRef={progressRef} folder={activePipe.folder} prefix={activePipe.prefix} frameCount={361} padLength={activePipe.padLength} ext="webp" />
+          <RenderSequence progressRef={progressRef} folder={activePipe.folder} prefix={activePipe.prefix} frameCount={126} padLength={activePipe.padLength} ext="webp" />
         )}
         {activePanel === "duct" && (
           <RenderSequence progressRef={progressRef} folder={activeDuct.folder} prefix={activeDuct.prefix} frameCount={activeDuct.frameCount} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
