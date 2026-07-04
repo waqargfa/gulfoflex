@@ -202,7 +202,7 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
           <RenderSequence progressRef={progressRef} folder={activePipe.folder} prefix={activePipe.prefix} frameCount={126} padLength={activePipe.padLength} ext="webp" />
         )}
         {activePanel === "duct" && (
-          <RenderSequence progressRef={progressRef} folder={activeDuct.folder} prefix={activeDuct.prefix} frameCount={activeDuct.frameCount} padLength={5} ext="webp" scale={0.6} topCrop={-0.12} />
+          <RenderSequence progressRef={progressRef} folder={activeDuct.folder} prefix={activeDuct.prefix} frameCount={activeDuct.frameCount} padLength={5} ext="webp" />
         )}
       </div>
 
