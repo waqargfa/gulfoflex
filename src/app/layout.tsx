@@ -26,11 +26,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gulfoflex.com"),
   title: {
-    default: "Gulf-O-Flex® | Premium NBR Rubber Insulation | UAE Manufacturing Since 1993",
+    default: "Gulf-O-Flex® | NBR Rubber Insulation Manufacturer UAE",
     template: "%s | Gulf-O-Flex®",
   },
   description:
-    "Gulf-O-Flex® is a leading manufacturer of closed-cell NBR rubber insulation products for HVAC, Oil & Gas, Marine, and industrial applications. ISO certified. Made in UAE since 1993.",
+    "Gulf-O-Flex® manufactures closed-cell NBR rubber insulation for HVAC, Oil & Gas, Marine & industrial use. ISO certified. Made in UAE since 1993.",
   keywords: [
     "NBR rubber insulation",
     "closed cell elastomeric insulation",

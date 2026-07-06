@@ -240,7 +240,7 @@ export default function Industries() {
                   >
                     <Image
                       src={ind.image}
-                      alt=""
+                      alt={`${ind.name} insulation applications`}
                       fill
                       sizes="44px"
                       className="object-cover"

@@ -12,9 +12,9 @@ const ExperienceCTA = dynamic(() => import("@/components/home/ExperienceCTA"));
 const Contact = dynamic(() => import("@/components/home/Contact"));
 
 export const metadata: Metadata = {
-  title: "Gulf-O-Flex® | Premium NBR Rubber Insulation Manufacturer | UAE Since 1993",
+  title: { absolute: "Gulf-O-Flex® | NBR Rubber Insulation Manufacturer UAE" },
   description:
-    "Gulf-O-Flex® is the GCC's leading manufacturer of closed-cell NBR rubber insulation. Trusted by engineers and contractors across 90+ countries. ISO 9001, FM Approved, UL Listed. Ajman, UAE.",
+    "Gulf-O-Flex® is the GCC's leading manufacturer of closed-cell NBR rubber insulation for HVAC. ISO 9001, FM Approved, UL Listed. Made in Ajman, UAE.",
   alternates: {
     canonical: "https://gulfoflex.com",
   },
