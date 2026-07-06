@@ -13,6 +13,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Enforce trailing slash removal for consistent canonical URLs
+  trailingSlash: false,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "gulfoflex.com" },
@@ -32,6 +34,13 @@ const nextConfig: NextConfig = {
   // closest equivalent page preserves SEO equity and stops "404 from Google" landings.
   async redirects() {
     return [
+      // ---- URL canonicalization: www → non-www ----
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.gulfoflex.com" }],
+        destination: "https://gulfoflex.com/:path*",
+        permanent: true,
+      },
       // ---- Core company pages ----
       { source: "/home", destination: "/", statusCode: 301 },
       { source: "/about-us", destination: "/about", statusCode: 301 },
@@ -193,6 +202,30 @@ const nextConfig: NextConfig = {
               source: "/fonts/(.*)",
               headers: [
                 { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+              ],
+            },
+            {
+              source: "/images/(.*)",
+              headers: [
+                { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
+              ],
+            },
+            {
+              source: "/videos/(.*)",
+              headers: [
+                { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
+              ],
+            },
+            {
+              source: "/Render/(.*)",
+              headers: [
+                { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
+              ],
+            },
+            {
+              source: "/assets/(.*)",
+              headers: [
+                { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
               ],
             },
           ]

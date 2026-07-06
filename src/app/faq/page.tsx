@@ -87,8 +87,27 @@ const faqs = [
 
 export default function FAQPage() {
   const totalQuestions = faqs.reduce((sum, s) => sum + s.questions.length, 0);
+  const allFaqs = faqs.flatMap((s) => s.questions);
   return (
     <>
+      {/* FAQPage structured data for rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: allFaqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10" style={{ background: "linear-gradient(180deg, #fff 0%, #fff7ed 100%)" }}>
         <PageHero src="https://images.unsplash.com/photo-1698031610524-c35e7ebbba2c?auto=format&fit=crop&w=2400&q=80" focalY="center" />

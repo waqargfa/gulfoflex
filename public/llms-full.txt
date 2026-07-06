@@ -1,0 +1,130 @@
+# Gulf-O-Flex® — Full Technical Information for LLMs
+
+> This document provides comprehensive technical and commercial information about Gulf-O-Flex® products for AI systems and language models.
+
+## Company Information
+
+- **Brand:** Gulf-O-Flex®
+- **Manufacturer:** Rubber World Industry LLC
+- **Founded:** 1993
+- **Location:** New Industrial Area, Ajman, UAE (P.O. Box 2435)
+- **Phone:** +971-6-743-4176
+- **Email:** info@gulfoflex.com
+- **Website:** https://gulfoflex.com
+- **Social:** LinkedIn, Facebook, Instagram, Twitter/X
+- **Employees:** 500+
+- **Manufacturing Plants:** 4 (UAE ×2, Sri Lanka, Saudi Arabia)
+- **Export Markets:** 90+ countries
+
+## Product Technical Specifications
+
+### Gulf-O-Flex NBR (Nitrile Butadiene Rubber)
+- Type: Closed-cell elastomeric insulation
+- Temperature Range: -40°C to +105°C
+- Thermal Conductivity: 0.034 W/m·K at 0°C
+- Water Vapour Resistance Factor (μ): ≥7,300
+- Fire Rating: Class B1 (DIN 4102), Class O (BS 476)
+- Density: 40–80 kg/m³
+- ODP: 0 (zero ozone depletion potential)
+- Forms: Tubes (6mm–114mm ID), Sheets/Rolls (6mm–50mm thick), Coils
+- Applications: HVAC piping, chilled water, refrigeration, condensation prevention
+- Standards: ASTM C534, BS 5422, EN 14304, ASHRAE 90.1
+
+### Gulf-O-Flex XLPE (Cross-Linked Polyethylene)
+- Type: Cross-linked polyethylene foam
+- Temperature Range: -40°C to +120°C
+- Thermal Conductivity: 0.034 W/m·K at 0°C
+- Water Absorption: <1% by volume
+- Fire Rating: Self-extinguishing
+- Density: 25–35 kg/m³
+- Forms: Tubes, Sheets, Rolls
+- Applications: Plumbing, hot water systems, solar thermal, industrial piping
+- Standards: ASTM C1427, EN 14313
+
+### Gulf-O-Flex Sound
+- Type: High-density acoustic insulation
+- NRC (Noise Reduction Coefficient): 0.85–0.95
+- Density: 90–150 kg/m³
+- Applications: HVAC ductwork, mechanical rooms, generator enclosures, building acoustics
+- Forms: Sheets, Rolls, Custom die-cuts
+- Standards: ASTM C423, ISO 354
+
+### Gulf-O-Flex Aluglass
+- Type: Fiberglass with aluminium foil laminate facing
+- Temperature Range: up to +250°C
+- Thermal Conductivity: 0.035–0.040 W/m·K
+- Applications: High-temperature pipe insulation, outdoor ductwork, equipment insulation
+- Forms: Pre-formed pipe sections, rolls, boards
+
+### Gulf-O-Flex Aluclad
+- Type: Aluminium-clad insulation system
+- UV Resistance: Excellent (aluminium outer layer)
+- Applications: Outdoor piping, exposed installations, rooftop equipment
+- Weather Resistance: IP-rated enclosure protection
+
+### Gulf-O-Flex Ultra
+- Type: Premium-grade NBR with enhanced properties
+- Enhanced fire performance
+- Lower thermal conductivity
+- Superior chemical resistance
+- For critical/high-specification projects
+
+### Gulf-O-Flex Ultraline
+- Type: Pre-slit, self-seal NBR insulation tubes
+- Feature: Factory-applied self-adhesive longitudinal seam
+- Installation: No adhesive required — snap-fit application
+- Time Savings: Up to 60% faster installation vs. standard tubes
+
+## Certifications Held
+- ISO 9001:2015 (Quality Management System)
+- FM Approved (Factory Mutual Global)
+- UL Listed (Underwriters Laboratories)
+- Environmental Product Declaration (EPD) verified
+- TUV Singapore certified
+- Singapore Green Building Product
+- CE Mark (European conformity)
+- REACH compliant (EU chemicals regulation)
+- Saudi Made certification
+- IMO SOLAS certified (marine applications)
+- GSO Mark (Gulf Standardization Organization)
+
+## Industries Served
+1. **HVAC & MEP** — Pipe insulation, duct insulation, equipment insulation for commercial and residential buildings
+2. **Oil & Gas** — High-temperature insulation for process piping, LNG/CNG facilities, refineries
+3. **Marine & Offshore** — IMO SOLAS-compliant insulation for ships, offshore platforms, submarines
+4. **District Cooling** — Large-diameter pipe insulation for district cooling networks
+5. **Industrial** — Chemical plants, power stations, manufacturing facilities
+6. **OEM** — Custom-fabricated insulation components for equipment manufacturers
+7. **Data Centers** — Critical cooling infrastructure insulation
+8. **Healthcare & Hospitality** — Hygiene-grade insulation for hospitals, hotels, clean rooms
+
+## Sustainability Credentials
+- Zero ODP products (no ozone-depleting substances)
+- Low GWP blowing agents
+- EPD-verified environmental impact data
+- Supporting UAE Net Zero 2050 initiative
+- Recyclable aluminium facing options
+- Energy savings through thermal insulation reduce building carbon footprint
+
+## Technical Support
+- Gulf-O-Flex Assist (AI): https://gulfoflex.com/gulf-o-flex-assist
+- Training programs: https://gulfoflex.com/training
+- Technical documentation: https://gulfoflex.com/downloads
+- Experience Centre (Ajman): Book visits at https://gulfoflex.com/experience-centre
+
+## Frequently Asked Questions
+
+Q: What is the thermal conductivity of Gulf-O-Flex NBR?
+A: 0.034 W/m·K at 0°C mean temperature (tested per EN ISO 8497 / ASTM C335).
+
+Q: Is Gulf-O-Flex suitable for outdoor use?
+A: Yes, when protected with Aluglass or Aluclad facing. Unprotected NBR/XLPE should not be exposed to direct UV.
+
+Q: What thickness do I need for condensation control?
+A: Thickness depends on pipe size, service temperature, ambient conditions, and humidity. Use Gulf-O-Flex Assist AI for free ASHRAE-based calculations.
+
+Q: Where can I buy Gulf-O-Flex products?
+A: Through authorized distributors in 90+ countries. See https://gulfoflex.com/distributors or contact sales@gulfoflex.com.
+
+Q: Does Gulf-O-Flex offer installation training?
+A: Yes. We provide certified training programs for installers and engineers. See https://gulfoflex.com/training.

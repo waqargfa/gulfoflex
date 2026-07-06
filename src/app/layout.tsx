@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import PageLoader from "@/components/layout/PageLoader";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import GoogleAnalytics from "@/components/layout/GoogleAnalytics";
 import { CountryProvider } from "@/context/CountryContext";
 
 const inter = Inter({
@@ -105,8 +106,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Preload hero video for LCP improvement */}
+        <link rel="preload" href="/slidervideo.webm" as="video" type="video/webm" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#F97316" />
+        <meta name="geo.region" content="AE-AJ" />
+        <meta name="geo.placename" content="Ajman" />
+        <meta name="geo.position" content="25.4052;55.5136" />
+        <meta name="ICBM" content="25.4052, 55.5136" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -155,6 +164,59 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* WebSite schema with SearchAction for sitelinks search box */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Gulf-O-Flex",
+              url: "https://gulfoflex.com",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://gulfoflex.com/gulf-o-flex-assist?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        {/* LocalBusiness/Manufacturer schema for local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Manufacturer",
+              name: "Gulf-O-Flex® by Rubber World Industry",
+              image: "https://gulfoflex.com/logo.png",
+              url: "https://gulfoflex.com",
+              telephone: "+971-6-743-4176",
+              email: "info@gulfoflex.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "New Industrial Area",
+                addressLocality: "Ajman",
+                addressRegion: "Ajman",
+                postalCode: "2435",
+                addressCountry: "AE",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 25.4052,
+                longitude: 55.5136,
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
+                opens: "08:00",
+                closes: "17:00",
+              },
+              priceRange: "$$",
+            }),
+          }}
+        />
+        <GoogleAnalytics />
       </head>
       <body className="bg-neutral-50 text-neutral-100 font-sans antialiased" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
         <PageLoader />
