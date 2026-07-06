@@ -189,6 +189,83 @@ export async function sendBookingEmails(b: Booking): Promise<void> {
 }
 
 /* ─────────────────────────────────────────────────────────
+   Contact form enquiry
+───────────────────────────────────────────────────────── */
+
+export interface ContactEnquiry {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  product?: string;
+  message: string;
+}
+
+const PRODUCT_LABELS: Record<string, string> = {
+  nbr: "Gulf-O-Flex® NBR",
+  xlpe: "Gulf-O-Flex® XLPE",
+  sound: "Gulf-O-Flex® Sound",
+  aluglass: "Gulf-O-Flex® Aluglass",
+  aluclad: "Gulf-O-Flex® Aluclad",
+  accessories: "Accessories & Adhesives",
+  other: "Other / Not Sure",
+};
+
+export async function sendContactEmail(c: ContactEnquiry): Promise<void> {
+  const transport = getTransport();
+  const from = fromHeader();
+  const notify = process.env.CONTACT_NOTIFY_EMAIL || "info@gulfoflex.com";
+
+  const productLabel = c.product ? PRODUCT_LABELS[c.product] || c.product : "";
+
+  const row = (label: string, value: string) => `
+    <tr>
+      <td style="padding:10px 0;color:#737373;font-size:13px;width:140px;vertical-align:top;">${label}</td>
+      <td style="padding:10px 0;color:#171717;font-size:14px;font-weight:600;">${value}</td>
+    </tr>`;
+
+  const html = shell(
+    `
+    <h1 style="margin:0 0 6px;font-size:22px;color:#171717;font-weight:800;">New contact enquiry</h1>
+    <p style="margin:0 0 20px;color:#737373;font-size:14px;line-height:1.6;">
+      A new enquiry has been submitted through the website contact form.
+    </p>
+    <table style="width:100%;border-collapse:collapse;border-top:1px solid #eee;margin-top:8px;">
+      ${row("Name", escapeHtml(c.name))}
+      ${row("Email", escapeHtml(c.email))}
+      ${c.phone ? row("Phone", escapeHtml(c.phone)) : ""}
+      ${c.company ? row("Company", escapeHtml(c.company)) : ""}
+      ${productLabel ? row("Product", escapeHtml(productLabel)) : ""}
+    </table>
+    <div style="margin-top:24px;">
+      <p style="color:#171717;font-size:14px;font-weight:700;margin:0 0 8px;">Message</p>
+      <div style="padding:14px 16px;background:#f5f5f4;border-radius:10px;color:#525252;font-size:14px;line-height:1.7;white-space:pre-wrap;">${escapeHtml(c.message)}</div>
+    </div>
+  `,
+    "Contact Enquiry"
+  );
+
+  const text = `New contact enquiry
+Name: ${c.name}
+Email: ${c.email}
+Phone: ${c.phone || "-"}
+Company: ${c.company || "-"}
+Product: ${productLabel || "-"}
+
+Message:
+${c.message}`;
+
+  await transport.sendMail({
+    from,
+    to: notify,
+    replyTo: c.email,
+    subject: `New contact enquiry — ${c.name}${productLabel ? ` · ${productLabel}` : ""}`,
+    html,
+    text,
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
    One-time password email for gated document downloads
 ───────────────────────────────────────────────────────── */
 

@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "Gulf-O-Flex® is the GCC's leading manufacturer of closed-cell NBR rubber insulation for HVAC. ISO 9001, FM Approved, UL Listed. Made in Ajman, UAE.",
   alternates: {
     canonical: "https://gulfoflex.com",
+    languages: {
+      en: "https://gulfoflex.com",
+      "x-default": "https://gulfoflex.com",
+    },
   },
 };
 
