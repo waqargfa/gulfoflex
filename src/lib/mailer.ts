@@ -133,9 +133,11 @@ function customerEmail(b: Booking): { subject: string; html: string; text: strin
     <div style="margin-top:24px;">
       <p style="color:#171717;font-size:14px;font-weight:700;margin:0 0 8px;">What to expect</p>
       <ul style="margin:0;padding-left:18px;color:#525252;font-size:13px;line-height:1.8;">
-        <li>A guided walkthrough of our full insulation product range</li>
-        <li>Live thermal, fire and acoustic performance demonstrations</li>
-        <li>One-on-one technical consultation with our specialists</li>
+        <li>Explore our complete range of insulation solutions through a guided tour.</li>
+        <li>Experience live demonstrations of thermal and acoustic performance.</li>
+        <li>Discover the history of insulation and the latest global innovations.</li>
+        <li>Enjoy a state-of-the-art, immersive insulation experience.</li>
+        <li>Receive personalized technical consultation from our insulation specialists.</li>
       </ul>
     </div>
     <div style="margin-top:24px;padding:14px 16px;background:#f5f5f4;border-radius:10px;color:#525252;font-size:13px;line-height:1.6;">
@@ -151,9 +153,11 @@ Time: ${slotLabel(b.slot)} GST
 Visitors: ${b.visitors}
 
 What to expect:
-- Guided walkthrough of our full insulation product range
-- Live thermal, fire and acoustic performance demonstrations
-- One-on-one technical consultation with our specialists
+- Explore our complete range of insulation solutions through a guided tour.
+- Experience live demonstrations of thermal and acoustic performance.
+- Discover the history of insulation and the latest global innovations.
+- Enjoy a state-of-the-art, immersive insulation experience.
+- Receive personalized technical consultation from our insulation specialists.
 
 Please arrive 10 minutes early. To reschedule, reply to this email or call +971 6 743 4176.
 Booking reference: ${b.id}`;

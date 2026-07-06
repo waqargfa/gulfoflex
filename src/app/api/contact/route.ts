@@ -34,7 +34,11 @@ export async function POST(request: Request) {
   try {
     await sendContactEmail({ name, email, phone, company, product, message });
   } catch (err) {
-    console.error("Contact email failed:", err);
+    // Surface the real reason in the server logs (pm2 logs gfa) so SMTP/env
+    // problems can be diagnosed on the live server.
+    const detail =
+      err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+    console.error("[contact] email send failed:", detail, err);
     return NextResponse.json(
       { error: "Sorry, we couldn't send your message right now. Please try again or email info@gulfoflex.com directly." },
       { status: 500 }
