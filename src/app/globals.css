@@ -410,10 +410,13 @@
   .mega-heading {
     font-family: var(--font-display), var(--font-syne), ui-sans-serif;
     font-weight: 800;
-    line-height: 0.88;
-    letter-spacing: -0.05em;
-    font-size: clamp(3.25rem, 7vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    font-size: clamp(2.25rem, 8vw, 8rem);
     font-feature-settings: "ss01", "ss02", "cv11";
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
   }
 
   /* --- Layout --- */

@@ -195,7 +195,9 @@ export default function Hero() {
                 style={{
                   animation: `hero-word 700ms cubic-bezier(0.19,1,0.22,1) ${isRight ? "120ms" : "80ms"} both`,
                   paddingTop: "0.18em",
+                  paddingBottom: "0.12em",
                   marginTop: "-0.18em",
+                  marginBottom: "-0.12em",
                 }}
               >
                 <span className="inline-block text-white" style={{ lineHeight: 1.02 }}>{slide.line1}</span>
@@ -204,6 +206,10 @@ export default function Hero() {
                 className="block overflow-hidden"
                 style={{
                   animation: `hero-word 700ms cubic-bezier(0.19,1,0.22,1) ${isRight ? "220ms" : "180ms"} both`,
+                  paddingTop: "0.12em",
+                  paddingBottom: "0.12em",
+                  marginTop: "-0.12em",
+                  marginBottom: "-0.12em",
                 }}
               >
                 <span className="inline-block text-white/55">{slide.line2a}</span>
@@ -213,11 +219,12 @@ export default function Hero() {
                 className="block"
                 style={{
                   animation: `hero-word 700ms cubic-bezier(0.19,1,0.22,1) ${isRight ? "320ms" : "280ms"} both`,
-                  paddingBottom: "0.15em",
+                  paddingTop: "0.08em",
+                  paddingBottom: "0.18em",
                   overflow: "visible",
                 }}
               >
-                <span className="inline-block serif-italic gradient-text" style={{ fontSize: "1.02em", lineHeight: 1.1 }}>
+                <span className="inline-block serif-italic gradient-text" style={{ fontSize: "1.02em", lineHeight: 1.12 }}>
                   {slide.line3}
                 </span>
               </span>
