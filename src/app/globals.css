@@ -414,8 +414,9 @@
     letter-spacing: -0.045em;
     font-size: clamp(2.25rem, 8vw, 8rem);
     font-feature-settings: "ss01", "ss02", "cv11";
-    overflow-wrap: break-word;
-    word-break: break-word;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    hyphens: none;
     max-width: 100%;
   }
 
