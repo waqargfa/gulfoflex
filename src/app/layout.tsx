@@ -26,7 +26,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gulfoflex.com"),
   title: {
-    default: "Gulf-O-Flex® | NBR Rubber Insulation Manufacturer UAE",
+    default: "Gulf-O-Flex® | Engineering for the Extreme",
     template: "%s | Gulf-O-Flex®",
   },
   description:
