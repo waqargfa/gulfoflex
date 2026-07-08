@@ -25,9 +25,9 @@ export default function ContactPage() {
             <span className="text-neutral-700">Contact</span>
           </nav>
           <div className="eyebrow mb-6"><span className="eyebrow-dot" />Get In Touch · Reply within 24 hrs</div>
-          <h1 className="text-neutral-900 leading-[0.95] mb-6 max-w-4xl"
-            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
-            Let&rsquo;s engineer your<br />
+          <h1 className="text-neutral-900 leading-[1.05] mb-6 max-w-4xl"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
+            Let&rsquo;s engineer your{" "}
             <span className="gradient-text">next project</span> <span className="serif-italic text-orange-600">together.</span>
           </h1>
           <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-3xl">

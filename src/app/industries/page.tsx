@@ -19,7 +19,6 @@ const industries = [
     tagline: "Energy-efficient building services",
     desc: "Comprehensive insulation solutions for heating, ventilation, air conditioning, mechanical, electrical & plumbing systems, and building construction. Reduces energy consumption, prevents condensation.",
     applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Ductwork insulation", "Green buildings"],
-    projects: "6,500+",
     image: "/images/industries/hvac.jpg",
   },
   {
@@ -29,7 +28,6 @@ const industries = [
     tagline: "Extreme-temperature performance",
     desc: "High-performance thermal insulation rated for extreme temperatures found in refineries, petrochemical plants, pipelines, and offshore platforms. Engineered to meet the most demanding international standards.",
     applications: ["Chilled water pipes", "Refrigerant lines", "Air handling units", "Duct insulation"],
-    projects: "1,200+",
     image: "/images/industries/oil-gas.jpg",
   },
   {
@@ -39,7 +37,6 @@ const industries = [
     tagline: "Salt-spray & humidity resistant",
     desc: "Marine-grade insulation engineered to withstand harsh sea environments, salt spray, humidity, and vibration on ships, offshore platforms, and naval vessels. Certified to international marine standards.",
     applications: ["HVAC systems", "Engine rooms", "Piping systems", "Refrigeration", "Offshore platforms"],
-    projects: "850+",
     image: "/images/industries/marine.jpg",
   },
   {
@@ -49,7 +46,6 @@ const industries = [
     tagline: "GCC-scale cooling networks",
     desc: "Specialized insulation for district cooling networks, the backbone of sustainable urban cooling in GCC cities. Prevents energy loss across extensive pipe networks and ensures maximum system efficiency.",
     applications: ["Distribution mains", "Energy transfer stations", "Chiller plants", "Storage tanks"],
-    projects: "380+",
     image: "/images/industries/district-cooling.jpg",
   },
   {
@@ -59,7 +55,6 @@ const industries = [
     tagline: "Process-grade durability",
     desc: "Heavy-duty thermal insulation for manufacturing plants, food processing facilities, pharmaceutical plants, and general industrial processes requiring precise temperature control and long-term durability.",
     applications: ["HVAC systems", "Chilled water pipes", "Air handling units", "Duct insulation"],
-    projects: "2,200+",
     image: "/images/industries/industrial.jpg",
   },
   {
@@ -69,7 +64,6 @@ const industries = [
     tagline: "Custom-engineered solutions",
     desc: "Tailored insulation products for original equipment manufacturers. Gulf-O-Flex partners with OEMs to develop custom-spec insulation integrated directly into HVAC units, refrigeration equipment, and industrial machinery.",
     applications: ["HVAC equipment", "Refrigeration units", "Custom fabrication", "Equipment lining"],
-    projects: "120+",
     image: "/images/industries/oem.jpg",
   },
   {
@@ -79,7 +73,6 @@ const industries = [
     tagline: "Mission-critical cooling",
     desc: "High-reliability insulation for data center cooling infrastructure. Prevents condensation on chilled water systems, maintains precise temperature control, and supports 24/7 uptime requirements.",
     applications: ["Chilled water loops", "CRAH/CRAC units", "Cooling towers", "Liquid cooling systems"],
-    projects: "100+",
     image: "/images/industries/data-center.jpg",
   },
   {
@@ -89,13 +82,12 @@ const industries = [
     tagline: "Hygienic, quiet & efficient",
     desc: "Insulation solutions for hospitals, laboratories, pharmaceutical facilities, hotels, resorts, and leisure complexes. Meets stringent hygiene standards, prevents microbial growth, delivers superior acoustic performance.",
     applications: ["Hospital HVAC", "Clean rooms", "Guest room HVAC", "Swimming pool piping"],
-    projects: "1,800+",
     image: "/images/industries/healthcare-hospitality.jpg",
   },
 ];
 
 export default function IndustriesPage() {
-  const totalProjects = industries.reduce((sum, ind) => sum + parseInt((ind.projects ?? "0").replace(/[^0-9]/g, ""), 10), 0);
+
 
   return (
     <>
@@ -135,7 +127,7 @@ export default function IndustriesPage() {
               style={{ borderColor: "rgba(0,0,0,0.08)" }}>
               <div className="flex items-center gap-2.5">
                 <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-xs font-semibold text-neutral-600">{totalProjects.toLocaleString()}+ projects delivered</span>
+                <span className="text-xs font-semibold text-neutral-600">8 sectors served</span>
               </div>
               <span className="w-px h-4 bg-neutral-200" />
               <span className="text-xs font-semibold text-orange-600">90+ countries</span>
@@ -199,14 +191,7 @@ export default function IndustriesPage() {
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between pt-5 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                    <div>
-                      <div className="text-orange-600 font-black text-2xl leading-none"
-                        style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.03em" }}>
-                        {ind.projects}
-                      </div>
-                      <div className="text-[10px] uppercase tracking-wider font-semibold text-neutral-400 mt-0.5">projects</div>
-                    </div>
+                  <div className="flex items-center justify-end pt-5 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                     <span className="w-10 h-10 rounded-full border flex items-center justify-center text-neutral-400 group-hover:bg-orange-600 group-hover:border-orange-600 group-hover:text-white transition-all"
                       style={{ borderColor: "rgba(0,0,0,0.10)" }}>
                       <ArrowUpRight size={15} />
