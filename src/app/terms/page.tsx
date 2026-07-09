@@ -117,7 +117,7 @@ export default function TermsPage() {
                   ))}
                 </nav>
                 <div className="mt-5 pt-5 border-t border-neutral-100">
-                  <a href="mailto:legal@gulfoflex.com" className="flex items-center gap-2 text-sm text-orange-600 hover:text-orange-700 font-medium transition-colors">
+                  <a href="mailto:info@gulfoflex.com" className="flex items-center gap-2 text-sm text-orange-600 hover:text-orange-700 font-medium transition-colors">
                     <Mail className="w-4 h-4" />
                     Legal enquiries
                   </a>
@@ -343,9 +343,9 @@ export default function TermsPage() {
                       <p className="text-neutral-900 font-semibold text-sm mb-0.5">Rubber World Industry LLC</p>
                       <p className="text-neutral-500 text-xs">P.O. Box 2435, New Industrial Area, Ajman, UAE</p>
                     </div>
-                    <a href="mailto:legal@gulfoflex.com" className="btn-primary text-xs whitespace-nowrap">
+                    <a href="mailto:info@gulfoflex.com" className="btn-primary text-xs whitespace-nowrap">
                       <Mail className="w-3.5 h-3.5" />
-                      legal@gulfoflex.com
+                      info@gulfoflex.com
                     </a>
                   </div>
                 </div>
@@ -359,7 +359,7 @@ export default function TermsPage() {
                   Our legal team is happy to assist with any questions about using our website or products.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a href="mailto:legal@gulfoflex.com" className="btn-primary">
+                  <a href="mailto:info@gulfoflex.com" className="btn-primary">
                     <Mail className="w-4 h-4" />
                     Email Legal Team
                   </a>

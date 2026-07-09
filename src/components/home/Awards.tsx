@@ -1,6 +1,8 @@
 "use client";
 
-import { Trophy, Star, Award, Globe2, Crown, Zap, BadgeCheck } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import { Trophy, Star, Award, Crown, Zap, BadgeCheck, X } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type AwardItem = {
@@ -43,13 +45,6 @@ const AWARDS: AwardItem[] = [
     link: "/images/awards/cbmne2023.png",
   },
   {
-    title: "CBNME Award",
-    org: "Construction Business News ME",
-    Icon: Globe2,
-    link: "/images/awards/cbmne2022.png",
-  },
-
-  {
     title: "Climate Control Award",
     org: "Climate Control Middle East",
     year: "2017",
@@ -66,6 +61,8 @@ const AWARDS: AwardItem[] = [
 ];
 
 export default function Awards() {
+  const [selectedAward, setSelectedAward] = useState<AwardItem | null>(null);
+
   return (
     <section
       className="section-padding relative overflow-hidden bg-white"
@@ -124,13 +121,9 @@ export default function Awards() {
           {AWARDS.map((award, i) => {
             const Icon = award.Icon;
             const isSpan = award.featured && i < 2;
-            const CardWrapper = award.link ? "a" : "div";
-            const cardProps = award.link
-              ? { href: award.link, target: "_blank", rel: "noopener noreferrer" }
-              : {};
             return (
-              <CardWrapper
-                {...cardProps}
+              <div
+                onClick={() => award.link && setSelectedAward(award)}
                 key={`${award.title}-${award.year ?? i}`}
                 className={`group relative flex flex-col items-center text-center py-8 px-5 rounded-2xl cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-0.5 ${
                   isSpan ? "sm:col-span-1 lg:col-span-1" : ""
@@ -231,11 +224,41 @@ export default function Awards() {
                     {award.org}
                   </div>
                 </div>
-              </CardWrapper>
+              </div>
             );
           })}
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedAward && selectedAward.link && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+          onClick={() => setSelectedAward(null)}
+        >
+          <div className="relative max-w-3xl w-full max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setSelectedAward(null)}
+              className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-neutral-100 transition-colors"
+            >
+              <X size={18} className="text-neutral-700" />
+            </button>
+            <div className="rounded-2xl overflow-hidden bg-white shadow-2xl">
+              <Image
+                src={selectedAward.link}
+                alt={selectedAward.title}
+                width={900}
+                height={600}
+                className="w-full h-auto object-contain"
+              />
+              <div className="px-6 py-4 border-t border-neutral-100">
+                <h3 className="font-bold text-neutral-900">{selectedAward.title}</h3>
+                <p className="text-sm text-neutral-500">{selectedAward.org}{selectedAward.year ? ` · ${selectedAward.year}` : ""}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -235,28 +235,6 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                 </Link>
               </div>
             </div>
-
-            {/* Stats panel */}
-            <div className="relative">
-              <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/15 to-transparent rounded-[2rem] blur-3xl pointer-events-none" />
-              <div className="relative rounded-3xl border bg-white/90 backdrop-blur-xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(234,88,12,0.20)]"
-                style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                <div className="px-7 py-4 border-b flex items-center justify-between" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                  <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-orange-600">By the numbers</div>
-                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                </div>
-                <div className="grid grid-cols-2 gap-px" style={{ background: "rgba(0,0,0,0.06)" }}>
-                  {industry.stats.map((s) => (
-                    <div key={s.l} className="bg-white p-6">
-                      <div className="text-neutral-900 font-black mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.4vw, 2.25rem)", letterSpacing: "-0.025em" }}>
-                        {s.n}
-                      </div>
-                      <div className="text-neutral-500 text-[10px] uppercase tracking-[0.18em] font-bold">{s.l}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
