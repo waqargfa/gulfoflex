@@ -7,7 +7,7 @@ import ProjectsExplorer, { type Project } from "@/components/projects/ProjectsEx
 export const metadata: Metadata = {
   title: "Project References | Gulf-O-Flex® Insulation Projects Worldwide",
   description:
-    "Explore Gulf-O-Flex® project references across HVAC, Oil & Gas, Marine, District Cooling, and Construction sectors. 10,000+ successful projects across 90+ countries.",
+    "Explore Gulf-O-Flex® project references across HVAC, Oil & Gas, Marine, District Cooling, and Construction sectors. 5,000+ successful projects across 90+ countries.",
   alternates: { canonical: "https://gulfoflex.com/projects" },
 };
 
@@ -27,7 +27,7 @@ const featuredProjects: Project[] = [
 ];
 
 const stats = [
-  { n: "10,000+", l: "Projects Completed" },
+  { n: "5,000+", l: "Projects Completed" },
   { n: "90+", l: "Countries" },
   { n: "30+", l: "Years Experience" },
   { n: "500+", l: "Major References" },
@@ -47,10 +47,10 @@ export default function ProjectsPage() {
                 <span className="text-neutral-300">/</span>
                 <span className="text-neutral-700">Projects</span>
               </nav>
-              <div className="eyebrow mb-6"><span className="eyebrow-dot" />Case Studies · 10,000+ projects</div>
+              <div className="eyebrow mb-6"><span className="eyebrow-dot" />Case Studies · 5,000+ projects</div>
               <h1 className="text-neutral-900 leading-[0.95] mb-6"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5.5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.04em" }}>
-                10,000+ projects<span className="serif-italic text-orange-600">.</span><br />
+                5,000+ projects<span className="serif-italic text-orange-600">.</span><br />
                 <span className="gradient-text">6 continents.</span>
               </h1>
               <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-2xl">
