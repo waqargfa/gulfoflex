@@ -22,8 +22,8 @@ const featuredProjects: Project[] = [
   { id: 8,  name: "Tivoli & Avani Hotels & Residences",     location: "Zallaq, Bahrain",        country: "Bahrain",   type: "Pipe & Duct Insulation", image: "/images/projects/project5.png"  },
   { id: 9,  name: "Ahlia University",                       location: "Manama, Bahrain",        country: "Bahrain",   type: "Pipe & Duct Insulation", image: "/images/projects/project6.png"  },
   { id: 10, name: "Waterfront Promenade Mina District",     location: "Old Doha Port, Qatar",   country: "Qatar",     type: "Pipe & Duct Insulation", image: "/images/projects/project7.png"  },
-  { id: 11, name: "Port City Mixed-Use Development",        location: "Colombo, Sri Lanka",     country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/images/projects/project3.png"  },
-  { id: 12, name: "Katunayake Logistics Hub",               location: "Katunayake, Sri Lanka",  country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/images/projects/project4.png"  },
+  { id: 11, name: "Port City Mixed-Use Development",        location: "Colombo, Sri Lanka",     country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/images/projects/project9.png"  },
+  { id: 12, name: "Katunayake Logistics Hub",               location: "Katunayake, Sri Lanka",  country: "Sri Lanka", type: "Pipe & Duct Insulation", image: "/images/projects/katunayake-logistics.jpg"  },
 ];
 
 const stats = [
