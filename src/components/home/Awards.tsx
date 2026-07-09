@@ -13,8 +13,9 @@ type AwardItem = {
 
 const AWARDS: AwardItem[] = [
   {
-    title: "One UAE Award",
+    title: "Pak-UAE Business Award",
     org: "UAE Excellence Programme",
+    year: "2025",
     Icon: Crown,
     featured: true,
   },
@@ -41,11 +42,7 @@ const AWARDS: AwardItem[] = [
     org: "Construction Business News ME",
     Icon: Globe2,
   },
-  {
-    title: "UAE Business Award",
-    org: "UAE Business Excellence",
-    Icon: BadgeCheck,
-  },
+
   {
     title: "Climate Control Award",
     org: "Climate Control Middle East",

@@ -14,12 +14,12 @@ import {
 } from "lucide-react";
 
 const recognitions = [
-  { Icon: Crown,      title: "One UAE Award",          org: "UAE Excellence Programme",       year: undefined, featured: true,  image: "/images/awards/uae business award.png" },
+  { Icon: Crown,      title: "Pak-UAE Business Award", org: "UAE Excellence Programme",       year: "2025",    featured: true,  image: "/images/awards/uae business award.png" },
   { Icon: Trophy,     title: "Meera Award",            org: "Industry Recognition",           year: undefined, featured: true,  image: "/images/awards/meera digital invotation award.png" },
   { Icon: Award,      title: "MEP Award",              org: "MEP Middle East",               year: "2022",    featured: false, image: "/images/awards/cbmne2022.png" },
   { Icon: Award,      title: "MEP Award",              org: "MEP Middle East",               year: "2023",    featured: false, image: "/images/awards/cbmne2023.png" },
   { Icon: Globe2,     title: "CBNME Award",            org: "Construction Business News ME", year: undefined, featured: false, image: "/images/awards/cbmne2023.png" },
-  { Icon: BadgeCheck, title: "UAE Business Award",     org: "UAE Business Excellence",       year: undefined, featured: false, image: "/images/awards/uae business award.png" },
+
   { Icon: Zap,        title: "Climate Control Award",  org: "Climate Control Middle East",   year: "2017",    featured: false, image: "/images/awards/Climate control award 2017.png" },
 ];
 
