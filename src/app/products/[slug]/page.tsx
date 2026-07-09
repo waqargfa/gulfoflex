@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import PipeLayerSectionClient from "@/components/home/PipeLayerSectionClient";
 import ProductAnimation from "@/components/products/ProductAnimation";
+import ProductGallery from "@/components/products/ProductGallery";
 import PageHero from "@/components/layout/PageHero";
 
 const products = {
@@ -649,13 +650,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
             <h2 className="text-neutral-900 leading-[1.05] mb-10" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.85rem, 3.4vw, 2.85rem)", fontWeight: 800, letterSpacing: "-0.035em" }}>
               Product <span className="serif-italic text-orange-600">close-up.</span>
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {((product as Record<string, unknown>).gallery as { src: string; alt: string }[]).map((img) => (
-                <div key={img.src} className="group relative aspect-square rounded-2xl border bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-25px_rgba(234,88,12,0.25)]" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                  <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" />
-                </div>
-              ))}
-            </div>
+            <ProductGallery images={(product as Record<string, unknown>).gallery as { src: string; alt: string }[]} />
           </div>
         </section>
       )}
@@ -783,7 +778,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
               <div className="mt-10 pt-6 border-t border-neutral-200 flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.18em] font-bold text-neutral-400">
                 <span className="flex items-center gap-2"><BadgeCheck size={13} className="text-orange-500" /> ISO 9001</span>
                 <span className="flex items-center gap-2"><ShieldCheck size={13} className="text-orange-500" /> Class O</span>
-                <span className="flex items-center gap-2"><Globe2 size={13} className="text-orange-500" /> 50+ Countries</span>
+                <span className="flex items-center gap-2"><Globe2 size={13} className="text-orange-500" /> 90+ Countries</span>
               </div>
             </div>
 

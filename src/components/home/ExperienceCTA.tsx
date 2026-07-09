@@ -42,7 +42,7 @@ export default function ExperienceCTA() {
 
             <div className="hidden lg:grid grid-cols-2 gap-3">
               {[
-                { n: "3000+", l: "Sq. Metres" },
+                { n: "3000+", l: "Sq. Ft" },
                 { n: "7", l: "Product Zones" },
                 { n: "30+", l: "Live Demos" },
                 { n: "1hr", l: "Private Slots" },

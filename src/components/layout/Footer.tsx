@@ -59,7 +59,6 @@ const footerIndustries = [
   { name: "Industrial Plants", href: "/industries/industrial" },
 ];
 
-const certLogos = ["ISO 9001", "ISO 14001", "FM Approved", "UL Listed"];
 
 export default function Footer() {
   const { country } = useCountry();
@@ -220,21 +219,7 @@ export default function Footer() {
               ))}
             </ul>
 
-            <div className="mt-8">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                <h3 className="text-neutral-900 font-bold text-xs tracking-[0.18em] uppercase" style={{ fontFamily: "var(--font-syne)" }}>
-                  Certifications
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {certLogos.map((cert) => (
-                  <span key={cert} className="tag text-[9px]">
-                    {cert}
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -245,10 +230,7 @@ export default function Footer() {
           <p className="text-xs text-neutral-500" suppressHydrationWarning>
             © {new Date().getFullYear()} Gulf-O-Flex® · Rubber World Industry LLC. All rights reserved.
           </p>
-          <div className="flex items-center gap-1 text-neutral-500 text-[10px]">
-            <span className="w-1 h-1 rounded-full bg-orange-500/50" />
-            <span className="text-neutral-500 font-medium">Member of Shaikhani Group · Est. 1993 · Ajman, UAE</span>
-          </div>
+
           <div className="flex items-center gap-5 text-xs text-neutral-500">
             <Link href="/privacy-policy" className="hover:text-neutral-700 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-neutral-700 transition-colors">Terms of Use</Link>

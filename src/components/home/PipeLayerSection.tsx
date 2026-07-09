@@ -158,7 +158,7 @@ function RenderSequence({ progressRef, folder, prefix, frameCount, padLength = 4
 }
 
 /* Two-panel NBR render: Pipe + Duct side by side */
-function NbrDualRender({ progressRef, productSlug }: { progressRef: React.MutableRefObject<number>; productSlug?: string }) {
+function NbrDualRender({ progressRef, productSlug, activePanel, onPanelChange }: { progressRef: React.MutableRefObject<number>; productSlug?: string; activePanel: "pipe" | "duct"; onPanelChange: (panel: "pipe" | "duct") => void }) {
   // Product-specific pipe render folder mapping
   const pipeFolder: Record<string, { folder: string; prefix: string; padLength: number }> = {
     nbr: { folder: "Render/pipe/NBR", prefix: "NBR PIPES RENDER_", padLength: 5 },
@@ -192,8 +192,6 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
   const tabs: TabType[] = ["pipe"];
   if (hasDuct) tabs.push("duct");
 
-  const [activePanel, setActivePanel] = useState<TabType>(tabs[0]);
-
   return (
     <div className="absolute inset-0">
       {/* Render panels - only mount active panel */}
@@ -211,7 +209,7 @@ function NbrDualRender({ progressRef, productSlug }: { progressRef: React.Mutabl
         {tabs.map((tab) => (
           <button
             key={tab}
-            onClick={() => setActivePanel(tab)}
+            onClick={() => onPanelChange(tab)}
             className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 backdrop-blur-md"
             style={{
               background: activePanel === tab ? "rgba(249,115,22,0.25)" : "rgba(0,0,0,0.4)",
@@ -436,7 +434,54 @@ function buildNbrLayers(productSlug?: string): readonly LayerSpec[] {
     accent: "#f97316",
   };
 
-  return [pipeStep, productSlug === "nbr" ? nbrInsulationStep : genericInsulationStep];
+  const nbrDuctInsulationStep: LayerSpec = {
+    id: "insulation",
+    sublabel: "Step 02  ·  Gulf-O-Flex® NBR",
+    label: "Closed-Cell NBR Duct Insulation",
+    description:
+      "Gulf-O-Flex® NBR sheet is measured, cut, and wrapped around rectangular ductwork, then sealed at all joints and seams with Gulf-O-Flex® adhesive - delivering a continuous, closed-cell vapour barrier over the entire duct surface. No mechanical fixings penetrate the insulation, eliminating thermal bridges and condensation risk at fastener points.",
+    keyMetric: { value: "0.032", unit: "W/mK", label: "Thermal conductivity at 35°C (ASTM C518)" },
+    specs: [
+      "λ = 0.032 W/mK at 35°C (ASTM C518)",
+      "−40°C to +105°C operating range",
+      "WVT = 0.00 Perm in - zero vapour pass (ASTM E96)",
+      "Class O fire rated (BS 476 Part 6 & 7)",
+      "Density 50–70 kg/m³ (ASTM C302-13)",
+    ],
+    highlights: [
+      "FM Approved · UL Listed · EPD Verified · ISO 9001",
+      "Zero ODP - CFC and HCFC free, low GWP",
+      "Continuous vapour barrier over rectangular ductwork",
+    ],
+    accent: "#f97316",
+  };
+
+  const genericDuctInsulationStep: LayerSpec = {
+    id: "insulation",
+    sublabel: `Step 02  ·  ${name}`,
+    label: `${name} Duct Insulation`,
+    description:
+      `${name} sheet is wrapped around rectangular ductwork and sealed at all joints with adhesive - forming a continuous closed-cell barrier over the entire duct surface. No mechanical fixings penetrate the insulation, eliminating thermal bridges and condensation risk.`,
+    keyMetric: { value: "30+", unit: "yrs", label: "Passive service life with zero maintenance" },
+    specs: [
+      "Continuous closed-cell insulation barrier",
+      "Integral vapour control over full duct surface",
+      "No mechanical fixings, no thermal bridges",
+      "Stable thermal & acoustic performance",
+      "Suitable for HVAC ductwork & air handling systems",
+    ],
+    highlights: [
+      "Closed-cell structure = integral vapour barrier",
+      "CFC & HCFC free - zero ODP",
+      "Passive performance - 30+ year service life",
+    ],
+    accent: "#f97316",
+  };
+
+  const pipeLayers = [pipeStep, productSlug === "nbr" ? nbrInsulationStep : genericInsulationStep];
+  const ductLayers = [pipeStep, productSlug === "nbr" ? nbrDuctInsulationStep : genericDuctInsulationStep];
+
+  return { pipeLayers, ductLayers };
 }
 
 export type PipeLayerVariant = "full" | "nbr";
@@ -1263,7 +1308,9 @@ function CameraRig({ progressRef, variant = "full" }: SceneProps) {
    MAIN SECTION
 ───────────────────────────────────────────────────────── */
 export default function PipeLayerSection({ variant = "full", productSlug }: { variant?: PipeLayerVariant; productSlug?: string } = {}) {
-  const layers      = variant === "nbr" ? buildNbrLayers(productSlug) : LAYERS;
+  const nbrResult = variant === "nbr" ? buildNbrLayers(productSlug) : null;
+  const [activePanel, setActivePanel] = useState<"pipe" | "duct">("pipe");
+  const layers = variant === "nbr" ? (activePanel === "duct" ? nbrResult!.ductLayers : nbrResult!.pipeLayers) : LAYERS;
   const stepCount   = layers.length;
   // 3-step NBR walkthrough needs less scroll runway than the 4-step
   // full walkthrough.
@@ -1482,7 +1529,7 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
                   style={{ background: `radial-gradient(ellipse at 60% 40%, ${layers[activeStep].accent}22, transparent 70%)`, transition: "background 1.2s ease" }}
                 />
                 <div className="relative w-full h-[46vh] lg:h-[64vh] max-h-[640px] rounded-3xl border border-white/10 overflow-hidden bg-[#0a0806] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
-                  <NbrDualRender progressRef={progressRef} productSlug={productSlug} />
+                  <NbrDualRender progressRef={progressRef} productSlug={productSlug} activePanel={activePanel} onPanelChange={setActivePanel} />
                 </div>
               </div>
             </div>

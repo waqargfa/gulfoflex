@@ -78,7 +78,7 @@ const tourFeatures = [
 ];
 
 const stats = [
-  { value: "3000+", label: "Sq. Metres" },
+  { value: "3000+", label: "Sq. Ft" },
   { value: "7", label: "Product Zones" },
   { value: "30+", label: "Live Demos" },
   { value: "360°", label: "Virtual Tour" },
