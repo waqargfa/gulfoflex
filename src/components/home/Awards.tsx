@@ -49,6 +49,12 @@ const AWARDS: AwardItem[] = [
     year: "2017",
     Icon: Zap,
   },
+  {
+    title: "One UAE Business Award",
+    org: "UAE Business Excellence",
+    Icon: BadgeCheck,
+    featured: true,
+  },
 ];
 
 export default function Awards() {

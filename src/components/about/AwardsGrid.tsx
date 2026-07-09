@@ -21,6 +21,7 @@ const recognitions = [
   { Icon: Globe2,     title: "CBNME Award",            org: "Construction Business News ME", year: undefined, featured: false, image: "/images/awards/cbmne2023.png" },
 
   { Icon: Zap,        title: "Climate Control Award",  org: "Climate Control Middle East",   year: "2017",    featured: false, image: "/images/awards/Climate control award 2017.png" },
+  { Icon: BadgeCheck, title: "One UAE Business Award",  org: "UAE Business Excellence",       year: undefined, featured: true,  image: "/images/awards/UAE ONE Business award.png" },
 ];
 
 export default function AwardsGrid() {
