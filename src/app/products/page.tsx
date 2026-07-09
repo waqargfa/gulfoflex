@@ -35,7 +35,7 @@ const products = [
     keyFeatures: ["Class O Fire Rated (ASTM E84)", "Zero ODP/GWP", "λ ≤ 0.036 W/mK", "Temp Range −40°C to +105°C"],
     applications: ["HVAC", "District Cooling", "Cold Water", "Industrial"],
     tag: "Best Seller",
-    image: "/assets/plain/C_107249.jpg",
+    image: "/images/products/nbr/White NBR_C10009.png",
   },
   {
     slug: "xlpe",
@@ -208,13 +208,6 @@ export default function ProductsPage() {
                 )}
 
                 <div className="relative px-7 pt-8 pb-7">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
-                      style={{ background: "linear-gradient(135deg, rgba(249,115,22,0.14), rgba(249,115,22,0.04))", border: "1px solid rgba(249,115,22,0.20)" }}>
-                      <p.icon size={20} className="text-orange-600" strokeWidth={2.2} />
-                    </div>
-                    <span className="tag text-[9px]">{p.tag}</span>
-                  </div>
 
                   <h2 className="text-neutral-900 font-bold text-xl mb-1.5"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.025em" }}>
@@ -224,15 +217,6 @@ export default function ProductsPage() {
                     {p.tagline}
                   </div>
                   <p className="text-neutral-500 text-sm leading-relaxed mb-5">{p.desc}</p>
-
-                  <ul className="space-y-1.5 mb-5">
-                    {p.keyFeatures.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-[12.5px] text-neutral-700">
-                        <CheckCircle2 size={13} className="text-orange-500 mt-0.5 flex-shrink-0" />
-                        <span className="leading-snug">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
 
                   <div className="pt-4 mb-5 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
                     <div className="text-[10px] uppercase font-bold tracking-[0.15em] text-neutral-400 mb-2">Applications</div>
