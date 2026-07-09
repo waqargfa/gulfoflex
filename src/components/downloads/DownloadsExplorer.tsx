@@ -72,7 +72,7 @@ const categories: Category[] = [
       { name: "UL Listed Certificate - ASTM E84 / UL 723", size: "0.8 MB", type: "PDF", downloads: 4710, updated: "2026-01-22" },
       { name: "DCL Certificate - Dubai Central Laboratory", size: "0.6 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCL-Al-Safat-Dubai-Green-Building.pdf", downloads: 3940, updated: "2026-02-14" },
       { name: "DCD Approval - Dubai Civil Defence", size: "0.7 MB", type: "PDF", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-DCD.pdf", downloads: 4280, updated: "2026-02-14" },
-      { name: "EPD - Environmental Product Declaration", size: "1.4 MB", type: "PDF", badge: "UPDATED", downloads: 2810, updated: "2026-04-30" },
+      { name: "EPD - Environmental Product Declaration", size: "1.4 MB", type: "PDF", badge: "UPDATED", href: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/EPD-Catalogue.pdf", downloads: 2810, updated: "2026-04-30" },
     ],
   },
   {
