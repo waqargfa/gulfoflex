@@ -233,27 +233,41 @@ export default function Awards() {
       {/* Modal */}
       {selectedAward && selectedAward.link && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setSelectedAward(null)}
         >
-          <div className="relative max-w-3xl w-full max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
+              type="button"
               onClick={() => setSelectedAward(null)}
-              className="absolute -top-3 -right-3 z-10 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-neutral-100 transition-colors"
+              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 border border-neutral-200 flex items-center justify-center hover:bg-neutral-100 transition-colors"
+              aria-label="Close"
             >
-              <X size={18} className="text-neutral-700" />
+              <X size={16} className="text-neutral-600" />
             </button>
-            <div className="rounded-2xl overflow-hidden bg-white shadow-2xl">
-              <Image
-                src={selectedAward.link}
-                alt={selectedAward.title}
-                width={900}
-                height={600}
-                className="w-full h-auto object-contain"
-              />
-              <div className="px-6 py-4 border-t border-neutral-100">
-                <h3 className="font-bold text-neutral-900">{selectedAward.title}</h3>
-                <p className="text-sm text-neutral-500">{selectedAward.org}{selectedAward.year ? ` · ${selectedAward.year}` : ""}</p>
+
+            <div className="p-6">
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-neutral-50">
+                <Image
+                  src={selectedAward.link}
+                  alt={selectedAward.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 512px) 100vw, 512px"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <h3
+                  className="text-neutral-900 font-bold text-lg"
+                  style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
+                >
+                  {selectedAward.title}
+                  {selectedAward.year && <span className="text-orange-600 ml-2">({selectedAward.year})</span>}
+                </h3>
+                <p className="text-neutral-500 text-sm mt-1">{selectedAward.org}</p>
               </div>
             </div>
           </div>
