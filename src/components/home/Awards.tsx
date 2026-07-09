@@ -9,6 +9,7 @@ type AwardItem = {
   year?: string;
   Icon: LucideIcon;
   featured?: boolean;
+  link?: string;
 };
 
 const AWARDS: AwardItem[] = [
@@ -18,29 +19,34 @@ const AWARDS: AwardItem[] = [
     year: "2025",
     Icon: Crown,
     featured: true,
+    link: "/images/awards/pak-uae business award 2025.png",
   },
   {
     title: "Meera Award",
     org: "Industry Recognition",
     Icon: Trophy,
     featured: true,
+    link: "/images/awards/meera digital invotation award.png",
   },
   {
     title: "MEP Award",
     org: "MEP Middle East",
     year: "2022",
     Icon: Award,
+    link: "/images/awards/cbmne2022.png",
   },
   {
     title: "MEP Award",
     org: "MEP Middle East",
     year: "2023",
     Icon: Award,
+    link: "/images/awards/cbmne2023.png",
   },
   {
     title: "CBNME Award",
     org: "Construction Business News ME",
     Icon: Globe2,
+    link: "/images/awards/cbmne2022.png",
   },
 
   {
@@ -48,12 +54,14 @@ const AWARDS: AwardItem[] = [
     org: "Climate Control Middle East",
     year: "2017",
     Icon: Zap,
+    link: "/images/awards/Climate control award 2017.png",
   },
   {
     title: "One UAE Business Award",
     org: "UAE Business Excellence",
     Icon: BadgeCheck,
     featured: true,
+    link: "/images/awards/UAE ONE Business award.png",
   },
 ];
 
@@ -116,10 +124,15 @@ export default function Awards() {
           {AWARDS.map((award, i) => {
             const Icon = award.Icon;
             const isSpan = award.featured && i < 2;
+            const CardWrapper = award.link ? "a" : "div";
+            const cardProps = award.link
+              ? { href: award.link, target: "_blank", rel: "noopener noreferrer" }
+              : {};
             return (
-              <div
+              <CardWrapper
+                {...cardProps}
                 key={`${award.title}-${award.year ?? i}`}
-                className={`group relative flex flex-col items-center text-center py-8 px-5 rounded-2xl cursor-default overflow-hidden transition-all duration-500 hover:-translate-y-0.5 ${
+                className={`group relative flex flex-col items-center text-center py-8 px-5 rounded-2xl cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-0.5 ${
                   isSpan ? "sm:col-span-1 lg:col-span-1" : ""
                 }`}
                 style={{
@@ -218,7 +231,7 @@ export default function Awards() {
                     {award.org}
                   </div>
                 </div>
-              </div>
+              </CardWrapper>
             );
           })}
         </div>

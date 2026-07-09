@@ -26,7 +26,13 @@ const COUNTRY_CLIENTS: Record<string, Client[]> = {
     { name: "Tiger Group",          logo: "/logos/Tiger%20Group.png",                      short: "TG" },
     { name: "Almal Realestate",     logo: "/logos/Almal%20Realstate.jpg",                  short: "AL" },
   ],
-  // KSA, LK, EG, PK, ZA - to be added
+  sa: [
+    { name: "CRCC",                 logo: "/logos/CRCC.png",                               short: "CR" },
+    { name: "Saudi Bin Laden",      logo: "/logos/Saudi%20Bin%20Laden.png",                short: "SBL" },
+    { name: "China Harbour",        logo: "/logos/China%20Harbour.png",                    short: "CH" },
+    { name: "Shapoorji Pallonji",   logo: "/logos/Shapoorji%20Pallonji.png",               short: "SP" },
+  ],
+  // LK, EG, PK, ZA - to be added
 };
 
 /* ─────────────────────────────────────────────────────────────────────

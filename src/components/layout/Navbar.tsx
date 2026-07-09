@@ -267,23 +267,15 @@ export default function Navbar() {
         <div className="container-wide">
           <nav className="flex items-center justify-between h-[72px]">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative w-10 h-10 flex-shrink-0">
+            <Link href="/" className="flex items-center group shrink-0">
+              <div className="relative w-44 h-10 flex-shrink-0">
                 <Image
-                  src="/images/logos/gof-emblem.png"
+                  src="/images/logos/GULFOFLEX _ beside version_black text (1).png"
                   alt="Gulf-O-Flex logo"
                   fill
                   className="object-contain"
-                  sizes="40px"
+                  sizes="176px"
                 />
-              </div>
-              <div className="whitespace-nowrap">
-                <div className="text-neutral-900 font-bold text-lg leading-none tracking-tight" style={{ fontFamily: "var(--font-syne), system-ui, sans-serif" }}>
-                  Gulf-O-Flex<span className="text-orange-500">®</span>
-                </div>
-                <div className="hidden sm:block text-neutral-500 text-[10px] tracking-[0.15em] uppercase font-semibold leading-none mt-1">
-                  Rubber World Industry
-                </div>
               </div>
             </Link>
 

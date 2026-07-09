@@ -102,23 +102,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6 group w-fit">
-              <div className="relative w-11 h-11 flex-shrink-0">
+            <Link href="/" className="flex items-center mb-6 group w-fit">
+              <div className="relative w-48 h-12 flex-shrink-0">
                 <Image
-                  src="/images/logos/gof-emblem.png"
+                  src="/images/logos/GULFOFLEX _ beside version_black text (1).png"
                   alt="Gulf-O-Flex logo"
                   fill
                   className="object-contain"
-                  sizes="44px"
+                  sizes="192px"
                 />
-              </div>
-              <div>
-                <div className="text-neutral-900 font-bold text-xl leading-none" style={{ fontFamily: "var(--font-display)" }}>
-                  Gulf-O-Flex<span className="text-orange-500">®</span>
-                </div>
-                <div className="text-neutral-500 text-[10px] tracking-[0.15em] uppercase font-semibold mt-0.5">
-                  Rubber World Industry
-                </div>
               </div>
             </Link>
             <p className="text-neutral-500 text-sm leading-relaxed mb-6 max-w-sm">
