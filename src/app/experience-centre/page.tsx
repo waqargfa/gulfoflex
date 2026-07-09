@@ -214,25 +214,18 @@ export default function ExperienceCentrePage() {
             </p>
           </div>
 
-          {/* Tour embed placeholder */}
+          {/* Tour embed */}
           <div className="relative max-w-5xl mx-auto">
-            <div className="aspect-video rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl shadow-orange-500/10">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-gradient-to-b from-neutral-900/80 to-neutral-950/90">
-                <div className="w-20 h-20 rounded-full bg-orange-500/20 border-2 border-orange-500 flex items-center justify-center backdrop-blur-sm">
-                  <Play size={32} className="text-orange-400 ml-1" />
-                </div>
-                <div className="text-center">
-                  <p className="text-white text-xl font-bold mb-1" style={{ fontFamily: "var(--font-display)" }}>
-                    Virtual Tour Coming Soon
-                  </p>
-                  <p className="text-neutral-400 text-sm">Our immersive 3D walkthrough is being prepared</p>
-                </div>
-              </div>
-              <Image
-                src="/images/experience/side image.jpeg"
-                alt="Experience Centre virtual tour preview"
-                fill
-                className="object-cover opacity-30"
+            <div className="aspect-video rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl shadow-orange-500/10">
+              <iframe
+                src="https://my.matterport.com/show/?m=iYxUmSKsFnQ"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allowFullScreen
+                allow="fullscreen; xr-spatial-tracking"
+                className="w-full h-full"
+                title="Gulf-O-Flex Experience Centre 3D Virtual Tour"
               />
             </div>
 
