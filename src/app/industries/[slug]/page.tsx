@@ -32,10 +32,10 @@ const industries = {
     color: "orange",
     description: [
       "The oil and gas sector demands insulation that performs reliably in extreme temperatures, corrosive environments, and safety-critical applications. Gulf-O-Flex® provides certified insulation solutions for refineries, petrochemical plants, LNG facilities, and offshore platforms.",
-      "Our insulation systems meet NORSOK, API, and ISO requirements for process piping and are compatible with fire protection systems, supporting safety-critical applications from cryogenic storage to high-temperature steam systems.",
+      "Our insulation systems meet API and ISO requirements for process piping and are compatible with fire protection systems, supporting safety-critical applications from cryogenic storage to high-temperature steam systems.",
     ],
     products: ["Gulf-O-Flex® NBR", "Gulf-O-Flex® Aluclad", "Gulf-O-Flex® Ultra"],
-    requirements: ["NORSOK M-501 Compliance", "Cryogenic to High-Temp Range", "Fire Safety (IMO/NFPA)", "Corrosion Resistance"],
+    requirements: ["Cryogenic to High-Temp Range", "Fire Safety (IMO/NFPA)", "Corrosion Resistance"],
     keyProjects: [],
     stats: [
       { n: "1,200+", l: "O&G Projects" },

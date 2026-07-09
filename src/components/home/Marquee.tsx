@@ -194,9 +194,11 @@ export default function Marquee() {
   const { country } = useCountry();
   const countryClients = COUNTRY_CLIENTS[country.code];
 
+  /* Only show for countries that have a client list (UAE & KSA) */
+  if (!countryClients) return null;
+
   /* Build doubled arrays for infinite scroll */
-  const clientsDoubled  = countryClients  ? [...countryClients,  ...countryClients]  : null;
-  const genericDoubled  = !countryClients ? [...genericPartners, ...genericPartners] : null;
+  const clientsDoubled  = [...countryClients, ...countryClients];
 
   return (
     <section
@@ -242,12 +244,8 @@ export default function Marquee() {
           className="flex w-max"
           style={{ gap: "2rem", animation: "marquee 60s linear infinite" }}
         >
-          {clientsDoubled
-            ? clientsDoubled.map((c, i) => (
+          {clientsDoubled.map((c, i) => (
                 <ClientLogoBadge key={`${c.name}-${i}`} client={c} />
-              ))
-            : genericDoubled!.map((p, i) => (
-                <MonogramBadge key={`${p.name}-${i}`} partner={p} />
               ))}
         </div>
       </div>

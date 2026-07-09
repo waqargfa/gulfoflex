@@ -337,11 +337,10 @@ const LAYERS: readonly LayerSpec[] = [
       "−200°C to +500°C operating temperature",
       "UV, weather and chemical resistant",
       "Cut to pipe circumference + overlap allowance",
-      "ISO 9001 · IMO FTP · NORSOK M-501",
+      "ISO 9001 · IMO FTP",
     ],
     highlights: [
       "Stucco emboss provides anti-slip and aesthetic finish",
-      "NORSOK M-501 approved for offshore environments",
       "IMO FTP certified for marine and naval applications",
       "Polysurlyn moisture-barrier backing option available",
     ],
