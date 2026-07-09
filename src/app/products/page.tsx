@@ -119,7 +119,7 @@ const products = [
     keyFeatures: ["Low-VOC Polychloroprene Adhesive", "Fire-Resistive Duct Sealant", "Foil / Glass / PVC / Alupet Tapes", "Cork & Metal Anti-Vibration Pads"],
     applications: ["Adhesives", "Duct Sealing", "Vapour Sealing", "Anti-Vibration"],
     tag: "System",
-    image: "/assets/aluminium.webp",
+    image: "/images/products/accessiores/whiet accesories_C1.0030016.png",
   },
 ];
 
