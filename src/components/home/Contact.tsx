@@ -179,7 +179,10 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Clock size={13} className="text-orange-500 shrink-0" />
-                  <p className="text-xs text-neutral-500">Mon – Fri: 8:00 AM – 5:00 PM GST</p>
+                  <div className="text-xs text-neutral-500">
+                    <p>Mon – Fri: 9:00 AM – 6:30 PM GST</p>
+                    <p>Sat: 9:00 AM – 3:30 PM GST</p>
+                  </div>
                 </div>
               </div>
             </div>
