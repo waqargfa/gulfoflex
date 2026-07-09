@@ -69,7 +69,7 @@ const technologies: Tech[] = [
     desc: "Ultra-density NBR engineered for projects that demand the best - district cooling mains, chiller plants, and critical pharma/data-centre piping. Higher cell density delivers improved thermal lambda and stronger mechanical performance over standard NBR.",
     specs: [
       { label: "Thermal Conductivity", value: "≤0.033 W/(m·K)" },
-      { label: "Temperature Range",   value: "−50°C to +110°C" },
+      { label: "Temperature Range",   value: "−40°C to +105°C" },
       { label: "Water Vapour Resist.", value: "μ ≥ 10,000" },
       { label: "Density",              value: "70–90 kg/m³" },
     ],
@@ -137,7 +137,7 @@ const technologies: Tech[] = [
     desc: "Premium aluminium-glass reinforced laminate claddings protect insulation from UV, mechanical damage and weather in outdoor and industrial use. Bonded directly to the NBR or XLPE core for permanent, glue-free performance.",
     specs: [
       { label: "Aluminium Thickness", value: "0.025–0.05 mm" },
-      { label: "Operating Temp",       value: "−30°C to +80°C" },
+      { label: "Operating Temp",       value: "−40°C to +105°C" },
       { label: "UV Resistance",        value: "Class A (ASTM G154)" },
       { label: "Peel Strength",        value: "≥8 N/cm" },
     ],

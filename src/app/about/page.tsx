@@ -85,16 +85,11 @@ const milestones = [
 
 const pillars = [
   { icon: ShieldCheck, title: "Engineered to Spec",   desc: "Every roll, sheet and tube is engineered against BS, ASTM, EN, DIN, IMO, NFPA and ASHRAE standards." },
-  { icon: Flame,       title: "Fire-Safe by Design",  desc: "Class O / B-s1,d0 / 25/50 ratings Gulf-O-Flex® meets the world's strictest fire performance codes." },
+  { icon: Flame,       title: "Fire-Safe by Design",  desc: "Class O / 25/50 ratings Gulf-O-Flex® meets the world's strictest fire performance codes." },
   { icon: Gauge,       title: "Lifetime Performance", desc: "Closed-cell NBR maintains thermal conductivity and vapour resistance for the asset's full design life." },
   { icon: Zap,         title: "Energy Saved",         desc: "Every meter we ship cuts HVAC and process energy losses measured in megawatt-hours, not slogans." },
 ];
 
-const certs = [
-  "ISO 9001", "ISO 14001", "ISO 45001", "FM Approved", "UL Listed",
-  "DCL", "DCD", "EPD", "ASTM E84", "BS 476", "IMO MED",
-  "EU REACH", "ASHRAE", "ECAS",
-];
 
 const certCards = [
   { abbr: "ISO 9001",    label: "Quality Management",           body: "Bureau Veritas certified quality system.",           Icon: BadgeCheck },
@@ -213,36 +208,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Certifications marquee ── */}
-      <section className="relative border-y bg-white" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-        <div className="container-wide py-6">
-          <div className="flex items-center gap-6">
-            <span className="hidden md:flex shrink-0 items-center gap-2 text-[10px] font-bold tracking-[0.22em] uppercase text-neutral-500">
-              <ShieldCheck size={12} className="text-orange-600" /> Certified · Approved · Compliant
-            </span>
-            <div
-              className="relative flex-1 overflow-hidden"
-              style={{
-                maskImage:
-                  "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
-                WebkitMaskImage:
-                  "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
-              }}
-            >
-              <div className="flex gap-3 whitespace-nowrap py-1 about-marquee">
-                {[...certs, ...certs].map((c, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.15em] uppercase text-neutral-700 bg-neutral-50 border border-neutral-200/80"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* ── Mission / Vision / Purpose ── */}
       <section className="section-padding bg-white relative overflow-hidden">

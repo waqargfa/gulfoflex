@@ -52,7 +52,7 @@ const certifications = [
     color: "neutral",
     desc: "Occupational Health and Safety Management System certification. Demonstrates our commitment to a safe and healthy workplace across all manufacturing operations.",
     scope: "Health & safety management of manufacturing operations",
-    pdfUrl: "/images/certificates/Certificate-ISO-45001-2018.pdf",
+    pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/Certificate-ISO-45001-2018.pdf",
   },
   {
     name: "FM Approved",
@@ -97,7 +97,7 @@ const certifications = [
     color: "orange",
     desc: "Environmental Product Declaration verified to ISO 14025 / EN 15804. Transparent, third-party Life-Cycle Assessment data for LEED, BREEAM, and Estidama credits.",
     scope: "Life-cycle environmental performance disclosure",
-    pdfUrl: "/images/certificates/EPD-Catalogue.pdf",
+    pdfUrl: "https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/EPD-Catalogue.pdf",
   },
   {
     name: "TUV Singapore",

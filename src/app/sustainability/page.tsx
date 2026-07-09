@@ -65,6 +65,7 @@ const standards = [
   "Dubai Green Building Regulations",
   "UAE Net Zero 2050 Aligned",
   "ISO 14001 Environmental Management",
+  "Environmental Product Declaration (EPD)",
 ];
 
 export default function SustainabilityPage() {
@@ -186,7 +187,13 @@ export default function SustainabilityPage() {
                     <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-400 w-8">0{i + 1}</div>
                     <span className="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
                     <span className="text-sm font-semibold text-neutral-800 flex-1">{std}</span>
-                    <ArrowUpRight size={14} className="text-neutral-300 group-hover:text-orange-600 transition-colors" />
+                    {std.includes("EPD") ? (
+                      <a href="https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/EPD-Catalogue.pdf" download className="text-orange-600 hover:text-orange-700 transition-colors text-xs font-semibold flex items-center gap-1">
+                        Download <ArrowUpRight size={14} />
+                      </a>
+                    ) : (
+                      <ArrowUpRight size={14} className="text-neutral-300 group-hover:text-orange-600 transition-colors" />
+                    )}
                   </div>
                 ))}
               </div>
@@ -218,10 +225,10 @@ export default function SustainabilityPage() {
             <Link href="/contact" className="btn-primary">
               Request EPD &amp; Data <ArrowRight size={16} />
             </Link>
-            <Link href="/downloads" className="btn-ghost"
+            <a href="https://gulfoflexstorage.blob.core.windows.net/certificate-test-reports/EPD-Catalogue.pdf" download className="btn-ghost"
               style={{ color: "rgba(255,255,255,0.85)", borderColor: "rgba(255,255,255,0.18)" }}>
-              Download Reports
-            </Link>
+              Download EPD Report
+            </a>
           </div>
         </div>
       </section>
