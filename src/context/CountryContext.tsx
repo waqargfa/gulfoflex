@@ -74,7 +74,7 @@ export const COUNTRIES: CountryData[] = [
     phoneHref: "tel:+966546084319",
     whatsapp: "+971 52 509 6231",
     whatsappHref: "https://wa.me/971525096231",
-    email: "ksa@gulfoflex.com",
+    email: "info@rwi.sa",
     address: "Riyadh, Kingdom of Saudi Arabia",
     heroSubtitle:
       "Engineering the Kingdom's future - certified NBR & XLPE insulation for NEOM, Red Sea, Qiddiya and every Vision 2030 mega-project.",
@@ -118,7 +118,7 @@ export const COUNTRIES: CountryData[] = [
     phoneHref: "tel:+94771666139",
     whatsapp: "+971 52 509 6231",
     whatsappHref: "https://wa.me/971525096231",
-    email: "srilanka@gulfoflex.com",
+    email: "admin@rwi.lk",
     address: "Colombo, Sri Lanka",
     heroSubtitle:
       "Supporting Sri Lanka's green recovery and Port City ambitions - NBR & XLPE insulation engineered for sustainable MEP, hospitality, and industrial projects.",
@@ -160,7 +160,7 @@ export const COUNTRIES: CountryData[] = [
     phoneHref: "tel:+201500091994",
     whatsapp: "+971 52 509 6231",
     whatsappHref: "https://wa.me/971525096231",
-    email: "egypt@gulfoflex.com",
+    email: "sales.egypt@gulfoflex.com",
     address: "Cairo, Egypt",
     heroSubtitle:
       "Insulating Egypt's New Republic - certified NBR & XLPE solutions for the New Administrative Capital, Benban Solar, and Egypt Vision 2030 mega-projects.",
@@ -204,7 +204,7 @@ export const COUNTRIES: CountryData[] = [
     phoneHref: "tel:+2348067178147",
     whatsapp: "+971 52 509 6231",
     whatsappHref: "https://wa.me/971525096231",
-    email: "africa@gulfoflex.com",
+    email: "sales.africa@gulfoflex.com",
     address: "Johannesburg, South Africa",
     heroSubtitle:
       "Insulating Africa's rise - NBR & XLPE solutions for the continent's energy, industrial, and smart-city projects under African Union Agenda 2063.",
