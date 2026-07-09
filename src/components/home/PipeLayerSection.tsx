@@ -365,7 +365,7 @@ const WALKTHROUGH_NAMES: Record<string, string> = {
    02 · the Gulf-O-Flex® insulation applied over it.
    The pipe step is generic; the insulation step is named per product.
    NBR keeps its full, independently-verified data set. */
-function buildNbrLayers(productSlug?: string): readonly LayerSpec[] {
+function buildNbrLayers(productSlug?: string): { pipeLayers: readonly LayerSpec[]; ductLayers: readonly LayerSpec[] } {
   const name = WALKTHROUGH_NAMES[productSlug || ""] || "Gulf-O-Flex®";
 
   const pipeStep: LayerSpec = {
