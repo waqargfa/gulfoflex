@@ -93,8 +93,14 @@ export default function BookingSection() {
     setWarning(null);
     setSuccess(null);
 
-    if (!slot) {
-      setError("Please select an available time slot.");
+    const missing: string[] = [];
+    if (!form.name.trim()) missing.push("Full Name");
+    if (!form.email.trim()) missing.push("Email");
+    if (!form.phone.trim()) missing.push("Phone");
+    if (!slot) missing.push("Time Slot");
+
+    if (missing.length > 0) {
+      setError(`Please fill in the following: ${missing.join(", ")}.`);
       return;
     }
 

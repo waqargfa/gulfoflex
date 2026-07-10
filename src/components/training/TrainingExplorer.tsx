@@ -139,7 +139,7 @@ export default function TrainingExplorer() {
 
       <div className="container-wide relative section-padding">
         {/* Heading */}
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-8 md:mb-12">
           <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.28em] uppercase text-orange-400 mb-5">
             <span className="w-8 h-px bg-gradient-to-r from-orange-500 to-transparent" />
             <Wrench size={12} /> Installation Curriculum
@@ -157,7 +157,7 @@ export default function TrainingExplorer() {
 
         </div>
 
-        <div className="grid lg:grid-cols-[1.65fr_1fr] gap-8 items-start">
+        <div className="grid lg:grid-cols-[1.65fr_1fr] gap-6 md:gap-8 items-start">
           {/* ── Player ── */}
           <div className="lg:sticky lg:top-24">
             {/* Premium player frame */}
@@ -252,16 +252,17 @@ export default function TrainingExplorer() {
             </div>
 
             {/* Active lesson detail */}
-            <div className="mt-6 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur p-6 md:p-7">
-              <div className="flex items-start gap-4">
+            <div className="mt-4 md:mt-6 rounded-2xl md:rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur p-4 sm:p-6 md:p-7">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <div
-                  className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center"
+                  className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center"
                   style={{
                     background: "linear-gradient(135deg, rgba(249,115,22,0.22), rgba(249,115,22,0.05))",
                     border: "1px solid rgba(249,115,22,0.3)",
                   }}
                 >
-                  <Icon size={22} className="text-orange-400" strokeWidth={2.2} />
+                  <Icon size={20} className="text-orange-400 sm:hidden" strokeWidth={2.2} />
+                  <Icon size={22} className="text-orange-400 hidden sm:block" strokeWidth={2.2} />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
@@ -273,7 +274,7 @@ export default function TrainingExplorer() {
                     )}
                   </div>
                   <h3
-                    className="text-white font-bold text-xl mt-1"
+                    className="text-white font-bold text-lg sm:text-xl mt-1"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
                   >
                     {lesson.title}
@@ -316,7 +317,7 @@ export default function TrainingExplorer() {
                   <button
                     key={l.key}
                     onClick={() => select(i)}
-                    className={`group relative w-full text-left rounded-2xl border p-3.5 transition-all duration-300 ${
+                    className={`group relative w-full text-left rounded-xl sm:rounded-2xl border p-2.5 sm:p-3.5 transition-all duration-300 ${
                       isActive
                         ? "border-orange-500/50 bg-orange-500/[0.08] shadow-[0_20px_50px_-30px_rgba(234,88,12,0.7)]"
                         : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
@@ -334,7 +335,7 @@ export default function TrainingExplorer() {
                       </span>
 
                       {/* Thumbnail */}
-                      <div className="relative shrink-0 w-24 h-14 rounded-lg overflow-hidden bg-neutral-900 ring-1 ring-white/10">
+                      <div className="relative shrink-0 w-16 sm:w-24 h-10 sm:h-14 rounded-lg overflow-hidden bg-neutral-900 ring-1 ring-white/10">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={`https://img.youtube.com/vi/${l.youtubeId}/mqdefault.jpg`}

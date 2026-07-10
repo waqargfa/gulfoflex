@@ -183,8 +183,26 @@ export default function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setActiveMenu(null), 150);
+    timeoutRef.current = setTimeout(() => setActiveMenu(null), 250);
   };
+
+  const handleNavClick = (e: React.MouseEvent, link: { mega?: string; href: string }) => {
+    if (link.mega) {
+      e.preventDefault();
+      setActiveMenu(activeMenu === link.mega ? null : link.mega);
+    }
+  };
+
+  // Close mega menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setActiveMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -290,9 +308,12 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
                     className={cn(
                       "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200",
-                      pathname === link.href || pathname.startsWith(link.href + "/")
+                      activeMenu === link.mega
+                        ? "text-orange-600 bg-orange-50"
+                        : pathname === link.href || pathname.startsWith(link.href + "/")
                         ? "text-orange-600"
                         : "text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100"
                     )}
@@ -310,6 +331,9 @@ export default function Navbar() {
                   </Link>
 
                   {/* Mega menu */}
+                  {link.mega && activeMenu === link.mega && (
+                    <div className="absolute top-full left-0 right-0 h-4" />
+                  )}
                   {link.mega === "solutions" && activeMenu === "solutions" && (
                     <MegaMenuSolutions onMouseEnter={() => handleMouseEnter("solutions")} onMouseLeave={handleMouseLeave} />
                   )}

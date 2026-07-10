@@ -448,9 +448,9 @@ export default function Products() {
             <div className="max-w-2xl">
               <h3
                 className="text-white leading-[1.05] mb-3"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.03em" }}
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 4.5vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.03em" }}
               >
-                Need help specifying the right<br className="hidden md:block" />
+                Need help specifying the right{" "}
                 <span className="serif-italic text-orange-400">insulation system?</span>
               </h3>
               <p className="text-white/60 text-sm md:text-[15px] leading-relaxed">
