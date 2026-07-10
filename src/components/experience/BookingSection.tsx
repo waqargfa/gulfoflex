@@ -138,9 +138,9 @@ export default function BookingSection() {
 
   if (success) {
     return (
-      <section id="book-visit" className="py-20 md:py-28 bg-neutral-50">
+      <section id="book-visit" className="py-16 md:py-28 bg-neutral-50">
         <div className="container-wide">
-          <div className="max-w-2xl mx-auto text-center bg-white rounded-3xl border border-neutral-100 shadow-sm p-10 md:p-14">
+          <div className="max-w-2xl mx-auto text-center bg-white rounded-2xl md:rounded-3xl border border-neutral-100 shadow-sm p-6 sm:p-10 md:p-14">
             <div className="w-16 h-16 rounded-full bg-green-50 border-2 border-green-500 flex items-center justify-center mx-auto mb-6">
               <PartyPopper size={30} className="text-green-600" />
             </div>
@@ -169,9 +169,9 @@ export default function BookingSection() {
   }
 
   return (
-    <section id="book-visit" className="py-20 md:py-28 bg-neutral-50">
+    <section id="book-visit" className="py-16 md:py-28 bg-neutral-50">
       <div className="container-wide">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase text-orange-600 mb-4">
             <CalendarDays size={13} /> Book Your Slot
           </span>
@@ -181,18 +181,18 @@ export default function BookingSection() {
           >
             Reserve a Private Visit
           </h2>
-          <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-500 text-base md:text-lg max-w-2xl mx-auto">
             Choose a one-hour slot that suits you. We&apos;ll confirm your booking by email instantly and prepare a tailored, hands-on experience for you and your team.
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="max-w-5xl mx-auto bg-white rounded-3xl border border-neutral-100 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.12)]"
+          className="max-w-5xl mx-auto bg-white rounded-2xl md:rounded-3xl border border-neutral-100 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.12)]"
         >
           <div className="grid lg:grid-cols-2">
             {/* LEFT: date + slot picker */}
-            <div className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-neutral-100">
+            <div className="p-5 sm:p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-neutral-100">
               <div className="flex items-center gap-2 mb-4">
                 <CalendarDays size={18} className="text-orange-500" />
                 <h3 className="text-neutral-900 font-bold text-sm uppercase tracking-[0.14em]">Select a date</h3>
@@ -235,7 +235,7 @@ export default function BookingSection() {
                   <Loader2 size={16} className="animate-spin" /> Loading availability…
                 </div>
               ) : (
-                <div className="grid grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-2.5">
                   {slots.map((s) => {
                     const selected = s.slot === slot;
                     return (
@@ -264,7 +264,7 @@ export default function BookingSection() {
             </div>
 
             {/* RIGHT: contact details */}
-            <div className="p-8 md:p-10 text-neutral-900">
+            <div className="p-5 sm:p-8 md:p-10 text-neutral-900">
               <div className="flex items-center gap-2 mb-6">
                 <User size={18} className="text-orange-500" />
                 <h3 className="text-neutral-900 font-bold text-sm uppercase tracking-[0.14em]">Your details</h3>
@@ -344,7 +344,7 @@ export default function BookingSection() {
                 </div>
               )}
 
-              <div className="mt-6 flex items-center justify-between gap-4">
+              <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="text-xs text-neutral-500">
                   {slot ? (
                     <span className="inline-flex items-center gap-1.5 text-green-600 font-semibold">
@@ -357,7 +357,7 @@ export default function BookingSection() {
                 <button
                   type="submit"
                   disabled={submitting || !slot}
-                  className="btn-primary inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn-primary w-full sm:w-auto justify-center inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? (
                     <>
