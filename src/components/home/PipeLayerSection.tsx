@@ -204,8 +204,8 @@ function NbrDualRender({ progressRef, productSlug, activePanel, onPanelChange }:
         )}
       </div>
 
-      {/* Tab switcher - overlaid at bottom */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+      {/* Tab switcher - top on mobile (always visible), bottom on larger screens */}
+      <div className="absolute top-3 sm:top-auto sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -1473,7 +1473,7 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
 
           {/* MIDDLE */}
           {variant === "nbr" ? (
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center flex-1 min-h-0">
+            <div className="grid lg:grid-cols-2 gap-5 sm:gap-8 lg:gap-14 items-center flex-1 min-h-0">
               {/* LEFT — scroll-synced product description */}
               <div className="max-w-xl">
                 <div
@@ -1527,7 +1527,7 @@ export default function PipeLayerSection({ variant = "full", productSlug }: { va
                   className="absolute -inset-6 rounded-[2.5rem] blur-2xl pointer-events-none"
                   style={{ background: `radial-gradient(ellipse at 60% 40%, ${layers[activeStep].accent}22, transparent 70%)`, transition: "background 1.2s ease" }}
                 />
-                <div className="relative w-full h-[46vh] lg:h-[64vh] max-h-[640px] rounded-3xl border border-white/10 overflow-hidden bg-[#0a0806] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+                <div className="relative w-full h-[38vh] sm:h-[46vh] lg:h-[64vh] max-h-[640px] rounded-3xl border border-white/10 overflow-hidden bg-[#0a0806] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
                   <NbrDualRender progressRef={progressRef} productSlug={productSlug} activePanel={activePanel} onPanelChange={setActivePanel} />
                 </div>
               </div>

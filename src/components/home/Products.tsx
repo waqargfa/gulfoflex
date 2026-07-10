@@ -233,7 +233,7 @@ export default function Products() {
               A complete portfolio of certified thermal, acoustic and protective insulation - manufactured in the UAE, KSA and Sri Lanka, specified across{" "}
               <span className="text-neutral-900 font-semibold">90+ markets</span>.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <Link href="/products" className="btn-primary text-sm py-3 px-6">
                 View All Products <ArrowRight size={14} />
               </Link>

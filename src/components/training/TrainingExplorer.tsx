@@ -159,7 +159,7 @@ export default function TrainingExplorer() {
 
         <div className="grid lg:grid-cols-[1.65fr_1fr] gap-6 md:gap-8 items-start">
           {/* ── Player ── */}
-          <div className="lg:sticky lg:top-24">
+          <div className="min-w-0 lg:sticky lg:top-24">
             {/* Premium player frame */}
             <div className="relative rounded-3xl p-1.5 bg-gradient-to-b from-white/[0.12] to-white/[0.02] shadow-[0_50px_120px_-40px_rgba(0,0,0,0.9)]">
               <div className="relative rounded-[1.35rem] overflow-hidden bg-black ring-1 ring-white/10">
@@ -168,7 +168,7 @@ export default function TrainingExplorer() {
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="w-2.5 h-2.5 rounded-full bg-orange-500/60" />
-                  <span className="ml-2 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500 truncate">
+                  <span className="ml-2 min-w-0 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500 truncate">
                     Gulf-O-Flex® Academy · {lesson.title}
                   </span>
                   <span className="ml-auto flex items-center gap-1.5 text-[10px] font-semibold text-orange-400/90">
@@ -264,7 +264,7 @@ export default function TrainingExplorer() {
                   <Icon size={20} className="text-orange-400 sm:hidden" strokeWidth={2.2} />
                   <Icon size={22} className="text-orange-400 hidden sm:block" strokeWidth={2.2} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="flex items-center gap-2">
                     <span className="text-[9px] font-black tracking-[0.25em] uppercase text-orange-400">{lesson.step}</span>
                     {completed.has(active) && (
@@ -301,7 +301,7 @@ export default function TrainingExplorer() {
           </div>
 
           {/* ── Lesson list ── */}
-          <div>
+          <div className="min-w-0">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-neutral-400">
                 Course Modules

@@ -356,7 +356,7 @@ export default function NewsExperience({
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     {slide.video ? (
                       <button
                         type="button"
@@ -465,36 +465,19 @@ export default function NewsExperience({
       {/* ── Sticky filter bar + grid ── */}
       <section id="all-stories" className="pt-6 pb-20 md:pb-28 bg-white">
         <div
-          className={`sticky top-16 z-30 -mx-4 sm:mx-0 backdrop-blur-xl bg-white/80 border-y transition-shadow ${
+          className={`sticky top-16 z-30 backdrop-blur-xl bg-white/80 border-y transition-shadow ${
             stuck ? "shadow-[0_10px_30px_-20px_rgba(0,0,0,0.20)]" : ""
           }`}
           style={{ borderColor: "rgba(0,0,0,0.06)" }}
         >
-          <div className="container-wide py-3 flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500 mr-1">
-              <Filter size={12} /> Filter
-            </div>
-            <div className="flex flex-wrap gap-2 flex-1 min-w-0">
-              {categories.map((cat) => {
-                const active = activeCat === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCat(cat)}
-                    className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all ${
-                      active
-                        ? "bg-orange-600 text-white border-orange-600 shadow-[0_8px_24px_-10px_rgba(234,88,12,0.6)]"
-                        : "bg-white text-neutral-600 border-neutral-200 hover:text-neutral-900 hover:border-neutral-300"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
-            </div>
+          <div className="container-wide py-3 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
+            <div className="flex items-center justify-between gap-3 md:contents">
+              <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.18em] uppercase text-neutral-500 shrink-0 md:mr-1">
+                <Filter size={12} /> Filter
+              </div>
 
-            <div className="flex items-center gap-2 ml-auto">
-              <select
+              <div className="flex items-center gap-2 shrink-0 md:ml-auto md:order-3">
+                <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as "newest" | "oldest")}
                 className="text-xs font-semibold px-3 py-1.5 rounded-full border bg-white text-neutral-700 hover:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-500/30"
@@ -524,6 +507,26 @@ export default function NewsExperience({
                   <List size={14} />
                 </button>
               </div>
+            </div>
+            </div>
+
+            <div className="flex gap-2 overflow-x-auto md:flex-wrap md:flex-1 md:min-w-0 md:order-2 -mx-4 px-4 md:mx-0 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {categories.map((cat) => {
+                const active = activeCat === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCat(cat)}
+                    className={`shrink-0 text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-all ${
+                      active
+                        ? "bg-orange-600 text-white border-orange-600 shadow-[0_8px_24px_-10px_rgba(234,88,12,0.6)]"
+                        : "bg-white text-neutral-600 border-neutral-200 hover:text-neutral-900 hover:border-neutral-300"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

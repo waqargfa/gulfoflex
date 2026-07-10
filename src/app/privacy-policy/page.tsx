@@ -335,7 +335,7 @@ export default function PrivacyPolicyPage() {
                       <p className="text-neutral-900 font-semibold text-sm mb-0.5">Rubber World Industry LLC</p>
                       <p className="text-neutral-500 text-xs">P.O. Box 2435, New Industrial Area, Ajman, UAE</p>
                     </div>
-                    <a href="mailto:privacy@gulfoflex.com" className="btn-primary text-xs whitespace-nowrap">
+                    <a href="mailto:privacy@gulfoflex.com" className="btn-primary text-xs whitespace-nowrap w-full sm:w-auto justify-center normal-case tracking-normal">
                       <Mail className="w-3.5 h-3.5" />
                       privacy@gulfoflex.com
                     </a>

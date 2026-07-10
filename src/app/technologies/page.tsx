@@ -461,9 +461,9 @@ export default function TechnologiesPage() {
         />
 
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
             {/* Left: copy */}
-            <div>
+            <div className="min-w-0">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.22em] uppercase mb-6"
                 style={{
