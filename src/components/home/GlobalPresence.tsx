@@ -160,7 +160,7 @@ export default function GlobalPresence() {
               </span>
             </div>
 
-            <div className="relative aspect-[16/9] w-full">
+            <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full">
               {/* Accurate interactive world map */}
               <WorldMap
                 hubs={HUBS}

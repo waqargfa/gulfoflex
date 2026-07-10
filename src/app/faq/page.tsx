@@ -187,7 +187,7 @@ export default function FAQPage() {
                           <Plus size={14} className="text-neutral-700 group-open:text-white transition-colors" />
                         </span>
                       </summary>
-                      <div className="px-6 pb-6 pl-[4.5rem]">
+                      <div className="px-4 pb-6 pl-4 sm:px-6 sm:pl-[4.5rem]">
                         <div className="h-px bg-gradient-to-r from-orange-500/30 to-transparent mb-4" />
                         <p className="text-neutral-600 leading-relaxed">{faq.a}</p>
                       </div>

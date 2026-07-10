@@ -197,7 +197,7 @@ export default function BookingSection() {
                 <CalendarDays size={18} className="text-orange-500" />
                 <h3 className="text-neutral-900 font-bold text-sm uppercase tracking-[0.14em]">Select a date</h3>
               </div>
-              <div className="flex gap-2 overflow-x-auto pb-3 -mx-1 px-1 mb-8">
+              <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 mb-8">
                 {days.map((d) => {
                   const active = d.value === date;
                   return (
@@ -205,7 +205,7 @@ export default function BookingSection() {
                       type="button"
                       key={d.value}
                       onClick={() => setDate(d.value)}
-                      className={`flex-shrink-0 w-16 rounded-2xl border px-2 py-3 text-center transition-all ${
+                      className={`rounded-2xl border px-1 py-3 text-center transition-all ${
                         active
                           ? "bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-500/25"
                           : "bg-white border-neutral-200 text-neutral-700 hover:border-orange-300"

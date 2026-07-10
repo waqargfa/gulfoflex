@@ -576,7 +576,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
           </div>
 
           <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-10 gap-y-4">
               <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-white/40">Certified to</span>
               {product.certifications.map((c) => (
                 <span key={c} className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/70 hover:text-orange-300 transition-colors">
@@ -678,7 +678,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
           </div>
 
           <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl overflow-hidden">
-            <div className="grid grid-cols-[1fr_1.4fr_auto] px-6 py-4 border-b border-white/10 text-[10px] uppercase tracking-[0.22em] font-bold text-white/45">
+            <div className="hidden sm:grid grid-cols-[1fr_1.4fr_auto] px-6 py-4 border-b border-white/10 text-[10px] uppercase tracking-[0.22em] font-bold text-white/45">
               <span>Parameter</span>
               <span>Value</span>
               <span className="hidden sm:inline">Method</span>
@@ -686,7 +686,7 @@ export default async function ProductPage({ params }: { params: Promise<ProductP
             {product.specs.map((s, i) => (
               <div
                 key={s.label}
-                className="grid grid-cols-[1fr_1.4fr_auto] items-center gap-4 px-6 py-5 border-b border-white/[0.06] last:border-b-0 hover:bg-white/[0.025] transition-colors"
+                className="grid grid-cols-1 sm:grid-cols-[1fr_1.4fr_auto] items-start sm:items-center gap-1 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 border-b border-white/[0.06] last:border-b-0 hover:bg-white/[0.025] transition-colors"
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <span className="text-[10px] font-bold text-orange-400/70 tracking-wider w-6">{String(i + 1).padStart(2, "0")}</span>

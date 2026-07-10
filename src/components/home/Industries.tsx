@@ -294,7 +294,7 @@ export default function Industries() {
 
             <div className="relative z-10 grid lg:grid-cols-[1fr_minmax(280px,420px)] gap-0 lg:min-h-[600px]">
               {/* ── Left: main info ── */}
-              <div className="p-7 lg:p-10">
+              <div className="p-4 sm:p-7 lg:p-10">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active}

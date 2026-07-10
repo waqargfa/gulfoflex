@@ -436,9 +436,9 @@ export default function Navbar() {
                 </button>
               ))}
             </div>
-            <a href="tel:+97167434176" className="flex items-center gap-2 text-sm text-neutral-500">
+            <a href={selectedCountry.phoneHref} className="flex items-center gap-2 text-sm text-neutral-500">
               <Phone size={14} className="text-orange-500" />
-              +971 6 743 4176
+              {selectedCountry.phone}
             </a>
             <Link href="/contact" className="btn-primary w-full justify-center text-xs py-3">
               Get a Quote
@@ -453,7 +453,7 @@ export default function Navbar() {
 function MegaMenuSolutions({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void; onMouseLeave: () => void }) {
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] max-w-[calc(100vw-2rem)] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -524,7 +524,7 @@ function MegaMenuIndustries({ onMouseEnter, onMouseLeave }: { onMouseEnter: () =
 function MegaMenuCompany({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void; onMouseLeave: () => void }) {
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[720px] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[720px] max-w-[calc(100vw-2rem)] bg-white/98 backdrop-blur-2xl rounded-2xl border border-neutral-200 shadow-[0_24px_80px_rgba(10,10,10,0.12)] p-6 animate-[fadeUp_0.2s_ease_forwards]"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
