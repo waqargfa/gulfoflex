@@ -93,6 +93,16 @@
     font-feature-settings: "ss01", "cv11";
   }
 
+  /* Title Case every heading and form field label across all pages.
+     `capitalize` only upper-cases the first letter of each word and leaves
+     the rest untouched, so acronyms (NBR, XLPE, ISO) and brand names
+     (Gulf-O-Flex) stay intact. Elements that explicitly opt into
+     `text-transform: uppercase` (eyebrow labels, badges) are unaffected. */
+  h1, h2, h3, h4, h5, h6,
+  label {
+    text-transform: capitalize;
+  }
+
   :focus-visible {
     outline: 2px solid var(--orange);
     outline-offset: 3px;
