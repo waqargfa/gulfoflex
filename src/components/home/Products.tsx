@@ -176,7 +176,7 @@ export default function Products() {
     if (!activeImages || activeImages.length <= 1) return;
     const interval = setInterval(() => {
       setImgIndex((prev) => (prev + 1) % activeImages.length);
-    }, 1200);
+    }, 2600);
     return () => clearInterval(interval);
   }, [activeId, activeImages]);
 
