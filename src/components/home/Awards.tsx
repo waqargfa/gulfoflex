@@ -116,7 +116,7 @@ export default function Awards() {
         </div>
 
         {/* Award cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 stagger-reveal">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 stagger-reveal">
           {/* Featured awards span 2 cols on lg */}
           {AWARDS.map((award, i) => {
             const Icon = award.Icon;
