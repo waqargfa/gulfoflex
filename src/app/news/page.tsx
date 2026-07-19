@@ -17,11 +17,11 @@ const articles: Article[] = [
     color: "emerald",
     summary:
       "Gulf-O-Flex® has opened the region's first thermal and acoustic Insulation Experience Centre in Dubai, offering architects, consultants and contractors a hands-on space to explore its advanced insulation systems, as featured by Construction Week Online.",
-    featured: true,
+    featured: false,
     readTime: 4,
     author: "GOF Newsroom",
     tags: ["Experience Centre", "Dubai", "Construction Week"],
-    trending: true,
+    trending: false,
     image: "/images/news/experience-centre-dubai-construction-week.jpg",
     link: "https://www.constructionweekonline.com/news/gulf-o-flex-opens-the-regions-first-thermal-and-acoustic-insulation-experience-centre-in-dubai",
   },
