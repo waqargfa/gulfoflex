@@ -377,6 +377,7 @@ const events: GofEvent[] = [
 ];
 
 const gallery: GalleryItem[] = [
+  { src: "/images/news/experience-centre-dubai-construction-week.jpg", caption: "Region's First Thermal & Acoustic Insulation Experience Centre - Dubai", tag: "Experience Centre" },
   { src: "/images/news/big5-construct-saudi-2025.jpg", caption: "Big 5 Construct Saudi 2025 - Riyadh", tag: "Event" },
   { src: "/images/news/ahr-vegas-2026.jpg", caption: "AHR Expo 2026 - Las Vegas, USA", tag: "Trade Show" },
   { src: "/images/news/one-uae-awards-2026.jpg", caption: "One UAE Awards 2026 - Green Solution", tag: "Award" },

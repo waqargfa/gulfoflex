@@ -365,6 +365,15 @@ export default function NewsExperience({
                       >
                         <PlayCircle size={18} /> Watch video
                       </button>
+                    ) : slide.link ? (
+                      <a
+                        href={slide.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary"
+                      >
+                        Read full story <ArrowUpRight size={16} />
+                      </a>
                     ) : (
                       <Link href="#all-stories" className="btn-primary">
                         Read full story <ArrowUpRight size={16} />
