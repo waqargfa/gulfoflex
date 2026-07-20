@@ -13,7 +13,7 @@ const articles: Article[] = [
     title: "Gulf-O-Flex® Opens the Region's First Thermal & Acoustic Insulation Experience Centre in Dubai",
     date: "July 2026",
     iso: "2026-07-15",
-    category: "Events",
+    category: "Media",
     color: "emerald",
     summary:
       "Gulf-O-Flex® has opened the region's first thermal and acoustic Insulation Experience Centre in Dubai, offering architects, consultants and contractors a hands-on space to explore its advanced insulation systems, as featured by Construction Week Online.",
@@ -377,7 +377,7 @@ const events: GofEvent[] = [
 ];
 
 const gallery: GalleryItem[] = [
-  { src: "/images/news/experience-centre-dubai-construction-week.jpg", caption: "Region's First Thermal & Acoustic Insulation Experience Centre - Dubai", tag: "Experience Centre" },
+  { src: "/images/news/experience-centre-dubai-construction-week.jpg", caption: "Region's First Thermal & Acoustic Insulation Experience Centre - Dubai", tag: "News" },
   { src: "/images/news/big5-construct-saudi-2025.jpg", caption: "Big 5 Construct Saudi 2025 - Riyadh", tag: "Event" },
   { src: "/images/news/ahr-vegas-2026.jpg", caption: "AHR Expo 2026 - Las Vegas, USA", tag: "Trade Show" },
   { src: "/images/news/one-uae-awards-2026.jpg", caption: "One UAE Awards 2026 - Green Solution", tag: "Award" },
@@ -385,7 +385,6 @@ const gallery: GalleryItem[] = [
   { src: "/images/news/hvacr-nigeria-2026.jpeg", caption: "HVACR Nigeria 2026 - Lagos", tag: "Trade Show" },
   { src: "/images/news/mep-awards-2023.jpg", caption: "MEP Awards 2023 - Sponsored", tag: "Award" },
   { src: "/images/news/pakistan-hvacr-2026.jpg", caption: "Pakistan HVACR Expo 2026 - Karachi", tag: "Event" },
-  { src: "/images/news/big5-global-2023.jpg", caption: "Big 5 Global 2023 - Dubai", tag: "Trade Show" },
 ];
 
 const videos: VideoItem[] = [

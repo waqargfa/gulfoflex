@@ -605,7 +605,7 @@ export default function NewsExperience({
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] md:auto-rows-[200px] gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] md:auto-rows-[200px] gap-3 grid-flow-row-dense">
                 {gallery.map((g, i) => {
                   const span = i === 0 ? "row-span-2 col-span-2" : i === 3 ? "row-span-2" : "";
                   return (
