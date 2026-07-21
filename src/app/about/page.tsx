@@ -692,7 +692,6 @@ export default function AboutPage() {
                     style={{ background: "linear-gradient(90deg, transparent, #fb923c, transparent)" }}
                   />
                 </span>
-                .
               </h2>
               <p className="text-white/60 leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
                 Every meter of Gulf-O-Flex® specified prevents waste energy from escaping a pipe, duct, or chiller. Zero-ODP, REACH-compliant, engineered for decades of service , the longest carbon payback in the building envelope.
